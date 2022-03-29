@@ -3,6 +3,7 @@ module com.example.projetgithub {
     requires javafx.fxml;
     requires javafx.web;
     requires transitive com.jfoenix;
+    requires javafx.graphics;
     // requires json.simple ;
     //requires json.simple;
 
