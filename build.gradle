@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.7.1'
+}
+
+sourceCompatibility = '16'
+targetCompatibility = '16'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'com.example.projetgithub'
+    mainClass = 'com.example.projetgithub.HelloApplication'
+}
+
+javafx {
+    version = '16'
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web']
+}
+
+dependencies {
+    implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
+    implementation group: 'eu.hansolo', name: 'Medusa', version: '11.1'
+
+    implementation( group: 'com.jfoenix', name: 'jfoenix', version: '9.0.9')
+
+    implementation( 'com.github.cliftonlabs:json-simple:3.0.1')
+    implementation group: 'eu.hansolo', name: 'tilesfx', version: '1.0.7'
+    // https://jmaven.com/maven/com.jidesoft/jidefx-converters
+    implementation group: 'com.jidesoft', name: 'jidefx-converters', version: '0.9.1'
+    //testRuntimeOnly('com.github.cliftonlabs:json-simple:3.1.0')
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+
+    implementation('org.controlsfx:controlsfx:11.1.0')
+    implementation('com.dlsc.formsfx:formsfx-core:11.3.2') {
+        exclude(group: 'org.openjfx')
+    }
+
+    implementation('org.kordamp.ikonli:ikonli-javafx:12.2.0')
+    implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
+    implementation('eu.hansolo:tilesfx:11.48') {
+        exclude(group: 'org.openjfx')
+    }
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
