@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="850.0" stylesheets="@css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgithub.SignUp2">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="860.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/SignUp2.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="monNumeroTelephone" layoutX="440.0" layoutY="336.0" prefHeight="30.0" prefWidth="162.0" promptText="Numéro de téléphone" />
+      <JFXButton buttonType="RAISED" layoutX="424.0" layoutY="547.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.772549033164978" blue="0.23529411852359772" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="718.0" layoutY="547.0" onAction="#NextPage" prefHeight="31.0" prefWidth="80.0" ripplerFill="#f8f8f8" style="-fx-text-fill: white; -fx-background-color: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Suivant">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="150.0" layoutX="115.0" layoutY="501.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/Help.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TextField fx:id="monFacebook" layoutX="440.0" layoutY="386.0" prefHeight="35.0" prefWidth="329.0" promptText="Nom d'uilisateur">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="monGithub" layoutX="439.0" layoutY="432.0" prefHeight="31.0" prefWidth="329.0" promptText="Nom d'utilisateur" />
+      <TextField fx:id="monLinkedln" layoutX="440.0" layoutY="476.0" prefHeight="30.0" prefWidth="329.0" promptText="Nom d'utilisateur">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <ImageView fx:id="monPhoto" cache="true" cacheHint="QUALITY" depthTest="ENABLE" fitHeight="150.0" fitWidth="130.0" focusTraversable="true" layoutX="629.0" layoutY="229.0" pickOnBounds="true">
+         <image>
+            <Image url="@icons/ImagePersonnel.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
