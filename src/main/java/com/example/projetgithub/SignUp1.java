@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 
 import java.net.URL;
@@ -24,7 +25,13 @@ public class SignUp1 implements Initializable {
     private PasswordField monConfirmation ;
     @FXML
     private ImageView myHelp ;
-    /********Ligne*******/
+    @FXML
+    private Line monLigneEmail ;
+    @FXML
+    private Line monLigneMotPasse ;
+    @FXML
+    private Line monLigneConfirmation;
+    /********Ligne**********************/
     @FXML
     private Line monLigne1;
     @FXML
@@ -35,13 +42,26 @@ public class SignUp1 implements Initializable {
     private Line monLigne4;
     @FXML
     private Line monLigne5;
-    /***********************/
+    /***********les anchorpanes***************/
+    @FXML
+    private AnchorPane monAnchorpane;
+    @FXML
+    private AnchorPane monAnchorpane1;
+    @FXML
+    private AnchorPane monAnchorpane2;
+    /*****************les erreurs*********************/
+
+    /**************************Les constatnts **************************************/
+    /****************************************************************/
     private int NbChMinEmail = 5;
     private int NbChminPassword=12;
     private boolean validatePassword =false;
+    private double YposAnchorepane2;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /********************/
+        YposAnchorepane2 =monAnchorpane2.getLayoutY();
+
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -66,9 +86,15 @@ public class SignUp1 implements Initializable {
         /*************************************/
         String typeB="-fx-stroke:#19C62A ;-fx-stroke-width:4 ";
         String typeA="-fx-stroke:#EFEFEF ;-fx-stroke-width:4 ";
+        /*****************/
+        String typeB1="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
+        String typeA1="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeC1="-fx-stroke: red ;-fx-stroke-width:3";
+        String typeD1="-fx-stroke:#19C62A ;-fx-stroke-width:3 ";
         EventHandler<KeyEvent> event2 = new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
+                /**********/
                 int i=0;
                 int index=0;
                 int index1=0;
@@ -104,6 +130,7 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeA);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        monLigneConfirmation.setStyle(typeA1);
                         break;
 
                     case 1:
@@ -112,6 +139,7 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeA);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 2:
                         monLigne1.setStyle(typeB);
@@ -119,6 +147,7 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeA);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 3:
                         monLigne1.setStyle(typeB);
@@ -126,6 +155,7 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeB);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 4:
                         monLigne1.setStyle(typeB);
@@ -133,6 +163,7 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeB);
                         monLigne4.setStyle(typeB);
                         monLigne5.setStyle(typeA);
+                        monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 5:
                         monLigne1.setStyle(typeB);
@@ -141,12 +172,46 @@ public class SignUp1 implements Initializable {
                         monLigne4.setStyle(typeB);
                         monLigne5.setStyle(typeB);
                         validatePassword=true;
+                        if(monConfirmation.getText().equals(monMotdePasse.getText())==false)
+                        {
+                            monLigneConfirmation.setStyle(typeC1);
+                        }
                         break;
                 }
 
             }
         };
         monMotdePasse.setOnKeyPressed(event2);
+        /***********************************************/
+        monConfirmation.setOnMouseClicked(event4->{
+            monAnchorpane2.setLayoutY(YposAnchorepane2);
+            monAnchorpane1.setOpacity(0);
+        });
+        monConfirmation.setOnKeyPressed(event4->{
+            if(validatePassword==true)
+            {
+                if(monConfirmation.getText().equals(monMotdePasse.getText()))
+                {
+                   monLigneConfirmation.setStyle(typeD1);
+                }
+            }
+        });
+        monAnchorpane.setOnMouseEntered(event3->{
+         monEmail.setOnMouseClicked(event5->{
+          monLigneEmail.setStyle(typeB1);
+          monLigneMotPasse.setStyle(typeA1);
+         });
+         monMotdePasse.setOnMouseClicked(event5->{
+                monLigneEmail.setStyle(typeA1);
+                monLigneMotPasse.setStyle(typeB1);
+             monAnchorpane2.setLayoutY(YposAnchorepane2+100);
+             monAnchorpane1.setOpacity(1);
+            });
+        });
+        monAnchorpane.setOnMouseExited(event5->{
+            monLigneEmail.setStyle(typeA1);
+            monLigneMotPasse.setStyle(typeA1);
+        });
     }
  /******************************************************************/
     public void PreviousPage(ActionEvent actionEvent) {

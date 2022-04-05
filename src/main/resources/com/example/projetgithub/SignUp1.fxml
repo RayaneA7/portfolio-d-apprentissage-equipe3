@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -14,13 +15,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" stylesheets="@css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgithub.SignUp1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgithub.SignUp1">
    <children>
-      <ImageView fitHeight="610.0" fitWidth="860.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/SignUp1.png" />
          </image></ImageView>
-      <JFXButton buttonType="RAISED" layoutX="414.0" layoutY="520.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+      <JFXButton buttonType="RAISED" layoutX="383.0" layoutY="520.0" onAction="#PreviousPage" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -54,7 +55,7 @@
             </LinearGradient>
          </ripplerFill>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="711.0" layoutY="520.0" onAction="#NextPage" prefHeight="31.0" prefWidth="80.0" ripplerFill="#f8f8f8" style="-fx-text-fill: white; -fx-background-color: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Suivant">
+      <JFXButton buttonType="RAISED" layoutX="682.0" layoutY="519.0" onAction="#NextPage" prefHeight="31.0" prefWidth="80.0" ripplerFill="#f8f8f8" style="-fx-text-fill: white; -fx-background-color: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Suivant">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -72,7 +73,7 @@
             </RadialGradient>
          </textFill>
       </JFXButton>
-      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="150.0" layoutX="105.0" layoutY="491.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/Help.png" />
          </image>
@@ -80,16 +81,54 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <TextField fx:id="monEmail" layoutX="412.0" layoutY="194.0" prefHeight="29.0" prefWidth="377.0" promptText="Email" style="-fx-font-size: 14;" />
-      <PasswordField fx:id="monMotdePasse" layoutX="413.0" layoutY="269.0" prefHeight="29.0" prefWidth="377.0" promptText="Mot de passe" />
-      <PasswordField fx:id="monConfirmation" layoutX="412.0" layoutY="442.0" prefHeight="29.0" prefWidth="370.0" promptText="Confirmation de mot de passe" />
-      <HBox alignment="CENTER_LEFT" layoutX="433.0" layoutY="334.0" prefHeight="17.0" prefWidth="339.0" spacing="10.0">
+      <AnchorPane fx:id="monAnchorpane" layoutX="364.0" layoutY="156.0" prefHeight="276.0" prefWidth="428.0">
          <children>
-            <Line fx:id="monLigne1" endX="-50.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
-            <Line fx:id="monLigne2" endX="-50.0" layoutX="112.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
-            <Line fx:id="monLigne3" endX="-50.0" layoutX="176.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
-            <Line fx:id="monLigne4" endX="-50.0" layoutX="240.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
-            <Line fx:id="monLigne5" endX="-50.0" layoutX="304.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
-         </children></HBox>
+            <TextField fx:id="monEmail" layoutX="24.0" layoutY="52.0" prefHeight="29.0" prefWidth="373.0" promptText="Email" style="-fx-font-size: 14;" />
+            <PasswordField fx:id="monMotdePasse" layoutX="22.0" layoutY="119.0" prefHeight="29.0" prefWidth="373.0" promptText="Mot de passe" />
+            <Line fx:id="monLigneEmail" endX="270.0" endY="1.52587890625E-5" layoutX="125.0" layoutY="84.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
+            <Line fx:id="monLigneMotPasse" endX="270.0" endY="1.52587890625E-5" layoutX="124.0" layoutY="150.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
+            <AnchorPane fx:id="monAnchorpane1" layoutX="24.0" layoutY="170.0" opacity="0.0" prefHeight="106.0" prefWidth="338.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="6.0" prefHeight="17.0" prefWidth="339.0" spacing="10.0">
+                     <children>
+                        <Line fx:id="monLigne1" endX="-50.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+                        <Line fx:id="monLigne2" endX="-50.0" layoutX="112.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+                        <Line fx:id="monLigne3" endX="-50.0" layoutX="176.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+                        <Line fx:id="monLigne4" endX="-50.0" layoutX="240.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+                        <Line fx:id="monLigne5" endX="-50.0" layoutX="304.0" layoutY="19.0" startX="-100.0" stroke="#666666" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="4.0" />
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="90.0" fitWidth="269.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/IndicationPassword.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="validation1" fitHeight="15.0" fitWidth="15.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Redvalidation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="validation2" fitHeight="15.0" fitWidth="15.0" layoutX="19.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Redvalidation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="validation3" fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Redvalidation.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="erreurEmail" layoutX="24.0" layoutY="89.0" opacity="0.0" prefHeight="17.0" prefWidth="154.0" style="-fx-text-fill: red;" text="Ce Email existe déja !" />
+            <Label fx:id="erreurMotPasse" layoutX="25.0" layoutY="156.0" opacity="0.0" prefHeight="17.0" prefWidth="311.0" text="Mot de passe faible" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="monAnchorpane2" layoutX="368.0" layoutY="352.0" prefHeight="81.0" prefWidth="398.0">
+         <children>
+            <Line fx:id="monLigneConfirmation" endX="270.0" layoutX="118.0" layoutY="48.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
+            <PasswordField fx:id="monConfirmation" layoutX="17.0" layoutY="15.0" prefHeight="29.0" prefWidth="373.0" promptText="Confirmation de mot de passe" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
