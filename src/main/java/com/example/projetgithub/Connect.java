@@ -5,14 +5,19 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -28,7 +33,20 @@ public class Connect implements Initializable {
     private Scene scene;
     private ArrayList<Parent> memory;
     @FXML
+    private Line monLigneEmail ;
+    @FXML
+    private Line monLigneMotPasse;
+    @FXML
     private ImageView myHelp;
+    @FXML
+    private TextField monEmail ;
+    @FXML
+    private PasswordField monMotDePasse ;
+    @FXML
+    private Pane myPane ;
+    @FXML
+    private AnchorPane myAnchorPane;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
@@ -52,8 +70,32 @@ public class Connect implements Initializable {
 
             }
         });
-
-    }
+        String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
+        String typeA="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+     /*   EventHandler<MouseEvent> event3 =new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+               monLigneEmail.setStyle(typeB);
+            }
+        };*/
+        myPane.setOnMouseEntered(event2 -> {
+                monEmail.setOnMouseClicked(event3 -> {
+                    monLigneEmail.setStyle(typeB);
+                    monLigneMotPasse.setStyle(typeA);
+                });
+                monMotDePasse.setOnMouseClicked(event3 -> {
+                    monLigneEmail.setStyle(typeA);
+                    monLigneMotPasse.setStyle(typeB);
+                });
+        });
+        myPane.setOnMouseExited(event2 -> {
+            monLigneEmail.setStyle(typeA);
+            monLigneMotPasse.setStyle(typeA);
+        });
+     /*   myPane.setOnMouseEntered(event2 -> {
+          for(int i=0;i<myPane.getChildren().size();i++)
+        });*/
+        }
     public void procedureRecupération(ActionEvent actionEvent) {
     }
 

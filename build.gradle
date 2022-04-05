@@ -29,7 +29,7 @@ application {
 
 javafx {
     version = '16'
-    modules = ['javafx.controls', 'javafx.fxml']
+    modules = ['javafx.controls', 'javafx.fxml','javafx.web']
 }
 
 dependencies {
@@ -39,6 +39,7 @@ dependencies {
     implementation( group: 'com.jfoenix', name: 'jfoenix', version: '9.0.9')
 
     implementation( 'com.github.cliftonlabs:json-simple:3.0.1')
+
     implementation group: 'eu.hansolo', name: 'tilesfx', version: '1.0.7'
     // https://jmaven.com/maven/com.jidesoft/jidefx-converters
     implementation group: 'com.jidesoft', name: 'jidefx-converters', version: '0.9.1'
