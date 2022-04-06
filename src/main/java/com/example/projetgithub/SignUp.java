@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -295,7 +297,15 @@ public class SignUp implements Initializable {
     }
 
     public void PreviousPage(ActionEvent event) throws IOException {
-        Connect.pagination.setCurrentPageIndex(Connect.pagination.getCurrentPageIndex()-1);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Connect.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setHeight(600);
+        stage.setWidth(800);
+        stage.setResizable(false);
+        stage.show();
+       // Connect.pagination.setCurrentPageIndex(Connect.pagination.getCurrentPageIndex()-1);
        // System.out.println("welcome in controller 0 return");
     }
 }

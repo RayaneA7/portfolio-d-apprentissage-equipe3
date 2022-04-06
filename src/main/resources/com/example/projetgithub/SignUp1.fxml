@@ -120,8 +120,8 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label fx:id="erreurEmail" layoutX="24.0" layoutY="89.0" opacity="0.0" prefHeight="17.0" prefWidth="154.0" style="-fx-text-fill: red;" text="Ce Email existe déja !" />
-            <Label fx:id="erreurMotPasse" layoutX="25.0" layoutY="156.0" opacity="0.0" prefHeight="17.0" prefWidth="311.0" text="Mot de passe faible" />
+            <Label fx:id="erreurEmail" layoutX="24.0" layoutY="89.0" opacity="0.0" prefHeight="17.0" prefWidth="269.0" style="-fx-text-fill: red;" text="Ce Email existe déja !" />
+            <Label fx:id="erreurMotPasse" layoutX="25.0" layoutY="156.0" opacity="0.0" prefHeight="17.0" prefWidth="311.0" style="-fx-text-fill: red;" text="Mot de passe faible" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="monAnchorpane2" layoutX="368.0" layoutY="352.0" prefHeight="81.0" prefWidth="398.0">

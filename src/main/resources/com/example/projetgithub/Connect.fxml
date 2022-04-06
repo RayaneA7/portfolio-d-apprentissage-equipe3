@@ -20,7 +20,7 @@
             <Image url="@icons/Connect.png" />
          </image>
       </ImageView>
-      <Pane fx:id="myPane" layoutX="366.0" layoutY="155.0" prefHeight="204.0" prefWidth="398.0">
+      <Pane fx:id="myPane" layoutX="366.0" layoutY="155.0" prefHeight="204.0" prefWidth="420.0">
          <children>
             <PasswordField fx:id="monMotDePasse" layoutX="36.0" layoutY="128.0" prefHeight="25.0" prefWidth="340.0" promptText="Mot de passe" style="-fx-font-size: 14;" />
             <TextField fx:id="monEmail" layoutX="36.0" layoutY="59.0" prefHeight="30.0" prefWidth="340.0" promptText="Email" style="-fx-font-size: 14;" />
@@ -36,6 +36,8 @@
             </ImageView>
             <Line fx:id="monLigneEmail" endX="245.0" endY="0.3333282470703125" layoutX="138.0" layoutY="91.0" startX="-100.0" startY="0.3333282470703125" stroke="#666666" strokeWidth="3.0" style="-fx-fill: #666666;" />
             <Line fx:id="monLigneMotPasse" endX="520.0" endY="10.0" layoutX="-134.0" layoutY="148.0" startX="171.66665649414062" startY="10.0" stroke="#666666" strokeWidth="3.0" />
+            <Label fx:id="erreurEmail" layoutX="38.0" layoutY="103.0" opacity="0.0" prefHeight="17.0" prefWidth="235.0" style="-fx-text-fill: red;" text="Ce champ ne doit être vide" />
+            <Label fx:id="erreurMotPasse" layoutX="37.0" layoutY="171.0" opacity="0.0" prefHeight="17.0" prefWidth="235.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide" />
          </children>
       </Pane>
       <Button layoutX="580.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#procedureRecupération" prefHeight="30.0" prefWidth="190.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe oublié ?">
@@ -43,7 +45,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <CheckBox fx:id="myCheck" allowIndeterminate="true" layoutX="403.0" layoutY="376.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Rappelez-moi">
+      <CheckBox fx:id="myCheck" layoutX="403.0" layoutY="376.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Rappelez-moi">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

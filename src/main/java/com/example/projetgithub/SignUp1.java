@@ -5,13 +5,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,13 +53,26 @@ public class SignUp1 implements Initializable {
     @FXML
     private AnchorPane monAnchorpane2;
     /*****************les erreurs*********************/
-
+     @FXML
+     private Label erreurEmail ;
+     @FXML
+     private Label erreurMotPasse;
+    /*****************les validations*****/
+     @FXML
+     private ImageView validation1;
+     @FXML
+     private ImageView validation2 ;
+     @FXML
+     private ImageView validation3 ;
+     /******************************************/
     /**************************Les constatnts **************************************/
     /****************************************************************/
     private int NbChMinEmail = 5;
     private int NbChminPassword=12;
     private boolean validatePassword =false;
     private double YposAnchorepane2;
+    private Image redIcon = new Image((getClass().getResourceAsStream("icons/Redvalidation.png")));
+    private Image greenIcon = new Image((getClass().getResourceAsStream("icons/GreenValidation.png")));
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /********************/
@@ -131,6 +147,11 @@ public class SignUp1 implements Initializable {
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
                         monLigneConfirmation.setStyle(typeA1);
+                      /***********/
+                        validation1.setImage(redIcon);
+                        validation2.setImage(redIcon);
+                        validation3.setImage(redIcon);
+                        /**********/
                         break;
 
                     case 1:
@@ -139,6 +160,11 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeA);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        /***********/
+                        validation1.setImage(greenIcon);
+                        validation2.setImage(redIcon);
+                        validation3.setImage(redIcon);
+                        /***********/
                         monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 2:
@@ -147,6 +173,11 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeA);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        /*****/
+                        validation1.setImage(greenIcon);
+                        validation2.setImage(redIcon);
+                        validation3.setImage(redIcon);
+                         /*********/
                         monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 3:
@@ -155,6 +186,11 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeB);
                         monLigne4.setStyle(typeA);
                         monLigne5.setStyle(typeA);
+                        /*********/
+                        validation1.setImage(greenIcon);
+                        validation2.setImage(greenIcon);
+                        validation3.setImage(redIcon);
+                        /**********/
                         monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 4:
@@ -163,6 +199,11 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeB);
                         monLigne4.setStyle(typeB);
                         monLigne5.setStyle(typeA);
+                        /*********/
+                        validation1.setImage(greenIcon);
+                        validation2.setImage(greenIcon);
+                        validation3.setImage(redIcon);
+                        /**********/
                         monLigneConfirmation.setStyle(typeA1);
                         break;
                     case 5:
@@ -171,6 +212,11 @@ public class SignUp1 implements Initializable {
                         monLigne3.setStyle(typeB);
                         monLigne4.setStyle(typeB);
                         monLigne5.setStyle(typeB);
+                        /***********/
+                        validation1.setImage(greenIcon);
+                        validation2.setImage(greenIcon);
+                        validation3.setImage(greenIcon);
+                        /************/
                         validatePassword=true;
                         if(monConfirmation.getText().equals(monMotdePasse.getText())==false)
                         {
@@ -193,6 +239,10 @@ public class SignUp1 implements Initializable {
                 if(monConfirmation.getText().equals(monMotdePasse.getText()))
                 {
                    monLigneConfirmation.setStyle(typeD1);
+                }
+                else
+                {
+                    monLigneConfirmation.setStyle(typeC1);
                 }
             }
         });
@@ -231,30 +281,55 @@ public class SignUp1 implements Initializable {
     }
     public void NextPage(ActionEvent actionEvent) {
 
-        if(validatePassword==true&&verifyEmail(monEmail.getText())==true&&monMotdePasse.getText().equals(monConfirmation.getText())) {
+        if(verifierEmail()+verifierPassword()==2) {
             Connect.user.donnes.setEmail(monEmail.getText());
             Connect.user.donnes.setMotdePasse(monMotdePasse.getText());
             afficher();
             Connect.pagination.setCurrentPageIndex(Connect.pagination.getCurrentPageIndex() + 1);
         }
-        else
-        {
-
+    }
+    public int verifierPassword(){
+        if(validatePassword==true) {
+            return 1;
+        }
+        else {
+            if (monMotdePasse.getText() == "") {
+                erreurMotPasse.setText("Ce champ ne doit pas être vide");
+            } else if (validatePassword == false) {
+                erreurMotPasse.setText(" Mot de passe faible ");
+            }
+            SignUp sign =new SignUp();
+            sign.TraiterAlert(erreurMotPasse);
+            return 0;
         }
     }
-    public boolean verifyEmail(String mail) {
+    public int verifierEmail() {
         char ch = ' ';
         int NbChar = 0;
+        String mail= monEmail.getText();
         while (ch != '@'&& NbChar <mail.length()) {
             ch = mail.charAt(NbChar);
             NbChar++;
         }
 
         if (((NbChar - 1) >= NbChMinEmail)&&verifyEmailSyntax(mail)==true) {
-            return true;
+            return 1;
         }
-        else
-        {return false;}
+        else {
+            if (NbChar == 0) {
+
+                erreurEmail.setText("Ce champ ne dois pas être vide ");
+            }
+            else{
+                erreurEmail.setText("Email incorrect");
+            }
+            SignUp sign =new SignUp();
+            /*******************************/
+            /*************le cas ou ce email existe déja *************************/
+            /**********************************/
+            sign.TraiterAlert(erreurEmail);
+            return 0;
+        }
       /*  } else if((NbChar-1)<NbChMinEmail) {
             /*Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Email Length problem");
@@ -278,7 +353,7 @@ public class SignUp1 implements Initializable {
         int index2=0;
         int index3=0;
         Character ch=info.charAt(i);
-        while (ch!='@') {
+        while (ch!='@' &&i<info.length()-1) {
             if (Character.isUpperCase(ch)) {
                 index = 1;
             }
@@ -302,4 +377,5 @@ public class SignUp1 implements Initializable {
             return false;
         }
     }
+
 }

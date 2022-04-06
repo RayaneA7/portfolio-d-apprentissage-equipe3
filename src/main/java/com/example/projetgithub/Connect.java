@@ -9,10 +9,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.Pagination;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -45,8 +42,11 @@ public class Connect implements Initializable {
     @FXML
     private Pane myPane ;
     @FXML
-    private AnchorPane myAnchorPane;
+    private Label erreurEmail ;
+    @FXML
+    private Label erreurMotPasse ;
 
+    /*********************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
@@ -127,11 +127,11 @@ public class Connect implements Initializable {
             }
         });
         AnchorPane pane = new AnchorPane(pagination);
-        Scene scene = new Scene(pane, 850, 600);
+        Scene scene = new Scene(pane);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setWidth(850);
-        stage.setHeight(630);
+        stage.setWidth(800);
+        stage.setHeight(600);
         stage.setResizable(false);
         stage.show();
         MenuButton button =new MenuButton();

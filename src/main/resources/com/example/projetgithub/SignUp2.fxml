@@ -19,7 +19,7 @@
             <Image url="@icons/SignUp2.png" />
          </image>
       </ImageView>
-      <TextField fx:id="monNumeroTelephone" layoutX="440.0" layoutY="336.0" prefHeight="30.0" prefWidth="162.0" promptText="Numéro de téléphone" />
+      <TextField fx:id="monNumeroTelephone" layoutX="463.0" layoutY="313.0" prefHeight="30.0" prefWidth="162.0" promptText="Numéro de téléphone" />
       <JFXButton buttonType="RAISED" layoutX="424.0" layoutY="547.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -89,7 +89,7 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <ImageView fx:id="monPhoto" cache="true" cacheHint="QUALITY" depthTest="ENABLE" fitHeight="150.0" fitWidth="130.0" focusTraversable="true" layoutX="629.0" layoutY="229.0" pickOnBounds="true">
+      <ImageView fx:id="monPhoto" cache="true" cacheHint="QUALITY" depthTest="ENABLE" fitHeight="150.0" fitWidth="130.0" focusTraversable="true" layoutX="652.0" layoutY="221.0" pickOnBounds="true">
          <image>
             <Image url="@icons/ImagePersonnel.png" />
          </image>
