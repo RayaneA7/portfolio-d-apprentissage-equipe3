@@ -134,7 +134,6 @@ public class Connect implements Initializable {
         stage.setHeight(600);
         stage.setResizable(false);
         stage.show();
-        MenuButton button =new MenuButton();
     }
 
 }

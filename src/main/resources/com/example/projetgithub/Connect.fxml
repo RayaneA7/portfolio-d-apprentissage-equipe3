@@ -17,7 +17,7 @@
    <children>
       <ImageView fitHeight="570.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/Connect.png" />
+            <Image url="@icons/Inscription/Connect.png" />
          </image>
       </ImageView>
       <Pane fx:id="myPane" layoutX="366.0" layoutY="155.0" prefHeight="204.0" prefWidth="420.0">
@@ -26,12 +26,12 @@
             <TextField fx:id="monEmail" layoutX="36.0" layoutY="59.0" prefHeight="30.0" prefWidth="340.0" promptText="Email" style="-fx-font-size: 14;" />
             <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="379.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/RedStar.png" />
+                  <Image url="@icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="376.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/RedStar.png" />
+                  <Image url="@icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
             <Line fx:id="monLigneEmail" endX="245.0" endY="0.3333282470703125" layoutX="138.0" layoutY="91.0" startX="-100.0" startY="0.3333282470703125" stroke="#666666" strokeWidth="3.0" style="-fx-fill: #666666;" />
@@ -52,7 +52,7 @@
       </CheckBox>
       <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/Help.png" />
+            <Image url="@icons/Inscription/Help.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -60,13 +60,16 @@
       </ImageView>
       <ImageView fx:id="emailEsi" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="130.0" layoutX="425.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/LoginEsi.png" />
+            <Image url="@icons/Inscription/LoginEsi.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <JFXButton layoutX="587.0" layoutY="444.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="Se connecter" />
+      <JFXButton layoutX="587.0" layoutY="444.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="Se connecter">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <JFXButton layoutX="623.0" layoutY="517.0" onAction="#inscription" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: white; -fx-font-size: 16; -fx-text-fill: #184173; -fx-font-weight: bold;" text="Inscrivez-vous">
          <cursor>
             <Cursor fx:constant="HAND" />

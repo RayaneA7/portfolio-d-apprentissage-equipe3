@@ -17,17 +17,18 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgithub.SignUp">
    <children>
       <ImageView fx:id="myErreurMatricule" fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/SignUp.png" />
+            <Image url="@icons/Inscription/SignUp.png" />
          </image>
       </ImageView>
       <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/Help.png" />
+            <Image url="@icons/Inscription/Help.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -137,6 +138,15 @@
                   <MenuItem mnemonicParsing="false" text="MSD" />
                </items>
             </Menu>
+            <MenuItem>
+               <graphic>
+                  <TextField fx:id="newNiveauEtude" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" promptText="Ajouter un niveau d'étude">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </graphic>
+            </MenuItem>
         </items>
       </MenuButton>
       <AnchorPane fx:id="monAnchorpane" layoutX="340.0" layoutY="159.0" prefHeight="200.0" prefWidth="455.0">
@@ -146,13 +156,13 @@
             <Line fx:id="monLignePrenom" endX="270.0" layoutX="155.0" layoutY="58.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
             <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="418.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/RedStar.png" />
+                  <Image url="@icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
             <TextField fx:id="monNom" layoutX="52.0" layoutY="118.0" prefHeight="31.0" prefWidth="360.0" promptText="Nom" style="-fx-font-size: 14; -fx-background-color: white;" />
             <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="416.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/RedStar.png" />
+                  <Image url="@icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
             <Label fx:id="erreurPrenom" layoutX="55.0" layoutY="68.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red; -fx-background-color: white;" text="Ce champ ne doit pas être vide !" />
@@ -164,7 +174,7 @@
             <Line fx:id="monLigneMatricule" endX="60.0" endY="-3.0517578125E-5" layoutX="121.0" layoutY="60.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
             <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="173.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/RedStar.png" />
+                  <Image url="@icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
             <Label fx:id="erreurMatricule" layoutX="25.0" layoutY="70.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide !" />

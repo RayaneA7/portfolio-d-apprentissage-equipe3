@@ -68,11 +68,11 @@ public class SignUp1 implements Initializable {
     /**************************Les constatnts **************************************/
     /****************************************************************/
     private int NbChMinEmail = 5;
-    private int NbChminPassword=12;
+    private int NbChminPassword=10;
     private boolean validatePassword =false;
     private double YposAnchorepane2;
-    private Image redIcon = new Image((getClass().getResourceAsStream("icons/Redvalidation.png")));
-    private Image greenIcon = new Image((getClass().getResourceAsStream("icons/GreenValidation.png")));
+    private Image redIcon = new Image((getClass().getResourceAsStream("icons/Inscription/Redvalidation.png")));
+    private Image greenIcon = new Image((getClass().getResourceAsStream("icons/Inscription/GreenValidation.png")));
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /********************/

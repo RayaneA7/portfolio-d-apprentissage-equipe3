@@ -24,22 +24,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-class RealiserAlert extends TimerTask {
-    private Node node ;
-    private Timer timer;
-
-    RealiserAlert(Node node, Timer timer) {
-        this.node = node;
-        this.timer = timer;
-    }
-
-    @Override
-    public void run() {
-        node.setOpacity(0);
-        timer.cancel();
-    }
-}
-
 public class SignUp implements Initializable {
     @FXML
     TextField monNom;
@@ -80,6 +64,8 @@ public class SignUp implements Initializable {
     Label erreurSexe ;
     @FXML
     Label erreurDateNaissance;
+    @FXML
+    TextField newNiveauEtude ;
     /********************/
     private Parent root;
     private Stage stage;
@@ -146,6 +132,10 @@ public class SignUp implements Initializable {
                         }
                     });
                 }
+                MenuItem item= monNiveauEtude.getItems().get(5);
+                item.setOnAction(event32 -> {
+                 monNiveauEtude.setText(newNiveauEtude.getText());
+                });
             }
         };
         monNiveauEtude.setOnMouseClicked(event2);

@@ -17,11 +17,11 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Connect.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Connect.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 568);
         stage.setTitle("Ecarrer");
         stage.setScene(scene);
-            Image icon = new Image((getClass().getResourceAsStream("icons/ProjectName.png")));
+            Image icon = new Image((getClass().getResourceAsStream("icons/Inscription/ProjectName.png")));
         if(icon!=null)
         {
             System.out.printf("icon is not  null");

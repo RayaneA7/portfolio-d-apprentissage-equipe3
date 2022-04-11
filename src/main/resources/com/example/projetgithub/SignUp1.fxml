@@ -19,7 +19,7 @@
    <children>
       <ImageView fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/SignUp1.png" />
+            <Image url="@icons/Inscription/SignUp1.png" />
          </image></ImageView>
       <JFXButton buttonType="RAISED" layoutX="383.0" layoutY="520.0" onAction="#PreviousPage" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
          <textFill>
@@ -75,7 +75,7 @@
       </JFXButton>
       <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icons/Help.png" />
+            <Image url="@icons/Inscription/Help.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -100,22 +100,22 @@
                   </HBox>
                   <ImageView fitHeight="90.0" fitWidth="269.0" layoutX="42.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/IndicationPassword.png" />
+                        <Image url="@icons/Inscription/IndicationPassword.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="validation1" fitHeight="15.0" fitWidth="15.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/Redvalidation.png" />
+                        <Image url="@icons/Inscription/Redvalidation.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="validation2" fitHeight="15.0" fitWidth="15.0" layoutX="19.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/Redvalidation.png" />
+                        <Image url="@icons/Inscription/Redvalidation.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="validation3" fitHeight="15.0" fitWidth="15.0" layoutX="18.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons/Redvalidation.png" />
+                        <Image url="@icons/Inscription/Redvalidation.png" />
                      </image>
                   </ImageView>
                </children>
