@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetgithub.Accueil_1">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/Acceuil/Slice2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="AjProButton" contentDisplay="BOTTOM" layoutX="213.0" layoutY="185.0" mnemonicParsing="false" prefHeight="117.0" prefWidth="191.0" style="-fx-background-color: EEEEEE;" text="Ajouter un Projet" textFill="#184173">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="69.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/Acceuil/Ajouter.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AjPorButton" contentDisplay="BOTTOM" layoutX="475.0" layoutY="185.0" mnemonicParsing="false" prefHeight="117.0" prefWidth="199.0" style="-fx-background-color: EEEEEE;" text="Ajouter un Portfolio" textFill="#184173">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="69.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/Acceuil/Portfolio.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="SwitchButton" layoutX="14.0" layoutY="132.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <ImageView fx:id="BarreImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/Acceuil/Barre.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AccueilButton" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0">
+               <children>
+                  <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Acceuil/AccueilBut.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ProjetButton" layoutX="14.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0">
+               <children>
+                  <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="13.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Acceuil/ProjetsBut.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="PortfolioButton" layoutX="14.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0">
+               <children>
+                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Acceuil/PortfolioBut.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ParametresButton" layoutX="14.0" layoutY="412.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0">
+               <children>
+                  <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Acceuil/ParametresBut.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="WelcomeLabel" layoutX="191.0" layoutY="28.0" text="Bonjour, user!" textFill="#184173">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logOut" fitHeight="45.0" fitWidth="55.0" layoutX="760.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/Acceuil/Deconnexion.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <Button fx:id="ParametresButton1" layoutX="15.0" layoutY="472.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AideButton" layoutX="14.0" layoutY="477.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="74.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="35.0">
+               <children>
+                  <ImageView fx:id="AideImage" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Acceuil/AideBut.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </graphic>
+      </Button>
+      <Line fx:id="line1" endX="-43.0" layoutX="116.0" layoutY="258.0" startX="-84.0" stroke="#666666" />
+      <Line fx:id="line2" endX="-43.0" layoutX="115.0" layoutY="318.0" startX="-84.0" stroke="#666666" />
+      <Line fx:id="line3" endX="-43.0" layoutX="115.0" layoutY="378.0" startX="-84.0" stroke="#666666" />
+      <Line fx:id="line4" endX="-43.0" layoutX="115.0" layoutY="471.0" startX="-84.0" stroke="#666666" />
+      <Line fx:id="line5" endX="-43.0" layoutX="115.0" layoutY="536.0" startX="-84.0" stroke="#666666" />
+   </children>
+</AnchorPane>
