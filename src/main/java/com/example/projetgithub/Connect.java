@@ -1,15 +1,19 @@
 package com.example.projetgithub;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.Pagination;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -19,7 +23,10 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -96,7 +103,25 @@ public class Connect implements Initializable {
           for(int i=0;i<myPane.getChildren().size();i++)
         });*/
         }
+
+    public static void create(Utilisateur user ) {
+
+        Writer writer = null;
+        try {
+            writer = Files.newBufferedWriter(Paths.get("user.json"));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(user, writer);
+
+//            System.out.println(gson.toJson(user, writer));
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void procedureRecupération(ActionEvent actionEvent) {
+
     }
 
     public void allerPageAcceuil(ActionEvent actionEvent) {

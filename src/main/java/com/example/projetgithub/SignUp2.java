@@ -21,12 +21,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.ParameterizedType;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
-import java.util.concurrent.Callable;
+
+import static com.example.projetgithub.Connect.create;
 
 public class SignUp2 implements Initializable {
     @FXML
@@ -164,9 +162,10 @@ public class SignUp2 implements Initializable {
         //System.out.println(monGithub.getText());
         //System.out.println(monLinkedln.getText());
         //System.out.println(monNumeroTelephone.getText());
+        //creation du fichier json :
+        create(Connect.user);
         /**********************************************************************/
         /*************************Passage à la page d'acceuil ********************************************/
-
         FXMLLoader loader =new FXMLLoader(getClass().getResource("Accueil.fxml"));
         Scene scene = new Scene(loader.load(),850,600);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

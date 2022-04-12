@@ -1,0 +1,18 @@
+{
+  "donnes": {
+    "matricule": "200025",
+    "nom": "Ahmed Rayane",
+    "prenom": "KEBIR",
+    "Datenaissance": "3/27/2002",
+    "sex": "MALE",
+    "motdePasse": "Re1234567890-\u003d",
+    "Email": "ka_kebir@esi.dz",
+    "niveauEtude": "2CP"
+  },
+  "contacts": {
+    "nbTelephone": 4132532,
+    "countFacebook": "ahmedrayane kebir",
+    "countGithub": "RayaneA7",
+    "countLinkedln": "KEBIR Ahmed Rayane"
+  }
+}

@@ -4,8 +4,7 @@ module com.example.projetgithub {
     requires javafx.web;
     requires transitive com.jfoenix;
     requires javafx.graphics;
-    // requires json.simple ;
-    //requires json.simple;
+    requires com.google.gson;
 
 
     opens com.example.projetgithub to javafx.fxml;

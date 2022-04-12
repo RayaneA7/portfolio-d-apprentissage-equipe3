@@ -33,12 +33,11 @@ javafx {
 }
 
 dependencies {
+    implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
     implementation group: 'eu.hansolo', name: 'Medusa', version: '11.1'
 
     implementation( group: 'com.jfoenix', name: 'jfoenix', version: '9.0.9')
-
-    implementation( 'com.github.cliftonlabs:json-simple:3.0.1')
 
     implementation group: 'eu.hansolo', name: 'tilesfx', version: '1.0.7'
     // https://jmaven.com/maven/com.jidesoft/jidefx-converters
