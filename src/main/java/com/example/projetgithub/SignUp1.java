@@ -227,13 +227,14 @@ public class SignUp1 implements Initializable {
 
             }
         };
-        monMotdePasse.setOnKeyPressed(event2);
+        monMotdePasse.setOnKeyReleased(event2);
         /***********************************************/
         monConfirmation.setOnMouseClicked(event4->{
             monAnchorpane2.setLayoutY(YposAnchorepane2);
             monAnchorpane1.setOpacity(0);
         });
-        monConfirmation.setOnKeyPressed(event4->{
+        monConfirmation.setOnKeyReleased(event4->{
+            System.out.println("validation :"+validatePassword);
             if(validatePassword==true)
             {
                 if(monConfirmation.getText().equals(monMotdePasse.getText()))
