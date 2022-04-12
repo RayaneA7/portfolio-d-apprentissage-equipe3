@@ -104,7 +104,7 @@ public class Connect implements Initializable {
         });*/
         }
 
-    public static void create(Utilisateur user ) {
+    static void create(Utilisateur user ) {
 
         Writer writer = null;
         try {

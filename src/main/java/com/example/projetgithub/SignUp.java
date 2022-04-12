@@ -181,14 +181,23 @@ public class SignUp implements Initializable {
     public int VerifierDate(){
         int result=0;
         if(monDateNaissance.getEditor().getText().length()!=0) {
-            String word = monDateNaissance.getEditor().getText().substring(5);
-            int yearNaissance = Integer.valueOf(word);
-            // System.out.println("age naissance est "+yearNaissance);
-            // DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            char ch='0' ;
+            String Annee="";
+            StringBuilder builder =new StringBuilder();
+            String date = monDateNaissance.getEditor().getText();
+            int i =date.length()-4;
+            while(i<date.length())
+            {
+               ch=date.charAt(i);
+               builder.append(ch);
+               i++;
+            }
+            Annee =builder.toString();
+           // System.out.println("année naissance est :"+Annee);
+            int AnneeNaissance = Integer.valueOf(Annee);
             LocalDateTime now = LocalDateTime.now();
-            int yearActuel = now.getYear();
-            System.out.println("actaul naissance est " + yearActuel);
-            if ((yearActuel - yearNaissance) >= ageMinimal) {
+            int AnneeActuel = now.getYear();
+            if ((AnneeActuel - AnneeNaissance) >= ageMinimal) {
                 result = 1;
             }
         }
