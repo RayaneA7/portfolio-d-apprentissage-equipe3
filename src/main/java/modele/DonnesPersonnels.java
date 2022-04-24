@@ -10,7 +10,6 @@ public class DonnesPersonnels {
     public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
-
     public String matricule;
 
     public String getNom() {

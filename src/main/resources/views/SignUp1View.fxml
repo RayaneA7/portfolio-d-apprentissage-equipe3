@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUp1Controller">
+<AnchorPane maxHeight="-Infinity"  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUp1Controller">
    <children>
       <ImageView fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>

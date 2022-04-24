@@ -55,7 +55,7 @@ public class SignUp2Controller implements Initializable {
     private TextArea monBio ;
     private File file ;
     private Stage stage ;
-
+    /****************Logique d'affichage ****************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
@@ -116,6 +116,9 @@ public class SignUp2Controller implements Initializable {
         }};
         monAnchorpane.setOnMouseExited(event5);
         monBio.setOnMouseClicked(event5);
+        /********************************************************************/
+        /******************Choix d'image de profile**************************/
+        /*******************************************************************/
         monPhoto.setOnMouseClicked(event6-> {
             monLigneFacebook.setStyle(typeA);
             monLigneNumeroTelephone.setStyle(typeA);
@@ -155,6 +158,8 @@ public class SignUp2Controller implements Initializable {
             }
         });
     }
+
+    /***************Logique de fonctionnement**********************/
     public void PreviousPage(ActionEvent actionEvent) {
         ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex() - 1);
     }

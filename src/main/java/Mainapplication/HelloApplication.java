@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/SignUp2V.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/SignUp2View.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 568);
         stage.setScene(scene);
         Image icon = new Image((getClass().getResourceAsStream("/icons/Inscription/ProjectName.png")));

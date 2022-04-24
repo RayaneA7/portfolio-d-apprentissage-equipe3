@@ -12,10 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -48,7 +52,8 @@ public class Accueil_1Controller implements Initializable {
     ImageView AideImage;
     @FXML
     ImageView logOut ;
-
+    @FXML
+    Circle imagePersonnel ;
     /************************lines************************/
 
     @FXML
@@ -72,11 +77,22 @@ public class Accueil_1Controller implements Initializable {
     Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut1.png"));
     Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
+
     /*******************************************************/
     Stage stage ;
     /******************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*********************Image personnel********************/
+        Image image = null;
+        try {
+            image = new Image(String.valueOf(AccueilController.file.toURI().toURL()));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        imagePersonnel.setFill(new ImagePattern(image));
+        /****************************************************/
+
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilImage.setImage(AccueilImg1);
@@ -159,6 +175,9 @@ public class Accueil_1Controller implements Initializable {
             stage.setResizable(false);
             stage.show();
         });
+        /*************************Aller au profile personnel**********************************/
+
+        /****************************************************************************************/
 
     }
     public void SwtichScene(ActionEvent event) throws IOException {

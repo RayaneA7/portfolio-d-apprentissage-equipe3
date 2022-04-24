@@ -1,18 +1,18 @@
 {
   "donnes": {
-    "matricule": "b",
-    "nom": "jj",
-    "prenom": "hh",
-    "Datenaissance": "4/21/2002",
+    "matricule": "ff",
+    "nom": "f",
+    "prenom": "f",
+    "Datenaissance": "4/28/2002",
     "sex": "MALE",
     "motdePasse": "ARMsha@256.",
-    "Email": "km_arab@esi.dz",
+    "Email": "kl_ty@esi.dz",
     "niveauEtude": "2CP"
   },
   "contacts": {
     "nbTelephone": 0,
-    "countFacebook": "dhdd",
-    "countGithub": "hhh",
-    "countLinkedln": "hhhd"
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
   }
 }

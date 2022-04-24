@@ -6,10 +6,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.Accueil_1Controller">
+<AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.Accueil_1Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -178,5 +179,6 @@
       <Line fx:id="line3" endX="-43.0" layoutX="115.0" layoutY="378.0" startX="-84.0" stroke="#666666" />
       <Line fx:id="line4" endX="-43.0" layoutX="115.0" layoutY="471.0" startX="-84.0" stroke="#666666" />
       <Line fx:id="line5" endX="-43.0" layoutX="115.0" layoutY="536.0" startX="-84.0" stroke="#666666" />
+      <Circle fx:id="imagePersonnnel" fill="WHITE" layoutX="715.0" layoutY="38.0" radius="25.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
    </children>
 </AnchorPane>

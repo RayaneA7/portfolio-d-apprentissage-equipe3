@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import modele.Contacts;
 import modele.DonnesPersonnels;
+import modele.Utilisateur;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -55,7 +56,7 @@ public class ConnectController implements Initializable {
     @FXML
     private Label erreurMotPasse ;
 
-    /*********************************/
+    /*********************Logique d'affichage***************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
@@ -104,7 +105,9 @@ public class ConnectController implements Initializable {
      /*   myPane.setOnMouseEntered(event2 -> {
           for(int i=0;i<myPane.getChildren().size();i++)
         });*/
-        }
+    }
+
+    /********************Logique de fonctionnement************************/
 
     static void create(Utilisateur user ) {
 
@@ -121,14 +124,10 @@ public class ConnectController implements Initializable {
         }
 
     }
-
     public void procedureRecupération(ActionEvent actionEvent) {
-
     }
-
     public void allerPageAcceuil(ActionEvent actionEvent) {
     }
-
     public void inscription(ActionEvent event) throws IOException {
         /*********Creation d'un nouveau Utilisatur****************/
         user =new Utilisateur();

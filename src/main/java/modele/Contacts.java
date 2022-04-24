@@ -10,7 +10,6 @@ public class Contacts {
     }
 
     public long nbTelephone;
-
     public String getCountFacebook() {
         return countFacebook;
     }

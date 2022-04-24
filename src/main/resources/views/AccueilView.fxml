@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -180,5 +181,6 @@
       <Line fx:id="line3" endX="27.0" layoutX="111.0" layoutY="379.0" startX="-79.0" stroke="#666666" />
       <Line fx:id="line5" endX="27.0" layoutX="111.0" layoutY="537.0" startX="-79.0" stroke="#666666" />
       <Line fx:id="line4" endX="27.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0" />
    </children>
 </AnchorPane>

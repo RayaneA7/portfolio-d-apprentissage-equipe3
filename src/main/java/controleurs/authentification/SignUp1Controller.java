@@ -62,15 +62,20 @@ public class SignUp1Controller implements Initializable {
      private ImageView validation2 ;
      @FXML
      private ImageView validation3 ;
-     /******************************************/
+
     /**************************Les constatnts **************************************/
-    /****************************************************************/
-    private int NbChMinEmail = 5;
+    private int NbChMinEmail = 5;/*le nombre minimal des caractéres d'email*/
     private int NbChminPassword=10;
     private boolean validatePassword =false;
     private double YposAnchorepane2;
+
+    /*******************les images***********************/
     private Image redIcon = new Image((getClass().getResourceAsStream("/icons/Inscription/Redvalidation.png")));
     private Image greenIcon = new Image((getClass().getResourceAsStream("/icons/Inscription/GreenValidation.png")));
+
+    /**********************************************************************************************/
+    /*********************** Loqique d'affichage *************************************************/
+    /**********************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /********************/
@@ -90,7 +95,7 @@ public class SignUp1Controller implements Initializable {
             }
         };
         myHelp.setOnMouseExited(event1);
-        /**************traitment des actions**********************/
+        /**************traitment des actions****************************/
         myHelp.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -105,6 +110,8 @@ public class SignUp1Controller implements Initializable {
         String typeA1="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
         String typeC1="-fx-stroke: red ;-fx-stroke-width:3";
         String typeD1="-fx-stroke:#19C62A ;-fx-stroke-width:3 ";
+
+        /************Traitment de mot ********/
         EventHandler<KeyEvent> event2 = new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -226,7 +233,7 @@ public class SignUp1Controller implements Initializable {
             }
         };
         monMotdePasse.setOnKeyReleased(event2);
-        /***********************************************/
+        /**********************************************************/
         monConfirmation.setOnMouseClicked(event4->{
             monAnchorpane2.setLayoutY(YposAnchorepane2);
             monAnchorpane1.setOpacity(0);
@@ -262,9 +269,12 @@ public class SignUp1Controller implements Initializable {
             monLigneMotPasse.setStyle(typeA1);
         });
     }
- /******************************************************************/
+
+    /**********************************************************************************************/
+    /****************************Logique de fonctionnement*****************************************/
+    /**********************************************************************************************/
     public void PreviousPage(ActionEvent actionEvent) {
-        System.out.println("welcome in controller 1 back");
+        //System.out.println("welcome in controller 1 back");
         ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex()-1);
     }
     public void NextPage(ActionEvent actionEvent) {

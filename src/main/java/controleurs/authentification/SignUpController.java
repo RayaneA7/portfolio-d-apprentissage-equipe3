@@ -40,19 +40,22 @@ public class SignUpController implements Initializable {
     TextField monMatricule;
     @FXML
     ImageView myHelp ;
-    /*******************************/
+
+    /*************les lignes ******************/
     @FXML
     Line monLigneNom ;
     @FXML
     Line monLignePrenom ;
     @FXML
     Line monLigneMatricule ;
+
     /*****les Anchorpanes***************************/
     @FXML
     AnchorPane monAnchorpane ;
     @FXML
     AnchorPane monAnchorpane1 ;
-    /*********les alerts************************************/
+
+    /*****************les erreurs*********************/
     @FXML
     Label erreurNom;
     @FXML
@@ -67,13 +70,16 @@ public class SignUpController implements Initializable {
     Label erreurDateNaissance;
     @FXML
     TextField newNiveauEtude ;
-    /********************/
+
+    /**********les constants *********************/
     private Parent root;
     private Stage stage;
     private Event event ;
     private int ageMinimal=18;
-    private int dureeErreur=3000;
-
+    private int dureeErreur=3000;//en ms
+    /****************************************************************************************/
+    /********************************Logique D'affichage ************************************/
+    /****************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         EventHandler<MouseEvent > event =new EventHandler<MouseEvent>() {
@@ -178,7 +184,8 @@ public class SignUpController implements Initializable {
         monAnchorpane1.setOnMouseExited(event4 -> monLigneMatricule.setStyle(typeA));
     }
      /***************************************************************************************/
-    /***************************************************************************************/
+    /*********************************Logique de fonctionnemnt*******************************/
+    /****************************************************************************************/
     public int VerifierDate(){
         int result=0;
         if(monDateNaissance.getEditor().getText().length()!=0) {
@@ -295,7 +302,6 @@ public class SignUpController implements Initializable {
             ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex()+1);
         }
     }
-
     public void PreviousPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
