@@ -1,1 +1,3 @@
 rootProject.name = "projetGithub"
+include 'portfolio-d-apprentissage-equipe3'
+

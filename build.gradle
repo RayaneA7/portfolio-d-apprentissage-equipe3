@@ -23,8 +23,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.example.projetgithub'
-    mainClass = 'com.example.projetgithub.HelloApplication'
+    mainModule = 'Mainapplication'
+    mainClass = 'Mainapplication.HelloApplication'
 }
 
 javafx {
