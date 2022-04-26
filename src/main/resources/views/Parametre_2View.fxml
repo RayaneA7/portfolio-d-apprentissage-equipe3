@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.Parametre_2Controller">
+   <children>
+      <ImageView fitHeight="599.0" fitWidth="954.0" layoutX="5.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Settings2%20mot%20de%20passe.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="425.0" layoutY="214.0" mnemonicParsing="false" style="-fx-background-color: F8F8F8;" />
+      <Button layoutX="375.0" layoutY="215.0" mnemonicParsing="false" style="-fx-background-color: F8F8F8;" />
+      <ImageView fx:id="BarreImage" fitHeight="28.0" fitWidth="41.0" layoutX="73.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/menu.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="3.0" fitWidth="126.0" layoutX="34.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Line%2020.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="3.0" fitWidth="126.0" layoutX="34.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Line%2020.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="3.0" fitWidth="126.0" layoutX="34.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Line%2020.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="483.0" layoutY="255.0" minWidth="-Infinity" promptText="*********" style="-fx-background-color: E7E7E7; -fx-font-family: Open Sans;" />
+      <Button layoutX="504.0" layoutY="522.0" mnemonicParsing="false" style="-fx-background-color: FAFAFA;">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Acceuil/Retour.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="3.0" fitWidth="126.0" layoutX="34.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Line%2020.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ProjetButton" layoutX="16.0" layoutY="282.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/layers%201.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Projets" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="PortfolioButton" layoutX="16.0" layoutY="346.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/Vector.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Portfolios" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AideButton" layoutX="16.0" layoutY="494.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
+         <graphic>
+            <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="125.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <children>
+                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="20.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/Vector%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AideLabel" layoutX="58.0" layoutY="11.0" style="-fx-font-family: Open Sans;" text="Aide" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button fx:id="ParametresButton" layoutX="16.0" layoutY="430.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/paramtre%20gris.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" style="-fx-font-family: Open Sans;" text="Parametres" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AccueilButton" layoutX="16.0" layoutY="218.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;" textFill="#ffffff00">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/958292%201.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Accueil" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="info_Button" layoutX="224.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="190.0" style="-fx-background-color: FAFAFA;" textFill="#ffffff00">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="174.0">
+               <children>
+                  <Label fx:id="AccueilLabel1" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="168.0" style="-fx-font-family: Work Sans;" text="Informations presonnel" textAlignment="CENTER" textFill="#444444">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+      </Button>
+      <Button fx:id="passe_Button" layoutX="414.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" style="-fx-background-color: FAFAFA;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <AnchorPane prefHeight="26.0" prefWidth="139.0">
+               <children>
+                  <Label fx:id="AccueilLabel11" alignment="CENTER" prefHeight="25.0" prefWidth="103.0" style="-fx-font-family: Work Sans;" text="Mot de passe" textAlignment="CENTER" textFill="#444444">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button fx:id="Adress_Button" layoutX="532.0" layoutY="135.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: FAFAFA;" textFill="#ffffff00">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <AnchorPane prefHeight="52.0" prefWidth="87.0">
+               <children>
+                  <Label fx:id="AccueilLabel12" layoutX="6.0" layoutY="1.0" prefHeight="25.0" prefWidth="90.0" style="-fx-font-family: Work Sans;" text="Adress Email" textAlignment="CENTER" textFill="#444444">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+      </Button>
+      <Button fx:id="contact_Button" layoutX="651.0" layoutY="135.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: FAFAFA;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <AnchorPane prefHeight="26.0" prefWidth="139.0">
+               <children>
+                  <Label fx:id="AccueilLabel111" alignment="CENTER" layoutY="1.0" prefHeight="25.0" prefWidth="66.0" style="-fx-font-family: Work Sans;" text="Contact" textAlignment="CENTER" textFill="#444444">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <TextField layoutX="483.0" layoutY="330.0" promptText="*********" style="-fx-background-color: E7E7E7; -fx-font-family: Open Sans;" />
+      <Button layoutX="627.0" layoutY="522.0" mnemonicParsing="false" style="-fx-background-color: FAFAFA;" textAlignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Acceuil/Modifier.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Line fx:id="ligne_info" endX="-65.0" layoutX="402.0" layoutY="173.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" visible="false" />
+      <Line fx:id="ligne_passe" endX="-65.0" layoutX="555.0" layoutY="173.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line fx:id="ligne_adress" disable="true" endX="-65.0" layoutX="674.0" layoutY="173.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" visible="false" />
+      <Line fx:id="ligne_contact" endX="-74.33331298828125" layoutX="780.0" layoutY="173.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" visible="false" />
+      <TextField layoutX="483.0" layoutY="406.0" promptText="*********" style="-fx-background-color: E7E7E7; -fx-font-family: Open Sans;" />
+   </children>
+</AnchorPane>
