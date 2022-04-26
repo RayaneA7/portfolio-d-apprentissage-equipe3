@@ -17,6 +17,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import models.Utilisateur;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class AccueilController implements Initializable {
     @FXML
     Line line5;
     /****************************************************************/
-    String user = null;
+    Utilisateur user = new Utilisateur();
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
     Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
@@ -176,8 +177,8 @@ public class AccueilController implements Initializable {
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
         });
-
-        WelcomeLabel.setText("Bonjour "+user);
+        user = Utilisateur.deserialization();
+        WelcomeLabel.setText("Bonjour "+ user.donnes.nom  + user.donnes.prenom);
 
         SwitchButton.setOnAction(e->{
             try {

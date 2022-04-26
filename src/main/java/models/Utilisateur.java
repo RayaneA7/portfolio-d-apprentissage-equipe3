@@ -30,21 +30,24 @@ public class Utilisateur {
 
   }
 
-  public static void deserialization() {
+  public static Utilisateur deserialization() {
 
+    Utilisateur user = null;
     try {
       Gson gson = new Gson();
 
       Reader reader = Files.newBufferedReader(Paths.get("/home/rayane/Documents/projet2cp/code/portfolio-d-apprentissage-equipe3/DonnesUtilisateur/user.json"));
 
-      Utilisateur user = gson.fromJson(reader, Utilisateur.class);
+      user = gson.fromJson(reader, Utilisateur.class);
 
 //      System.out.println(user.donnes.Datenaissance);
       reader.close();
+      return user;
 
     } catch (Exception ex) {
       ex.printStackTrace();
     }
 
+    return user;
   }
 }
