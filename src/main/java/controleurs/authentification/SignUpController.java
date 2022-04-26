@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import modele.Sex;
+import models.Sex;
 
 import java.io.IOException;
 import java.net.URL;

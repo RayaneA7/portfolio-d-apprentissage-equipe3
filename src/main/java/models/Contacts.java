@@ -1,4 +1,4 @@
-package modele;
+package models;
 
 public class Contacts {
     public long getNbTelephone() {

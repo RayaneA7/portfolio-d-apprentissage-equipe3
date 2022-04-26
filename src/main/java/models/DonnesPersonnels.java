@@ -1,6 +1,4 @@
-package modele;
-
-import modele.Sex;
+package models;
 
 public class DonnesPersonnels {
     public String getMatricule() {

@@ -13,6 +13,6 @@ module Mainapplication{
     exports controleurs.authentification to javafx.graphics,javafx.fxml,com.google.gson;
     exports controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
     opens controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
-    exports modele to javafx.fxml, javafx.graphics,com.google.gson;
-    opens modele to javafx.fxml, javafx.graphics,com.google.gson;
+    exports models to javafx.fxml, javafx.graphics,com.google.gson;
+    opens models to javafx.fxml, javafx.graphics,com.google.gson;
 }
