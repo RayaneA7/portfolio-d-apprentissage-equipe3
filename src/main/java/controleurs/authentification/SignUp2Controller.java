@@ -17,12 +17,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import models.Utilisateur;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class SignUp2Controller implements Initializable {
@@ -181,11 +182,7 @@ public class SignUp2Controller implements Initializable {
         if(monNumeroTelephone.getText()!=""&& validate!=1) {
             ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
         }
-        //System.out.println(monFacebook.getText());
-        //System.out.println(monGithub.getText());
-        //System.out.println(monLinkedln.getText());
-        //System.out.println(monNumeroTelephone.getText());
-        Utilisateur.serialize(ConnectController.user);
+        ConnectController.create(ConnectController.user);
         /**********************************************************************/
         /*************************Passage à la page d'acceuil ********************************************/
 

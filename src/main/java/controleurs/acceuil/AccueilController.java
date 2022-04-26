@@ -91,7 +91,6 @@ public class AccueilController implements Initializable {
 
     static File file =new File("DonnesUtilisateur/ImagePersonnel.png");
     /********************************************************/
-
     Stage stage ;
     /*******************************************************/
     @Override
@@ -179,10 +178,12 @@ public class AccueilController implements Initializable {
         });
         user = Utilisateur.deserialization();
         WelcomeLabel.setText("Bonjour "+ user.donnes.nom  + user.donnes.prenom);
-
         SwitchButton.setOnAction(e->{
             try {
-                SwtichScene(e);
+                Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
+                stage = (Stage) SwitchButton.getScene().getWindow();
+                stage.setScene(new Scene(root, 850,600));
+                stage.setTitle("Ecareer");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -201,7 +202,6 @@ public class AccueilController implements Initializable {
             stage.show();
         });
     }
-
     public void SwtichScene(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
         stage = (Stage) SwitchButton.getScene().getWindow();

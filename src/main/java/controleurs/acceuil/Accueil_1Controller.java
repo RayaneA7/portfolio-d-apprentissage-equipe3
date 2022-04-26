@@ -16,6 +16,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import models.Utilisateur;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +54,7 @@ public class Accueil_1Controller implements Initializable {
     @FXML
     ImageView logOut ;
     @FXML
-    Circle imagePersonnel ;
+    Circle imagePersonnnel;
     /************************lines************************/
 
     @FXML
@@ -66,7 +67,7 @@ public class Accueil_1Controller implements Initializable {
     Line line4;
     @FXML
     Line line5;
-    String user = null;
+    Utilisateur user ;
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
     Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
@@ -80,17 +81,27 @@ public class Accueil_1Controller implements Initializable {
 
     /*******************************************************/
     Stage stage ;
+   /* static File file;
+    static LoginUtilisateurs loginUtilisateurs =new LoginUtilisateurs();
+    static {
+        try {
+            file = new File("DonnesUtilisateur/"+loginUtilisateurs.getList().get(loginUtilisateurs.getList().size()-1).getMatricule()+"/ImagePersonnel.png");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
+    static File file =new File("DonnesUtilisateur/ImagePersonnel.png");
     /******************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*********************Image personnel********************/
         Image image = null;
         try {
-            image = new Image(String.valueOf(AccueilController.file.toURI().toURL()));
+            image = new Image(String.valueOf(file.toURI().toURL()));
+            imagePersonnnel.setFill(new ImagePattern(image));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        imagePersonnel.setFill(new ImagePattern(image));
         /****************************************************/
 
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
@@ -152,9 +163,8 @@ public class Accueil_1Controller implements Initializable {
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
         });
-
-        WelcomeLabel.setText("Bonjour "+user);
-
+        user = Utilisateur.deserialization();
+        WelcomeLabel.setText("Bonjour "+ user.donnes.nom  + user.donnes.prenom);
         SwitchButton.setOnAction(e->{
             try {
                 SwtichScene(e);

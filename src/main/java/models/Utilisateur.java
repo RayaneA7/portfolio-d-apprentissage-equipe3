@@ -36,11 +36,8 @@ public class Utilisateur {
     try {
       Gson gson = new Gson();
 
-      Reader reader = Files.newBufferedReader(Paths.get("/home/rayane/Documents/projet2cp/code/portfolio-d-apprentissage-equipe3/DonnesUtilisateur/user.json"));
-
+      Reader reader = Files.newBufferedReader(Paths.get("DonnesUtilisateur/user.json"));
       user = gson.fromJson(reader, Utilisateur.class);
-
-//      System.out.println(user.donnes.Datenaissance);
       reader.close();
       return user;
 
