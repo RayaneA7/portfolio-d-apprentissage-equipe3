@@ -8,7 +8,7 @@ public class DonnesPersonnels {
     public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
-    public String matricule;
+    private String matricule;
 
     public String getNom() {
         return nom;
@@ -18,7 +18,7 @@ public class DonnesPersonnels {
         this.nom = nom;
     }
 
-    public String nom;
+    private String nom;
 
     public String getPrenom() {
         return prenom;
@@ -44,9 +44,9 @@ public class DonnesPersonnels {
         this.sex = sex;
     }
 
-    public String prenom;
-    public String Datenaissance;
-    public Sex sex;
+    private String prenom;
+    private String Datenaissance;
+    private Sex sex;
 
     public String getMotdePasse() {
         return motdePasse;
@@ -56,7 +56,7 @@ public class DonnesPersonnels {
         this.motdePasse = motdePasse;
     }
 
-    public String motdePasse;
+    private String motdePasse;
 
     public String getEmail() {
         return Email;
@@ -66,7 +66,7 @@ public class DonnesPersonnels {
         Email = email;
     }
 
-    public String Email;
+    private String Email;
 
     public String getNiveauEtude() {
         return niveauEtude;
@@ -76,7 +76,7 @@ public class DonnesPersonnels {
         this.niveauEtude = niveauEtude;
     }
 
-    public String niveauEtude;
+    private String niveauEtude;
 
 
 }
