@@ -11,8 +11,8 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public class Utilisateur {
-  public DonnesPersonnels donnes;
-  public Contacts contacts;
+  private DonnesPersonnels donnes;
+  private Contacts contacts;
 
   public static void serialize(Utilisateur user) {
 
@@ -49,5 +49,21 @@ public class Utilisateur {
     }
 
     return user;
+  }
+
+  public DonnesPersonnels getDonnes() {
+    return donnes;
+  }
+
+  public void setDonnes(DonnesPersonnels donnes) {
+    this.donnes = donnes;
+  }
+
+  public Contacts getContacts() {
+    return contacts;
+  }
+
+  public void setContacts(Contacts contacts) {
+    this.contacts = contacts;
   }
 }
