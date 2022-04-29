@@ -78,6 +78,8 @@ public class Accueil_1Controller implements Initializable {
     Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
 
+    static File file =new File("DonnesUtilisateur/ImagePersonnel.png");
+
     /*******************************************************/
     Stage stage ;
     /******************************************************/
@@ -86,7 +88,7 @@ public class Accueil_1Controller implements Initializable {
         /*********************Image personnel********************/
         Image image = null;
         try {
-            image = new Image(String.valueOf(AccueilController.file.toURI().toURL()));
+            image = new Image(String.valueOf(file.toURI().toURL()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -175,6 +177,14 @@ public class Accueil_1Controller implements Initializable {
             stage.setResizable(false);
             stage.show();
         });
+
+        PortfolioButton.setOnAction(e->{
+            try{
+                GoToPortfolio(e);
+            } catch(Exception ex){
+                ex.printStackTrace();
+            }
+        });
         /*************************Aller au profile personnel**********************************/
 
         /****************************************************************************************/
@@ -182,6 +192,13 @@ public class Accueil_1Controller implements Initializable {
     }
     public void SwtichScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/views/AccueilView.fxml"));
+        stage = (Stage)SwitchButton.getScene().getWindow();
+        stage.setScene(new Scene(root, 850,600));
+        stage.setTitle("Ecareer");
+    }
+
+    public void GoToPortfolio(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Portfolio12View.fxml"));
         stage = (Stage)SwitchButton.getScene().getWindow();
         stage.setScene(new Scene(root, 850,600));
         stage.setTitle("Ecareer");

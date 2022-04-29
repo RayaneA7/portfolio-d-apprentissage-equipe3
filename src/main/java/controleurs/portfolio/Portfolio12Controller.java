@@ -1,4 +1,4 @@
-package controleurs.acceuil;
+package controleurs.portfolio;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,175 +9,136 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Pagination;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AccueilController implements Initializable {
+public class Portfolio12Controller implements Initializable {
     @FXML
-    Button SwitchButton;
+    private Pagination pagination;
     @FXML
-    Button AccueilButton;
+    private Button SwitchButton;
     @FXML
-    Label AccueilLabel;
+    private Button AccueilButton;
     @FXML
-    Button ProjetButton;
+    private Button ProjetButton;
     @FXML
-    Label ProjetLabel;
+    private Button PortfolioButton;
     @FXML
-    Button PortfolioButton;
+    private Button ParametresButton;
     @FXML
-    Button AideButton;
+    private Label WelcomeLabel;
     @FXML
-    Label AideLabel;
+    private ImageView AccueilImage;
     @FXML
-    Label PortfolioLabel;
+    private ImageView ProjetsImage;
     @FXML
-    Button ParametresButton;
+    private ImageView PortfolioImage;
     @FXML
-    Label ParametresLabel;
+    private ImageView ParametresIamge;
     @FXML
-    Label WelcomeLabel;
-    /****************** ImageViews *************************/
+    private Button AideButton;
     @FXML
-    ImageView AccueilImage;
+    private ImageView AideImage;
     @FXML
-    ImageView ProjetsImage;
+    private Label AideLabel;
     @FXML
-    ImageView PortfolioImage;
+    private Button DeconnexionButton;
     @FXML
-    ImageView ParametresIamge;
+    private Line line1;
     @FXML
-    ImageView AideImage;
+    private Line line2;
     @FXML
-    ImageView logOut ;
+    private Line line3;
     @FXML
-    Circle imagePersonnel ;
-    /*******************les lignes **********************/
+    private Line line4;
     @FXML
-    Line line1;
-    @FXML
-    Line line2;
-    @FXML
-    Line line3;
-    @FXML
-    Line line4;
-    @FXML
-    Line line5;
-    /****************************************************************/
-    String user = null;
-    Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
-    Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
-    Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
-    Image PortfolioImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut1.png"));
-    Image ProjetImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/ProjetsBut.png"));
-    Image ProjetImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ProjetsBut1.png"));
-    Image ParametresImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut.png"));
-    Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut1.png"));
-    Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
-    Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
+    private Line line5;
+    private String user = null;
+    private int nbrProjets = 0;
+    private Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut.png"));
+    private Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut1.png"));
+    private Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioBut.png"));
+    private Image PortfolioImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioBut1.png"));
+    private Image ProjetImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/ProjetsBut.png"));
+    private Image ProjetImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/ProjetsBut1.png"));
+    private Image ParametresImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/ParametresBut.png"));
+    private Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/ParametresBut1.png"));
+    private Image AideImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut.png"));
+    private Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut1.png"));
+    private Image IconImg = new Image(getClass().getResourceAsStream("/icons/Inscription/ProjectName.png"));
+    static int Currentpag;
 
-    static File file =new File("DonnesUtilisateur/ImagePersonnel.png");
-    /********************************************************/
-
-    Stage stage ;
-    /*******************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        /*********************Image personnel********************/
-        Image image = null;
-        try {
-            image = new Image(String.valueOf(file.toURI().toURL()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        imagePersonnel.setFill(new ImagePattern(image));
-        /****************************************************/
-
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
-            AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
 
         AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
-            AccueilLabel.setTextFill(Color.BLACK);
             AccueilImage.setImage(AccueilImg);
             line1.setStyle("-fx-stroke: #b7b5b5");
         });
 
         ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
-            ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
-
         });
 
         ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
-            ProjetLabel.setTextFill(Color.BLACK);
             ProjetsImage.setImage(ProjetImg);
             line2.setStyle("-fx-stroke: #b7b5b5");
         });
 
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
-            PortfolioLabel.setTextFill(Color.WHITE);
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
 
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
-            PortfolioLabel.setTextFill(Color.BLACK);
             PortfolioImage.setImage(PortfolioImg);
             line3.setStyle("-fx-stroke: #b7b5b5");
         });
 
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
-            ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
 
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
-            ParametresLabel.setTextFill(Color.BLACK);
             ParametresIamge.setImage(ParametresImg);
             line4.setStyle("-fx-stroke: #b7b5b5");
         });
 
         AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: #f1c53c");
-            AideLabel.setTextFill(Color.WHITE);
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
 
         AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: F5F5F5");
-            AideLabel.setTextFill(Color.BLACK);
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
         });
 
-        WelcomeLabel.setText("Bonjour "+user);
 
         SwitchButton.setOnAction(e->{
             try {
@@ -190,37 +151,75 @@ public class AccueilController implements Initializable {
         PortfolioButton.setOnAction(e->{
             try{
                 GoToPortfolio(e);
-            } catch(Exception ex){
+            }
+            catch (IOException ex){
                 ex.printStackTrace();
             }
         });
-        logOut.setOnMouseClicked(event -> {
+
+        DeconnexionButton.setOnMouseClicked(event -> {
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
             Scene scene = null;
             try {
-                scene = new Scene(loader.load(),800,568);
+                scene = new Scene(loader.load(),850,600);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
         });
-    }
 
-    public void SwtichScene(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
-        stage = (Stage) SwitchButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 850,600));
-        stage.setTitle("Ecareer");
-    }
+        AccueilButton.setOnAction(e->{
+            try{
+                GoToAccueil(e);
+            } catch(Exception ex){
+                ex.printStackTrace();
+            }
+        });
 
-    public void GoToPortfolio(ActionEvent event) throws IOException{
+        CreatePag();
+        Currentpag = pagination.getCurrentPageIndex();
+
+    }
+    public void SwtichScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/views/Portfolio1View.fxml"));
-        stage = (Stage) SwitchButton.getScene().getWindow();
+        Stage stage = (Stage)SwitchButton.getScene().getWindow();
         stage.setScene(new Scene(root, 850,600));
-        stage.setTitle("Ecareer");
+        stage.getIcons().add(IconImg);
+    }
+
+    public void GoToPortfolio(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Portfolio12View.fxml"));
+        Stage stage = (Stage)PortfolioButton.getScene().getWindow();
+        stage.setScene(new Scene(root, 850,600));
+        stage.getIcons().add(IconImg);
+    }
+
+    public void GoToAccueil(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
+        Stage stage = (Stage)AccueilButton.getScene().getWindow();
+        stage.setScene(new Scene(root,850,600));
+        stage.getIcons().add(IconImg);
+    }
+
+    public int getNumberOfPages() {
+        return nbrProjets;
+    }
+
+    public HBox CreatePage(int numberOfPage){
+        HBox hbox = new HBox();
+        // à implémenter
+        return hbox;
+    }
+
+    public void CreatePag(){
+        pagination.setPageCount(getNumberOfPages());
+        pagination.setPageFactory((Integer pageIndex) -> CreatePage(pageIndex));
+        pagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
+        pagination.getStylesheets().add("/css/PortfolioPag.css");
+        pagination.setCurrentPageIndex(Currentpag);
     }
 
 }

@@ -1,0 +1,8 @@
+.pagination .pagination-control .bullet-button:selected {
+    -fx-background-color: transparent, white, #1a4173, white, #0E5D79;
+}
+
+.pagination{
+    -fx-arrows-visible : false;
+    -fx-page-information-visible : false;
+}
