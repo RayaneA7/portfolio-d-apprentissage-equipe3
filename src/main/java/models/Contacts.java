@@ -9,7 +9,7 @@ public class Contacts {
         this.nbTelephone = nbTelephone;
     }
 
-    public long nbTelephone;
+    private long nbTelephone;
     public String getCountFacebook() {
         return countFacebook;
     }
@@ -18,7 +18,7 @@ public class Contacts {
         this.countFacebook = countFacebook;
     }
 
-    public String countFacebook;
+    private String countFacebook;
 
     public String getCountGithub() {
         return countGithub;
@@ -28,7 +28,7 @@ public class Contacts {
         this.countGithub = countGithub;
     }
 
-    public String countGithub;
+    private String countGithub;
 
     public String getCountLinkedln() {
         return countLinkedln;
@@ -38,6 +38,6 @@ public class Contacts {
         this.countLinkedln = countLinkedln;
     }
 
-    public String countLinkedln;
+    private String countLinkedln;
 
 }
