@@ -238,15 +238,27 @@ public class SignUpController implements Initializable {
         }
     }
     public int VerifierMatricule(){
-        if(monMatricule.getText()=="")
+        int resultat =1;
+        if(monMatricule.getText()!="")
         {
-            TraiterAlert(erreurMatricule);
-            return 0;
+            int i=0;
+            int stop=0;
+            while (i < ConnectController.listLogins.size() && stop !=1) {
+                if (ConnectController.listLogins.get(i).getMatricule().equals(monMatricule.getText())) {
+                    stop=1;
+                    resultat=0;
+                    erreurMatricule.setText("Ce matricule appartient déja à un étudiant !");
+                }
+                i++;
+            }
         }
         else
         {
-            return 1 ;
+         erreurMatricule.setText("Ce champ ne doit pas étre vide !");
+         resultat=0;
         }
+        if(resultat==0){TraiterAlert(erreurMatricule);}
+        return resultat;
     }
     public int VerifierSexe(){
         if(monSexe.getText().equals("Sexe"))

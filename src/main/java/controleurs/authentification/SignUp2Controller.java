@@ -4,10 +4,7 @@ package controleurs.authentification;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -17,14 +14,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import models.LoginUser;
+import models.LoginUtilisateurs;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
+import java.util.stream.Stream;
 
 public class SignUp2Controller implements Initializable {
     @FXML
@@ -55,6 +54,7 @@ public class SignUp2Controller implements Initializable {
     private TextArea monBio ;
     private File file ;
     private Stage stage ;
+    String studentFolder;
     /****************Logique d'affichage ****************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -134,8 +134,27 @@ public class SignUp2Controller implements Initializable {
             );
             file = chooser.showOpenDialog(null);
             System.out.println(getClass());
-            OutputStream output =null ;
             FileInputStream input = null;
+            /*******************************/
+            try {
+                input = new FileInputStream(file);
+                Image image = new Image(input);
+                monPhoto.setImage(image);
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            /********************************
             if (file != null) {
                 try {
                     input = new FileInputStream(file);
@@ -156,7 +175,22 @@ public class SignUp2Controller implements Initializable {
 
                 }
             }
+            /*************************************/
         });
+    }
+    //Copy methods
+    public static void copyFolder(Path src, Path dest) throws IOException {
+        try (Stream<Path> stream = Files.walk(src)) {
+            stream.forEach(source -> copy(source, dest.resolve(src.relativize(source))));
+        }
+    }
+
+    private static void copy(Path source, Path dest) {
+        try {
+            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
     }
 
     /***************Logique de fonctionnement**********************/
@@ -167,33 +201,50 @@ public class SignUp2Controller implements Initializable {
         ConnectController.user.contacts.setCountFacebook(monFacebook.getText());
         ConnectController.user.contacts.setCountGithub(monGithub.getText());
         ConnectController.user.contacts.setCountLinkedln(monLinkedln.getText());
-        String numerotelephone =monNumeroTelephone.getText();
-        int i=0;
-        int validate =0;
-        while(i<numerotelephone.length()&&validate!=1)
-        {
-            char ch = numerotelephone.charAt(i);
-            if(Character.isDigit(ch)==false)
-            {
-               validate=1;
-            }
-            i++;
-        }
-        if(monNumeroTelephone.getText()!=""&& validate!=1) {
+        String numerotelephone = monNumeroTelephone.getText();
+        if (verifiNumeroTelephone(monNumeroTelephone.getText()) == true) {
             ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
         }
-        ConnectController.create(ConnectController.user);
-        /**********************************************************************/
-        /*************************Passage à la page d'acceuil ********************************************/
-
-        FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/AccueilView.fxml"));
-        Scene scene = new Scene(loader.load(),850,600);
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setWidth(850);
-        stage.setHeight(600);
-        stage.setResizable(false);
-        stage.show();
-        /******Serialisation******/
+        /********************************************************************/
+        try {
+            studentFolder =ConnectController.user.donnes.getMatricule();
+            System.out.println("le folder d'étudiant est : " + studentFolder);
+            File srcDir = new File("DonnesUtilisateurs/Etudiant");
+            File destDir = new File("DonnesUtilisateurs/" + studentFolder);
+            copyFolder(srcDir.toPath(), destDir.toPath());
+            System.out.println("fiate2");
+            ConnectController.create(ConnectController.user);
+            /***************/
+            LoginUser loginUser = new LoginUser(ConnectController.user.donnes.motdePasse,
+                    ConnectController.user.donnes.Email, ConnectController.user.donnes.matricule);
+            LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
+            utilisateurs.ajouteUtilisateurToList(loginUser);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (file != null){
+            OutputStream output;
+            output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateurs/" + studentFolder + "/ImagePersonnel.png"));
+            Files.copy(Path.of(file.getPath()), output);
+            output.close();
+        }
+        /************Passage à la page d'acceuil *************/
+        ConnectController.studentFolder=ConnectController.user.donnes.getMatricule();
+        ConnectController.accedreAcceuil(event);
+    }
+    public boolean verifiNumeroTelephone(String numerotelephone){
+        int i=0;
+        boolean validate =true;
+            if(numerotelephone!="") {
+                while (i < numerotelephone.length() && validate != false) {
+                    char ch = numerotelephone.charAt(i);
+                    if (Character.isDigit(ch) == false) {
+                        validate = false;
+                    }
+                    i++;
+                }
+            }
+            else{validate=false ;}
+        return validate;
     }
 }

@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity"  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUpController">
    <children>
       <ImageView fx:id="myErreurMatricule" fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -177,7 +177,7 @@
                   <Image url="@../icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
-            <Label fx:id="erreurMatricule" layoutX="25.0" layoutY="70.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide !" />
+            <Label fx:id="erreurMatricule" layoutX="20.0" layoutY="70.0" opacity="0.0" prefHeight="17.0" prefWidth="233.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide !" />
          </children>
       </AnchorPane>
       <Label fx:id="erreurDateNaissance" layoutX="391.0" layoutY="403.0" opacity="0.0" prefHeight="17.0" prefWidth="223.0" style="-fx-text-fill: red;" text="Veuillez choisir votre date de naissance !" />

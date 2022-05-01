@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -16,6 +17,9 @@
          <image>
             <Image url="@../icons/Acceuil/Slice2.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Button fx:id="AjProButton" contentDisplay="BOTTOM" layoutX="213.0" layoutY="185.0" mnemonicParsing="false" prefHeight="117.0" prefWidth="191.0" style="-fx-background-color: EEEEEE;" text="Ajouter un Projet" textFill="#184173">
          <font>
@@ -180,5 +184,6 @@
       <Line fx:id="line4" endX="-43.0" layoutX="115.0" layoutY="471.0" startX="-84.0" stroke="#666666" />
       <Line fx:id="line5" endX="-43.0" layoutX="115.0" layoutY="536.0" startX="-84.0" stroke="#666666" />
       <Circle fx:id="imagePersonnnel" fill="WHITE" layoutX="715.0" layoutY="38.0" radius="25.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
+      <HBox layoutX="573.0" layoutY="2.0" />
    </children>
 </AnchorPane>

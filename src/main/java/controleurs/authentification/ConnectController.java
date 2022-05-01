@@ -2,6 +2,7 @@ package controleurs.authentification;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import hashage.GenererHashage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -24,28 +25,23 @@ import javafx.util.Callback;
 //import modele.Contacts;
 //import modele.DonnesPersonnels;
 //import modele.Utilisateur;
-import models.Contacts;
-import models.DonnesPersonnels;
-import models.Utilisateur;
+import models.*;
 
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
 public class ConnectController implements Initializable {
     static Pagination pagination;
-    static Utilisateur user ;
-    private Stage stage ;
-    private Scene scene;
+    public static Utilisateur user ;
+    static ArrayList<LoginUser> listLogins ;
+    static Stage stage ;
+    static Scene scene;
     private ArrayList<Parent> memory;
-    @FXML
-    private Line monLigneEmail ;
-    @FXML
-    private Line monLigneMotPasse;
     @FXML
     private ImageView myHelp;
     @FXML
@@ -54,14 +50,31 @@ public class ConnectController implements Initializable {
     private PasswordField monMotDePasse ;
     @FXML
     private Pane myPane ;
+    /****************les lignes***************************/
     @FXML
-    private Label erreurEmail ;
+    private Line monLigneEmail ;
     @FXML
-    private Label erreurMotPasse ;
+    private Line monLigneMotPasse;
+    /*************les erreurs **************************/
+    @FXML
+    private Label alertEmail ;
+    @FXML
+    private Label alertMotPasse;
 
+    /*************************Variables de classe****************************/
+    public static String studentFolder ;
+    private int dureeErreur=3000;
     /*********************Logique d'affichage***************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /***********************************************/
+        LoginUtilisateurs loginUtilisateurs =new LoginUtilisateurs();
+        try {
+            listLogins=loginUtilisateurs.getList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        /***********************************************/
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -112,22 +125,73 @@ public class ConnectController implements Initializable {
 
     /********************Logique de fonctionnement************************/
 
-    static void create(Utilisateur user ) {
+    static void create(Utilisateur user ) throws IOException {
 
         Writer writer = null;
         try {
-            writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateur/user.json"));
+            System.out.println("baa");
+            writer = Files. newBufferedWriter(Paths.get("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule()+"/user.json"));
+            System.out.println("baa1");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            System.out.println("baa2");
             gson.toJson(user, writer);
-            writer.close();
+            System.out.println("baa3");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("un probleme se genere lors de la sérialisation des données personnels");
         }
-
+        finally {
+            writer.close();
+        }
     }
     public void procedureRecupération(ActionEvent actionEvent) {
     }
-    public void allerPageAcceuil(ActionEvent actionEvent) {
+    /***************************/
+    public void allerPageAcceuil(ActionEvent event) throws IOException, NoSuchAlgorithmException {
+        int index =vérifierLogin(listLogins,monEmail.getText(),monMotDePasse.getText());
+        switch (index)
+        {
+            case 0:
+                alertEmail.setText("Email inexistant !");
+                TraiterAlert(alertEmail);
+                break;
+            case 1:
+                alertMotPasse.setText("mot de passeincorrect!");
+                TraiterAlert(alertMotPasse);
+                break;
+            case 2:
+                /************passage à l'acceuil*******************/
+               accedreAcceuil(event);
+               /*****************************************************/
+        }
+    }
+     /******************************/
+    public  int vérifierLogin(ArrayList<LoginUser> list, String email, String motPasse) throws NoSuchAlgorithmException {
+        int validation =0 ,stop=0;
+        int i=0;
+        while (i < list.size() && stop !=1) {
+            if (list.get(i).getEmail().equals(email)) {
+                GenererHashage hashage =new GenererHashage(motPasse);
+                if (list.get(i).getMotPasse().equals(hashage.RécupereHashage())) {
+                    validation= 2;
+                    studentFolder=list.get(i).getMatricule();
+                } else {
+                    validation= 1;
+                }
+                stop=1;
+            } else {
+                validation= 0;
+            }
+            i++;
+        }
+        return validation;
+    }
+    public void TraiterAlert(Node node)
+    {
+        Timer timer =new Timer();
+        TimerTask task =new RealiserAlert(node, timer);
+        node.setOpacity(1);
+        timer.schedule(task,dureeErreur);
     }
     public void inscription(ActionEvent event) throws IOException {
         /*********Creation d'un nouveau Utilisatur****************/
@@ -163,5 +227,16 @@ public class ConnectController implements Initializable {
         stage.setResizable(false);
         stage.show();
     }
-
+    static void accedreAcceuil(ActionEvent event) throws IOException {
+        FXMLLoader loader =new FXMLLoader(ConnectController.class.getResource("/views/AccueilMediateurView.fxml"));
+        if(loader!=null) {
+            scene = new Scene(loader.load());
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setWidth(830);
+            stage.setHeight(630);
+            stage.setResizable(false);
+            stage.show();
+        }
+    }
 }

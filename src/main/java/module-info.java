@@ -5,6 +5,7 @@ module Mainapplication{
     requires transitive com.jfoenix;
     requires javafx.graphics;
     requires com.google.gson;
+    requires org.bouncycastle.provider;
 
 
     opens Mainapplication  to javafx.fxml , javafx.graphics,com.google.gson;

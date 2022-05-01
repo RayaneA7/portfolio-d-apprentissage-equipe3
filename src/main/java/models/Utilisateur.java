@@ -3,6 +3,7 @@ package models;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -29,22 +30,23 @@ public class Utilisateur {
     }
 
   }
-
-  public static Utilisateur deserialization() {
+  public static Utilisateur deserialization(String studentFolder) throws IOException {
 
     Utilisateur user = null;
+    Gson gson = new Gson();
+    Reader reader =null;
     try {
-      Gson gson = new Gson();
-
-      Reader reader = Files.newBufferedReader(Paths.get("DonnesUtilisateur/user.json"));
+      reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/"+studentFolder+"/user.json"));
       user = gson.fromJson(reader, Utilisateur.class);
-      reader.close();
-      return user;
 
-    } catch (Exception ex) {
+    } catch (FileNotFoundException ex) {
       ex.printStackTrace();
+      reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/Etudiant/user.json"));
+      user = gson.fromJson(reader, Utilisateur.class);
     }
-
+    finally {
+      reader.close();
+    }
     return user;
   }
 }

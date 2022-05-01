@@ -1,5 +1,6 @@
 package controleurs.authentification;
 
+import hashage.GenererHashage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 public class SignUp1Controller implements Initializable {
@@ -277,11 +279,12 @@ public class SignUp1Controller implements Initializable {
         //System.out.println("welcome in controller 1 back");
         ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex()-1);
     }
-    public void NextPage(ActionEvent actionEvent) {
+    public void NextPage(ActionEvent actionEvent) throws NoSuchAlgorithmException {
 
-        if(verifierEmail()+verifierPassword()==2) {
+        if(verifierEmail(monEmail.getText())+verifierPassword()==2) {
             ConnectController.user.donnes.setEmail(monEmail.getText());
-            ConnectController.user.donnes.setMotdePasse(monMotdePasse.getText());
+            GenererHashage hashage =new GenererHashage(monMotdePasse.getText());
+            ConnectController.user.donnes.setMotdePasse(hashage.RécupereHashage());
             ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex() + 1);
         }
     }
@@ -300,48 +303,44 @@ public class SignUp1Controller implements Initializable {
             return 0;
         }
     }
-    public int verifierEmail() {
-        char ch = ' ';
-        int NbChar = 0;
-        String mail= monEmail.getText();
-        while (ch != '@'&& NbChar <mail.length()) {
-            ch = mail.charAt(NbChar);
-            NbChar++;
-        }
-
-        if (((NbChar - 1) >= NbChMinEmail)&&verifyEmailSyntax(mail)==true) {
-            return 1;
-        }
-        else {
-            if (NbChar == 0) {
-
-                erreurEmail.setText("Ce champ ne dois pas être vide ");
+    public int verifierEmail(String email) {
+        int index =1;//par defaut correct
+        String erreur="Ce champ ne doir pas étre vide !" ;
+        if(email!="")
+        {
+            if(email.endsWith("@gmail.com")||email.endsWith("@esi.dz")||email.endsWith("@outlook.com")||email.endsWith("@yahoo.com"))
+            {
+              if(verifyEmailSyntax(email)==false)
+              {
+                  index=0;
+                  erreur="Ce email est incorrect !";
+              }
+              else{
+                  int i=0;
+                  int stop=0;
+                  while (i < ConnectController.listLogins.size() && stop !=1) {
+                          if (ConnectController.listLogins.get(i).getEmail().equals(email)) {
+                              stop=1;
+                              index=0;
+                              erreur="Ce email appartient déja à un étudiant !";
+                          }
+                          i++;
+                      }
+                  }
             }
-            else{
-                erreurEmail.setText("Email incorrect");
+            else
+            {
+                erreur="Ce email est incorrect !";
+                index=0;
             }
-            SignUpController sign =new SignUpController();
-            /*******************************/
-            /*************le cas ou ce email existe déja *************************/
-            /**********************************/
-            sign.TraiterAlert(erreurEmail);
-            return 0;
         }
-      /*  } else if((NbChar-1)<NbChMinEmail) {
-            /*Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Email Length problem");
-            alert.setContentText("Email address have to composed at least of 8C Characters");
-            alert.setWidth(300);
-            alert.show();
-            return false;
+        else{index=0;}
+        if(index==0){
+            erreurEmail.setText(erreur);
+            SignUpController controller =new SignUpController();
+            controller.TraiterAlert(erreurEmail);
         }
-        else{
-            Alert alert1=new Alert(Alert.AlertType.ERROR);
-            alert1.setTitle("Syntax Error");
-            alert1.setContentText("Please verify your address syntax");
-            alert1.show();
-            return false;
-        }*/
+        return index;
     }
     public boolean verifyEmailSyntax(String info){
         int i=0;
@@ -360,12 +359,14 @@ public class SignUp1Controller implements Initializable {
             if (Character.isDigit(ch)) {
                 index2=1;
             }
+            if(!Character.isDigit(ch)&&!Character.isAlphabetic(ch))
+            {
+                index3=1;
+            }
             i++;
             ch = info.charAt(i);
         }
-        int index4=0;
-        if(info.endsWith("@gmail.com")||info.endsWith("@esi.dz")||info.endsWith("@outlook.com")||info.endsWith("@yahoo.com")){index4=1;}
-        int totalIndex= index4+index1+index2+index;
+        int totalIndex= index3+index1+index2+index;
         if(totalIndex>=2)
         {
             return true;

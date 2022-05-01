@@ -17,6 +17,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import models.LoginUtilisateurs;
 import models.Utilisateur;
 
 import java.io.File;
@@ -65,6 +66,8 @@ public class AccueilController implements Initializable {
     ImageView logOut ;
     @FXML
     Circle imagePersonnel ;
+    @FXML
+    ImageView imageTest;
     /*******************les lignes **********************/
     @FXML
     Line line1;
@@ -88,31 +91,22 @@ public class AccueilController implements Initializable {
     Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut1.png"));
     Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
-
-    static File file =new File("DonnesUtilisateur/ImagePersonnel.png");
-    /********************************************************/
     Stage stage ;
     /*******************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         /*********************Image personnel********************/
-        Image image = null;
-        try {
-            image = new Image(String.valueOf(file.toURI().toURL()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        imagePersonnel.setFill(new ImagePattern(image));
+            if(AccueilMediateur.image!=null){
+                imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+            }
         /****************************************************/
-
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
-
         AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
             AccueilLabel.setTextFill(Color.BLACK);
@@ -176,18 +170,12 @@ public class AccueilController implements Initializable {
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
         });
-        user = Utilisateur.deserialization();
-        WelcomeLabel.setText("Bonjour "+ user.donnes.nom  + user.donnes.prenom);
+        /******************************************************/
+        WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getNom()+" "+ AccueilMediateur.utilisateur.donnes.getPrenom());
         SwitchButton.setOnAction(e->{
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
-                stage = (Stage) SwitchButton.getScene().getWindow();
-                stage.setScene(new Scene(root, 850,600));
-                stage.setTitle("Ecareer");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            AccueilMediateur.monPagination.setCurrentPageIndex(1);
         });
+        /***********************************************************/
         logOut.setOnMouseClicked(event -> {
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
             Scene scene = null;
@@ -202,12 +190,14 @@ public class AccueilController implements Initializable {
             stage.show();
         });
     }
+    /***
     public void SwtichScene(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
         stage = (Stage) SwitchButton.getScene().getWindow();
         stage.setScene(new Scene(root, 850,600));
         stage.setTitle("Ecareer");
     }
+     /*******/
 
 
 }

@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 
-
 <AnchorPane fx:id="myAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.ConnectController">
    <children>
       <ImageView fitHeight="570.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
@@ -37,8 +36,8 @@
             </ImageView>
             <Line fx:id="monLigneEmail" endX="245.0" endY="0.3333282470703125" layoutX="138.0" layoutY="91.0" startX="-100.0" startY="0.3333282470703125" stroke="#666666" strokeWidth="3.0" style="-fx-fill: #666666;" />
             <Line fx:id="monLigneMotPasse" endX="520.0" endY="10.0" layoutX="-134.0" layoutY="148.0" startX="171.66665649414062" startY="10.0" stroke="#666666" strokeWidth="3.0" />
-            <Label fx:id="erreurEmail" layoutX="38.0" layoutY="103.0" opacity="0.0" prefHeight="17.0" prefWidth="235.0" style="-fx-text-fill: red;" text="Ce champ ne doit être vide" />
-            <Label fx:id="erreurMotPasse" layoutX="37.0" layoutY="171.0" opacity="0.0" prefHeight="17.0" prefWidth="235.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide" />
+            <Label fx:id="alertEmail" layoutX="37.0" layoutY="96.0" opacity="0.0" prefHeight="17.0" prefWidth="348.0" text="Email inexistant !" textFill="RED" />
+            <Label fx:id="alertMotPasse" layoutX="37.0" layoutY="163.0" opacity="0.0" prefHeight="17.0" prefWidth="348.0" text="Mot de passe incorrect !" textFill="RED" />
          </children>
       </Pane>
       <Button layoutX="580.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#procedureRecupération" prefHeight="30.0" prefWidth="190.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe oublié ?">
