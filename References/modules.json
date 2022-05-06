@@ -1,0 +1,1127 @@
+{
+  "isLeaf": false,
+  "children": {
+    "A": {
+      "isLeaf": false,
+      "children": {
+        "Q": {
+          "isLeaf": false,
+          "children": {
+            "U": {
+              "isLeaf": false,
+              "children": {
+                "A": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "AQUA"
+                }
+              }
+            }
+          }
+        },
+        "R": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": false,
+              "children": {
+                "H": {
+                  "isLeaf": true,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ARCH1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ARCH2"
+                    }
+                  },
+                  "module": "ARCH"
+                }
+              }
+            }
+          }
+        },
+        "S": {
+          "isLeaf": false,
+          "children": {
+            "I": {
+              "isLeaf": true,
+              "children": {},
+              "module": "ASI"
+            }
+          }
+        },
+        "U": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "AUSI"
+                }
+              }
+            }
+          }
+        },
+        "L": {
+          "isLeaf": true,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "D": {
+                  "isLeaf": false,
+                  "children": {
+                    "S": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ALSDS"
+                    },
+                    "D": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ALSDD"
+                    }
+                  }
+                }
+              }
+            },
+            "G": {
+              "isLeaf": false,
+              "children": {
+                "1": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ALG1"
+                },
+                "2": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ALG2"
+                },
+                "3": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ALG3"
+                }
+              }
+            }
+          },
+          "module": "AL"
+        },
+        "N": {
+          "isLeaf": false,
+          "children": {
+            "A": {
+              "isLeaf": false,
+              "children": {
+                "D": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ANAD"
+                },
+                "L": {
+                  "isLeaf": false,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ANAL1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ANAL2"
+                    },
+                    "3": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ANAL3"
+                    },
+                    "4": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ANAL4"
+                    }
+                  }
+                }
+              }
+            },
+            "U": {
+              "isLeaf": false,
+              "children": {
+                "M": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ANUM"
+                }
+              }
+            },
+            "G": {
+              "isLeaf": false,
+              "children": {
+                "1": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ANG1"
+                },
+                "2": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ANG2"
+                },
+                "3": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ANG3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "isLeaf": false,
+      "children": {
+        "D": {
+          "isLeaf": false,
+          "children": {
+            "A": {
+              "isLeaf": true,
+              "children": {},
+              "module": "BDA"
+            },
+            "D": {
+              "isLeaf": true,
+              "children": {
+                "A": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "BDDA"
+                }
+              },
+              "module": "BDD"
+            },
+            "M": {
+              "isLeaf": true,
+              "children": {},
+              "module": "BDM"
+            }
+          }
+        },
+        "W": {
+          "isLeaf": true,
+          "children": {},
+          "module": "BW"
+        },
+        "I": {
+          "isLeaf": true,
+          "children": {},
+          "module": "BI"
+        }
+      }
+    },
+    "c": {
+      "isLeaf": false,
+      "children": {
+        "o": {
+          "isLeaf": false,
+          "children": {
+            "d": {
+              "isLeaf": false,
+              "children": {
+                "e": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "code"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "C": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "R": {
+              "isLeaf": false,
+              "children": {
+                "O": {
+                  "isLeaf": false,
+                  "children": {
+                    "J": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "CPROJ"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "R": {
+          "isLeaf": false,
+          "children": {
+            "P": {
+              "isLeaf": true,
+              "children": {},
+              "module": "CRP"
+            }
+          }
+        },
+        "O": {
+          "isLeaf": false,
+          "children": {
+            "F": {
+              "isLeaf": false,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "COFI"
+                }
+              }
+            },
+            "M": {
+              "isLeaf": true,
+              "children": {},
+              "module": "COM"
+            }
+          }
+        }
+      }
+    },
+    "E": {
+      "isLeaf": false,
+      "children": {
+        "C": {
+          "isLeaf": false,
+          "children": {
+            "O": {
+              "isLeaf": false,
+              "children": {
+                "N": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ECON"
+                }
+              }
+            }
+          }
+        },
+        "L": {
+          "isLeaf": false,
+          "children": {
+            "E": {
+              "isLeaf": false,
+              "children": {
+                "C": {
+                  "isLeaf": false,
+                  "children": {
+                    "T": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ELECT"
+                    }
+                  }
+                },
+                "F": {
+                  "isLeaf": false,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ELEF1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "ELEF2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "M": {
+          "isLeaf": false,
+          "children": {
+            "M": {
+              "isLeaf": true,
+              "children": {},
+              "module": "EMM"
+            }
+          }
+        },
+        "N": {
+          "isLeaf": false,
+          "children": {
+            "T": {
+              "isLeaf": false,
+              "children": {
+                "P": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "ENTP"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "F": {
+      "isLeaf": false,
+      "children": {
+        "A": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": true,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "FASI"
+                }
+              },
+              "module": "FAS"
+            }
+          }
+        }
+      }
+    },
+    "G": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": true,
+              "children": {},
+              "module": "GPS"
+            }
+          }
+        }
+      }
+    },
+    "H": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": true,
+              "children": {},
+              "module": "HPC"
+            }
+          }
+        }
+      }
+    },
+    "I": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "L": {
+              "isLeaf": false,
+              "children": {
+                "S": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "IPLS"
+                }
+              }
+            }
+          }
+        },
+        "V": {
+          "isLeaf": false,
+          "children": {
+            "R": {
+              "isLeaf": true,
+              "children": {},
+              "module": "IVR"
+            }
+          }
+        },
+        "G": {
+          "isLeaf": false,
+          "children": {
+            "L": {
+              "isLeaf": true,
+              "children": {},
+              "module": "IGL"
+            }
+          }
+        },
+        "H": {
+          "isLeaf": false,
+          "children": {
+            "M": {
+              "isLeaf": true,
+              "children": {},
+              "module": "IHM"
+            }
+          }
+        },
+        "M": {
+          "isLeaf": false,
+          "children": {
+            "R": {
+              "isLeaf": true,
+              "children": {},
+              "module": "IMR"
+            },
+            "N": {
+              "isLeaf": true,
+              "children": {},
+              "module": "IMN"
+            }
+          }
+        }
+      }
+    },
+    "L": {
+      "isLeaf": false,
+      "children": {
+        "A": {
+          "isLeaf": false,
+          "children": {
+            "N": {
+              "isLeaf": false,
+              "children": {
+                "G": {
+                  "isLeaf": false,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "LANG1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "LANG2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "O": {
+          "isLeaf": false,
+          "children": {
+            "G": {
+              "isLeaf": false,
+              "children": {
+                "M": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "LOGM"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "M": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "MPSI"
+                }
+              }
+            }
+          }
+        },
+        "A": {
+          "isLeaf": true,
+          "children": {},
+          "module": "MA"
+        },
+        "C": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "MCSI"
+                }
+              }
+            }
+          }
+        },
+        "S": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": true,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "MSSI"
+                }
+              },
+              "module": "MSS"
+            }
+          }
+        },
+        "E": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": false,
+              "children": {
+                "A": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "MECA"
+                }
+              }
+            }
+          }
+        },
+        "L": {
+          "isLeaf": true,
+          "children": {},
+          "module": "ML"
+        }
+      }
+    },
+    "O": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "T": {
+              "isLeaf": true,
+              "children": {},
+              "module": "OPT"
+            }
+          }
+        },
+        "R": {
+          "isLeaf": false,
+          "children": {
+            "G": {
+              "isLeaf": true,
+              "children": {},
+              "module": "ORG"
+            }
+          }
+        },
+        "G": {
+          "isLeaf": false,
+          "children": {
+            "L": {
+              "isLeaf": true,
+              "children": {},
+              "module": "OGL"
+            }
+          }
+        },
+        "O": {
+          "isLeaf": false,
+          "children": {
+            "E": {
+              "isLeaf": true,
+              "children": {},
+              "module": "OOE"
+            }
+          }
+        }
+      }
+    },
+    "P": {
+      "isLeaf": false,
+      "children": {
+        "R": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "T": {
+                  "isLeaf": false,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "PRST1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "PRST2"
+                    }
+                  }
+                }
+              }
+            },
+            "J": {
+              "isLeaf": false,
+              "children": {
+                "P": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "PRJP"
+                },
+                "S": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "PRJS"
+                }
+              }
+            },
+            "O": {
+              "isLeaf": false,
+              "children": {
+                "J": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "PROJ"
+                }
+              }
+            }
+          }
+        },
+        "D": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": true,
+              "children": {},
+              "module": "PDC"
+            },
+            "J": {
+              "isLeaf": true,
+              "children": {},
+              "module": "PDJ"
+            }
+          }
+        },
+        "F": {
+          "isLeaf": false,
+          "children": {
+            "E": {
+              "isLeaf": true,
+              "children": {},
+              "module": "PFE"
+            }
+          }
+        },
+        "G": {
+          "isLeaf": false,
+          "children": {
+            "I": {
+              "isLeaf": true,
+              "children": {},
+              "module": "PGI"
+            }
+          }
+        },
+        "Y": {
+          "isLeaf": false,
+          "children": {
+            "T": {
+              "isLeaf": true,
+              "children": {},
+              "module": "PYT"
+            }
+          }
+        },
+        "O": {
+          "isLeaf": false,
+          "children": {
+            "O": {
+              "isLeaf": true,
+              "children": {},
+              "module": "POO"
+            }
+          }
+        }
+      }
+    },
+    "Q": {
+      "isLeaf": false,
+      "children": {
+        "L": {
+          "isLeaf": true,
+          "children": {},
+          "module": "QL"
+        }
+      }
+    },
+    "R": {
+      "isLeaf": false,
+      "children": {
+        "D": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": false,
+              "children": {
+                "R": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "RDCR"
+                }
+              }
+            }
+          }
+        },
+        "E": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "1": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "RES1"
+                },
+                "A": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "RESA"
+                },
+                "2": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "RES2"
+                }
+              }
+            }
+          }
+        },
+        "V": {
+          "isLeaf": true,
+          "children": {},
+          "module": "RV"
+        },
+        "O": {
+          "isLeaf": true,
+          "children": {},
+          "module": "RO"
+        }
+      }
+    },
+    "S": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "E": {
+              "isLeaf": true,
+              "children": {},
+              "module": "SPE"
+            }
+          }
+        },
+        "S": {
+          "isLeaf": false,
+          "children": {
+            "R": {
+              "isLeaf": true,
+              "children": {},
+              "module": "SSR"
+            }
+          }
+        },
+        "E": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": true,
+              "children": {},
+              "module": "SEC"
+            }
+          }
+        },
+        "F": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "D": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SFSD"
+                }
+              }
+            }
+          }
+        },
+        "G": {
+          "isLeaf": false,
+          "children": {
+            "O": {
+              "isLeaf": false,
+              "children": {
+                "V": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SGOV"
+                }
+              }
+            }
+          }
+        },
+        "I": {
+          "isLeaf": false,
+          "children": {
+            "A": {
+              "isLeaf": false,
+              "children": {
+                "D": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SIAD"
+                }
+              }
+            },
+            "C": {
+              "isLeaf": true,
+              "children": {},
+              "module": "SIC"
+            },
+            "G": {
+              "isLeaf": true,
+              "children": {
+                "A": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SIGA"
+                }
+              },
+              "module": "SIG"
+            },
+            "N": {
+              "isLeaf": false,
+              "children": {
+                "F": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SINF"
+                }
+              }
+            }
+          }
+        },
+        "Y": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "1": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SYS1"
+                },
+                "R": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SYSR"
+                },
+                "2": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SYS2"
+                },
+                "T": {
+                  "isLeaf": false,
+                  "children": {
+                    "1": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "SYST1"
+                    },
+                    "2": {
+                      "isLeaf": true,
+                      "children": {},
+                      "module": "SYST2"
+                    }
+                  }
+                },
+                "E": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "SYSE"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "T": {
+      "isLeaf": false,
+      "children": {
+        "P": {
+          "isLeaf": false,
+          "children": {
+            "R": {
+              "isLeaf": false,
+              "children": {
+                "O": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "TPRO"
+                }
+              }
+            }
+          }
+        },
+        "S": {
+          "isLeaf": false,
+          "children": {
+            "G": {
+              "isLeaf": true,
+              "children": {},
+              "module": "TSG"
+            }
+          }
+        },
+        "D": {
+          "isLeaf": false,
+          "children": {
+            "W": {
+              "isLeaf": true,
+              "children": {},
+              "module": "TDW"
+            },
+            "M": {
+              "isLeaf": true,
+              "children": {
+                "1": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "TDM1"
+                },
+                "2": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "TDM2"
+                }
+              },
+              "module": "TDM"
+            }
+          }
+        },
+        "E": {
+          "isLeaf": false,
+          "children": {
+            "E": {
+              "isLeaf": true,
+              "children": {},
+              "module": "TEE"
+            },
+            "O": {
+              "isLeaf": true,
+              "children": {},
+              "module": "TEO"
+            }
+          }
+        },
+        "H": {
+          "isLeaf": false,
+          "children": {
+            "P": {
+              "isLeaf": true,
+              "children": {},
+              "module": "THP"
+            }
+          }
+        },
+        "I": {
+          "isLeaf": false,
+          "children": {
+            "C": {
+              "isLeaf": false,
+              "children": {
+                "O": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "TICO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "U": {
+      "isLeaf": false,
+      "children": {
+        "R": {
+          "isLeaf": false,
+          "children": {
+            "S": {
+              "isLeaf": false,
+              "children": {
+                "I": {
+                  "isLeaf": true,
+                  "children": {},
+                  "module": "URSI"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "V": {
+      "isLeaf": false,
+      "children": {
+        "C": {
+          "isLeaf": false,
+          "children": {
+            "L": {
+              "isLeaf": true,
+              "children": {},
+              "module": "VCL"
+            }
+          }
+        }
+      }
+    }
+  }
+}

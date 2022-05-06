@@ -201,6 +201,7 @@ public class SignUp2Controller implements Initializable {
         ConnectController.user.contacts.setCountFacebook(monFacebook.getText());
         ConnectController.user.contacts.setCountGithub(monGithub.getText());
         ConnectController.user.contacts.setCountLinkedln(monLinkedln.getText());
+        ConnectController.user.donnes.setBioPersonnel(monBio.getText());
         String numerotelephone = monNumeroTelephone.getText();
         if (verifiNumeroTelephone(monNumeroTelephone.getText()) == true) {
             ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
@@ -215,8 +216,8 @@ public class SignUp2Controller implements Initializable {
             System.out.println("fiate2");
             ConnectController.create(ConnectController.user);
             /***************/
-            LoginUser loginUser = new LoginUser(ConnectController.user.donnes.motdePasse,
-                    ConnectController.user.donnes.Email, ConnectController.user.donnes.matricule);
+            LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
+                    ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
             LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
             utilisateurs.ajouteUtilisateurToList(loginUser);
         } catch (IOException e) {

@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public class Utilisateur {
-  private DonnesPersonnels donnes;
-  private Contacts contacts;
+  public DonnesPersonnels donnes;
+  public Contacts contacts;
 
   public static void serialize(Utilisateur user) {
 

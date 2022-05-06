@@ -16,4 +16,6 @@ module Mainapplication{
     opens controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
     exports models to javafx.fxml, javafx.graphics,com.google.gson;
     opens models to javafx.fxml, javafx.graphics,com.google.gson;
+    exports References to javafx.fxml, javafx.graphics,com.google.gson;
+    opens References to javafx.fxml, javafx.graphics,com.google.gson;
 }

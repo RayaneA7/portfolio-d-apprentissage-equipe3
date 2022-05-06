@@ -1,0 +1,420 @@
+code,titre,code2,intitule,objectif
+IGL,Introduction au génie logiciel,C11.1,Exploiter un formalisme de rédaction de spécifications fonctionelles et techniques,Utiliser un langage dédié pour la rédaction de spécifications fonctionnelles et techniques
+PRJS,Projet de spécialité,C11.1,Exploiter un formalisme de rédaction de spécifications fonctionelles et techniques,Utiliser un langage dédié pour la rédaction de spécifications fonctionnelles et techniques
+PRJS,Projet de spécialité,C11.1,Exploiter un formalisme de rédaction de spécifications fonctionelles et techniques,Utiliser un langage dédié pour la rédaction de spécifications fonctionnelles et techniques
+ASI,Analyse des Systèmes d'Information,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+EMM,Elaboration du mémoire de Master,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+GPS,Gestion de projets scientifiques,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+PFE,Elaboration du Mémoire d'Ingénieur,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+PRJS,Projet de spécialité,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+PRJS,Projet de spécialité,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+SPE,Stage Pratique en Entreprise,C13.1,"Identifier un contexte, identifier une problématique, et déterminer des objectifs",—
+ASI,Analyse des Systèmes d'Information,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+EMM,Elaboration du mémoire de Master,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+GPS,Gestion de projets scientifiques,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+MCSI,Méthodologies d'analyse et conception de systèmes d'information,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+PFE,Elaboration du Mémoire d'Ingénieur,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+PRJS,Projet de spécialité,C13.2,Effectuer une analyse de l'existant et/ou une étude bibliographique,—
+ASI,Analyse des Systèmes d'Information,C13.3,Analyser un cahier de charge,Comprendre un cahier de charge et identifier les éléments clés
+GPS,Gestion de projets scientifiques,C13.3,Analyser un cahier de charge,Comprendre un cahier de charge et identifier les éléments clés
+PRJS,Projet de spécialité,C13.3,Analyser un cahier de charge,Comprendre un cahier de charge et identifier les éléments clés
+PRJS,Projet de spécialité,C13.3,Analyser un cahier de charge,Comprendre un cahier de charge et identifier les éléments clés
+ASI,Analyse des Systèmes d'Information,C13.4,Mettre en oeuvre les techniques de collecte des besoins,—
+PRJS,Projet de spécialité,C13.4,Mettre en oeuvre les techniques de collecte des besoins,—
+ANUM,Analyse Numérique,C21.1,Exploiter les méthodes numériques pour modéliser des systèmes complexes linéaires non linéraires,—
+ANUM,Analyse Numérique,C21.2,Programmer des méthodes numériques pour modéliser des systèmes complexes,—
+ANAL1,Analyse mathématique 1,C21.3,Analyser une fonction réelle à une variable réelle,Effectuer un calcul différentiel et intégral sur une fonction réelle à variable réelle. Etude du comportement asymptotique.
+ALG1,Algèbre 1,C21.4,Identifier et analyser des structures algébriques,—
+ALG1,Algèbre 1,C21.5,Analyser un polynôme à une indéterminée à coefficients dans un anneau,—
+ANAL2,Analyse 2,C21.6,Développer en séries entières des fonctions usuelles de l’analyse dans le but de mettre en œuvre des algorithmes d’approximation des nombres,—
+ANAL3,Analyse 3,C21.6,Développer en séries entières des fonctions usuelles de l’analyse dans le but de mettre en œuvre des algorithmes d’approximation des nombres,—
+ALG3,Algèbre 3,C21.7,Utiliser des méthodes de résolution des EDO,—
+ANAL2,Analyse 2,C21.7,Utiliser des méthodes de résolution des EDO,—
+ALG2,Algèbre 2,C21.8,Exploiter l'algèbre linéaire et calcul matriciel dans la méodélisation et résolution de problèmes,—
+ALG3,Algèbre 3,C21.8,Exploiter l'algèbre linéaire et calcul matriciel dans la méodélisation et résolution de problèmes,—
+ANAL4,Analyse 4,C21.9,Résoudre des équations à dérivées partielles,—
+RO,Recherche Opérationnelle: graphes et algorithmes,C22.1,Exploiter la théorie des graphes pour modéliser un système de systèmes complexe,—
+RO,Recherche Opérationnelle: graphes et algorithmes,C22.2,Exploiter la programmation linéaire pour modéliser et chercher une solution à un problème,—
+FAS,File d'attente et Simulation,C22.3,Exploiter la théorie de files d'attentes pour modéliser un système,Etudier les différents modèles de files d'attente et calculer les paramètres de performance
+FASI,Files d'attente et simulations,C22.3,Exploiter la théorie de files d'attentes pour modéliser un système,Etudier les différents modèles de files d'attente et calculer les paramètres de performance
+FAS,File d'attente et Simulation,C22.4,Mettre en oeuvre la simulation d'un système,Apprendre les techniques de simulation
+FASI,Files d'attente et simulations,C22.4,Mettre en oeuvre la simulation d'un système,Apprendre les techniques de simulation
+MSS,Modèles Stochastiques et Simulation,C22.4,Mettre en oeuvre la simulation d'un système,Apprendre les techniques de simulation
+MSS,Modèles Stochastiques et Simulation,C22.5,"Exploiter la théorie des processus stochastiques pour résoudre des problèmes d'estimation, d'optimisation et d'apprentissage statistique","Exploiter la théorie des processus stochastiques pour résoudre des problèmes d'estimation, d'optimisation et d'apprentissage statistique"
+ANAL3,Analyse 3,C22.6,Analyser des topologies de IR² et IR³,—
+ANAL4,Analyse 4,C22.7,Analyser la géométrie des courbes et des surfaces,—
+ANAL4,Analyse 4,C22.8,Exploiter les résultats des fonctions à plusieurs variables pour traiter certains problèmes d’optimisation sans ou avec contraintes,—
+ELECT,Eléctricité,C23.1,"Déterminer le courant et la tension dans un circuit électrique comprenant des sources de tension continue, des condensateurs et des résistances,",—
+ELECT,Eléctricité,C23.2,Déterminer le courant et la tension dans un circuit en régime alternatif,—
+ELECT,Eléctricité,C23.3,Déterminer les caractéristiques d’un circuit par la représentation quadripolaire,—
+ELECT,Eléctricité,C23.4,Réaliser une analyse et un tracé du diagramme Bode,—
+ELEF1,Electronique fondamentale 1,C23.5,Interprêter le principe de la conduction dans les semi-conducteurs et dans les jonctions PN,—
+ELEF1,Electronique fondamentale 1,C23.6,"Identifier les caractéristiques de fonctionnements des composants électroniques (diodes, transistors bipolaires, transistors à effet de champ)",—
+ELEF1,Electronique fondamentale 1,C23.7,"Utiliser des composants électroniques dans des applications concrètes : redressement, écrêtages, stabilisations, amplifications, commutations, portes logiques..",—
+ELEF2,Electronique fondamentale 2,C23.8,"Concevoir et analyser un circuit de production de signaux analogiques et numériques,",Produire des signaux analogiques et numériques
+ELEF2,Electronique fondamentale 2,C23.9,Concevoir et analyser des circuits d'acquisition de données,"comprendre le fonctionnement des montages de base d’une chaîne d’acquisition de données (échantillonneurs/bloqueurs, convertisseurs, amplificateur, horloge),"
+TSG,Traitement de Signal,C24.1,Mettre en oeuvre les techniques et algorithme de traitement de signal,"Acquérir les notions nécessaires à la maîtrise des algorithmes et architectures de traitement du signal et de l'image. Ces notions trouvent leurs applications dans des domaines aussi variés que les télécommunications, le multimédia, la robotique"
+IMN,Images Numériques,C24.2,Analyser les techniques de traitement d'images et de reconnaissance de formes,Acquérir les bases essentielles de traitement et d’analyse des images numériques et de la reconnaissance des formes. Des exemples concrets seront mis en œuvre à travers des TP et de mini-projets.
+IMN,Images Numériques,C24.3,Expérimeter des techniques de traitement d'images et de reconnaissance de formes sur des problèmes concrêts,"Tester les techniques de traitement d'images et de reconnaissance de formes sur des applications diverses : biométrie (reconnaissance et identification), documents, restauration de documents et des images etc.."
+OOE,Optique et Ondes éléctromagnétiques,C24.4,Analyser la propagation de rayons lumineux,—
+OOE,Optique et Ondes éléctromagnétiques,C24.5,Analyser des ondes életromagnétiques,—
+MECA,Mécanique du point,C25.1,Enumérer les hypothèses de la mécanique classique,—
+MECA,Mécanique du point,C25.2,Identifier un objet assimilable à un point matériel,—
+MECA,Mécanique du point,C25.3,Formaliser le mouvement d'un point matériel dans différents systèmes de coordonnées,—
+MECA,Mécanique du point,C25.4,Calculer les vitesses et accélérations d'un mobile pour une trajectoire quelconque,—
+MECA,Mécanique du point,C25.5,Formaliser des actions extérieures s'exerçant sur un point matériel,—
+MECA,Mécanique du point,C25.6,Ecrire et résoudre des équations de la dynamique régissant le mouvement d'un point matériel,—
+SINF,Introduction aux systèmes d'information,C30.1,Analyser et codifier une information,L’étudiant doit être capable de comprendre le concept de système afin de mieux l’utiliser en modélisation des situations complexes
+SINF,Introduction aux systèmes d'information,C30.2,Discérner les types de systèmes et identifier leurs fonctions,—
+SINF,Introduction aux systèmes d'information,C30.3,Discerner les types de systèmes d'information et identifier leur rôle dans l'organisation,"Il doit percevoir l’importance des systèmes d’information de l’entreprise ? Une économie de service, une économie de l’information voire création de la valeur."
+ORG,Analyse des organisations,C31.1,Analyser les organisations et fonctions de l'entreprise,—
+ORG,Analyse des organisations,C31.2,Analyser le fonctionnement d'un processus métier,—
+MCSI,Méthodologies d'analyse et conception de systèmes d'information,C32.1,Analyser un système d'information selon une démarche systémique,—
+URSI,Urbanisation des systèmes d'information,C32.1,Analyser un système d'information selon une démarche systémique,—
+MCSI,Méthodologies d'analyse et conception de systèmes d'information,C32.2,Concevoir un système d'information en considérant les objectifs métiers selon une méthodologie,—
+SGOV,Smart Government,C32.3,Enumérer les principaux impacts des TIC/ numérique sur les organisations,—
+TICO,Technologies de l'information et de la communication en organisation,C32.3,Enumérer les principaux impacts des TIC/ numérique sur les organisations,—
+URSI,Urbanisation des systèmes d'information,C32.3,Enumérer les principaux impacts des TIC/ numérique sur les organisations,—
+TICO,Technologies de l'information et de la communication en organisation,C32.4,Utiliser une démarche d'analyse stratégique appliquée aux TIC,"Utiliser une démarche d'analyse stratégique appliquée aux TIC à travers quelques outils de base (SWOT, Modèle des 5 Forces et le modèle SAM)"
+SGOV,Smart Government,C32.5,Enumérer et comparer les principaux scénarii de structuration des TIC dans une organisation,—
+TICO,Technologies de l'information et de la communication en organisation,C32.5,Enumérer et comparer les principaux scénarii de structuration des TIC dans une organisation,—
+TICO,Technologies de l'information et de la communication en organisation,C32.6,Décrire les principaux indicateurs du tableau de bord du DSI,—
+TICO,Technologies de l'information et de la communication en organisation,C32.7,Rattacher les référentiels de ITGovernance aux différentes activités de la DSI,—
+AUSI,Audit de systèmes d'information,C32.8,Analyser la fonction d'audit et décrire une démarche d'audit d'un système d'information,Expliquer ce qu’est fondamentalement l’Audit et la typologie d’Audit Décrire les acteurs concernés Décrire une démarche générale d’Audit Appréhender les spécificités de l'audit d'un système d'information et les types d'activités concernées
+AUSI,Audit de systèmes d'information,C32.9,Exploiter les outils et référentiels d'audit et porter un jugement objectif sur un système d'information,Comprendre comment des référentiels sont utilisés par les auditeurs systèmes d'information
+SGOV,Smart Government,C32.A1,Appréhender les enjeux des données gouvernementales ouvertes pour renforcer l’intelligence gouvernementale,—
+SGOV,Smart Government,C32.A2,Analyser le potentiel du Crowdsourcing/Crowfunding pour une plus grande participation citoyenne,—
+SIG,Systèmes d'Information Géographiques,C33.1,Effectuer une analyse spaciale des données géographiques,"Maîtriser la notion de positionnement spatial, puis fournir une méthode d’analyse spatiale des données cartographiques."
+SIGA,Systèmes d'Information Géographiques Avancés,C33.1,Effectuer une analyse spaciale des données géographiques,"Maîtriser la notion de positionnement spatial, puis fournir une méthode d’analyse spatiale des données cartographiques."
+SIG,Systèmes d'Information Géographiques,C33.2,"Mettre en oeuvre l’acquisition, l’organisation et le stockage des images spatiales, satellitaires ou collectées sur le terrain.","Effectuer l’acquisition, l’organisation puis le stockage dans des bases de données spécifiques des images Spatiales, satellitaires ou collectées sur le terrain."
+SIGA,Systèmes d'Information Géographiques Avancés,C33.2,"Mettre en oeuvre l’acquisition, l’organisation et le stockage des images spatiales, satellitaires ou collectées sur le terrain.","Effectuer l’acquisition, l’organisation puis le stockage dans des bases de données spécifiques des images Spatiales, satellitaires ou collectées sur le terrain."
+SIG,Systèmes d'Information Géographiques,C33.3,Modéliser les données géo-spatiales en 2D et 3D pour l’aide à la décision,S’imprégner des techniques de modélisation de données géo-spaciales
+SIGA,Systèmes d'Information Géographiques Avancés,C33.3,Modéliser les données géo-spatiales en 2D et 3D pour l’aide à la décision,S’imprégner des techniques de modélisation de données géo-spaciales
+ASI,Analyse des Systèmes d'Information,C34.1,Analyser et articuler les types de faisabilités,—
+PRJS,Projet de spécialité,C34.1,Analyser et articuler les types de faisabilités,—
+ASI,Analyse des Systèmes d'Information,C34.2,Elaborer un plan directeur informatique,—
+SIAD,Système d'information d'aide à la décision: méthodes et outils,C35.1,Analyser les modèles sous-jacents aux systèmes d'information d'aide à la décision,—
+SIAD,Système d'information d'aide à la décision: méthodes et outils,C35.2,Exploiter les méthodes et outils d'aide à la décision,—
+BI,Business Intelligence,C35.3,Concevoir et mettre en oeuvre des systèmes d'aide à la décision,—
+BI,Business Intelligence,C35.3,Concevoir et mettre en oeuvre des systèmes d'aide à la décision,—
+SIC,Systèmes d'information coopératifs,C36.1,Analyser le travail coopératif et identifier les TIC contribuant à l'avantage coopératif,"Avoir les connaissances conceptuelles indispensables en matière de coopération plus spécifiquement le travail coopératif et des TIC contribuant à l’avantage coopératif (groupware, workflow, ..)."
+SIC,Systèmes d'information coopératifs,C36.2,"Mettre en oeuvre, déployer et utiliser des systèmes d'information coopératifs en entreprise",Être capable de mettre en œuvre et de déployer en entreprise les systèmes d’information coopératifs les plus courants
+PGI,Progiciels de gestion intégrée,C37.1,Analyser l'intégration de systèmes d'information de gestion,Assimiler les concepts liés à l’intégration des systèmes d’Information de gestion.
+PGI,Progiciels de gestion intégrée,C37.2,Identifier et modéliser des processus métiers,"Maitriser la modélisation de processus métiers (identification, modélisation)"
+URSI,Urbanisation des systèmes d'information,C37.2,Identifier et modéliser des processus métiers,"Maitriser la modélisation de processus métiers (identification, modélisation)"
+PGI,Progiciels de gestion intégrée,C37.3,Elaborer des solutions d’intégration à travers les technologies d’ERP et d’EAI,—
+PGI,Progiciels de gestion intégrée,C37.4,Mettre en relief les bénéfices et les freins qui peuvent se présenter à l'intégration des systèmes d'information de gestion,—
+URSI,Urbanisation des systèmes d'information,C37.5,Mettre en oeuvre un projet d'urbanisation d'un système d'information,"Acquérir les connaissances ""de base"" relatives à l'urbanisation des systèmes d'information Acquérir des connaissances plus approfondies dans le domaine de la conduite et le management de projets d'urbanisation des systèmes d'information"
+ALSDS,Algorithmique et Structures de Données Statiques,C40.1,Construire une analyse à partir de l’énoncé d’un problème,procéder à son découpage modulaire analyser et construire séparément des différents modules (principal et secondaires). valider chaque module
+ALSDD,Algorithmique et Structure de données dynamique,C40.2,Identifier les structures algorithmiques statiques et dynamiques adéquate pour construire un algorithme à partir de l’analyse d’un problème,—
+ALSDS,Algorithmique et Structures de Données Statiques,C40.2,Identifier les structures algorithmiques statiques et dynamiques adéquate pour construire un algorithme à partir de l’analyse d’un problème,—
+ALSDD,Algorithmique et Structure de données dynamique,C40.3,Déboguer un programme et vérifier un algorithme,—
+ALSDS,Algorithmique et Structures de Données Statiques,C40.3,Déboguer un programme et vérifier un algorithme,—
+ALSDD,Algorithmique et Structure de données dynamique,C40.4,Proposer un découpage modulaire en procédures et/ou fonctions et le justifier,Programmer séparément les divers algorithmes correspondants aux modules (principal et secondaires)
+ALSDS,Algorithmique et Structures de Données Statiques,C40.4,Proposer un découpage modulaire en procédures et/ou fonctions et le justifier,Programmer séparément les divers algorithmes correspondants aux modules (principal et secondaires)
+ALSDD,Algorithmique et Structure de données dynamique,C40.5,Traduire un algorithme dans un langage de programmation et le commenter,Développer des applications informatiques répondant aux besoins d'un client
+ALSDS,Algorithmique et Structures de Données Statiques,C40.5,Traduire un algorithme dans un langage de programmation et le commenter,Développer des applications informatiques répondant aux besoins d'un client
+PYT,Langage de programmation Python,C40.5,Traduire un algorithme dans un langage de programmation et le commenter,Développer des applications informatiques répondant aux besoins d'un client
+ALSDD,Algorithmique et Structure de données dynamique,C40.6,Confectionner un dossier technique de programmation,—
+ALSDS,Algorithmique et Structures de Données Statiques,C40.6,Confectionner un dossier technique de programmation,—
+SFSD,Structure Fichiers et Structures de Données,C40.7,"Concevoir des structures de fichiers efficaces et répondant aux besoins de tout type d'applications, y compris le cas des données volumineuses et massives.",—
+SFSD,Structure Fichiers et Structures de Données,C40.8,Identifier les différents types d’organisation des fichiers et effectuer un choix d'organisation répondant aux besoins des applications,—
+IGL,Introduction au génie logiciel,C40.9,Concevoir et programmer une application avec un langage orienté objet,—
+POO,Programmation Orientée Objet,C40.9,Concevoir et programmer une application avec un langage orienté objet,—
+TPRO,Théorie de la Programmation,C40.A,Mettre en oeuvre différents paradigmes de programmation,Sélectionner et implémenter le paradigme de programmation adéquat pour la résolution d'un problème
+IGL,Introduction au génie logiciel,C41.1,Proposer une conception orientée objet pour un problème métier,—
+PDC,Patrons de conception,C41.1,Proposer une conception orientée objet pour un problème métier,—
+POO,Programmation Orientée Objet,C41.1,Proposer une conception orientée objet pour un problème métier,—
+IGL,Introduction au génie logiciel,C41.2,Modéliser une conception orientée objet en utilisant le diagramme de classes UML,—
+PDC,Patrons de conception,C41.3,Appliquer et mettre en oeuvre les patrons de conception,—
+AL,Architectures logicielles,C41.4,Analyser et documenter l'architecture d'un logiciel,"Identifier les principaux styles architecturaux, évaluer les caractéristiques des solutions architecturales et les enjeux des services techniques (persistance, transactions) dans les architectures"
+AL,Architectures Logicielles,C41.4,Analyser et documenter l'architecture d'un logiciel,"Identifier les principaux styles architecturaux, évaluer les caractéristiques des solutions architecturales et les enjeux des services techniques (persistance, transactions) dans les architectures"
+AL,Architectures logicielles,C41.5,Proposer et mettre en œuvre une architecture à partir de styles architecturaux existants,Concevoir une architecture à partir des attributs de qualité et les styles architecturaux
+AL,Architectures Logicielles,C41.5,Proposer et mettre en œuvre une architecture à partir de styles architecturaux existants,Concevoir une architecture à partir des attributs de qualité et les styles architecturaux
+IGL,Introduction au génie logiciel,C41.5,Proposer et mettre en œuvre une architecture à partir de styles architecturaux existants,Concevoir une architecture à partir des attributs de qualité et les styles architecturaux
+AL,Architectures Logicielles,C41.6,Proposer et mettre en œuvre des architectures à base de services et de micro-services,—
+AL,Architectures logicielles,C41.6,Proposer et mettre en œuvre des architectures à base de services et de micro-services,—
+IGL,Introduction au génie logiciel,C41.6,Proposer et mettre en œuvre des architectures à base de services et de micro-services,—
+AL,Architectures Logicielles,C41.7,Mettre en œuvre des modèles de déploiement tels que les conteneurs ou le cloud pour les architectures complexes,—
+AL,Architectures logicielles,C41.7,Mettre en œuvre des modèles de déploiement tels que les conteneurs ou le cloud pour les architectures complexes,—
+IGL,Introduction au génie logiciel,C42.1,Appliquer une méthodologie pendant le cycle de développement logiciel,—
+MA,Méthodes Agiles,C42.1,Appliquer une méthodologie pendant le cycle de développement logiciel,—
+MA,Méthodes Agiles,C42.2,Mettre en oeuvre une méthodologie agile dans le développement logiciel,S’imprégner des pratiques agiles dans le développement logiciel selon une méthodologie.
+OGL,Outils de Génie Logiciel,C42.2,Mettre en oeuvre une méthodologie agile dans le développement logiciel,S’imprégner des pratiques agiles dans le développement logiciel selon une méthodologie.
+QL,Qualité Logicielle,C42.3,Analyser les risques dans un processus de développement logiciel,Analyser les risques dans un processus de développement logiciel
+QL,Qualité Logicielle,C42.4,Estimer le coût et l'effort du développement logiciel en s'appuyant sur une méthodologie,Estimer le coût et l'effort du développement logiciel en s'appuyant sur une méthodologie
+MA,Méthodes Agiles,C42.5,Mettre en oeuvre les outils nécessaires pour automatiser les tâches répétitives du développement et faciliter le travail en équipe.,"Rendre le processus de développement logiciel, en équipe, efficace et améliorer la qualité du logiciel"
+OGL,Outils de Génie Logiciel,C42.5,Mettre en oeuvre les outils nécessaires pour automatiser les tâches répétitives du développement et faciliter le travail en équipe.,"Rendre le processus de développement logiciel, en équipe, efficace et améliorer la qualité du logiciel"
+OGL,Outils de Génie Logiciel,C42.6,Mettre en oeuvre les tests unitaires et d'intégration d'un logiciel,Effectuer des tests structurel dans le cadre d'un processus de développement logiciel
+PRJS,Projet de spécialité,C42.6,Mettre en oeuvre les tests unitaires et d'intégration d'un logiciel,Effectuer des tests structurel dans le cadre d'un processus de développement logiciel
+PRJS,Projet de spécialité,C42.6,Mettre en oeuvre les tests unitaires et d'intégration d'un logiciel,Effectuer des tests structurel dans le cadre d'un processus de développement logiciel
+QL,Qualité Logicielle,C42.6,Mettre en oeuvre les tests unitaires et d'intégration d'un logiciel,Effectuer des tests structurel dans le cadre d'un processus de développement logiciel
+IGL,Introduction au génie logiciel,C42.7,Mettre en œuvre les tests fonctionnels pour la qualité des logiciels,—
+PRJS,Projet de spécialité,C42.7,Mettre en œuvre les tests fonctionnels pour la qualité des logiciels,—
+PRJS,Projet de spécialité,C42.7,Mettre en œuvre les tests fonctionnels pour la qualité des logiciels,—
+QL,Qualité Logicielle,C42.7,Mettre en œuvre les tests fonctionnels pour la qualité des logiciels,—
+COM,Compilation,C44.1,Effectuer une analyse lexicale et syntaxique d'un langage,—
+THP,Théorie des langages de programmation et applications,C44.1,Effectuer une analyse lexicale et syntaxique d'un langage,—
+COM,Compilation,C44.2,Exploiter un outil de génération d'analyseur syntaxique et lexical en vue de concevoir un langage,—
+THP,Théorie des langages de programmation et applications,C44.2,Exploiter un outil de génération d'analyseur syntaxique et lexical en vue de concevoir un langage,—
+COM,Compilation,C44.3,Décrire et analyser la sémantique d'un langage,Interpréter la sémantique opérationnelle d'un langage
+COM,Compilation,C44.5,Programmer un compilateur d'un langage vers une machine cible,Développer un compilateur d'un langage vers une machine cible
+PDJ,Python et Développement Web Full Stack avec Django,C46.1,Exploiter des feuilles de style et des langages de balisage et de script pour développer des sites web hergonomiques et répondants aux besoins,Développer des sites web répondants aux besoins
+TDW,Techniques de Développement Web,C46.1,Exploiter des feuilles de style et des langages de balisage et de script pour développer des sites web hergonomiques et répondants aux besoins,Développer des sites web répondants aux besoins
+PDJ,Python et Développement Web Full Stack avec Django,C46.2,Exploiter des langages et bases de données pour développer des sites web dyanmiques,Développer des applications web dynamiques
+TDW,Techniques de Développement Web,C46.2,Exploiter des langages et bases de données pour développer des sites web dyanmiques,Développer des applications web dynamiques
+PDJ,Python et Développement Web Full Stack avec Django,C46.3,"Exploiter un framework pour développer efficacement un site web dynamique, hérgonomique et sécurisé","Développer des site web dynamiques, hergonomiques et sécurisés."
+TDM,Techniques de Développement Mobile,C47.1,Analyser un système d'exploitation mobile et son environnement de développement,Analyser un système d'exploitation mobile et identifier les différences avec un système classique. Maîtriser l'environnement de développement d'un système mobile.
+TDM1,Techniques de Développement Mobile 1,C47.1,Analyser un système d'exploitation mobile et son environnement de développement,Analyser un système d'exploitation mobile et identifier les différences avec un système classique. Maîtriser l'environnement de développement d'un système mobile.
+TDM,Techniques de Développement Mobile,C47.2,Exploiter un langage de programmation pour le développement d'une application mobile,Développer des applications mobiles
+TDM1,Techniques de Développement Mobile 1,C47.2,Exploiter un langage de programmation pour le développement d'une application mobile,Développer des applications mobiles
+TDM,Techniques de Développement Mobile,C47.3,Concevoir et implémenter une application mobile interactive et multimédias,"Concevoir et implémenter une application mobile interactive (notifications, fournisseurs de contenus) et multimédias (image, son, viédo)"
+TDM2,Techniques de Développement Mobile 2,C47.3,Concevoir et implémenter une application mobile interactive et multimédias,"Concevoir et implémenter une application mobile interactive (notifications, fournisseurs de contenus) et multimédias (image, son, viédo)"
+TDM,Techniques de Développement Mobile,C47.4,Concevoir et implémenter une application mobile manipulant des données,Concevoir et implémenter une application mobile connectée à un backend et manipulant des données stockées dans un fichier ou base de données
+TDM2,Techniques de Développement Mobile 2,C47.4,Concevoir et implémenter une application mobile manipulant des données,Concevoir et implémenter une application mobile connectée à un backend et manipulant des données stockées dans un fichier ou base de données
+IHM,Interface Homme Machine,C48.1,Analyser et modéliser la fonction d'interaction homme-machine,Introduire les concepts de base de l’interaction Homme-Machine et donner une vision complète de tous les aspects liés à l’interaction Homme-Machine
+IHM,Interface Homme Machine,C48.2,"Concevoir, développer et évaluer des interfaces homme-machine",Acquérir les compétences nécessaires pour le développement d’interface Homme-Machine.
+POO,Programmation Orientée Objet,C48.3,Développer des interfaces graphiques avec un langage de programmation orientée objet,—
+RV,Réalité Virtuelle,C49.1,Lister les concepts fondamentaux de la réalité virtuelle et la réalité augmentée,—
+RV,Réalité Virtuelle,C49.2,Décrire le fonctionnement des dispositifs d’entrée et de sortie utilisés dans les applications de réalité virtuelle et réalité augmentée,—
+RV,Réalité Virtuelle,C49.3,Expliquer les techniques graphiques utilisées dans les applications de réalité virtuelle et réalité augmentée,—
+RV,Réalité Virtuelle,C49.4,Développer des environnements virtuels et des techniques d'interaction 3D,—
+ALSDD,Algorithmique et Structure de données dynamique,C4A.1,Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes,—
+CRP,Complexité et Résolution de Problème,C4A.1,Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes,—
+SFSD,Structure Fichiers et Structures de Données,C4A.1,Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes,—
+TPRO,Théorie de la Programmation,C4A.1,Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes,—
+CRP,Complexité et Résolution de Problème,C4A.2,Etudier les classes de problèmes et les différents type de résolution de problèmes,—
+TPRO,Théorie de la Programmation,C4A.2,Etudier les classes de problèmes et les différents type de résolution de problèmes,—
+COM,Compilation,C4A.3,Etudier les paradigmes de programmation et les transformations de programmes,—
+TPRO,Théorie de la Programmation,C4A.3,Etudier les paradigmes de programmation et les transformations de programmes,—
+BDD,Bases de données,C51.1,Concevoir une Base de Données relationnelle,Exploiter un langage de modélisation de base de données relationnelle
+BDD,Bases de données,C51.2,Utiliser SQL pour définir et manipuler des données relationnelles,—
+BDD,Bases de données,C51.4,"Traduire un modèle entité/association vers un schéma relationnel, le normaliser et le manipuler avec l'algèbre relationnelle.",—
+BDA,Bases de données avancées,C51.5,Programmer avec le langage procédural SQL,Ecrire des programmes avec le langage SQL selon sa dimension procédurale
+BDDA,SGBD et Bases de Données Avancées,C51.5,Programmer avec le langage procédural SQL,Ecrire des programmes avec le langage SQL selon sa dimension procédurale
+BDDA,SGBD et Bases de Données Avancées,C51.5,Programmer avec le langage procédural SQL,Ecrire des programmes avec le langage SQL selon sa dimension procédurale
+BDDA,SGBD et Bases de Données avancées,C51.5,Programmer avec le langage procédural SQL,Ecrire des programmes avec le langage SQL selon sa dimension procédurale
+BDDA,SGBD et Bases de Données Avancées,C51.6,Analyser l'architecture d'un SGBD relationnel,Comprendre l’architecture d’un SGBD relationnel
+BDDA,SGBD et Bases de Données avancées,C51.6,Analyser l'architecture d'un SGBD relationnel,Comprendre l’architecture d’un SGBD relationnel
+BDDA,SGBD et Bases de Données Avancées,C51.6,Analyser l'architecture d'un SGBD relationnel,Comprendre l’architecture d’un SGBD relationnel
+BDA,Bases de données avancées,C51.7,Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles,Concevoir et implémenter des BDD multidimensionnelles.
+BDDA,SGBD et Bases de Données Avancées,C51.7,Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles,Concevoir et implémenter des BDD multidimensionnelles.
+BDDA,SGBD et Bases de Données avancées,C51.7,Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles,Concevoir et implémenter des BDD multidimensionnelles.
+BDDA,SGBD et Bases de Données Avancées,C51.7,Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles,Concevoir et implémenter des BDD multidimensionnelles.
+BI,Business Intelligence,C51.7,Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles,Concevoir et implémenter des BDD multidimensionnelles.
+BDA,Bases de données avancées,C53.1,Concevoir et mettre en oeuvre des bases de données semi-structurées,Concevoir et manipuler les données semi structurées de type XML
+BDDA,SGBD et Bases de Données Avancées,C53.1,Concevoir et mettre en oeuvre des bases de données semi-structurées,Concevoir et manipuler les données semi structurées de type XML
+BDDA,SGBD et Bases de Données Avancées,C53.1,Concevoir et mettre en oeuvre des bases de données semi-structurées,Concevoir et manipuler les données semi structurées de type XML
+BDDA,SGBD et Bases de Données avancées,C53.1,Concevoir et mettre en oeuvre des bases de données semi-structurées,Concevoir et manipuler les données semi structurées de type XML
+BDA,Bases de données avancées,C53.2,Concevoir et mettre en oeuvre des bases de données non structurées,Concevoir et manipuler les données non structurées avec NoSQL
+BDDA,SGBD et Bases de Données avancées,C53.2,Concevoir et mettre en oeuvre des bases de données non structurées,Concevoir et manipuler les données non structurées avec NoSQL
+ANAD,Analyse et fouille de données,C61.1,"Analyser les techniques de description multidimensionnelle (réduction, visualisation, clustering,…)",Effectuer une description multidimensionnelle sur une masse de données
+ANAD,Analyse et fouille de données,C61.2,"Effectuer une modélisation statistique (régression, classification) sur une masse de données",—
+BDM,Big data mining,C61.3,Utiliser et développer des méthodes d'apprentissage automatique pour l'analyse de big data,L'utilisation et le développement de méthodes liées à l'apprentissage automatique pour l'analyse des big data.
+ML,Machine learning,C61.4,Utiliser et développer des techniques d'apprentissage automatique,—
+PRST1,Probabilités et statistiques,C61.5,Effectuer une description statiistique sur une masse de données,"Présenter les données sous une forme brute, en les réduisant à quelques résumés graphiques et paramètres caractéristiques."
+PRST1,Probabilités et statistiques,C61.6,Modéliser un phénomène aléatoire avec une loi de probabilité,—
+PRST2,Probabilités et Statistiques 2,C61.7,Analyser l'éspérance et la convergence d'un phénomène aléatoire,—
+PRST2,Probabilités et Statistiques 2,C67.8,Interroger une population et estimer les résultats d'un sondage à partir d'un échantillon,—
+BDM,Big data mining,C62.1,Caractériser un système de grandes masses de données et décrire son environnement de développement,Se familiariser avec le big data et son environnement de développement.
+BDM,Big data mining,C62.2,"Décliner les activités d'un processus d'analyse de grandes masses de données (génération, acquisition, analyse,..)","Se familiariser avec le processus d'analyse des big data (génération, acquisition, analyse,.."
+ML,Machine learning,C62.3,Décliner les activités d'un processus d'apprentissage automatique,—
+ANAD,Analyse et fouille de données,C63.1,Mobiliser les outils pour traiter les données et interpréter les résultats,Utiliser les outils adéquat pour analyser les données
+BDM,Big data mining,C63.2,Mobiliser des outils et technologies pour le dévloppement de projets de big data analytique,Développer des projets Big data analytique avec toute la technologie associée sur de grand datasets.
+CRP,Complexité et Résolution de Problème,C64.1,Analyser des méthodes de résolution des problèmes d’optimisation combinatoire,"Etudier les méthodes de résolution des problèmes d’optimisation combinatoire en allant des méthodes exactes vers les méthodes approchées,"
+OPT,Optimisation Combinatoire,C64.1,Analyser des méthodes de résolution des problèmes d’optimisation combinatoire,"Etudier les méthodes de résolution des problèmes d’optimisation combinatoire en allant des méthodes exactes vers les méthodes approchées,"
+OPT,Optimisation Combinatoire,C64.2,Expérimenter différentes méthodes d'optimisation pour résoudre des problèmes combinatoires,"Montrer l’applicabilité effective des méthodes présentées à des problèmes pratiques. Se rendre compte des limites de chaque famille de méthodes d’optimisation et de leur dépendance des différents paramètres en entrée, d’où la nécessité de proposer de nouveaux paradigmes (méthodes hybrides, parallèles, hyper-heuristiques, apprentissage automatique)"
+LOGM,Logique Mathématique,C65.1,Exploiter une logique propositionnelle pour formaliser l'énoncé d'un problème,—
+LOGM,Logique Mathématique,C65.2,Utiliser la théorie des modèles ou de la démonstration pour montrer la satisfiabilité de l'énoncé d'un problème,—
+RES1,Réseaux 1,C71.1,Analyser les fonctions d'un réseau local,—
+RES1,Réseaux 1,C71.2,Mettre en oeuvre et configurer un réseau local,—
+RES2,Réseaux 2,C71.3,Configurer et administrer un réseau informatique,—
+IPLS,Ingénierie des protocoles et logiciels sécurisés,C72.1,Analyser les menaces et les vulnérabilités d'un système,—
+MSSI,Ingénierie et management de la sécurité des systèmes d'information,C72.1,Analyser les menaces et les vulnérabilités d'un système,—
+SEC,Introduction à la sécurité informatique,C72.1,Analyser les menaces et les vulnérabilités d'un système,—
+SSR,Sécurité Systèmes et Réseaux,C72.1,Analyser les menaces et les vulnérabilités d'un système,—
+IPLS,Ingénierie des protocoles et logiciels sécurisés,C72.2,Sécuriser un système informatique,—
+SEC,Introduction à la sécurité informatique,C72.2,Sécuriser un système informatique,—
+SSR,Sécurité Systèmes et Réseaux,C72.2,Sécuriser un système informatique,—
+SEC,Introduction à la sécurité informatique,C72.3,Identifier les mécanismes cryptographiques permettant d'assurer des services de sécurité requis,—
+SSR,Sécurité Systèmes et Réseaux,C72.3,Identifier les mécanismes cryptographiques permettant d'assurer des services de sécurité requis,—
+IPLS,Ingénierie des protocoles et logiciels sécurisés,C72.4,Exploiter des outils logiciels pour mettre en oeuvre des mécanismes de sécurité de données,—
+SEC,Introduction à la sécurité informatique,C72.4,Exploiter des outils logiciels pour mettre en oeuvre des mécanismes de sécurité de données,—
+SSR,Sécurité Systèmes et Réseaux,C72.4,Exploiter des outils logiciels pour mettre en oeuvre des mécanismes de sécurité de données,—
+IPLS,Ingénierie des protocoles et logiciels sécurisés,C72.5,Identifier des protocoles de communication sécurisée en réponse à une politique de sécurité,Sélectionner les protocoles de sécurité en réponse à une politique de sécurité
+SSR,Sécurité Systèmes et Réseaux,C72.5,Identifier des protocoles de communication sécurisée en réponse à une politique de sécurité,Sélectionner les protocoles de sécurité en réponse à une politique de sécurité
+SSR,Sécurité Systèmes et Réseaux,C72.6,Configurer un pare-feu pour mettre en oeuvre une politique de sécurité et de protection,Filtrer les flux entrants et sortants d'un réseau en réponse à une politique de sécurité
+MSSI,Ingénierie et management de la sécurité des systèmes d'information,C72.7,Organiser la sécurité d'un système d'information au sein de l'entreprise,—
+MSSI,Ingénierie et management de la sécurité des systèmes d'information,C72.8,Exploiter des outils d'analyse de risques de sécuirté informatique,Effectuer une analyse de risque d'un système d'information
+MSSI,Ingénierie et management de la sécurité des systèmes d'information,C72.9,Définir une politique de sécurité,—
+ARCH1,Architectures des ordinateurs 1,C73.1,Ecrire les nombres dans différentes représentations et effectuer des calculs selon une algèbre,—
+ARCH1,Architectures des ordinateurs 1,C73.2,Exploiter les méthodes de synthèse de systèmes logiques combinatoires et séquentiels,—
+ARCH1,Architectures des ordinateurs 1,C73.3,Concevoir des circuits combinatoires et séquentiels,—
+ARCH1,Architectures des ordinateurs 1,C73.4,Analyser les composants d'un ordinateur et leurs fonctions,—
+ARCH2,Architecture des ordinateurs 2,C73.4,Analyser les composants d'un ordinateur et leurs fonctions,—
+ARCH2,Architecture des ordinateurs 2,C73.5,"Concevoir des circuits à base de composants mémoires, dans le but de résoudre des problèmes particuliers de stockage, et de récupération de l’information","Expliquer le fonctionnement des différents types de composants mémoires présents dans un calculateur. Déterminer la technologie utilisée dans chaque type de mémoire. Concevoir des circuits mémoires répondant à des spécifications (circuits mémoires vives, mémoires mortes, mémoires associatives, mémoires séquentielles)"
+ARCH2,Architecture des ordinateurs 2,C73.6,"Analyser les mécanismes de base permettant à un ordinateur de communiquer (entrées/sortes, interruptions)",Programmer un contrôleur de communication élémentaire. Schématiser les composantes principales d’un système d’interruption hiérarchique. Concevoir des systèmes d’interruption de base pour répondre à des besoins de contrôle élémentaires.
+SYS1,Systèmes d'exploitation 1,C73.6,"Analyser les mécanismes de base permettant à un ordinateur de communiquer (entrées/sortes, interruptions)",Programmer un contrôleur de communication élémentaire. Schématiser les composantes principales d’un système d’interruption hiérarchique. Concevoir des systèmes d’interruption de base pour répondre à des besoins de contrôle élémentaires.
+ARCH2,Architecture des ordinateurs 2,C73.7,Analyser l'exécution d'un programme en langage machine sur une architecture de Von Neumann,—
+SYST2,Introduction aux systèmes d'exploitation 2,C73.7,Analyser l'exécution d'un programme en langage machine sur une architecture de Von Neumann,—
+ARCH2,Architecture des ordinateurs 2,C73.8,Analyser le fonctionnement de l'unité de contrôle,"Expliquer le fonctionnement d’une micro-machine, le principe du séquencement et la conception des différents types de séquenceurs Concevoir un séquenceur élémentaire répondant à des caractéristiques données."
+RES2,Réseaux 2,C74.0,Identifier et analyser les protocoles et architecture d'Internet,—
+RESA,Réseaux Avancés,C74.1,Analyser la fonction de routage dynamique dans Internet,Comprendre le principe et la mise en ouvre du routage dynamique et le routage sur Internet
+RESA,Réseaux Avancés,C74.2,Identifier les technologies de mise en oeuvre d'infrastructure de transport au sein d'Internet,Comprendre les technologies utilisées pour réaliser l'infrastructure de transport de paquets au sein de l'Internet et les approches actuelles pour assurer des communications de haute performance dans les réseaux étendus.
+RESA,Réseaux Avancés,C74.3,Mettre en place un réseau d'opérateur basé sur la technologie MPLS et ses variantes,Mettre en place un réseau Provider basé sur la technologie MPLS et ses variantes : VPN/MPLS et MPLS-TE
+RESA,Réseaux Avancés,C74.4,Analyser la qualité de service et les protocoles de sa mise en oeuvre dans un réseau informatique,—
+SYSE,Systèmes Embarqués,C75.1,Identifier et analyser les composants et couches d'un système embarqué,"Se familiariser avec les trois couches composant ce type de systèmes: l’architecture, le système d’exploitation et l’applicatif."
+SYSE,Systèmes Embarqués,C75.2,Analyser les contraintes des systèmes temps-réels et embarqués,Etre confronté aux contraintes des systèmes temps-réels et embarqués qui sont très différentes de celles des systèmes habituellement utilisés par les ingénieurs informaticiens.
+SYSE,Systèmes Embarqués,C75.3,"Concevoir, développer et utiliser : des logiciels embarqués, des applicatifs temps réel et des systèmes embarqués en utilisant une méthodologie unifiée.","Concevoir, développer et utiliser : des logiciels embarqués, des applicatifs temps réel et des systèmes embarqués en utilisant une méthodologie unifiée."
+SYSE,Systèmes Embarqués,C75.4,Concevoir des applications simples et les embarquer sur des circuits reconfigurables (FPGA),—
+SYSR,Systèmes Répartis,C76.1,Différencier un système réparti d'un système centralisé et analyser ses fonctions,Introduire les concepts de base des systèmes répartis. Comprendre les avantages que les systèmes répartis procurent par rapport aux systèmes centralisés.
+SYSR,Systèmes Répartis,C76.2,Concevoir des applications réparties et mobiliser des algorithmes et API pour les mettre en oeuvre,Comprendre et concevoir des applications réparties (distribuées)
+SYS1,Systèmes d'exploitation 1,C77.1,Analyser les fonctions d'un systèmes d'exploitation,—
+SYS2,Système d'exploitation 2,C77.1,Analyser les fonctions d'un systèmes d'exploitation,—
+SYST1,Instroduction au Système d'exploitation 1,C77.1,Analyser les fonctions d'un systèmes d'exploitation,—
+SYS1,Systèmes d'exploitation 1,C77.2,Exploiter les fonctions d'un système d'exploitation multi-tâches par la programmation,—
+SYS2,Système d'exploitation 2,C77.3,Exploiter les fonctions de gestion de la mémoire virtuelle et de stockage dans un système multi-programmé,—
+SYST1,Instroduction au Système d'exploitation 1,C77.4,Installer et utiliser un système d'exploitation centralisé de type UNIX,Initier les étudiants à la pratique du système Unix. A la fin du cours l’étudiant doit être capable de travailler dans un environnement Unix (au niveau utilisateur) et installer un système Unix (Linux)
+SYST2,Introduction aux systèmes d'exploitation 2,C77.5,Ecrire des programmes en langage assembleur,—
+SFSD,Structure Fichiers et Structures de Données,C77.6,Différencier les technologies de stockage,—
+ARCH,Architecture,C78.1,Evaluer l'impact des choix d’architectures générales et spécialisées sur l'exécution d'un programme,Mesurer les performances de différentes machines étant donné les paramètres des composants de leurs architectures. Comparer des architectures différentes et pouvoir choisir une architecture pour une application donnée.
+ARCH,Architecture,C78.2,Déterminer les types de mécanismes d’accélérations permettant d’améliorer les performances des programmes,"Réaliser des compromis entre les différents paramètres d’une architecture (CPI, organisation de la mémoire, étages du pipeline, Superscalaire, VLIW))"
+ARCH,Architecture,C78.3,Développer des programmes performants sur des architectures parallèles et avancées,—
+HPC,Calcul Intensif,C78.3,Développer des programmes performants sur des architectures parallèles et avancées,—
+HPC,Calcul Intensif,C78.3,Développer des programmes performants sur des architectures parallèles et avancées,—
+ARCH,Architecture,C78.4,Analyser les types d'architectures parallèles et identifier les différents niveaux de parallélisme dans les architectures,—
+HPC,Calcul Intensif,C78.4,Analyser les types d'architectures parallèles et identifier les différents niveaux de parallélisme dans les architectures,—
+HPC,Calcul Intensif,C78.4,Analyser les types d'architectures parallèles et identifier les différents niveaux de parallélisme dans les architectures,—
+ARCH,Architecture,C78.5,Exploiter diverses API pour mettre en oeuvre des programmes parallèles,"- Concevoir, Implémenter et analyser des programmes parallèles avec mémoire partagée en utilisant OpenMP. - Concevoir, Implémenter et analyser des programmes parallèles avec mémoire distribuée en utilisant MPI. - Implémenter des programmes parallèles sur les GPUs en utilisant CUDA."
+HPC,Calcul Intensif,C78.5,Exploiter diverses API pour mettre en oeuvre des programmes parallèles,"- Concevoir, Implémenter et analyser des programmes parallèles avec mémoire partagée en utilisant OpenMP. - Concevoir, Implémenter et analyser des programmes parallèles avec mémoire distribuée en utilisant MPI. - Implémenter des programmes parallèles sur les GPUs en utilisant CUDA."
+HPC,Calcul Intensif,C78.5,Exploiter diverses API pour mettre en oeuvre des programmes parallèles,"- Concevoir, Implémenter et analyser des programmes parallèles avec mémoire partagée en utilisant OpenMP. - Concevoir, Implémenter et analyser des programmes parallèles avec mémoire distribuée en utilisant MPI. - Implémenter des programmes parallèles sur les GPUs en utilisant CUDA."
+VCL,Virtualisation et Cloud,C79.1,Analyser la fonction de virtualisation des systèmes,"Maîtriser les notions de la virtualisation, véritable changement technologique des systèmes d'exploitation modernes."
+VCL,Virtualisation et Cloud,C79.2,Exploiter des plateformes de virtualisation,"L'utilisation des plateformes de virtualisation phares telles que Vmware, HyperV et Kvm"
+VCL,Virtualisation et Cloud,C79.3,Exploiter des plateformes de Cloud computing,Utilisation des plateformes Cloud telles que Amazon et Openstack.
+PFE,Elaboration du Mémoire d'Ingénieur,C811,"Réaliser et présenter un bilan qualitatif selon des critères de : coût, sécurité, performances, fiabilité, satisfaction usager, déploiement",—
+AQUA,Assurance qualité,C82.1,Décrire une démarche qualité et identifier ses atouts pour l'entreprise,Comprendre la démarche qualité
+AQUA,Assurance qualité,C82.2,Adopter une démarche qualité et utiliser ses principaux outils,"Utiliser les outils de la qualité et de l'amélioration continue (roue de Deming, Diagramme Pareto, Ishikawa, ..)"
+AQUA,Assurance qualité,C82.3,"Décrire l’apport de la normalisation, la certification et l’accréditation pour l'entreprises","Comprendre l’intérêt des entreprises pour la normalisation, la certification et l’accréditation"
+IVR,Innovation et valorisation de la recherche,C90.0,Définir la propriété intellectuelle et identifier les mécanismes de sa protection,—
+EMM,Elaboration du mémoire de Master,C90.1,Exploiter des outils de recherche bibliographique,—
+GPS,Gestion de projets scientifiques,C90.1,Exploiter des outils de recherche bibliographique,—
+RDCR,Recherche documentaire et communication de recherche,C90.1,Exploiter des outils de recherche bibliographique,—
+EMM,Elaboration du mémoire de Master,C90.10,Mettre en oeuvre un travail de recherche selon une méthodologie,—
+GPS,Gestion de projets scientifiques,C90.10,Mettre en oeuvre un travail de recherche selon une méthodologie,—
+IMR,Initiation à la méthodologie de recherche,C90.10,Mettre en oeuvre un travail de recherche selon une méthodologie,—
+IVR,Innovation et valorisation de la recherche,C90.2,"Analyser le processus d'innovation, de recherche et développement, et de valorisation",—
+IVR,Innovation et valorisation de la recherche,C90.3,Identifier les voies de valorisation de travaux de recherche,—
+IMR,Initiation à la méthodologie de recherche,C90.4,Effectuer une synthèse bibliographique et ressortir des verrous scientifiques,—
+IMR,Initiation à la méthodologie de recherche,C90.5,Respecter des pratiques éthiques durant un travail de recherche,—
+EMM,Elaboration du mémoire de Master,C90.6,Elaborer une bibliographie en respectant une norme de citation,—
+GPS,Gestion de projets scientifiques,C90.6,Elaborer une bibliographie en respectant une norme de citation,—
+RDCR,Recherche documentaire et communication de recherche,C90.6,Elaborer une bibliographie en respectant une norme de citation,—
+GPS,Gestion de projets scientifiques,C90.7,Effectuer une recherche dans des ressources documentaires diverses,—
+RDCR,Recherche documentaire et communication de recherche,C90.7,Effectuer une recherche dans des ressources documentaires diverses,—
+GPS,Gestion de projets scientifiques,C90.8,Rédiger un article en adoptant un style scientifique et académique,—
+RDCR,Recherche documentaire et communication de recherche,C90.8,Rédiger un article en adoptant un style scientifique et académique,—
+EMM,Elaboration du mémoire de Master,C90.9,Effectuer une communication scientifique orale,—
+RDCR,Recherche documentaire et communication de recherche,C90.9,Effectuer une communication scientifique orale,—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.1,"Respecter de la charte de rédaction du mémoire ( couverture, nombre de pages, plan, références bibliographiques,,,,,)",—
+EMM,Elaboration du mémoire de Master,C91.2,Equilibrer les chapitres du rapport,—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.2,Equilibrer les chapitres du rapport,—
+EMM,Elaboration du mémoire de Master,C91.3,Présenter un sujet et la problématique et formuler les objectifs et hypothèses,—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.3,Présenter un sujet et la problématique et formuler les objectifs et hypothèses,—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.4,Utliser une méthodologie et/ou des techniques dans les règles de l'art,—
+EMM,Elaboration du mémoire de Master,C91.5,"Synthètiser et effectuer une analyse critique, et adopter une rigueur dans l'argumentation (étude quantitative)",—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.5,"Synthètiser et effectuer une analyse critique, et adopter une rigueur dans l'argumentation (étude quantitative)",—
+EMM,Elaboration du mémoire de Master,C91.6,"Rédiger correctement (Synthèse, clarté, lisibilité, soins de l'orthographe et grammaire)",—
+PFE,Elaboration du Mémoire d'Ingénieur,C91.6,"Rédiger correctement (Synthèse, clarté, lisibilité, soins de l'orthographe et grammaire)",—
+SPE,Stage Pratique en Entreprise,C91.6,"Rédiger correctement (Synthèse, clarté, lisibilité, soins de l'orthographe et grammaire)",—
+TEE,Technique d'expression écrite,C91.6,"Rédiger correctement (Synthèse, clarté, lisibilité, soins de l'orthographe et grammaire)",—
+CPROJ,Conduite de projets,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+GPS,Gestion de projets scientifiques,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+PFE,Elaboration du Mémoire d'Ingénieur,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+PRJP,Projet Pluridisciplinaire,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+PRJS,Projet de spécialité,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+PRJS,Projet de spécialité,C92.1,Planifier un projet (Diagramme Gantt prévu et réel),—
+PFE,Elaboration du Mémoire d'Ingénieur,C92.2,Rédiger des livrables (résultats) intermédiaires et livrable final de qualité,—
+PRJP,Projet Pluridisciplinaire,C92.2,Rédiger des livrables (résultats) intermédiaires et livrable final de qualité,—
+PRJS,Projet de spécialité,C92.2,Rédiger des livrables (résultats) intermédiaires et livrable final de qualité,—
+PRJS,Projet de spécialité,C92.2,Rédiger des livrables (résultats) intermédiaires et livrable final de qualité,—
+PROJ,Projet,C92.2,Rédiger des livrables (résultats) intermédiaires et livrable final de qualité,—
+PFE,Elaboration du Mémoire d'Ingénieur,C92.3,Adopter une posture professionnelle (Assuiduité & sérieux),—
+PRJP,Projet Pluridisciplinaire,C92.3,Adopter une posture professionnelle (Assuiduité & sérieux),—
+PRJS,Projet de spécialité,C92.3,Adopter une posture professionnelle (Assuiduité & sérieux),—
+PRJS,Projet de spécialité,C92.3,Adopter une posture professionnelle (Assuiduité & sérieux),—
+CPROJ,Conduite de projets,C92.4,"Exploiter un outil de gestion de projet afin de quantifier les ressources en temps, matériels, moyens humains et en financement",—
+GPS,Gestion de projets scientifiques,C92.4,"Exploiter un outil de gestion de projet afin de quantifier les ressources en temps, matériels, moyens humains et en financement",—
+PROJ,Projet,C92.4,"Exploiter un outil de gestion de projet afin de quantifier les ressources en temps, matériels, moyens humains et en financement",—
+CPROJ,Conduite de projets,C92.5,Planifier des plans de secours afin de prendre en charge les risques entourant un projet,—
+GPS,Gestion de projets scientifiques,C92.5,Planifier des plans de secours afin de prendre en charge les risques entourant un projet,—
+PRJS,Projet de spécialité,C92.5,Planifier des plans de secours afin de prendre en charge les risques entourant un projet,—
+PROJ,Projet,C92.5,Planifier des plans de secours afin de prendre en charge les risques entourant un projet,—
+GPS,Gestion de projets scientifiques,C92.6,S'organiser et travailler en équipe en vue de réaliser un projet commun,—
+PRJP,Projet Pluridisciplinaire,C92.6,S'organiser et travailler en équipe en vue de réaliser un projet commun,—
+PFE,Elaboration du Mémoire d'Ingénieur,C931,Concevoir un système implémentant des fonctionnalités selon un cahier de charge,—
+PRJS,Projet de spécialité,C931,Concevoir un système implémentant des fonctionnalités selon un cahier de charge,—
+PROJ,Projet,C931,Concevoir un système implémentant des fonctionnalités selon un cahier de charge,—
+PFE,Elaboration du Mémoire d'Ingénieur,C932,Développer une solution informatique (IHM / Jeu d'essai/ tests/ degré d'intégration/ documentation technique),—
+PRJS,Projet de spécialité,C932,Développer une solution informatique (IHM / Jeu d'essai/ tests/ degré d'intégration/ documentation technique),—
+PFE,Elaboration du Mémoire d'Ingénieur,C94.1,"Respecter le temps alloué ( par diapo, global) et clarté de la présentation  (lisiblité, enchaînements, illustration, ... )",—
+EMM,Elaboration du mémoire de Master,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PFE,Elaboration du Mémoire d'Ingénieur,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PRJP,Projet Pluridisciplinaire,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PRJS,Projet de spécialité,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PRJS,Projet de spécialité,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PROJ,Projet,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+SPE,Stage Pratique en Entreprise,C94.2,Synthètiser les éléments principaux/essentiels/importants dans une présentation,—
+PFE,Elaboration du Mémoire d'Ingénieur,C94.3,Valoriser le produit réalisé durant une démonstration,—
+PRJS,Projet de spécialité,C94.3,Valoriser le produit réalisé durant une démonstration,—
+PRJS,Projet de spécialité,C94.3,Valoriser le produit réalisé durant une démonstration,—
+PROJ,Projet,C94.3,Valoriser le produit réalisé durant une démonstration,—
+TEO,Techniques d'expression orale,C94.4,"Adapter la force de la voix, le regard et la posture dans une communication",—
+EMM,Elaboration du mémoire de Master,C94.5,Répondre aux questions avec aisance et précision,—
+PFE,Elaboration du Mémoire d'Ingénieur,C94.5,Répondre aux questions avec aisance et précision,—
+SPE,Stage Pratique en Entreprise,C94.5,Répondre aux questions avec aisance et précision,—
+EMM,Elaboration du mémoire de Master,C94.6,"Effectuer une communication orale de qualité (prononciation, articulation, volume, débit, intonation, posture, aisance, présence)",—
+PFE,Elaboration du Mémoire d'Ingénieur,C94.6,"Effectuer une communication orale de qualité (prononciation, articulation, volume, débit, intonation, posture, aisance, présence)",—
+PRJP,Projet Pluridisciplinaire,C94.6,"Effectuer une communication orale de qualité (prononciation, articulation, volume, débit, intonation, posture, aisance, présence)",—
+TEO,Techniques d'expression orale,C94.6,"Effectuer une communication orale de qualité (prononciation, articulation, volume, débit, intonation, posture, aisance, présence)",—
+TEO,Techniques d'expression orale,C94.7,Adapter la communication à l'auditoire,—
+TEO,Techniques d'expression orale,C94.8,Gérer le stress,—
+TEO,Techniques d'expression orale,C94.9,Effectuer une communication verbale et non-verbale,—
+ANG1,Anglais 1,C95.1,Acquérir le vocabulaire de l`anglais spécifique à l`informatique,—
+ANG2,Anglais 2,C95.1,Acquérir le vocabulaire de l`anglais spécifique à l`informatique,—
+ANG3,Anglais 3,C95.1,Acquérir le vocabulaire de l`anglais spécifique à l`informatique,—
+LANG1,Langue anglaise 1,C95.1,Acquérir le vocabulaire de l`anglais spécifique à l`informatique,—
+LANG2,Langue anglaise 2,C95.1,Acquérir le vocabulaire de l`anglais spécifique à l`informatique,—
+LANG1,Langue anglaise 1,C95.2,Organiser et participer avec succès à un entretien d`embauche,—
+LANG1,Langue anglaise 1,C95.3,"Rédiger efficacement en anglais : Courriels, CV, articles scientifiques, etc.",—
+LANG2,Langue anglaise 2,C95.3,"Rédiger efficacement en anglais : Courriels, CV, articles scientifiques, etc.",—
+ANG1,Anglais 1,C95.4,Ecrire en anglais dans un style académique,—
+ANG2,Anglais 2,C95.4,Ecrire en anglais dans un style académique,—
+ANG3,Anglais 3,C95.4,Ecrire en anglais dans un style académique,—
+ANG1,Anglais 1,C95.5,Ecouter et inférer le sens d'un discours en anglais,—
+ANG2,Anglais 2,C95.5,Ecouter et inférer le sens d'un discours en anglais,—
+ANG3,Anglais 3,C95.5,Ecouter et inférer le sens d'un discours en anglais,—
+ANG1,Anglais 1,C95.6,"S’exprimer correctement, en considérant le niveau de maitrise de la langue",—
+ANG2,Anglais 2,C95.6,"S’exprimer correctement, en considérant le niveau de maitrise de la langue",—
+ANG3,Anglais 3,C95.6,"S’exprimer correctement, en considérant le niveau de maitrise de la langue",—
+LANG1,Langue anglaise 1,C95.6,"S’exprimer correctement, en considérant le niveau de maitrise de la langue",—
+LANG2,Langue anglaise 2,C95.6,"S’exprimer correctement, en considérant le niveau de maitrise de la langue",—
+MPSI,Management du changement dans les projets de systèmes d'information,C96.1,Adopter une posture de leader et sponsor d'un projet,Comprendre l’importance du leadership et sponsoring du projet
+MPSI,Management du changement dans les projets de systèmes d'information,C96.2,Mettre en oeuvre un plan de conduite de changement,Accompagner la mise en œuvre du SI par une démarche de conduite de changement
+MPSI,Management du changement dans les projets de systèmes d'information,C96.3,Mettre en oeuvre un plan de communication,—
+MPSI,Management du changement dans les projets de systèmes d'information,C96.4,"Analyser, concevoir et réaliser une formation pour des adultes",—
+MPSI,Management du changement dans les projets de systèmes d'information,C96.5,Résoudre les conflits,—
+ENTP,Entreprenariat et création d’entreprise,C97.1,Adopter une posture entreprenarial,Adopter un mode de pensée entrepreneurial ; Evaluer et développer leur potentiel entrepreneurial ;
+ENTP,Entreprenariat et création d’entreprise,C97.2,Exploiter des outils pour élaborer un projet d'entrepsie,Mettre en place des actions entrepreneuriales ; Prototyper leur projet de démarrage ;
+ENTP,Entreprenariat et création d’entreprise,C97.3,Défendre un projet d'entreprise,Défendre un projet entrepreneurial.
+ECON,Economie,C97.4,Identifier le rôle de l'entreprise dans l'économie d'une nation,L’étudiant doit être capable de comprendre le rôle de l’entreprise dans l’activité économique d’une nation et l’aborder comme un système ouvert.
+ECON,Economie,C97.5,Analyser les missions et responsabilités de chacune des grandes fonctions (opérationnelles et de soutien) de l’entreprise,—
+COFI,Comptabilité et Finances,C98.1,Identifier et analyser les documents comptables,"Faire connaître les documents comptables, leur objet, et la logique de comptabilisation qui est structurée par une codification."
+COFI,Comptabilité et Finances,C98.2,"Analyser l’activité et les résultats de son entreprise au quotidien, afin d’en tirer le maximum d’informations susceptible d'aider à la prise de décision","Comprendre et identifier les états financiers. Etre capable d’analyser l’activité et les résultats de son entreprise au quotidien compte tenu de la réglementation en vigueur, afin d’en tirer le maximum d’informations susceptibles d’aider à la prise des décisions des décideurs au sein des entreprises."
+COFI,Comptabilité et Finances,C98.3,Exploiter les méthodes qui permettent d’optimiser la rentabilité des entreprises par une meilleure gestion des coûts et le calcul des écarts.,—
+BW,Bureautique et Web,C99.1,Effectuer une communication par e-mail et gérer efficacement sa messagerie.,—
+BW,Bureautique et Web,C99.2,"Utiliser efficacement les outils de recherche d’information pertinente (collecte, tri) devant l’hétérogénéité des sources documentaires",—
+BW,Bureautique et Web,C99.3,"Utiliser efficacement les outils de la bureautique (Word, Powerpoint, Excel,..)",—
+EMM,Elaboration du mémoire de Master,C99.3,"Utiliser efficacement les outils de la bureautique (Word, Powerpoint, Excel,..)",—
+EMM,Elaboration du mémoire de Master,C99.4,Elaborer un support de communication synthétique et pertinent,Elaborer une présentation ou un poster avec les outils de bureautique adéquats synthétisant les éléments essentiels d'un sujet.
+EMM,Elaboration du mémoire de Master,C99.5,Elaborer un support de communication bien organisé,"Mettre en oeuvre un support de communication faisant valoir les parties clés d'une communication dans un ordre correct: résumé, introduction, développement, évaluation, conclusions etc."
+EMM,Elaboration du mémoire de Master,C99.6,Mettre en oeuvre un support de communication avec un visuel clair,"Utiliser les outils de bureautique adéquats pour faire un support de communication (poster, dépliant, projection, etc.) avec un visuel clair, épuré, non encombré, etc."
