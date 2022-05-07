@@ -2,6 +2,7 @@ package References;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import javafx.scene.control.PasswordField;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -10,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
    public class Modules {
@@ -28,7 +30,7 @@ import java.util.Map;
        return propositions;
     }
     public void AjouteModule(String module) throws IOException {
-      trie.insert(module);
+      trie.insert(module.toUpperCase(Locale.ROOT));
       Writer writer=null;
       Gson gson =new GsonBuilder().setPrettyPrinting().create();
         writer =Files.newBufferedWriter(Paths.get("References/modules.json"));

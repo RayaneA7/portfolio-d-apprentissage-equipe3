@@ -1,14 +1,17 @@
-package controleurs.acceuil;
+package controleurs.parametre;
 
+import controleurs.acceuil.AccueilMediateur;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -17,18 +20,30 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import models.LoginUtilisateurs;
-import models.Utilisateur;
+import models.*;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AccueilController implements Initializable {
+public class Parametre_1Controller implements Initializable {
     @FXML
-    Button SwitchButton;
+    Line ligne_info;
+    @FXML
+    Line ligne_passe;
+    @FXML
+    Line ligne_adress;
+    @FXML
+    Line ligne_contact;
+    //---------------------------------
+    @FXML
+    Button info_Button;
+    @FXML
+    Button passe_Button;
+    @FXML
+    Button Adress_Button;
+    @FXML
+    Button contact_Button;
     @FXML
     Button AccueilButton;
     @FXML
@@ -49,8 +64,6 @@ public class AccueilController implements Initializable {
     Button ParametresButton;
     @FXML
     Label ParametresLabel;
-    @FXML
-    Label WelcomeLabel;
     /****************** ImageViews *************************/
     @FXML
     ImageView AccueilImage;
@@ -80,7 +93,16 @@ public class AccueilController implements Initializable {
     @FXML
     Line line5;
     /****************************************************************/
-    Utilisateur user = new Utilisateur();
+
+    String typeA="-fx-stroke:#305380 ;-fx-stroke-width:3";
+    @FXML
+    TextField studentNom;
+    @FXML
+    TextField studentPrenom;
+    @FXML
+    TextField studentBio;
+    Utilisateur user;
+    String studentFolder;
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
     Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
@@ -92,15 +114,50 @@ public class AccueilController implements Initializable {
     Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
     Stage stage ;
-    /*******************************************************/
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*********************Image personnel*******************/
+        if(AccueilMediateur.image!=null){
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
+        /*****************************************/
+        studentBio.setText(AccueilMediateur.utilisateur.donnes.getBioPersonnel());
+        studentNom.setText(AccueilMediateur.utilisateur.donnes.getNom());
+        studentPrenom.setText(AccueilMediateur.utilisateur.donnes.getPrenom());
+        /***************************/
+        passe_Button.setOnMouseClicked(e -> {
+        AccueilMediateur.monPagination.setCurrentPageIndex(3);
+        });
+        Adress_Button.setOnMouseClicked(e -> {
 
-        /*********************Image personnel********************/
-            if(AccueilMediateur.image!=null){
-                imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
-            }
-        /****************************************************/
+            AccueilMediateur.monPagination.setCurrentPageIndex(4);
+        });
+        contact_Button.setOnMouseClicked(e ->{
+
+            AccueilMediateur.monPagination.setCurrentPageIndex(5);
+        });
+
+       // try {
+        studentNom.setPromptText(
+                    //Utilisateur.deserialization(studentFolder).getDonnes().getNom()
+                    "nom null");
+         //  } catch (IOException e) {
+          //     e.printStackTrace();
+          //  }
+        // try {
+        studentPrenom.setPromptText(
+                //Utilisateur.deserialization(studentFolder).getDonnes().getPrenom()
+                "prenom null");
+        //  } catch (IOException e) {
+        //     e.printStackTrace();
+        //  }
+        studentBio.setPromptText("Bio null");
+        //  } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
+     /***********
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
@@ -143,23 +200,20 @@ public class AccueilController implements Initializable {
             line3.setStyle("-fx-stroke: #b7b5b5");
         });
 
-        /***********************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
+
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
             ParametresLabel.setTextFill(Color.BLACK);
             ParametresIamge.setImage(ParametresImg);
             line4.setStyle("-fx-stroke: #b7b5b5");
         });
-        ParametresButton.setOnMouseClicked(event -> {
-            AccueilMediateur.monPagination.setCurrentPageIndex(2);
-        });
-        /***********************************************************************************/
+
         AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: #f1c53c");
             AideLabel.setTextFill(Color.WHITE);
@@ -173,34 +227,7 @@ public class AccueilController implements Initializable {
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
         });
-        /******************************************************/
-        WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getNom()+" "+ AccueilMediateur.utilisateur.donnes.getPrenom());
-        SwitchButton.setOnAction(e->{
-            AccueilMediateur.monPagination.setCurrentPageIndex(1);
-        });
-        /***********************************************************/
-        logOut.setOnMouseClicked(event -> {
-            FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
-            Scene scene = null;
-            try {
-                scene = new Scene(loader.load(),800,568);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        });
-    }
-    /***
-    public void SwtichScene(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Accueil_1View.fxml"));
-        stage = (Stage) SwitchButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 850,600));
-        stage.setTitle("Ecareer");
-    }
-     /*******/
-
-
+   }
+         /*************/
+ }
 }

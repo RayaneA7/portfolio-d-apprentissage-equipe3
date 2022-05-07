@@ -118,19 +118,21 @@ public class Accueil_1Controller implements Initializable {
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
-
+       /**********************************************************************************/
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
             PortfolioImage.setImage(PortfolioImg);
             line3.setStyle("-fx-stroke: #b7b5b5");
         });
-
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
-
+        ParametresButton.setOnMouseClicked(event -> {
+            AccueilMediateur.monPagination.setCurrentPageIndex(2);
+        });
+        /*******************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
             ParametresIamge.setImage(ParametresImg);
