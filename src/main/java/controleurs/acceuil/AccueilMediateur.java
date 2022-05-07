@@ -25,14 +25,14 @@ public class AccueilMediateur implements Initializable {
     @FXML
     AnchorPane monAnchorPane;
     /***********************/
-    static Pagination monPagination;
-    static String studentFolder ;
-    static Utilisateur utilisateur;
-    static ArrayList<Parent> memory;
-    private File file;
-    static  Image image;
+   public static Pagination monPagination;
+   public static String studentFolder ;
+   public static Utilisateur utilisateur;
+   public static ArrayList<Parent> memory;
+   public static Image image;
     private Stage stage;
     private Scene scene;
+    private File file;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*********************************/
@@ -68,14 +68,44 @@ public class AccueilMediateur implements Initializable {
          } catch (IOException e) {
          e.printStackTrace();
          }
+         /****************************************/
          loader = new FXMLLoader(getClass().getResource("/views/Accueil_1View.fxml"));
          try {
          memory.add(loader.load());
          } catch (IOException e) {
          e.printStackTrace();
          }
+         /************************/
+        loader =new FXMLLoader(getClass().getResource("/views/Parametre_1View.fxml"));
+        try {
+            memory.add(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        /***********************/
+        loader =new FXMLLoader(getClass().getResource("/views/Parametre_2View.fxml"));
+        try {
+            memory.add(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        /************************/
+        loader =new FXMLLoader(getClass().getResource("/views/Parametre_3View.fxml"));
+        try {
+            memory.add(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        /**************************/
+        loader =new FXMLLoader(getClass().getResource("/views/Parametre_4View.fxml"));
+        try {
+            memory.add(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+         /********************************************************************/
          monPagination =new Pagination();
-         monPagination.setPageCount(2);
+         monPagination.setPageCount(6);
          monPagination.setCurrentPageIndex(0);
          monPagination.setMaxPageIndicatorCount(1);
          monPagination.setPageFactory(new Callback<Integer, Node>() {
