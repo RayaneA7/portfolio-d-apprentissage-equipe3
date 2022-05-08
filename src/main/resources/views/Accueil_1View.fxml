@@ -179,6 +179,6 @@
       <Line fx:id="line3" endX="-43.0" layoutX="115.0" layoutY="378.0" startX="-84.0" stroke="#666666" />
       <Line fx:id="line4" endX="-43.0" layoutX="115.0" layoutY="471.0" startX="-84.0" stroke="#666666" />
       <Line fx:id="line5" endX="-43.0" layoutX="115.0" layoutY="536.0" startX="-84.0" stroke="#666666" />
-      <Circle fx:id="imagePersonnnel" fill="WHITE" layoutX="715.0" layoutY="38.0" radius="25.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="38.0" radius="25.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
    </children>
 </AnchorPane>

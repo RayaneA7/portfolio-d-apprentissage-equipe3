@@ -1,0 +1,7 @@
+.rounded-layout{
+    -fx-background-radius : 50;
+    -fx-border-radius: 50;
+}
+.transparent{
+    -fx-background-color : rgba(0,0,0,0);
+}

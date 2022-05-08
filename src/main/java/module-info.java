@@ -1,3 +1,4 @@
+
 module Mainapplication{
     requires javafx.controls;
     requires javafx.fxml;
@@ -11,8 +12,10 @@ module Mainapplication{
     opens controleurs.authentification to javafx.fxml , javafx.graphics,com.google.gson;
     exports Mainapplication to javafx.graphics,javafx.fxml,com.google.gson ;
     exports controleurs.authentification to javafx.graphics,javafx.fxml,com.google.gson;
-    exports controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
+    exports controleurs.acceuil  to javafx.fxml, javafx.graphics,com.google.gson;
     opens controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
+    exports controleurs.Projet to javafx.fxml, javafx.graphics,com.google.gson;
+    opens controleurs.Projet to javafx.fxml, javafx.graphics,com.google.gson;
     exports modele to javafx.fxml, javafx.graphics,com.google.gson;
     opens modele to javafx.fxml, javafx.graphics,com.google.gson;
 }
