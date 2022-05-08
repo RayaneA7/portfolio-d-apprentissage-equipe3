@@ -4,90 +4,108 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Pagination;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import modele.Portfolio;
+import modele.PortfoliosBag;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Portfolio1Controller implements Initializable {
-    @FXML
-    Pagination pagination;
-    @FXML
-    private AnchorPane PanePort;
-    /************************ Buttons *******************************/
+public class PortfolioShowController implements Initializable {
     @FXML
     private Button SwitchButton;
+
     @FXML
-    private Button AccueilButton;
+    private ImageView BarreImage;
+
     @FXML
     private Button ProjetButton;
-    @FXML
-    private Button PortfolioButton;
-    @FXML
-    private Button AideButton;
-    @FXML
-    private Button ParametresButton;
-    @FXML
-    private Button DeconnexionBut;
-    /************************ Labels *******************************/
-    @FXML
-    private Label AccueilLabel;
-    @FXML
-    private Label ProjetLabel;
-    @FXML
-    private Label AideLabel;
-    @FXML
-    private Label PortfolioLabel;
-    @FXML
-    private Label ParametresLabel;
-    /************************ Image Views *******************************/
-    @FXML
-    private ImageView AccueilImage;
+
     @FXML
     private ImageView ProjetsImage;
+
+    @FXML
+    private Label ProjetLabel;
+
+    @FXML
+    private Button PortfolioButton;
+
     @FXML
     private ImageView PortfolioImage;
+
     @FXML
-    private ImageView ParametresIamge;
+    private Label PortfolioLabel;
+
+    @FXML
+    private Button AideButton;
+
     @FXML
     private ImageView AideImage;
-    @FXML
-    private ImageView Mod1;
-    @FXML
-    private ImageView Mod2;
-    @FXML
-    private ImageView PortModel1;
-    @FXML
-    private ImageView PortModel2;
-    @FXML
-    private ImageView Next;
-    @FXML
-    private ImageView Previous;
 
-    /************************ Lines *******************************/
+    @FXML
+    private Label AideLabel;
+
+    @FXML
+    private Button ParametresButton;
+
+    @FXML
+    private ImageView ParametresIamge;
+
+    @FXML
+    private Label ParametresLabel;
+
+    @FXML
+    private Button AccueilButton;
+
+    @FXML
+    private ImageView AccueilImage;
+
+    @FXML
+    private Label AccueilLabel;
+
+    @FXML
+    private ImageView logOut;
+
     @FXML
     private Line line1;
+
     @FXML
     private Line line2;
+
     @FXML
     private Line line3;
+
+    @FXML
+    private Line line5;
+
     @FXML
     private Line line4;
     @FXML
-    private Line line5;
+    private Circle imagePersonnel;
+    @FXML
+    private ImageView addPort;
+    @FXML
+    public  AnchorPane monAnchorpane ;
+
+    public static GridPane gridPane;
+    public static ScrollPane MonScrollPane;
 
     private Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut.png"));
     private Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut1.png"));
@@ -100,18 +118,20 @@ public class Portfolio1Controller implements Initializable {
     private Image AideImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut.png"));
     private Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut1.png"));
     private Image IconImg = new Image(getClass().getResourceAsStream("/icons/Inscription/ProjectName.png"));
-    private Image ModelProf1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/Mod1.png"));
-    private Image ModelAnim1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/Mod2.png"));
-    private Image PortMod1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioModel.png"));
-    private Image PortMo2 = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioModel2.png"));
-    private int nbrPag = 3;
-    static int Currentpag = 0;
+
+    private MyPortfolio myPortfolio;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        CreatePag();
-
+        /**********************************************/
+        MonScrollPane =new ScrollPane();
+        gridPane =new GridPane();
+        MonScrollPane.setContent(gridPane);
+        monAnchorpane.getChildren().add(MonScrollPane);
+        MonScrollPane.setPrefSize(530,385);
+        MonScrollPane.setLayoutX(226);
+        MonScrollPane.setLayoutY(172);
+        /**********************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
@@ -131,6 +151,7 @@ public class Portfolio1Controller implements Initializable {
             ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
+
         });
 
         ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
@@ -208,39 +229,20 @@ public class Portfolio1Controller implements Initializable {
             }
         });
 
-        Next.setOnMouseClicked(e->{
-            NextPag();
-        });
-
-        Previous.setOnMouseClicked(e->{
-            PreviousPag();
-        });
-
-        PortModel1.setOnMouseClicked(e-> {
+        addPort.setOnMouseClicked(event->{
             try{
-                Preview(e, pagination.getCurrentPageIndex());
-            } catch (Exception exception){
-                exception.printStackTrace();
-            }
-        });
-
-        Mod1.setOnMouseClicked(e->{
-            try {
-                Preview(e, pagination.getCurrentPageIndex());
-            } catch (IOException ex) {
+                CreatePortfolio(event);
+            } catch (Exception ex){
                 ex.printStackTrace();
             }
         });
 
-        DeconnexionBut.setOnMouseClicked(e->{
-            try{
-                SeDeconnecter(e);
-            } catch(Exception exception){
-                exception.printStackTrace();
-            }
+        CreateListPortfolio();
+
+        logOut.setOnMouseClicked(event -> {
+            seDeconnecter(event);
         });
 
-        Currentpag = pagination.getCurrentPageIndex();
     }
 
     public void SwtichScene(ActionEvent event) throws IOException {
@@ -251,7 +253,7 @@ public class Portfolio1Controller implements Initializable {
     }
 
     public void GoToPortfolio(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/PortfolioShowPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/PprtfolioShowView.fxml"));
         Stage stage = (Stage)PortfolioButton.getScene().getWindow();
         stage.setScene(new Scene(root, 850,600));
         stage.getIcons().addAll(IconImg);
@@ -264,101 +266,65 @@ public class Portfolio1Controller implements Initializable {
         stage.getIcons().add(IconImg);
     }
 
-    public AnchorPane CreatePage(int pageIndex){
-        AnchorPane pane = new AnchorPane();
-        if(pageIndex == 0){
-            Mod1.setImage(ModelProf1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
-            PortModel1.setLayoutX(0);
-            PortModel1.setLayoutY(20);
-            PortModel2.setLayoutX(238);
-            PortModel2.setLayoutY(20);
-            pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1,Mod2);
-            return pane;
-        }
-        if(pageIndex == 1) {
-            Mod1.setImage(ModelAnim1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
-            PortModel1.setLayoutX(0);
-            PortModel1.setLayoutY(20);
-            PortModel2.setLayoutX(238);
-            PortModel2.setLayoutY(20);
-            pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().add(Mod1);
-            pane.getChildren().add(Mod2);
-            return pane;
-        }
-        if(pageIndex == 2) {
-            Mod1.setImage(ModelProf1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
-            PortModel1.setLayoutX(0);
-            PortModel1.setLayoutY(20);
-            PortModel2.setLayoutX(238);
-            PortModel2.setLayoutY(20);
-            pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1,Mod2);
-            return pane;
-        }
-        return null;
-    }
-
-    public void CreatePag(){
-        pagination.setPageCount(nbrPag);
-        pagination.setCurrentPageIndex(Currentpag);
-        pagination.setPageFactory((Integer pageIndex) -> CreatePage(pageIndex));
-        pagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
-        pagination.getStylesheets().add("/css/PortfolioPag.css");
-    }
-
-    public void NextPag(){
-        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex()+1)%nbrPag);
-    }
-
-    public void PreviousPag(){
-        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex()+1)%nbrPag);
-    }
-
-    public void Preview(MouseEvent event, int numPag) throws IOException {
-        FXMLLoader loader = null;
-        if(numPag == 0){
-        loader =new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
-        }
-        if(numPag == 1){
-            loader =new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
-        }
-        if(numPag == 2){
-            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
-        }
-
-        Scene scene = new Scene(loader.load(),850,600);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-        stage.getIcons().add(IconImg);
-    }
-
-    public void SeDeconnecter(MouseEvent event) throws IOException {
+    public void seDeconnecter(MouseEvent event){
         FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
-        Scene scene = new Scene(loader.load(),800,568);
+        Scene scene = null;
+        try {
+            scene = new Scene(loader.load(),800,568);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
-        stage.getIcons().add(IconImg);
     }
+
+    public void CreatePortfolio(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Portfolio1View.fxml"));
+        Stage stage = (Stage)PortfolioButton.getScene().getWindow();
+        stage.setScene(new Scene(root, 850,600));
+        stage.getIcons().addAll(IconImg);
+    }
+
+    public void CreateListPortfolio() {
+        if (!PortfoliosBag.isEmptyBag()) {
+            myPortfolio = new MyPortfolio() {
+                @Override
+                public void removePortfolio(Portfolio portfolio) {
+                    PortfoliosBag.removePortfolio(portfolio);
+                }
+            };
+            int column = 1;
+            int row = 0;
+            Portfolio po;
+            try {
+                for (int i = 0; i < PortfoliosBag.getPortfolios().size(); i++) {
+                    po = PortfoliosBag.getPortfolios().get(i);
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("/views/PortfolioModelView.fxml"));
+                    AnchorPane anchorPane = fxmlLoader.load();
+
+                    PortfolioItemController portfolioItemController = fxmlLoader.getController();
+                    portfolioItemController.setData(po, myPortfolio);
+
+                    gridPane.add(anchorPane, column++, row);
+                    GridPane.setMargin(anchorPane, new Insets(1, 10, 1, 10));
+                    //gridPane.setHgap(10);
+                    gridPane.setMinWidth(Region.USE_COMPUTED_SIZE);
+                    gridPane.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                    gridPane.setMaxWidth(Region.USE_PREF_SIZE);
+
+                    gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
+                    gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                    gridPane.setMaxHeight(Region.USE_PREF_SIZE);
+
+
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
 }
-/*195 80 gridPane ScrPane*/

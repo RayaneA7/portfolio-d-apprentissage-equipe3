@@ -15,4 +15,6 @@ module Mainapplication{
     opens controleurs.acceuil to javafx.fxml, javafx.graphics,com.google.gson;
     exports controleurs.portfolio to javafx.fxml, javafx.graphics,com.google.gson;
     opens controleurs.portfolio to javafx.fxml, javafx.graphics,com.google.gson;
+    exports modele to javafx.fxml, javafx.graphics,com.google.gson;
+    opens modele to javafx.fxml, javafx.graphics,com.google.gson;
 }
