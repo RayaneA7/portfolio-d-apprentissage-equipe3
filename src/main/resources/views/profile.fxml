@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.profil.Profil">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="850.0">
+         <image>
+            <Image url="@../icons/Profil/Profil.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Nom" layoutX="94.0" layoutY="260.0" prefHeight="26.0" prefWidth="113.0" text="nom">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Label>
+      <Label fx:id="Prenom" layoutX="112.0" layoutY="294.0" prefHeight="26.0" prefWidth="113.0" text="prenom">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="email" layoutX="103.0" layoutY="369.0" prefHeight="26.0" prefWidth="139.0" text="mail">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="niveau" layoutX="174.0" layoutY="334.0" prefHeight="26.0" prefWidth="69.0" text="niveau">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="matricule" layoutX="128.0" layoutY="404.0" prefHeight="26.0" prefWidth="69.0" text="matricule">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="Bio" layoutX="40.0" layoutY="442.0" prefHeight="76.0" prefWidth="210.0" text="BIO">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <JFXButton buttonType="RAISED" layoutX="706.0" layoutY="540.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.772549033164978" blue="0.23529411852359772" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <BarChart layoutX="351.0" layoutY="408.0" prefHeight="146.0" prefWidth="195.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <PieChart layoutX="421.0" layoutY="189.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="157.0" />
+      <Label fx:id="Nbprojects" layoutX="639.0" layoutY="205.0" prefHeight="26.0" prefWidth="40.0" style="-fx-font-family: Arial;" text="Nbprojects">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <ImageView fitHeight="20.0" fitWidth="52.0" layoutX="686.0" layoutY="192.0">
+         <image>
+            <Image url="@../icons/Profil/Group 101.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="85.0" layoutX="639.0" layoutY="408.0">
+         <image>
+            <Image url="@../icons/Profil/Frame 77.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="20.0" layoutX="742.0" layoutY="31.0">
+         <image>
+            <Image url="@../icons/Profil/Group 153.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="191.0" layoutY="45.0">
+         <image>
+            <Image url="@../icons/Profil/Vector (1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="191.0" layoutY="81.0">
+         <image>
+            <Image url="@../icons/Profil/Vector (2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="192.0" layoutY="116.0">
+         <image>
+            <Image url="@../icons/Profil/Vector.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image" fitHeight="136.0" fitWidth="127.0" layoutX="44.0" layoutY="28.0">
+         <image>
+            <Image url="@../icons/Profil/ImagePersonnel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="85.0" layoutX="328.0" layoutY="250.0">
+         <image>
+            <Image url="@../icons/Profil/Group 154 (1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
