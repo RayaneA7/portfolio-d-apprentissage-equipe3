@@ -24,6 +24,9 @@ public class Utilisateur {
     this.mesProjets = mesProjets;}
   }
 
+  public ArrayList<Projet> getMesProjets() {
+    return mesProjets;
+  }
 
   public static void serialize(Utilisateur user) {
 

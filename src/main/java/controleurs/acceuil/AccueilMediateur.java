@@ -13,12 +13,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import models.Utilisateur;
+import de.neuland.pug4j.Pug4J;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class AccueilMediateur implements Initializable {
@@ -40,6 +43,18 @@ public class AccueilMediateur implements Initializable {
          System.out.println("le student folder est :"+studentFolder);
          try {
             utilisateur = Utilisateur.deserialization(studentFolder);
+        /****ici on cree l html ***/
+             Map<String, Object> model = new HashMap<String, Object>();
+             model.put("projets",utilisateur.getMesProjets());
+             System.out.println(model);
+
+
+
+
+
+
+
+
          } catch (IOException e) {
             e.printStackTrace();
             System.out.println("un probleme se génere lors de la désirialisation des données de l'utilisateur");
@@ -104,8 +119,16 @@ public class AccueilMediateur implements Initializable {
             e.printStackTrace();
         }
          /********************************************************************/
+        /************************/
+        loader =new FXMLLoader(getClass().getResource("/views/profile.fxml"));
+        try {
+            memory.add(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        /***********************/
          monPagination =new Pagination();
-         monPagination.setPageCount(6);
+         monPagination.setPageCount(7);
          monPagination.setCurrentPageIndex(0);
          monPagination.setMaxPageIndicatorCount(1);
          monPagination.setPageFactory(new Callback<Integer, Node>() {

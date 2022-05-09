@@ -1,6 +1,7 @@
 package controleurs.acceuil;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -80,7 +81,6 @@ public class AccueilController implements Initializable {
     @FXML
     Line line5;
     /****************************************************************/
-    Utilisateur user = new Utilisateur();
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
     Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
@@ -100,6 +100,12 @@ public class AccueilController implements Initializable {
             if(AccueilMediateur.image!=null){
                 imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
             }
+            imagePersonnel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    AccueilMediateur.monPagination.setCurrentPageIndex(6);
+                }
+            });
         /****************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
@@ -113,7 +119,6 @@ public class AccueilController implements Initializable {
             AccueilImage.setImage(AccueilImg);
             line1.setStyle("-fx-stroke: #b7b5b5");
         });
-
         ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
             ProjetLabel.setTextFill(Color.WHITE);

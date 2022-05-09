@@ -1,6 +1,7 @@
 package controleurs.acceuil;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -88,6 +89,12 @@ public class Accueil_1Controller implements Initializable {
             if(AccueilMediateur.image!=null){
                 imagePersonnnel.setFill(new ImagePattern(AccueilMediateur.image));
             }
+            imagePersonnnel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                AccueilMediateur.monPagination.setCurrentPageIndex(6);
+            }
+            });
             /**************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
