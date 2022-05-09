@@ -14,8 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import models.LoginUser;
-import models.LoginUtilisateurs;
+import models.*;
 
 import java.io.*;
 import java.net.URL;
@@ -23,6 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class SignUp2Controller implements Initializable {
@@ -213,8 +213,12 @@ public class SignUp2Controller implements Initializable {
             File srcDir = new File("DonnesUtilisateurs/Etudiant");
             File destDir = new File("DonnesUtilisateurs/" + studentFolder);
             copyFolder(srcDir.toPath(), destDir.toPath());
-            System.out.println("fiate2");
-            ConnectController.create(ConnectController.user);
+            System.out.println("faite2");
+            Projet projet = new Projet();
+            projet.setId(new UUID(5,6));
+            projet.setTitre("fsfds");
+            ConnectController.user.ajouterProjet(projet);
+           ConnectController.create(ConnectController.user);
             /***************/
             LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
                     ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());

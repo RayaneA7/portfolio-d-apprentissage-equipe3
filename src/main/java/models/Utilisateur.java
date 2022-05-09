@@ -2,24 +2,37 @@ package models;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Utilisateur {
   public DonnesPersonnels donnes;
   public Contacts contacts;
 
+  ArrayList<Projet> mesProjets;
+
+  public void setMesProjets(ArrayList<Projet> mesProjets) {
+    if (this.mesProjets == null) {
+      this.mesProjets = new ArrayList<Projet>();
+    }else {
+    this.mesProjets = mesProjets;}
+  }
+
+
   public static void serialize(Utilisateur user) {
 
     Writer writer = null;
     try {
       writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateur/user.json"));
+//      RuntimeTypeAdapterFactory<Projet> parameterAdapterFactory = RuntimeTypeAdapterFactory.of(Projet.class, "type");
+//      parameterAdapterFactory.registerSubtype(ProjetClub.class, "ProjetClub");
+//      parameterAdapterFactory.registerSubtype(PasswordParameter.class, "PasswordParameter");
       Gson gson = new GsonBuilder().setPrettyPrinting().create();
       gson.toJson(user, writer);
 
@@ -50,6 +63,12 @@ public class Utilisateur {
     return user;
   }
 
+  public void ajouterProjet(Projet projet) {
+    setMesProjets(mesProjets);
+    mesProjets.add(projet);
+
+  }
+
   public DonnesPersonnels getDonnes() {
     return donnes;
   }
@@ -66,3 +85,5 @@ public class Utilisateur {
     this.contacts = contacts;
   }
 }
+
+
