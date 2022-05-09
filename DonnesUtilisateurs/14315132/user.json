@@ -1,0 +1,26 @@
+{
+  "donnes": {
+    "matricule": "14315132",
+    "nom": "fdsklfjad",
+    "prenom": "fjdafodf",
+    "Datenaissance": "5/4/2002",
+    "sex": "MALE",
+    "motdePasse": "fc793fd39b2f6fb7d7a3d096235db663a45c8a46ab28483e7bf1405fb1f2be49",
+    "Email": "k_Ddfslf@esi.dz",
+    "niveauEtude": "1CP",
+    "bioPersonnel": "kdsj;flkas"
+  },
+  "contacts": {
+    "nbTelephone": 315151,
+    "countFacebook": "dfksjalsd",
+    "countGithub": "fdskajl",
+    "countLinkedln": "dsklafjaklsjdf"
+  },
+  "mesProjets": [
+    {
+      "id": "00000000-0000-0005-0000-000000000006",
+      "titre": "fsfds",
+      "competences": []
+    }
+  ]
+}

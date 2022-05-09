@@ -1,0 +1,26 @@
+{
+  "donnes": {
+    "matricule": "314123423",
+    "nom": "dsafflasjfsakld",
+    "prenom": "sdfajslfds",
+    "Datenaissance": "5/4/2002",
+    "sex": "MALE",
+    "motdePasse": "db99897ed75cc685618862d96b902cbe760ee67ff7eaad91417d1f624d5904ce",
+    "Email": "D_kdsjfalks@esi.dz",
+    "niveauEtude": "1CP",
+    "bioPersonnel": ""
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
+  },
+  "mesProjets": [
+    {
+      "id": "00000000-0000-0005-0000-000000000006",
+      "titre": "fsfds",
+      "competences": []
+    }
+  ]
+}
