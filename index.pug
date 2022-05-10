@@ -1,0 +1,65 @@
+doctype html
+html
+    head
+        title= pageName
+    body
+        header
+            .studentInfo
+                h1= info.nom + " " +info.prenom
+                p.niveau= info.niveauEtude
+                p= info.bioPersonnel
+                .contact
+                    div
+                        a
+                        p
+                    div
+                        a
+                        p
+            img.studentImage(src='/' + url)
+        main
+            section.Education
+                h2 Education
+                ul.projects
+                    each projet in projets
+                        if (projet.type == 'PEDAGOGIQUE')
+                            li.project
+                                div
+                                    h3= projet.titre
+                                        span= projet.date
+                                    p= projet.description
+                                    div.technologies
+                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
+
+
+
+            section.Clubs
+                h2 Education
+                ul.projects
+                    each projet in projets
+                        if (projet.type == 'CLUB')
+                            li.projet
+                                div
+                                    h3= projet.titre
+                                        span= projet.date
+                                    p= projet.description
+                                    div.technologies
+                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
+
+            section.Extra
+                h2 Education
+                ul.projects
+                    each projet in projets
+                        if (project.type == 'PERSONNEL')
+                            li.project
+                                div
+                                    h3= projet.titre
+                                        span= projet.date
+                                    p= projet.description
+                                    div.technologies
+                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
+        footer
+            div.skills
+                div
+                    a(href="#"): img(src='/' + url alt="facebook")
+                    a(href="#"): img(src='/' + url alt="github")
+                    a(href="#"): img(src='/' + url alt="linkedin")

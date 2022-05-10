@@ -1,0 +1,217 @@
+/* todos :
+- flex contact 
+- header we will make a title and picture and description also flex
+- the main will be devided into 3 sections 
+- each section will have a list of the projects
+- add the absolute shapes in the sides 
+- footer will be skills (soft hard ..)
+- add facebook github insta phone number juste abode the first line
+
+
+
+
+*/
+@import url('https://fonts.googleapis.com/css2&display=swap');
+
+main, aside {
+    border-left: 5px solid #F1C53C;
+    border-right: 5px solid #F1C53C;
+}
+
+body {
+    background-color: #ffffff;
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 1;
+    color: #666666;
+
+    /* place-items: center; */
+}
+
+ul.projects {
+
+    list-style: none;
+    position:relative;
+
+    padding: 0px 30px;
+
+    
+}
+
+header {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+    background-color: #F1C53C;
+    box-shadow: 0 20px 0 0 #F1C53C;
+    /* border-bottom: 2px solid #184173; */
+}
+main {
+
+    padding: 10px 20px;
+
+    
+}
+
+footer {
+    background-color: #F1C53C;
+
+}
+
+header > div >h1 {
+    color: #184173;
+    color: #ffffff;
+    font-weight: bolder;
+    /* border-bottom: 2px solid ;
+    border-color: #ffffff */
+
+}
+
+
+.studentInfo {
+    display: inline;
+
+}
+
+.niveau {
+    color: #fafafa;
+    font-size: medium;
+    font-weight: 900;
+    border-bottom: 1px solid ;
+    padding-bottom: 4px;
+    border-color: #ffffff;
+    display: inline;
+    margin-left: 5px;
+
+}
+
+.StudentImage {
+display: inline;
+width: 180px;
+/* border: 2px solid ; */
+border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+border-color: #F1C53C;
+}
+.projectTitle {
+    color: #F1C53C;
+    font-weight: bolder;
+    color: #000000;
+
+
+
+    
+
+}
+
+.project {
+    position: relative;
+}
+
+.project > div{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 4px 12px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: 0 0px;
+    padding-bottom: 0.5em;
+    margin-bottom: 10px;
+    border-width: 10px;
+    z-index: 10;
+    position: relative;
+
+}
+.technologies {
+    background-color: #fafafa;
+    display: inline;
+    font-style: italic;
+    font-size: small;
+}
+.projectDate {
+    color: #666666;
+    font-size: small;
+    vertical-align:middle;
+}
+
+section > h2 {
+    color: #184173;
+    border-bottom: 2px solid ;
+    border-color: #184173;
+}
+
+.shape {
+    z-index: 0;
+    position:relative;
+    width: 10%;
+}
+.bleuShape {
+    top: -100px;
+    float:right;
+    right: -50px;
+    /* top: -340px;
+    left: 0em; */
+}
+.yellowShape {
+
+    /* right: -800px; */
+    /* bottom: 200px; */
+    float: right;
+    top: -60px;
+}
+
+.rights {
+    color: #fafafa ;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+.logo {
+    width: 20px;
+}
+
+.skills {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills > div {
+    display: inline;
+    border-bottom: 2px solid #fafafa;
+
+}
+
+.contact {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contact > div {
+    font-size: medium;
+    font-weight: bolder;
+    color: #184173;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.contact > div > p {
+    display: inline;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}
+
+section {
+    margin-bottom: 20px;
+
+}

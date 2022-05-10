@@ -17,8 +17,11 @@ import de.neuland.pug4j.Pug4J;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +49,23 @@ public class AccueilMediateur implements Initializable {
         /****ici on cree l html ***/
              Map<String, Object> model = new HashMap<String, Object>();
              model.put("projets",utilisateur.getMesProjets());
-             System.out.println(model);
+             model.put("pageName","Ecareer");
+             model.put("info",utilisateur.getDonnes());
+             System.out.println(utilisateur.donnes.getSex());
+             Writer writer=null;
+             try {
+
+                     String html = Pug4J.render("./index.pug", model);
+                     System.out.println("hhhhhhhhhhhhhhhhhhhhhhh");
+                     System.out.println(html);
+                     writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/" + utilisateur.donnes.getMatricule()+"/index.html"));
+                     writer.write(html);
+                     writer.close();
+             } catch (IOException e) {
+                 throw new RuntimeException(e);
+             }
+
+
 
 
 
