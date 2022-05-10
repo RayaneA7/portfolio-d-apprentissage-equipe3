@@ -1,0 +1,32 @@
+html
+    head
+        title= pageName
+        style
+            include /style.css
+    body
+        header
+            .studentInfo
+                h1
+                p.niveau
+            img.studentImage(src='/' + url)
+        main
+            p= pageName
+            section.Education
+                h2 Education
+                ul.projects
+                    each projet in projets
+                        if(projet.type == "PEDAGOGIQUE")
+                            li.project
+                                div
+                                    h3= projet.titre
+                                        span= projet.date
+                                    p= projet.description
+                                    div.technologies
+                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
+
+        footer
+            div.skills
+                div
+                    a(href="#"): img(src='/' + url alt="facebook")
+                    a(href="#"): img(src='/' + url alt="github")
+                    a(href="#"): img(src='/' + url alt="linkedin")

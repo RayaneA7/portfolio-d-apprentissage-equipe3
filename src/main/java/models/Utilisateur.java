@@ -16,6 +16,9 @@ public class Utilisateur {
   public Contacts contacts;
 
   ArrayList<Projet> mesProjets;
+  private ArrayList<Portfolio> mesPortfolios;
+
+
 
   public void setMesProjets(ArrayList<Projet> mesProjets) {
     if (this.mesProjets == null) {
@@ -72,6 +75,12 @@ public class Utilisateur {
 
   }
 
+
+  //ovveride equals in order to fix the problem of deletion
+//  public Portfolio supprimerProjet() {
+//
+//  }
+
   public DonnesPersonnels getDonnes() {
     return donnes;
   }
@@ -86,6 +95,17 @@ public class Utilisateur {
 
   public void setContacts(Contacts contacts) {
     this.contacts = contacts;
+  }
+
+  public ArrayList<Portfolio> getMesPortfolios() {
+    return mesPortfolios;
+  }
+
+  public void setMesPortfolios(ArrayList<Portfolio> mesPortfolios) {
+    if (this.mesPortfolios == null) {
+      this.mesPortfolios = new ArrayList<Portfolio>();
+    }else {
+      this.mesPortfolios = mesPortfolios;}
   }
 }
 
