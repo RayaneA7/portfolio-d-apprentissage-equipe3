@@ -1,0 +1,18 @@
+{
+  "donnes": {
+    "matricule": "Etudiant",
+    "nom": "Etudiant",
+    "prenom": "",
+    "Datenaissance": "",
+    "sex": "",
+    "motdePasse": "",
+    "Email": "",
+    "niveauEtude": ""
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
+  }
+}

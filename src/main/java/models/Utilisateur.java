@@ -2,8 +2,6 @@ package models;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
@@ -17,31 +15,30 @@ public class Utilisateur {
   public DonnesPersonnels donnes;
   public Contacts contacts;
 
-  public ArrayList<Project> getListProjets() {
-    return listProjets;
+  ArrayList<Projet> mesProjets;
+  private ArrayList<Portfolio> mesPortfolios;
+
+
+
+  public void setMesProjets(ArrayList<Projet> mesProjets) {
+    if (this.mesProjets == null) {
+      this.mesProjets = new ArrayList<Projet>();
+    }else {
+    this.mesProjets = mesProjets;}
   }
 
-  public void setListProjets(ArrayList<Project> listProjets) {
-    this.listProjets = listProjets;
+  public ArrayList<Projet> getMesProjets() {
+    return mesProjets;
   }
 
-  public ArrayList<Project> listProjets ;
-
-  public ArrayList<Portfolio> getListPortfolio() {
-    return listPortfolio;
-  }
-
-  public void setListPortfolio(ArrayList<Portfolio> listPortfolio) {
-    this.listPortfolio = listPortfolio;
-  }
-
-  public ArrayList<Portfolio> listPortfolio ;
-
-  public static void serialize(Utilisateur user,String studentFolder) {
+  public static void serialize(Utilisateur user) {
 
     Writer writer = null;
     try {
-      writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/"+studentFolder+"/user.json"));
+      writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateur/user.json"));
+//      RuntimeTypeAdapterFactory<Projet> parameterAdapterFactory = RuntimeTypeAdapterFactory.of(Projet.class, "type");
+//      parameterAdapterFactory.registerSubtype(ProjetClub.class, "ProjetClub");
+//      parameterAdapterFactory.registerSubtype(PasswordParameter.class, "PasswordParameter");
       Gson gson = new GsonBuilder().setPrettyPrinting().create();
       gson.toJson(user, writer);
 
@@ -72,6 +69,18 @@ public class Utilisateur {
     return user;
   }
 
+  public void ajouterProjet(Projet projet) {
+    setMesProjets(mesProjets);
+    mesProjets.add(projet);
+
+  }
+
+
+  //ovveride equals in order to fix the problem of deletion
+//  public Portfolio supprimerProjet() {
+//
+//  }
+
   public DonnesPersonnels getDonnes() {
     return donnes;
   }
@@ -87,4 +96,17 @@ public class Utilisateur {
   public void setContacts(Contacts contacts) {
     this.contacts = contacts;
   }
+
+  public ArrayList<Portfolio> getMesPortfolios() {
+    return mesPortfolios;
+  }
+
+  public void setMesPortfolios(ArrayList<Portfolio> mesPortfolios) {
+    if (this.mesPortfolios == null) {
+      this.mesPortfolios = new ArrayList<Portfolio>();
+    }else {
+      this.mesPortfolios = mesPortfolios;}
+  }
 }
+
+

@@ -13,7 +13,6 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.Utilisateur;
 import controleurs.acceuil.*;
@@ -59,12 +58,16 @@ public class Profil implements Initializable {
    @FXML
     private Hyperlink linkdin;
     @FXML
-    void openLink (ActionEvent event ) throws URISyntaxException,IOException{
+ void openLink (ActionEvent event ) throws URISyntaxException,IOException{
         Desktop.getDesktop().browse(new URI("https://www.linkedin.com/feed/"));
     }
+
     @FXML
     private Label lab2;
+
     Utilisateur user = new Utilisateur();
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /**************************pieChart********************************/
@@ -106,6 +109,7 @@ public class Profil implements Initializable {
         series.getData().add(new XYChart.Data<>("2020",17));
         series.getData().add(new XYChart.Data<>("2021",24));
         series.getData().add(new XYChart.Data<>("2022",70));
+
         barChart.getData().add(series);
         /*********************Image personnel********************/
 
@@ -124,12 +128,24 @@ public class Profil implements Initializable {
         }
         /**************************************************/
         logout.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.Déconnecter(event);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
+            Scene scene = null;
+            Stage stage = null;
+            try {
+                scene = new Scene(loader.load(), 800, 568);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
         });
     }
 
     public void PreviousPage(ActionEvent actionEvent) {
-       AccueilMediateur.monPagination.setCurrentPageIndex(0);
+
+        AccueilMediateur.monPagination.setCurrentPageIndex(0);
     }
 }
 /*******************************************************************************/

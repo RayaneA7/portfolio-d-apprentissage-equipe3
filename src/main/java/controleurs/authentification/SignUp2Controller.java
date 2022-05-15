@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,17 +14,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import models.LoginUser;
-import models.LoginUtilisateurs;
+import models.*;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class SignUp2Controller implements Initializable {
@@ -75,25 +72,12 @@ public class SignUp2Controller implements Initializable {
             }
         };
         myHelp.setOnMouseExited(event1);
-        myHelp.setOnMouseClicked(event2->{
-            try {
-                ConnectController.commutateur.AllerAide(event2);
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+        myHelp.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
             }
         });
-        /*********************assurer que l'utilisateur va saisir juste de nombdes dans le numéro de telephone*******************************/
-        UnaryOperator<TextFormatter.Change> integerFilter = change -> {
-            String input = change.getText();
-            if (input.matches("[0-9]*")){
-                return change;
-            }
-            return null;
-        };
-        monNumeroTelephone.setTextFormatter(new TextFormatter<String>(integerFilter));
-        /********************************************************************************/
         String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
         String typeA="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
         monAnchorpane.setOnMouseEntered(event2 -> {
@@ -170,9 +154,44 @@ public class SignUp2Controller implements Initializable {
                     e.printStackTrace();
                 }
             }
+            /********************************
+            if (file != null) {
+                try {
+                    input = new FileInputStream(file);
+                    output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateur/ImagePersonnel.png"));
+                    Files.copy(Path.of(file.getPath()), output);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    Image image = new Image(input);
+                    monPhoto.setImage(image);
+                    try {
+                        output.close();
+                        input.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+            /*************************************/
         });
     }
     //Copy methods
+    public static void copyFolder(Path src, Path dest) throws IOException {
+        try (Stream<Path> stream = Files.walk(src)) {
+            stream.forEach(source -> copy(source, dest.resolve(src.relativize(source))));
+        }
+    }
+
+    private static void copy(Path source, Path dest) {
+        try {
+            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
+    }
 
     /***************Logique de fonctionnement**********************/
     public void PreviousPage(ActionEvent actionEvent) {
@@ -184,7 +203,7 @@ public class SignUp2Controller implements Initializable {
         ConnectController.user.contacts.setCountLinkedln(monLinkedln.getText());
         ConnectController.user.donnes.setBioPersonnel(monBio.getText());
         String numerotelephone = monNumeroTelephone.getText();
-        if (monNumeroTelephone.getText()!="") {
+        if (verifiNumeroTelephone(monNumeroTelephone.getText()) == true) {
             ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
         }
         /********************************************************************/
@@ -194,8 +213,12 @@ public class SignUp2Controller implements Initializable {
             File srcDir = new File("DonnesUtilisateurs/Etudiant");
             File destDir = new File("DonnesUtilisateurs/" + studentFolder);
             copyFolder(srcDir.toPath(), destDir.toPath());
-            System.out.println("fiate2");
-            ConnectController.create(ConnectController.user);
+            System.out.println("faite2");
+            Projet projet = new Projet();
+            projet.setId(new UUID(5,6));
+            projet.setTitre("fsfds");
+            ConnectController.user.ajouterProjet(projet);
+           ConnectController.create(ConnectController.user);
             /***************/
             LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
                     ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
@@ -214,17 +237,19 @@ public class SignUp2Controller implements Initializable {
         ConnectController.studentFolder=ConnectController.user.donnes.getMatricule();
         ConnectController.accedreAcceuil(event);
     }
-    public static void copyFolder(Path src, Path dest) throws IOException {
-        try (Stream<Path> stream = Files.walk(src)) {
-            stream.forEach(source -> copy(source, dest.resolve(src.relativize(source))));
-        }
-    }
-
-    private static void copy(Path source, Path dest) {
-        try {
-            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
+    public boolean verifiNumeroTelephone(String numerotelephone){
+        int i=0;
+        boolean validate =true;
+            if(numerotelephone!="") {
+                while (i < numerotelephone.length() && validate != false) {
+                    char ch = numerotelephone.charAt(i);
+                    if (Character.isDigit(ch) == false) {
+                        validate = false;
+                    }
+                    i++;
+                }
+            }
+            else{validate=false ;}
+        return validate;
     }
 }
