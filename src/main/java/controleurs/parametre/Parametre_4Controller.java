@@ -9,112 +9,98 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import models.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.UnaryOperator;
 
 public class Parametre_4Controller implements Initializable {
     @FXML
-    Line ligne_info;
-    @FXML
-    Line ligne_passe;
-    @FXML
-    Line ligne_adress;
-    @FXML
-    Line ligne_contact;
-    //---------------------------------
-    @FXML
-    Button info_Button;
-    @FXML
-    Button passe_Button;
-    @FXML
-    Button Adress_Button;
-    @FXML
-    Button contact_Button;
-    String typeA="-fx-stroke:#305380 ;-fx-stroke-width:3";
-    @FXML
-    TextField studentPhone;
-    @FXML
-    TextField studentFB;
-    @FXML
-    TextField studentGithub;
-    @FXML
-    TextField studentLinkedIn;
+    private AnchorPane monAnchor1;
 
-    Utilisateur user;
-    String studentFolder;
+    @FXML
+    private AnchorPane monAnchor2;
 
+    @FXML
+    private AnchorPane monAncho3;
+
+    @FXML
+    private AnchorPane monAnchor4;
+
+    @FXML
+    private AnchorPane monAnchorConfirmation;
+    /************************************/
+    static TextField monNumeroTelephone ;
+    static TextField monCountGithub ;
+    static TextField monCountFacebook;
+    static TextField monCountLinkedln;
+    static Label ErreurNbTelephone ;
+    static Label ConfirmeModification ;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        monNumeroTelephone =new TextField();
+        monNumeroTelephone.setPrefSize(347,30);
+        UnaryOperator<TextFormatter.Change> integerFilter = change -> {
+            String input = change.getText();
+            if (input.matches("[0-9]*")){
+                return change;
+            }
+            return null;
+        };
+        monNumeroTelephone.setTextFormatter(new TextFormatter<String>(integerFilter));
+        monAnchor1.getChildren().add(monNumeroTelephone);
 
-        info_Button.setOnMouseClicked(e -> {
-            AccueilMediateur.monPagination.setCurrentPageIndex(2);
-        });
-        passe_Button.setOnMouseClicked(e -> {
-            AccueilMediateur.monPagination.setCurrentPageIndex(3);
-        });
-        Adress_Button.setOnMouseClicked(e -> {
-            AccueilMediateur.monPagination.setCurrentPageIndex(4);
-        });
-        /*************************************
-        //try {
-        studentPhone.setPromptText(
-              // String.valueOf(Utilisateur.deserialization(studentFolder).getContacts().getNbTelephone()));
-           "Phone null");
-        //  } catch (IOException e) {
-        //     e.printStackTrace();
-        //  }
-        //try {
-        studentFB.setPromptText(
-              // Utilisateur.deserialization(studentFolder).getContacts().getCountFacebook());
-                "FB null");
-        //  } catch (IOException e) {
-        //     e.printStackTrace();
-        //  }
-        //try {
-        studentGithub.setPromptText(
-              //  Utilisateur.deserialization(studentFolder).getContacts().getCountGithub());
-                "Github null");
-        //  } catch (IOException e) {
-        //     e.printStackTrace();
-        //  }
-      //  try {
+        monCountFacebook =new TextField();
+        monCountFacebook.setPrefSize(347,30);
+        monAnchor2.getChildren().add(monCountFacebook);
 
-        studentLinkedIn.setPromptText(
-                //Utilisateur.deserialization(studentFolder).getContacts().getCountLinkedln() );
-                 "LinkedIn null");
-        //} catch (IOException ioException) {
-        //    ioException.printStackTrace();
-       // }
-        // "LinkedIn null");
+        monCountGithub =new TextField();
+        monCountGithub.setPrefSize(347,30);
+        monAncho3.getChildren().add(monCountGithub);
 
-
-
+        monCountLinkedln =new TextField();
+        monCountLinkedln.setPrefSize(347,30);
+        monAnchor4.getChildren().add(monCountLinkedln);
+        /*******************************************************/
+        ConfirmeModification =new Label();
+        ConfirmeModification.setPrefSize(350,30);
+        ConfirmeModification.setStyle("-fx-text-fill :#19c62a ; -fx-font-family : Open Sans ; -fx-font-size : 16");
+        ConfirmeModification.setText("Informations Personnels modifiées avec succés !");
+        ConfirmeModification.setOpacity(0);
+        monAnchorConfirmation.getChildren().add(ConfirmeModification);
+        /********************************************/
+        if(AccueilMediateur.utilisateur.contacts.getNbTelephone()!=0) {
+            monNumeroTelephone.setText(String.valueOf(AccueilMediateur.utilisateur.contacts.getNbTelephone()));
+        }
+        monCountFacebook.setText(AccueilMediateur.utilisateur.contacts.getCountFacebook());
+        monCountGithub.setText(AccueilMediateur.utilisateur.contacts.getCountGithub());
+        monCountLinkedln.setText(AccueilMediateur.utilisateur.contacts.getCountLinkedln());
     }
-    /*********
-    public void SwitchScene (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Parametre_1View.fxml"));
-        Stage stage = (Stage)info_Button.getScene().getWindow();
-        stage.setScene(new Scene(root,850,600));
+    static void  ModifierContacts(){
+        System.out.println("modification des info personnels ");
+        long Nbtelephone =AccueilMediateur.utilisateur.contacts.getNbTelephone();
+        String countfacbook =AccueilMediateur.utilisateur.contacts.getCountFacebook();
+        String countgithub =AccueilMediateur.utilisateur.contacts.getCountGithub();
+        String countlindeln=AccueilMediateur.utilisateur.contacts.getCountLinkedln();
+        if(monNumeroTelephone.getText()==""){monNumeroTelephone.setText("0");}
+        if(Nbtelephone!=Long.parseLong(monNumeroTelephone.getText()) || !countfacbook.equals(monCountGithub.getText()) || !countgithub.equals(monCountGithub.getText())|| ! countlindeln.equals(monCountLinkedln.getText())) {
+            AccueilMediateur.utilisateur.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
+            AccueilMediateur.utilisateur.contacts.setCountFacebook(monCountFacebook.getText());
+            AccueilMediateur.utilisateur.contacts.setCountGithub(monCountGithub.getText());
+            AccueilMediateur.utilisateur.contacts.setCountLinkedln(monCountLinkedln.getText());
+            ConfirmeModification.setText("Contacts modifiés avec succés !");
+            Parametre_Controller.ModifierInformations();//la serialisation
+        }
+        else
+        {
+            ConfirmeModification.setText("Vous n'avez modifiés aucun champ ! ");
+        }
+        AccueilMediateur.commutateur.TraiterAlert(ConfirmeModification);
     }
-    public void SwitchScene2 (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Parametre_2View.fxml"));
-        Stage stage = (Stage)passe_Button.getScene().getWindow();
-        stage.setScene(new Scene(root,850,600));
-    }
-    public void SwitchScene3 (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Parametre_3View.fxml"));
-        Stage stage = (Stage)Adress_Button.getScene().getWindow();
-        stage.setScene(new Scene(root,850,600));
-    }
-    public void SwitchScene4 (ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Paarametre_4.fxml"));
-        Stage stage = (Stage)contact_Button.getScene().getWindow();
-        stage.setScene(new Scene(root,850,600));
-    }
-     /*******************/
- }
 }

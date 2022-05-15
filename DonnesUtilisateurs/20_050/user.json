@@ -1,0 +1,19 @@
+{
+  "donnes": {
+    "matricule": "20_050",
+    "nom": "Mohammed",
+    "prenom": "Arab",
+    "Datenaissance": "6/2/2002",
+    "sex": "MALE",
+    "motdePasse": "1a4059b0e530e67edd00136f3493b4479e2066d296dafd2f0f53a8de6b83043f",
+    "Email": "ky_Refise@esi.dz",
+    "niveauEtude": "1CS",
+    "bioPersonnel": ""
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "sn hshhdvsg",
+    "countGithub": "sjbbyveyfevyfe",
+    "countLinkedln": "dhvdvdvgfvgv"
+  }
+}

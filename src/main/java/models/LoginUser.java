@@ -36,4 +36,7 @@ public class LoginUser {
         this.email = email;
         this.matricule = matricule;
     }
+    public boolean equals(Object user){
+      return ((LoginUser)user).getEmail().equals(this.email);
+    }
 }

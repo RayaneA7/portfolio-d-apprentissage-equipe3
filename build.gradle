@@ -33,6 +33,8 @@ javafx {
 }
 
 dependencies {
+    implementation group:'com.opencsv',name:'opencsv',version:'4.4'
+    implementation group :'org.apache.commons',name :'commons-csv',version:'1.9.0'
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
     implementation group: 'eu.hansolo', name: 'Medusa', version: '11.1'
@@ -42,12 +44,12 @@ dependencies {
     implementation group: 'eu.hansolo', name: 'tilesfx', version: '1.0.7'
     // https://jmaven.com/maven/com.jidesoft/jidefx-converters
     implementation group: 'com.jidesoft', name: 'jidefx-converters', version: '0.9.1'
+    implementation 'com.epam:parso:2.0.14'
+    annotationProcessor 'org.jumpmind.symmetric:symmetric-csv:3.5.19'
     //testRuntimeOnly('com.github.cliftonlabs:json-simple:3.1.0')
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
-
     implementation('org.controlsfx:controlsfx:11.1.0')
     implementation('com.dlsc.formsfx:formsfx-core:11.3.2') {
         exclude(group: 'org.openjfx')

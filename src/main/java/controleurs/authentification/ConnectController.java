@@ -2,6 +2,8 @@ package controleurs.authentification;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import controleurs.passage.Commutateur;
+import controleurs.passage.RealiserAlert;
 import hashage.GenererHashage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,6 +31,7 @@ import models.*;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -41,6 +44,7 @@ public class ConnectController implements Initializable {
     static ArrayList<LoginUser> listLogins ;
     static Stage stage ;
     static Scene scene;
+    static Commutateur commutateur;
     private ArrayList<Parent> memory;
     @FXML
     private ImageView myHelp;
@@ -60,21 +64,21 @@ public class ConnectController implements Initializable {
     private Label alertEmail ;
     @FXML
     private Label alertMotPasse;
-
-    /*************************Variables de classe****************************/
+    /*************************Variables de classe********/
     public static String studentFolder ;
     private int dureeErreur=3000;
-    /*********************Logique d'affichage***************************/
+    /*********************Logique d'affichage************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /***********************************************/
+        commutateur =new Commutateur();
+        /*****************chargement de la liste des utilisateurs ******************************/
         LoginUtilisateurs loginUtilisateurs =new LoginUtilisateurs();
         try {
             listLogins=loginUtilisateurs.getList();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /***********************************************/
+        /**********************l'Aide en ligne *************************/
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -89,6 +93,15 @@ public class ConnectController implements Initializable {
             }
         };
         myHelp.setOnMouseExited(event1);
+        myHelp.setOnMouseClicked(event2->{
+            try {
+                ConnectController.commutateur.AllerAide(event2);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         /*****************traitment des actions********************/
         myHelp.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -198,6 +211,8 @@ public class ConnectController implements Initializable {
         user =new Utilisateur();
         user.contacts =new Contacts();
         user.donnes =new DonnesPersonnels();
+        user.listPortfolio =new ArrayList<>();
+        user.listProjets =new ArrayList<>();
         /*************************/
         pagination= new Pagination();
         pagination.setPageCount(3);

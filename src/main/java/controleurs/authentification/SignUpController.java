@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import models.Sex;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
@@ -96,14 +97,16 @@ public class SignUpController implements Initializable {
             }
         };
         myHelp.setOnMouseExited(event1);
-        /*************traitement des actions*****************/
-        myHelp.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
+        myHelp.setOnMouseClicked(event2->{
+            try {
+                ConnectController.commutateur.AllerAide(event2);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
-        /**********************************************/
+        /*************traitement des actions*************************/
         EventHandler<MouseEvent> event2 =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -211,14 +214,14 @@ public class SignUpController implements Initializable {
         }
         else
         {
-            TraiterAlert(erreurDateNaissance);
+            ConnectController.commutateur.TraiterAlert(erreurDateNaissance);
         }
       return result;
     }
     public int VerifierNom(){
         if(monNom.getText()=="")
         {
-            TraiterAlert(erreurNom);
+            ConnectController.commutateur.TraiterAlert(erreurNom);
             return 0;
         }
         else
@@ -229,7 +232,7 @@ public class SignUpController implements Initializable {
     public int VerifierPreNom(){
         if(monPrenom.getText()=="")
             {
-                TraiterAlert(erreurPrenom);
+                ConnectController.commutateur.TraiterAlert(erreurPrenom);
                 return 0;
             }
             else
@@ -238,6 +241,8 @@ public class SignUpController implements Initializable {
         }
     }
     public int VerifierMatricule(){
+        String nom= monMatricule.getText().replace('/','_');
+        monMatricule.setText(nom);
         int resultat =1;
         if(monMatricule.getText()!="")
         {
@@ -257,13 +262,13 @@ public class SignUpController implements Initializable {
          erreurMatricule.setText("Ce champ ne doit pas étre vide !");
          resultat=0;
         }
-        if(resultat==0){TraiterAlert(erreurMatricule);}
+        if(resultat==0){ConnectController.commutateur.TraiterAlert(erreurMatricule);}
         return resultat;
     }
     public int VerifierSexe(){
         if(monSexe.getText().equals("Sexe"))
         {
-          TraiterAlert(erreurSexe);
+          ConnectController.commutateur.TraiterAlert(erreurSexe);
           return 0;
         }
         else
@@ -274,20 +279,13 @@ public class SignUpController implements Initializable {
     public int VerifierNiveauEtude(){
         if(monNiveauEtude.getText().equals("Niveau d'étude"))
         {
-            TraiterAlert(erreurNiveauEtude);
+            ConnectController.commutateur.TraiterAlert(erreurNiveauEtude);
             return 0;
         }
         else
         {
             return 1;
         }
-    }
-    public void TraiterAlert(Node node)
-    {
-        Timer timer =new Timer();
-        TimerTask task =new RealiserAlert(node, timer);
-        node.setOpacity(1);
-        timer.schedule(task,dureeErreur);
     }
     public void NextPage(ActionEvent event) throws IOException {
         //afficher();

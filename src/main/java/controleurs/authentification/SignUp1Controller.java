@@ -15,6 +15,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
@@ -67,7 +69,7 @@ public class SignUp1Controller implements Initializable {
 
     /**************************Les constatnts **************************************/
     private int NbChMinEmail = 5;/*le nombre minimal des caractéres d'email*/
-    private int NbChminPassword=10;
+    private final int NbChminPassword=10;
     private boolean validatePassword =false;
     private double YposAnchorepane2;
 
@@ -81,8 +83,16 @@ public class SignUp1Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /********************/
+        String typeB="-fx-stroke:#19C62A ;-fx-stroke-width:4 ";
+        String typeA="-fx-stroke:#EFEFEF ;-fx-stroke-width:4 ";
+        /*****************/
+        String typeB1="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
+        String typeA1="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeC1="-fx-stroke: red ;-fx-stroke-width:3";
+        String typeD1="-fx-stroke:#19C62A ;-fx-stroke-width:3 ";
+        /******************************************************************/
         YposAnchorepane2 =monAnchorpane2.getLayoutY();
-
+        /**************************************************************/
         EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -97,22 +107,15 @@ public class SignUp1Controller implements Initializable {
             }
         };
         myHelp.setOnMouseExited(event1);
-        /**************traitment des actions****************************/
-        myHelp.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
+        myHelp.setOnMouseClicked(event2->{
+            try {
+                ConnectController.commutateur.AllerAide(event2);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
-        /*************************************/
-        String typeB="-fx-stroke:#19C62A ;-fx-stroke-width:4 ";
-        String typeA="-fx-stroke:#EFEFEF ;-fx-stroke-width:4 ";
-        /*****************/
-        String typeB1="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA1="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
-        String typeC1="-fx-stroke: red ;-fx-stroke-width:3";
-        String typeD1="-fx-stroke:#19C62A ;-fx-stroke-width:3 ";
-
         /************Traitment de mot ********/
         EventHandler<KeyEvent> event2 = new EventHandler<KeyEvent>() {
             @Override
@@ -298,8 +301,7 @@ public class SignUp1Controller implements Initializable {
             } else if (validatePassword == false) {
                 erreurMotPasse.setText(" Mot de passe faible ");
             }
-            SignUpController sign =new SignUpController();
-            sign.TraiterAlert(erreurMotPasse);
+            ConnectController.commutateur.TraiterAlert(erreurMotPasse);
             return 0;
         }
     }
@@ -337,8 +339,7 @@ public class SignUp1Controller implements Initializable {
         else{index=0;}
         if(index==0){
             erreurEmail.setText(erreur);
-            SignUpController controller =new SignUpController();
-            controller.TraiterAlert(erreurEmail);
+            ConnectController.commutateur.TraiterAlert(erreurEmail);
         }
         return index;
     }

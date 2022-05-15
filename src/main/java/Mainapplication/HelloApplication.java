@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 568);
         stage.setScene(scene);
-        Image icon = new Image((getClass().getResourceAsStream("/icons/Inscription/ProjectName.png")));
+        Image icon = new Image((getClass().getResourceAsStream("/icons/Inscription/Ecareer2.png")));
         if(icon!=null)
         {
             System.out.printf("icon is not  null");

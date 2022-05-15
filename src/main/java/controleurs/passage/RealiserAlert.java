@@ -1,15 +1,15 @@
-package controleurs.authentification;
+package controleurs.passage;
 
 import javafx.scene.Node;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-class RealiserAlert extends TimerTask {
+public class RealiserAlert extends TimerTask {
     private Node node ;
     private Timer timer;
 
-    RealiserAlert(Node node, Timer timer) {
+    public RealiserAlert(Node node, Timer timer) {
         this.node = node;
         this.timer = timer;
     }

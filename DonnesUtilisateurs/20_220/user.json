@@ -1,13 +1,14 @@
 {
   "donnes": {
     "matricule": "20_220",
-    "nom": "Mohammed",
-    "prenom": "Arab",
+    "nom": "Youcef",
+    "prenom": "Refiss",
     "Datenaissance": "6/2/2002",
     "sex": "MALE",
-    "motdePasse": "c28bc8712b0d703ecbcf19ca660fb00b5823fb878bf21aee4937e16894e2e355",
-    "Email": "ky_Youcef@esi.dz",
-    "niveauEtude": "1CS"
+    "motdePasse": "a380d775cb00a2f8095c78012e8a8b184b51dc294e84042ed80e8c3f56f3204f",
+    "Email": "ky_Youceff@esi.dz",
+    "niveauEtude": "1CS",
+    "bioPersonnel": "je suis un étudiant 2cp"
   },
   "contacts": {
     "nbTelephone": 0,

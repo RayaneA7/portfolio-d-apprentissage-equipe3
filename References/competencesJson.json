@@ -1,0 +1,2785 @@
+{
+  "listcompetences": [
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.1: Rédiger des spécifications fonctionnelles et techniques",
+      "ElemdeCompetence": "C11.1: Exploiter un formalisme de rédaction de spécifications fonctionelles et techniques",
+      "modules": [
+        "IGL",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Utiliser un langage dédié pour la rédaction de spécifications fonctionnelles et techniques"
+    },
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.2: Identifier et analyser le problème à résoudre",
+      "ElemdeCompetence": "C13.1: Identifier un contexte, identifier une problématique, et déterminer des objectifs",
+      "modules": [
+        "ASI",
+        "EMM",
+        "GPS",
+        "PFE",
+        "PRJS",
+        "PRJS",
+        "SPE"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.2: Identifier et analyser le problème à résoudre",
+      "ElemdeCompetence": "C13.2: Effectuer une analyse de l\u0027existant et/ou une étude bibliographique",
+      "modules": [
+        "ASI",
+        "MCSI",
+        "EMM",
+        "GPS",
+        "PFE",
+        "PRJS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.2: Identifier et analyser le problème à résoudre",
+      "ElemdeCompetence": "C13.3: Analyser un cahier de charge",
+      "modules": [
+        "ASI",
+        "GPS",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre un cahier de charge et identifier les éléments clés"
+    },
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.2: Identifier et analyser le problème à résoudre",
+      "ElemdeCompetence": "C13.4: Mettre en oeuvre les techniques de collecte des besoins",
+      "modules": [
+        "ASI",
+        "PRJS"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF1: Analyser le métier et les besoins d\u0027un client",
+      "Competence": "C1.2: Identifier et analyser le problème à résoudre",
+      "ElemdeCompetence": "C13.4: Mettre en oeuvre les techniques de collecte des besoins",
+      "modules": [
+        "ASI",
+        "PRJS"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.1: Exploiter les méthodes numériques pour modéliser des systèmes complexes linéaires non linéraires",
+      "modules": [
+        "ANUM"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.2: Programmer des méthodes numériques pour modéliser des systèmes complexes",
+      "modules": [
+        "ANUM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.3: Analyser une fonction réelle à une variable réelle",
+      "modules": [
+        "ANAL1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Effectuer un calcul différentiel et intégral sur une fonction réelle à variable réelle. Etude du comportement asymptotique."
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.4: Identifier et analyser des structures algébriques",
+      "modules": [
+        "ALG1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.5: Analyser un polynôme à une indéterminée à coefficients dans un anneau",
+      "modules": [
+        "ALG1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.6: Développer en séries entières des fonctions usuelles de l’analyse dans le but de mettre en œuvre des algorithmes d’approximation des nombres",
+      "modules": [
+        "ANAL2",
+        "ANAL3"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.7: Utiliser des méthodes de résolution des EDO",
+      "modules": [
+        "ALG3",
+        "ANAL2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.8: Exploiter l\u0027algèbre linéaire et calcul matriciel dans la méodélisation et résolution de problèmes",
+      "modules": [
+        "ALG2",
+        "ALG3"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.1: Modéliser numériquement un système complexe",
+      "ElemdeCompetence": "C21.9: Résoudre des équations à dérivées partielles",
+      "modules": [
+        "ANAL4"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.1: Exploiter la théorie des graphes pour modéliser un système de systèmes complexe",
+      "modules": [
+        "RO"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.2: Exploiter la programmation linéaire pour modéliser et chercher une solution à un problème",
+      "modules": [
+        "RO"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.3: Exploiter la théorie de files d\u0027attentes pour modéliser un système",
+      "modules": [
+        "FAS",
+        "FASI"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Etudier les différents modèles de files d\u0027attente et calculer les paramètres de performance"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.4: Mettre en oeuvre la simulation d\u0027un système",
+      "modules": [
+        "FAS",
+        "FASI",
+        "MSS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Apprendre les techniques de simulation"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.5: Exploiter la théorie des processus stochastiques pour résoudre des problèmes d\u0027estimation, d\u0027optimisation et d\u0027apprentissage statistique",
+      "modules": [
+        "MSS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Exploiter la théorie des processus stochastiques pour résoudre des problèmes d\u0027estimation, d\u0027optimisation et d\u0027apprentissage statistique"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.6: Analyser des topologies de IR² et IR³",
+      "modules": [
+        "ANAL3"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.7: Analyser la géométrie des courbes et des surfaces",
+      "modules": [
+        "ANAL4"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.2: Modéliser et optimiser un système complexe",
+      "ElemdeCompetence": "C22.8: Exploiter les résultats des fonctions à plusieurs variables pour traiter certains problèmes d’optimisation sans ou avec contraintes",
+      "modules": [
+        "ANAL4"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.1: Déterminer le courant et la tension dans un circuit électrique comprenant des sources de tension continue, des condensateurs et des résistances,",
+      "modules": [
+        "ELECT"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.2: Déterminer le courant et la tension dans un circuit en régime alternatif",
+      "modules": [
+        "ELECT"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.3: Déterminer les caractéristiques d’un circuit par la représentation quadripolaire",
+      "modules": [
+        "ELECT"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.4: Réaliser une analyse et un tracé du diagramme Bode",
+      "modules": [
+        "ELECT"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.5: Interprêter le principe de la conduction dans les semi-conducteurs et dans les jonctions PN",
+      "modules": [
+        "ELEF1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.6: Identifier les caractéristiques de fonctionnements des composants électroniques (diodes, transistors bipolaires, transistors à effet de champ)",
+      "modules": [
+        "ELEF1"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.7: Utiliser des composants électroniques dans des applications concrètes : redressement, écrêtages, stabilisations, amplifications, commutations, portes logiques..",
+      "modules": [
+        "ELEF1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.8: Concevoir et analyser un circuit de production de signaux analogiques et numériques,",
+      "modules": [
+        "ELEF2"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Produire des signaux analogiques et numériques"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.3: Analyser et concevoir un circuit électrique",
+      "ElemdeCompetence": "C23.9: Concevoir et analyser des circuits d\u0027acquisition de données",
+      "modules": [
+        "ELEF2"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "comprendre le fonctionnement des montages de base d’une chaîne d’acquisition de données (échantillonneurs/bloqueurs, convertisseurs, amplificateur, horloge),"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.4: Analyser des signaux et des images numériques",
+      "ElemdeCompetence": "C24.1: Mettre en oeuvre les techniques et algorithme de traitement de signal",
+      "modules": [
+        "TSG"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Acquérir les notions nécessaires à la maîtrise des algorithmes et architectures de traitement du signal et de l\u0027image. Ces notions trouvent leurs applications dans des domaines aussi variés que les télécommunications, le multimédia, la robotique"
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.4: Analyser des signaux et des images numériques",
+      "ElemdeCompetence": "C24.2: Analyser les techniques de traitement d\u0027images et de reconnaissance de formes",
+      "modules": [
+        "IMN"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Acquérir les bases essentielles de traitement et d’analyse des images numériques et de la reconnaissance des formes. Des exemples concrets seront mis en œuvre à travers des TP et de mini-projets."
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.4: Analyser des signaux et des images numériques",
+      "ElemdeCompetence": "C24.3: Expérimeter des techniques de traitement d\u0027images et de reconnaissance de formes sur des problèmes concrêts",
+      "modules": [
+        "IMN"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Tester les techniques de traitement d\u0027images et de reconnaissance de formes sur des applications diverses : biométrie (reconnaissance et identification), documents, restauration de documents et des images etc.."
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.4: Analyser des signaux et des images numériques",
+      "ElemdeCompetence": "C24.4: Analyser la propagation de rayons lumineux",
+      "modules": [
+        "OOE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.4: Analyser des signaux et des images numériques",
+      "ElemdeCompetence": "C24.5: Analyser des ondes életromagnétiques",
+      "modules": [
+        "OOE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.1: Enumérer les hypothèses de la mécanique classique",
+      "modules": [
+        "MECA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.2: Identifier un objet assimilable à un point matériel",
+      "modules": [
+        "MECA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.3: Formaliser le mouvement d\u0027un point matériel dans différents systèmes de coordonnées",
+      "modules": [
+        "MECA"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.4: Calculer les vitesses et accélérations d\u0027un mobile pour une trajectoire quelconque",
+      "modules": [
+        "MECA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.5: Formaliser des actions extérieures s\u0027exerçant sur un point matériel",
+      "modules": [
+        "MECA"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.6: Ecrire et résoudre des équations de la dynamique régissant le mouvement d\u0027un point matériel",
+      "modules": [
+        "MECA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF2: Modéliser des systèmes complexes",
+      "Competence": "C2.5: Modéliser un phénomène physique en vue de l\u0027analyser par simulation numérique",
+      "ElemdeCompetence": "C25.6: Ecrire et résoudre des équations de la dynamique régissant le mouvement d\u0027un point matériel",
+      "modules": [
+        "MECA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.0: Analyser un système d\u0027information",
+      "ElemdeCompetence": "C30.1: Analyser et codifier une information",
+      "modules": [
+        "SINF"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "L’étudiant doit être capable de comprendre le concept de système afin de mieux l’utiliser en modélisation des situations complexes"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.0: Analyser un système d\u0027information",
+      "ElemdeCompetence": "C30.2: Discérner les types de systèmes et identifier leurs fonctions",
+      "modules": [
+        "SINF"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.0: Analyser un système d\u0027information",
+      "ElemdeCompetence": "C30.3: Discerner les types de systèmes d\u0027information et identifier leur rôle dans l\u0027organisation",
+      "modules": [
+        "SINF"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Il doit percevoir l’importance des systèmes d’information de l’entreprise ? Une économie de service, une économie de l’information voire création de la valeur."
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.1: Aligner une organisation aux objectifs métiers",
+      "ElemdeCompetence": "C31.1: Analyser les organisations et fonctions de l\u0027entreprise",
+      "modules": [
+        "ORG"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.1: Aligner une organisation aux objectifs métiers",
+      "ElemdeCompetence": "C31.2: Analyser le fonctionnement d\u0027un processus métier",
+      "modules": [
+        "ORG"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.1: Analyser un système d\u0027information selon une démarche systémique",
+      "modules": [
+        "MCSI",
+        "URSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.2: Concevoir un système d\u0027information en considérant les objectifs métiers selon une méthodologie",
+      "modules": [
+        "MCSI"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.3: Enumérer les principaux impacts des TIC/ numérique sur les organisations",
+      "modules": [
+        "SGOV",
+        "TICO",
+        "URSI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.4: Utiliser une démarche d\u0027analyse stratégique appliquée aux TIC",
+      "modules": [
+        "TICO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Utiliser une démarche d\u0027analyse stratégique appliquée aux TIC à travers quelques outils de base (SWOT, Modèle des 5 Forces et le modèle SAM)"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.5: Enumérer et comparer les principaux scénarii de structuration des TIC dans une organisation",
+      "modules": [
+        "SGOV",
+        "TICO"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.6: Décrire les principaux indicateurs du tableau de bord du DSI",
+      "modules": [
+        "TICO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.7: Rattacher les référentiels de ITGovernance aux différentes activités de la DSI",
+      "modules": [
+        "TICO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.8: Analyser la fonction d\u0027audit et décrire une démarche d\u0027audit d\u0027un système d\u0027information",
+      "modules": [
+        "AUSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Expliquer ce qu’est fondamentalement l’Audit et la typologie d’Audit Décrire les acteurs concernés Décrire une démarche générale d’Audit Appréhender les spécificités de l\u0027audit d\u0027un système d\u0027information et les types d\u0027activités concernées"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.9: Exploiter les outils et référentiels d\u0027audit et porter un jugement objectif sur un système d\u0027information",
+      "modules": [
+        "AUSI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre comment des référentiels sont utilisés par les auditeurs systèmes d\u0027information"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.A1: Appréhender les enjeux des données gouvernementales ouvertes pour renforcer l’intelligence gouvernementale",
+      "modules": [
+        "SGOV"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.2: Aligner un système d\u0027information avec la stratégie de l\u0027organisation",
+      "ElemdeCompetence": "C32.A2: Analyser le potentiel du Crowdsourcing/Crowfunding pour une plus grande participation citoyenne",
+      "modules": [
+        "SGOV"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.3: Concevoir et mettre en oeuvre un système d\u0027information géographique",
+      "ElemdeCompetence": "C33.1: Effectuer une analyse spaciale des données géographiques",
+      "modules": [
+        "SIG",
+        "SIGA"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Maîtriser la notion de positionnement spatial, puis fournir une méthode d’analyse spatiale des données cartographiques."
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.3: Concevoir et mettre en oeuvre un système d\u0027information géographique",
+      "ElemdeCompetence": "C33.2: Mettre en oeuvre l’acquisition, l’organisation et le stockage des images spatiales, satellitaires ou collectées sur le terrain.",
+      "modules": [
+        "SIG",
+        "SIGA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Effectuer l’acquisition, l’organisation puis le stockage dans des bases de données spécifiques des images Spatiales, satellitaires ou collectées sur le terrain."
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.3: Concevoir et mettre en oeuvre un système d\u0027information géographique",
+      "ElemdeCompetence": "C33.3: Modéliser les données géo-spatiales en 2D et 3D pour l’aide à la décision",
+      "modules": [
+        "SIG",
+        "SIGA"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "S’imprégner des techniques de modélisation de données géo-spaciales"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.4: Mettre en oeuvre une démarche de réalisation d\u0027un plan directeur informatique",
+      "ElemdeCompetence": "C34.1: Analyser et articuler les types de faisabilités",
+      "modules": [
+        "ASI",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.4: Mettre en oeuvre une démarche de réalisation d\u0027un plan directeur informatique",
+      "ElemdeCompetence": "C34.2: Elaborer un plan directeur informatique",
+      "modules": [
+        "ASI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.5: Concevoir et mettre en oeuvre un système d\u0027information d\u0027aide à la décision",
+      "ElemdeCompetence": "C35.1: Analyser les modèles sous-jacents aux systèmes d\u0027information d\u0027aide à la décision",
+      "modules": [
+        "SIAD"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.5: Concevoir et mettre en oeuvre un système d\u0027information d\u0027aide à la décision",
+      "ElemdeCompetence": "C35.2: Exploiter les méthodes et outils d\u0027aide à la décision",
+      "modules": [
+        "SIAD"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.5: Concevoir et mettre en oeuvre un système d\u0027information d\u0027aide à la décision",
+      "ElemdeCompetence": "C35.3: Concevoir et mettre en oeuvre des systèmes d\u0027aide à la décision",
+      "modules": [
+        "BI",
+        "BI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.6: Exploiter un système d\u0027information coopératif",
+      "ElemdeCompetence": "C36.1: Analyser le travail coopératif et identifier les TIC contribuant à l\u0027avantage coopératif",
+      "modules": [
+        "SIC"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Avoir les connaissances conceptuelles indispensables en matière de coopération plus spécifiquement le travail coopératif et des TIC contribuant à l’avantage coopératif (groupware, workflow, ..)."
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.6: Exploiter un système d\u0027information coopératif",
+      "ElemdeCompetence": "C36.2: Mettre en oeuvre, déployer et utiliser des systèmes d\u0027information coopératifs en entreprise",
+      "modules": [
+        "SIC"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Être capable de mettre en œuvre et de déployer en entreprise les systèmes d’information coopératifs les plus courants"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.1: Analyser l\u0027intégration de systèmes d\u0027information de gestion",
+      "modules": [
+        "PGI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Assimiler les concepts liés à l’intégration des systèmes d’Information de gestion."
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.2: Identifier et modéliser des processus métiers",
+      "modules": [
+        "PGI",
+        "URSI"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Maitriser la modélisation de processus métiers (identification, modélisation)"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.3: Elaborer des solutions d’intégration à travers les technologies d’ERP et d’EAI",
+      "modules": [
+        "PGI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.4: Mettre en relief les bénéfices et les freins qui peuvent se présenter à l\u0027intégration des systèmes d\u0027information de gestion",
+      "modules": [
+        "PGI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.5: Mettre en oeuvre un projet d\u0027urbanisation d\u0027un système d\u0027information",
+      "modules": [
+        "URSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Acquérir les connaissances \"de base\" relatives à l\u0027urbanisation des systèmes d\u0027information Acquérir des connaissances plus approfondies dans le domaine de la conduite et le management de projets d\u0027urbanisation des systèmes d\u0027information"
+    },
+    {
+      "FamilledeCompetence": "CF3: Concevoir des systèmes d\u0027information",
+      "Competence": "C3.7: Mettre en oeuvre l\u0027intégration de systèmes d\u0027information de gestion",
+      "ElemdeCompetence": "C37.5: Mettre en oeuvre un projet d\u0027urbanisation d\u0027un système d\u0027information",
+      "modules": [
+        "URSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Acquérir les connaissances \"de base\" relatives à l\u0027urbanisation des systèmes d\u0027information Acquérir des connaissances plus approfondies dans le domaine de la conduite et le management de projets d\u0027urbanisation des systèmes d\u0027information"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.1: Construire une analyse à partir de l’énoncé d’un problème",
+      "modules": [
+        "ALSDS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "procéder à son découpage modulaire analyser et construire séparément des différents modules (principal et secondaires). valider chaque module"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.2: Identifier les structures algorithmiques statiques et dynamiques adéquate pour construire un algorithme à partir de l’analyse d’un problème",
+      "modules": [
+        "ALSDD",
+        "ALSDS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.3: Déboguer un programme et vérifier un algorithme",
+      "modules": [
+        "ALSDD",
+        "ALSDS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.4: Proposer un découpage modulaire en procédures et/ou fonctions et le justifier",
+      "modules": [
+        "ALSDD",
+        "ALSDS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Programmer séparément les divers algorithmes correspondants aux modules (principal et secondaires)"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.5: Traduire un algorithme dans un langage de programmation et le commenter",
+      "modules": [
+        "ALSDD",
+        "ALSDS",
+        "PYT"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer des applications informatiques répondant aux besoins d\u0027un client"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.6: Confectionner un dossier technique de programmation",
+      "modules": [
+        "ALSDD",
+        "ALSDS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.7: Concevoir des structures de fichiers efficaces et répondant aux besoins de tout type d\u0027applications, y compris le cas des données volumineuses et massives.",
+      "modules": [
+        "SFSD"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.8: Identifier les différents types d’organisation des fichiers et effectuer un choix d\u0027organisation répondant aux besoins des applications",
+      "modules": [
+        "SFSD"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.9: Concevoir et programmer une application avec un langage orienté objet",
+      "modules": [
+        "IGL",
+        "POO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.0: Développer des programmes informatiques",
+      "ElemdeCompetence": "C40.A: Mettre en oeuvre différents paradigmes de programmation",
+      "modules": [
+        "TPRO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Sélectionner et implémenter le paradigme de programmation adéquat pour la résolution d\u0027un problème"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.1: Proposer une conception orientée objet pour un problème métier",
+      "modules": [
+        "IGL",
+        "PDC",
+        "POO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.2: Modéliser une conception orientée objet en utilisant le diagramme de classes UML",
+      "modules": [
+        "IGL"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.3: Appliquer et mettre en oeuvre les patrons de conception",
+      "modules": [
+        "PDC"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.4: Analyser et documenter l\u0027architecture d\u0027un logiciel",
+      "modules": [
+        "AL",
+        "AL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Identifier les principaux styles architecturaux, évaluer les caractéristiques des solutions architecturales et les enjeux des services techniques (persistance, transactions) dans les architectures"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.5: Proposer et mettre en œuvre une architecture à partir de styles architecturaux existants",
+      "modules": [
+        "AL",
+        "AL",
+        "IGL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir une architecture à partir des attributs de qualité et les styles architecturaux"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.6: Proposer et mettre en œuvre des architectures à base de services et de micro-services",
+      "modules": [
+        "AL",
+        "AL",
+        "IGL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+      "ElemdeCompetence": "C41.7: Mettre en œuvre des modèles de déploiement tels que les conteneurs ou le cloud pour les architectures complexes",
+      "modules": [
+        "AL",
+        "AL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.1: Appliquer une méthodologie pendant le cycle de développement logiciel",
+      "modules": [
+        "IGL",
+        "MA"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.2: Mettre en oeuvre une méthodologie agile dans le développement logiciel",
+      "modules": [
+        "MA",
+        "OGL"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "S’imprégner des pratiques agiles dans le développement logiciel selon une méthodologie."
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.3: Analyser les risques dans un processus de développement logiciel",
+      "modules": [
+        "QL"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Analyser les risques dans un processus de développement logiciel"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.4: Estimer le coût et l\u0027effort du développement logiciel en s\u0027appuyant sur une méthodologie",
+      "modules": [
+        "QL"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Estimer le coût et l\u0027effort du développement logiciel en s\u0027appuyant sur une méthodologie"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.5: Mettre en oeuvre les outils nécessaires pour automatiser les tâches répétitives du développement et faciliter le travail en équipe.",
+      "modules": [
+        "MA",
+        "OGL"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Rendre le processus de développement logiciel, en équipe, efficace et améliorer la qualité du logiciel"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.6: Mettre en oeuvre les tests unitaires et d\u0027intégration d\u0027un logiciel",
+      "modules": [
+        "OGL",
+        "QL",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Effectuer des tests structurel dans le cadre d\u0027un processus de développement logiciel"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.2: Mettre en oeuvre une méthodologie pour le développement logiciel",
+      "ElemdeCompetence": "C42.7: Mettre en œuvre les tests fonctionnels pour la qualité des logiciels",
+      "modules": [
+        "IGL",
+        "QL",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.4: Analyser et concevoir un langage",
+      "ElemdeCompetence": "C44.1: Effectuer une analyse lexicale et syntaxique d\u0027un langage",
+      "modules": [
+        "COM",
+        "THP"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.4: Analyser et concevoir un langage",
+      "ElemdeCompetence": "C44.2: Exploiter un outil de génération d\u0027analyseur syntaxique et lexical en vue de concevoir un langage",
+      "modules": [
+        "COM",
+        "THP"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.4: Analyser et concevoir un langage",
+      "ElemdeCompetence": "C44.3: Décrire et analyser la sémantique d\u0027un langage",
+      "modules": [
+        "COM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Interpréter la sémantique opérationnelle d\u0027un langage"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.4: Analyser et concevoir un langage",
+      "ElemdeCompetence": "C44.5: Programmer un compilateur d\u0027un langage vers une machine cible",
+      "modules": [
+        "COM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer un compilateur d\u0027un langage vers une machine cible"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.6: Développer une application Web",
+      "ElemdeCompetence": "C46.1: Exploiter des feuilles de style et des langages de balisage et de script pour développer des sites web hergonomiques et répondants aux besoins",
+      "modules": [
+        "PDJ",
+        "TDW"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer des sites web répondants aux besoins"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.6: Développer une application Web",
+      "ElemdeCompetence": "C46.2: Exploiter des langages et bases de données pour développer des sites web dyanmiques",
+      "modules": [
+        "PDJ",
+        "TDW"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer des applications web dynamiques"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.6: Développer une application Web",
+      "ElemdeCompetence": "C46.3: Exploiter un framework pour développer efficacement un site web dynamique, hérgonomique et sécurisé",
+      "modules": [
+        "PDJ"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer des site web dynamiques, hergonomiques et sécurisés."
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.7: Développer une application mobile",
+      "ElemdeCompetence": "C47.1: Analyser un système d\u0027exploitation mobile et son environnement de développement",
+      "modules": [
+        "TDM",
+        "TDM1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Analyser un système d\u0027exploitation mobile et identifier les différences avec un système classique. Maîtriser l\u0027environnement de développement d\u0027un système mobile."
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.7: Développer une application mobile",
+      "ElemdeCompetence": "C47.2: Exploiter un langage de programmation pour le développement d\u0027une application mobile",
+      "modules": [
+        "TDM",
+        "TDM1"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Développer des applications mobiles"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.7: Développer une application mobile",
+      "ElemdeCompetence": "C47.3: Concevoir et implémenter une application mobile interactive et multimédias",
+      "modules": [
+        "TDM",
+        "TDM2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et implémenter une application mobile interactive (notifications, fournisseurs de contenus) et multimédias (image, son, viédo)"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.7: Développer une application mobile",
+      "ElemdeCompetence": "C47.4: Concevoir et implémenter une application mobile manipulant des données",
+      "modules": [
+        "TDM",
+        "TDM2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et implémenter une application mobile connectée à un backend et manipulant des données stockées dans un fichier ou base de données"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.8: Concevoir et développer des interfaces homme-machine",
+      "ElemdeCompetence": "C48.1: Analyser et modéliser la fonction d\u0027interaction homme-machine",
+      "modules": [
+        "IHM"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Introduire les concepts de base de l’interaction Homme-Machine et donner une vision complète de tous les aspects liés à l’interaction Homme-Machine"
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.8: Concevoir et développer des interfaces homme-machine",
+      "ElemdeCompetence": "C48.2: Concevoir, développer et évaluer des interfaces homme-machine",
+      "modules": [
+        "IHM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Acquérir les compétences nécessaires pour le développement d’interface Homme-Machine."
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.8: Concevoir et développer des interfaces homme-machine",
+      "ElemdeCompetence": "C48.3: Développer des interfaces graphiques avec un langage de programmation orientée objet",
+      "modules": [
+        "POO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.9: Concevoir et développer un système de réalité virtuelle et/ou augmentée",
+      "ElemdeCompetence": "C49.1: Lister les concepts fondamentaux de la réalité virtuelle et la réalité augmentée",
+      "modules": [
+        "RV"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.9: Concevoir et développer un système de réalité virtuelle et/ou augmentée",
+      "ElemdeCompetence": "C49.2: Décrire le fonctionnement des dispositifs d’entrée et de sortie utilisés dans les applications de réalité virtuelle et réalité augmentée",
+      "modules": [
+        "RV"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.9: Concevoir et développer un système de réalité virtuelle et/ou augmentée",
+      "ElemdeCompetence": "C49.3: Expliquer les techniques graphiques utilisées dans les applications de réalité virtuelle et réalité augmentée",
+      "modules": [
+        "RV"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.9: Concevoir et développer un système de réalité virtuelle et/ou augmentée",
+      "ElemdeCompetence": "C49.4: Développer des environnements virtuels et des techniques d\u0027interaction 3D",
+      "modules": [
+        "RV"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.A: Analyser et concevoir des algorithmes",
+      "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+      "modules": [
+        "ALSDD",
+        "SFSD",
+        "TPRO",
+        "CRP"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.A: Analyser et concevoir des algorithmes",
+      "ElemdeCompetence": "C4A.2: Etudier les classes de problèmes et les différents type de résolution de problèmes",
+      "modules": [
+        "TPRO",
+        "CRP"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.A: Analyser et concevoir des algorithmes",
+      "ElemdeCompetence": "C4A.3: Etudier les paradigmes de programmation et les transformations de programmes",
+      "modules": [
+        "COM",
+        "TPRO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+      "Competence": "C4.A: Analyser et concevoir des algorithmes",
+      "ElemdeCompetence": "C4A.3: Etudier les paradigmes de programmation et les transformations de programmes",
+      "modules": [
+        "COM",
+        "TPRO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.1: Concevoir une Base de Données relationnelle",
+      "modules": [
+        "BDD"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Exploiter un langage de modélisation de base de données relationnelle"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.2: Utiliser SQL pour définir et manipuler des données relationnelles",
+      "modules": [
+        "BDD"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "None"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.4: Traduire un modèle entité/association vers un schéma relationnel, le normaliser et le manipuler avec l\u0027algèbre relationnelle.",
+      "modules": [
+        "BDD"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.5: Programmer avec le langage procédural SQL",
+      "modules": [
+        "BDA",
+        "BDDA",
+        "BDDA",
+        "BDDA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Ecrire des programmes avec le langage SQL selon sa dimension procédurale"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.6: Analyser l\u0027architecture d\u0027un SGBD relationnel",
+      "modules": [
+        "BDDA",
+        "BDDA",
+        "BDDA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre l’architecture d’un SGBD relationnel"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.1: Créer et interroger une BD relationnelle",
+      "ElemdeCompetence": "C51.7: Concevoir et mettre en oeuvre des bases de données multi-dimentionnelles",
+      "modules": [
+        "BDA",
+        "BDDA",
+        "BDDA",
+        "BDDA",
+        "BI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et implémenter des BDD multidimensionnelles."
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.3: Créer et manipuler des bases de données semi ou non structurées",
+      "ElemdeCompetence": "C53.1: Concevoir et mettre en oeuvre des bases de données semi-structurées",
+      "modules": [
+        "BDA",
+        "BDDA",
+        "BDDA",
+        "BDDA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et manipuler les données semi structurées de type XML"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.3: Créer et manipuler des bases de données semi ou non structurées",
+      "ElemdeCompetence": "C53.2: Concevoir et mettre en oeuvre des bases de données non structurées",
+      "modules": [
+        "BDA",
+        "BDDA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et manipuler les données non structurées avec NoSQL"
+    },
+    {
+      "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+      "Competence": "C5.3: Créer et manipuler des bases de données semi ou non structurées",
+      "ElemdeCompetence": "C53.2: Concevoir et mettre en oeuvre des bases de données non structurées",
+      "modules": [
+        "BDA",
+        "BDDA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir et manipuler les données non structurées avec NoSQL"
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.1: Analyser les techniques de description multidimensionnelle (réduction, visualisation, clustering,…)",
+      "modules": [
+        "ANAD"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Effectuer une description multidimensionnelle sur une masse de données"
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.2: Effectuer une modélisation statistique (régression, classification) sur une masse de données",
+      "modules": [
+        "ANAD"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.3: Utiliser et développer des méthodes d\u0027apprentissage automatique pour l\u0027analyse de big data",
+      "modules": [
+        "BDM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "L\u0027utilisation et le développement de méthodes liées à l\u0027apprentissage automatique pour l\u0027analyse des big data."
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.4: Utiliser et développer des techniques d\u0027apprentissage automatique",
+      "modules": [
+        "ML"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.5: Effectuer une description statiistique sur une masse de données",
+      "modules": [
+        "PRST1"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": "Présenter les données sous une forme brute, en les réduisant à quelques résumés graphiques et paramètres caractéristiques."
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.6: Modéliser un phénomène aléatoire avec une loi de probabilité",
+      "modules": [
+        "PRST1"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C61.7: Analyser l\u0027éspérance et la convergence d\u0027un phénomène aléatoire",
+      "modules": [
+        "PRST2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.1: Ressortir l\u0027information pertinente à partir d\u0027une masse de données",
+      "ElemdeCompetence": "C67.8: Interroger une population et estimer les résultats d\u0027un sondage à partir d\u0027un échantillon",
+      "modules": [
+        "PRST2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.2: Analyser un processus d\u0027analyse de données",
+      "ElemdeCompetence": "C62.1: Caractériser un système de grandes masses de données et décrire son environnement de développement",
+      "modules": [
+        "BDM"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Se familiariser avec le big data et son environnement de développement."
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.2: Analyser un processus d\u0027analyse de données",
+      "ElemdeCompetence": "C62.2: Décliner les activités d\u0027un processus d\u0027analyse de grandes masses de données (génération, acquisition, analyse,..)",
+      "modules": [
+        "BDM"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Se familiariser avec le processus d\u0027analyse des big data (génération, acquisition, analyse,.."
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.2: Analyser un processus d\u0027analyse de données",
+      "ElemdeCompetence": "C62.3: Décliner les activités d\u0027un processus d\u0027apprentissage automatique",
+      "modules": [
+        "ML"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.3: Identifier les outils et technologies pour l\u0027analyse de données",
+      "ElemdeCompetence": "C63.1: Mobiliser les outils pour traiter les données et interpréter les résultats",
+      "modules": [
+        "ANAD"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Utiliser les outils adéquat pour analyser les données"
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.3: Identifier les outils et technologies pour l\u0027analyse de données",
+      "ElemdeCompetence": "C63.2: Mobiliser des outils et technologies pour le dévloppement de projets de big data analytique",
+      "modules": [
+        "BDM"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Développer des projets Big data analytique avec toute la technologie associée sur de grand datasets."
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.4: Analyser et exploiter des méthodes de résolution de problèmes combinatoires",
+      "ElemdeCompetence": "C64.1: Analyser des méthodes de résolution des problèmes d’optimisation combinatoire",
+      "modules": [
+        "CRP",
+        "OPT"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Etudier les méthodes de résolution des problèmes d’optimisation combinatoire en allant des méthodes exactes vers les méthodes approchées,"
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.4: Analyser et exploiter des méthodes de résolution de problèmes combinatoires",
+      "ElemdeCompetence": "C64.2: Expérimenter différentes méthodes d\u0027optimisation pour résoudre des problèmes combinatoires",
+      "modules": [
+        "OPT"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Montrer l’applicabilité effective des méthodes présentées à des problèmes pratiques. Se rendre compte des limites de chaque famille de méthodes d’optimisation et de leur dépendance des différents paramètres en entrée, d’où la nécessité de proposer de nouveaux paradigmes (méthodes hybrides, parallèles, hyper-heuristiques, apprentissage automatique)"
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.5: Formaliser l\u0027énoncé d\u0027un problème et analyser sa satisfiabilité",
+      "ElemdeCompetence": "C65.1: Exploiter une logique propositionnelle pour formaliser l\u0027énoncé d\u0027un problème",
+      "modules": [
+        "LOGM"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.5: Formaliser l\u0027énoncé d\u0027un problème et analyser sa satisfiabilité",
+      "ElemdeCompetence": "C65.2: Utiliser la théorie des modèles ou de la démonstration pour montrer la satisfiabilité de l\u0027énoncé d\u0027un problème",
+      "modules": [
+        "LOGM"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF6: Concevoir des systèmes orientés données et/ou d\u0027aide à la décision",
+      "Competence": "C6.5: Formaliser l\u0027énoncé d\u0027un problème et analyser sa satisfiabilité",
+      "ElemdeCompetence": "C65.2: Utiliser la théorie des modèles ou de la démonstration pour montrer la satisfiabilité de l\u0027énoncé d\u0027un problème",
+      "modules": [
+        "LOGM"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.1: Concevoir et mettre en oeuvre un réseau local",
+      "ElemdeCompetence": "C71.1: Analyser les fonctions d\u0027un réseau local",
+      "modules": [
+        "RES1"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.1: Concevoir et mettre en oeuvre un réseau local",
+      "ElemdeCompetence": "C71.2: Mettre en oeuvre et configurer un réseau local",
+      "modules": [
+        "RES1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.1: Concevoir et mettre en oeuvre un réseau local",
+      "ElemdeCompetence": "C71.3: Configurer et administrer un réseau informatique",
+      "modules": [
+        "RES2"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.1: Analyser les menaces et les vulnérabilités d\u0027un système",
+      "modules": [
+        "IPLS",
+        "SEC",
+        "SSR",
+        "MSSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "None"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.2: Sécuriser un système informatique",
+      "modules": [
+        "IPLS",
+        "SEC",
+        "SSR"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "None"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.3: Identifier les mécanismes cryptographiques permettant d\u0027assurer des services de sécurité requis",
+      "modules": [
+        "SEC",
+        "SSR"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.4: Exploiter des outils logiciels pour mettre en oeuvre des mécanismes de sécurité de données",
+      "modules": [
+        "IPLS",
+        "SEC",
+        "SSR"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.5: Identifier des protocoles de communication sécurisée en réponse à une politique de sécurité",
+      "modules": [
+        "IPLS",
+        "SSR"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Sélectionner les protocoles de sécurité en réponse à une politique de sécurité"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.6: Configurer un pare-feu pour mettre en oeuvre une politique de sécurité et de protection",
+      "modules": [
+        "SSR"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Filtrer les flux entrants et sortants d\u0027un réseau en réponse à une politique de sécurité"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.7: Organiser la sécurité d\u0027un système d\u0027information au sein de l\u0027entreprise",
+      "modules": [
+        "MSSI"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.8: Exploiter des outils d\u0027analyse de risques de sécuirté informatique",
+      "modules": [
+        "MSSI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Effectuer une analyse de risque d\u0027un système d\u0027information"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.2: Définir et mettre en œuvre une politique de sécurité",
+      "ElemdeCompetence": "C72.9: Définir une politique de sécurité",
+      "modules": [
+        "MSSI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.1: Ecrire les nombres dans différentes représentations et effectuer des calculs selon une algèbre",
+      "modules": [
+        "ARCH1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.2: Exploiter les méthodes de synthèse de systèmes logiques combinatoires et séquentiels",
+      "modules": [
+        "ARCH1"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.3: Concevoir des circuits combinatoires et séquentiels",
+      "modules": [
+        "ARCH1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.4: Analyser les composants d\u0027un ordinateur et leurs fonctions",
+      "modules": [
+        "ARCH1",
+        "ARCH2"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.5: Concevoir des circuits à base de composants mémoires, dans le but de résoudre des problèmes particuliers de stockage, et de récupération de l’information",
+      "modules": [
+        "ARCH2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Expliquer le fonctionnement des différents types de composants mémoires présents dans un calculateur. Déterminer la technologie utilisée dans chaque type de mémoire. Concevoir des circuits mémoires répondant à des spécifications (circuits mémoires vives, mémoires mortes, mémoires associatives, mémoires séquentielles)"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.6: Analyser les mécanismes de base permettant à un ordinateur de communiquer (entrées/sortes, interruptions)",
+      "modules": [
+        "ARCH2",
+        "SYS1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Programmer un contrôleur de communication élémentaire. Schématiser les composantes principales d’un système d’interruption hiérarchique. Concevoir des systèmes d’interruption de base pour répondre à des besoins de contrôle élémentaires."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.7: Analyser l\u0027exécution d\u0027un programme en langage machine sur une architecture de Von Neumann",
+      "modules": [
+        "ARCH2",
+        "SYST2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.3: Analyser l\u0027architecture d\u0027un ordinateur et concevoir des cirduits de base",
+      "ElemdeCompetence": "C73.8: Analyser le fonctionnement de l\u0027unité de contrôle",
+      "modules": [
+        "ARCH2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Expliquer le fonctionnement d’une micro-machine, le principe du séquencement et la conception des différents types de séquenceurs Concevoir un séquenceur élémentaire répondant à des caractéristiques données."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.4: Analyser, concevoir et évaluer un réseau d\u0027opérateur",
+      "ElemdeCompetence": "C74.0: Identifier et analyser les protocoles et architecture d\u0027Internet",
+      "modules": [
+        "RES2"
+      ],
+      "type": "MOD",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.4: Analyser, concevoir et évaluer un réseau d\u0027opérateur",
+      "ElemdeCompetence": "C74.1: Analyser la fonction de routage dynamique dans Internet",
+      "modules": [
+        "RESA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre le principe et la mise en ouvre du routage dynamique et le routage sur Internet"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.4: Analyser, concevoir et évaluer un réseau d\u0027opérateur",
+      "ElemdeCompetence": "C74.2: Identifier les technologies de mise en oeuvre d\u0027infrastructure de transport au sein d\u0027Internet",
+      "modules": [
+        "RESA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre les technologies utilisées pour réaliser l\u0027infrastructure de transport de paquets au sein de l\u0027Internet et les approches actuelles pour assurer des communications de haute performance dans les réseaux étendus."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.4: Analyser, concevoir et évaluer un réseau d\u0027opérateur",
+      "ElemdeCompetence": "C74.3: Mettre en place un réseau d\u0027opérateur basé sur la technologie MPLS et ses variantes",
+      "modules": [
+        "RESA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Mettre en place un réseau Provider basé sur la technologie MPLS et ses variantes : VPN/MPLS et MPLS-TE"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.4: Analyser, concevoir et évaluer un réseau d\u0027opérateur",
+      "ElemdeCompetence": "C74.4: Analyser la qualité de service et les protocoles de sa mise en oeuvre dans un réseau informatique",
+      "modules": [
+        "RESA"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.5: Analyser, concevoir et mettre en oeuvre des systèmes embarqués selon une méthodlogie",
+      "ElemdeCompetence": "C75.1: Identifier et analyser les composants et couches d\u0027un système embarqué",
+      "modules": [
+        "SYSE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Se familiariser avec les trois couches composant ce type de systèmes: l’architecture, le système d’exploitation et l’applicatif."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.5: Analyser, concevoir et mettre en oeuvre des systèmes embarqués selon une méthodlogie",
+      "ElemdeCompetence": "C75.2: Analyser les contraintes des systèmes temps-réels et embarqués",
+      "modules": [
+        "SYSE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Etre confronté aux contraintes des systèmes temps-réels et embarqués qui sont très différentes de celles des systèmes habituellement utilisés par les ingénieurs informaticiens."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.5: Analyser, concevoir et mettre en oeuvre des systèmes embarqués selon une méthodlogie",
+      "ElemdeCompetence": "C75.3: Concevoir, développer et utiliser : des logiciels embarqués, des applicatifs temps réel et des systèmes embarqués en utilisant une méthodologie unifiée.",
+      "modules": [
+        "SYSE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Concevoir, développer et utiliser : des logiciels embarqués, des applicatifs temps réel et des systèmes embarqués en utilisant une méthodologie unifiée."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.5: Analyser, concevoir et mettre en oeuvre des systèmes embarqués selon une méthodlogie",
+      "ElemdeCompetence": "C75.4: Concevoir des applications simples et les embarquer sur des circuits reconfigurables (FPGA)",
+      "modules": [
+        "SYSE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.6: Analyser, concevoir et mettre en oeuvre des applications réparties",
+      "ElemdeCompetence": "C76.1: Différencier un système réparti d\u0027un système centralisé et analyser ses fonctions",
+      "modules": [
+        "SYSR"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Introduire les concepts de base des systèmes répartis. Comprendre les avantages que les systèmes répartis procurent par rapport aux systèmes centralisés."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.6: Analyser, concevoir et mettre en oeuvre des applications réparties",
+      "ElemdeCompetence": "C76.2: Concevoir des applications réparties et mobiliser des algorithmes et API pour les mettre en oeuvre",
+      "modules": [
+        "SYSR"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre et concevoir des applications réparties (distribuées)"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.1: Analyser les fonctions d\u0027un systèmes d\u0027exploitation",
+      "modules": [
+        "SYS1",
+        "SYS2",
+        "SYST1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.2: Exploiter les fonctions d\u0027un système d\u0027exploitation multi-tâches par la programmation",
+      "modules": [
+        "SYS1"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.3: Exploiter les fonctions de gestion de la mémoire virtuelle et de stockage dans un système multi-programmé",
+      "modules": [
+        "SYS2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.4: Installer et utiliser un système d\u0027exploitation centralisé de type UNIX",
+      "modules": [
+        "SYST1"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Initier les étudiants à la pratique du système Unix. A la fin du cours l’étudiant doit être capable de travailler dans un environnement Unix (au niveau utilisateur) et installer un système Unix (Linux)"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.5: Ecrire des programmes en langage assembleur",
+      "modules": [
+        "SYST2"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.7: Exploiter un système d\u0027exploitation centralisé",
+      "ElemdeCompetence": "C77.6: Différencier les technologies de stockage",
+      "modules": [
+        "SFSD"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.8: Exploiter des architectures parallèles et avancées pour accélérer l\u0027exécution des programmes",
+      "ElemdeCompetence": "C78.1: Evaluer l\u0027impact des choix d’architectures générales et spécialisées sur l\u0027exécution d\u0027un programme",
+      "modules": [
+        "ARCH"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Mesurer les performances de différentes machines étant donné les paramètres des composants de leurs architectures. Comparer des architectures différentes et pouvoir choisir une architecture pour une application donnée."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.8: Exploiter des architectures parallèles et avancées pour accélérer l\u0027exécution des programmes",
+      "ElemdeCompetence": "C78.2: Déterminer les types de mécanismes d’accélérations permettant d’améliorer les performances des programmes",
+      "modules": [
+        "ARCH"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Réaliser des compromis entre les différents paramètres d’une architecture (CPI, organisation de la mémoire, étages du pipeline, Superscalaire, VLIW))"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.8: Exploiter des architectures parallèles et avancées pour accélérer l\u0027exécution des programmes",
+      "ElemdeCompetence": "C78.3: Développer des programmes performants sur des architectures parallèles et avancées",
+      "modules": [
+        "ARCH",
+        "HPC",
+        "HPC"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.8: Exploiter des architectures parallèles et avancées pour accélérer l\u0027exécution des programmes",
+      "ElemdeCompetence": "C78.4: Analyser les types d\u0027architectures parallèles et identifier les différents niveaux de parallélisme dans les architectures",
+      "modules": [
+        "ARCH",
+        "HPC",
+        "HPC"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.8: Exploiter des architectures parallèles et avancées pour accélérer l\u0027exécution des programmes",
+      "ElemdeCompetence": "C78.5: Exploiter diverses API pour mettre en oeuvre des programmes parallèles",
+      "modules": [
+        "ARCH",
+        "HPC",
+        "HPC"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "- Concevoir, Implémenter et analyser des programmes parallèles avec mémoire partagée en utilisant OpenMP. - Concevoir, Implémenter et analyser des programmes parallèles avec mémoire distribuée en utilisant MPI. - Implémenter des programmes parallèles sur les GPUs en utilisant CUDA."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.9: Concevoir et mettre en œuvre des systèmes virtuels",
+      "ElemdeCompetence": "C79.1: Analyser la fonction de virtualisation des systèmes",
+      "modules": [
+        "VCL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Maîtriser les notions de la virtualisation, véritable changement technologique des systèmes d\u0027exploitation modernes."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.9: Concevoir et mettre en œuvre des systèmes virtuels",
+      "ElemdeCompetence": "C79.2: Exploiter des plateformes de virtualisation",
+      "modules": [
+        "VCL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "L\u0027utilisation des plateformes de virtualisation phares telles que Vmware, HyperV et Kvm"
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.9: Concevoir et mettre en œuvre des systèmes virtuels",
+      "ElemdeCompetence": "C79.3: Exploiter des plateformes de Cloud computing",
+      "modules": [
+        "VCL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Utilisation des plateformes Cloud telles que Amazon et Openstack."
+    },
+    {
+      "FamilledeCompetence": "CF7: Concevoir, mettre en œuvre et administrer des infrastructures complexes et réparties",
+      "Competence": "C7.9: Concevoir et mettre en œuvre des systèmes virtuels",
+      "ElemdeCompetence": "C79.3: Exploiter des plateformes de Cloud computing",
+      "modules": [
+        "VCL"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Utilisation des plateformes Cloud telles que Amazon et Openstack."
+    },
+    {
+      "FamilledeCompetence": "CF8: Mettre en œuvre une démarche qualité",
+      "Competence": "C8.1: Evaluer la qualité de la solution proposée",
+      "ElemdeCompetence": "C811: Réaliser et présenter un bilan qualitatif selon des critères de : coût, sécurité, performances, fiabilité, satisfaction usager, déploiement",
+      "modules": [
+        "PFE"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF8: Mettre en œuvre une démarche qualité",
+      "Competence": "C8.2: Mettre en oeuvre une démarche qualité",
+      "ElemdeCompetence": "C82.1: Décrire une démarche qualité et identifier ses atouts pour l\u0027entreprise",
+      "modules": [
+        "AQUA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Comprendre la démarche qualité"
+    },
+    {
+      "FamilledeCompetence": "CF8: Mettre en œuvre une démarche qualité",
+      "Competence": "C8.2: Mettre en oeuvre une démarche qualité",
+      "ElemdeCompetence": "C82.2: Adopter une démarche qualité et utiliser ses principaux outils",
+      "modules": [
+        "AQUA"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Utiliser les outils de la qualité et de l\u0027amélioration continue (roue de Deming, Diagramme Pareto, Ishikawa, ..)"
+    },
+    {
+      "FamilledeCompetence": "CF8: Mettre en œuvre une démarche qualité",
+      "Competence": "C8.2: Mettre en oeuvre une démarche qualité",
+      "ElemdeCompetence": "C82.3: Décrire l’apport de la normalisation, la certification et l’accréditation pour l\u0027entreprises",
+      "modules": [
+        "AQUA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Comprendre l’intérêt des entreprises pour la normalisation, la certification et l’accréditation"
+    },
+    {
+      "FamilledeCompetence": "CF8: Mettre en œuvre une démarche qualité",
+      "Competence": "C8.2: Mettre en oeuvre une démarche qualité",
+      "ElemdeCompetence": "C82.3: Décrire l’apport de la normalisation, la certification et l’accréditation pour l\u0027entreprises",
+      "modules": [
+        "AQUA"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Comprendre l’intérêt des entreprises pour la normalisation, la certification et l’accréditation"
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.0: Définir la propriété intellectuelle et identifier les mécanismes de sa protection",
+      "modules": [
+        "IVR"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.1: Exploiter des outils de recherche bibliographique",
+      "modules": [
+        "RDCR",
+        "EMM",
+        "GPS"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.10: Mettre en oeuvre un travail de recherche selon une méthodologie",
+      "modules": [
+        "EMM",
+        "GPS",
+        "IMR"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.2: Analyser le processus d\u0027innovation, de recherche et développement, et de valorisation",
+      "modules": [
+        "IVR"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.3: Identifier les voies de valorisation de travaux de recherche",
+      "modules": [
+        "IVR"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.4: Effectuer une synthèse bibliographique et ressortir des verrous scientifiques",
+      "modules": [
+        "IMR"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.5: Respecter des pratiques éthiques durant un travail de recherche",
+      "modules": [
+        "IMR"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.6: Elaborer une bibliographie en respectant une norme de citation",
+      "modules": [
+        "RDCR",
+        "EMM",
+        "GPS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.7: Effectuer une recherche dans des ressources documentaires diverses",
+      "modules": [
+        "RDCR",
+        "GPS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.8: Rédiger un article en adoptant un style scientifique et académique",
+      "modules": [
+        "RDCR",
+        "GPS"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.0: Mettre en oeuvre une veille scientifique et technique",
+      "ElemdeCompetence": "C90.9: Effectuer une communication scientifique orale",
+      "modules": [
+        "RDCR",
+        "EMM"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.1: Respecter de la charte de rédaction du mémoire ( couverture, nombre de pages, plan, références bibliographiques,,,,,)",
+      "modules": [
+        "PFE"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.2: Equilibrer les chapitres du rapport",
+      "modules": [
+        "EMM",
+        "PFE"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.3: Présenter un sujet et la problématique et formuler les objectifs et hypothèses",
+      "modules": [
+        "EMM",
+        "PFE"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.4: Utliser une méthodologie et/ou des techniques dans les règles de l\u0027art",
+      "modules": [
+        "PFE"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.5: Synthètiser et effectuer une analyse critique, et adopter une rigueur dans l\u0027argumentation (étude quantitative)",
+      "modules": [
+        "EMM",
+        "PFE"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.1: Rédiger un mémoire de qualité",
+      "ElemdeCompetence": "C91.6: Rédiger correctement (Synthèse, clarté, lisibilité, soins de l\u0027orthographe et grammaire)",
+      "modules": [
+        "TEE",
+        "EMM",
+        "PFE",
+        "SPE"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.1: Planifier un projet (Diagramme Gantt prévu et réel)",
+      "modules": [
+        "CPROJ",
+        "GPS",
+        "PFE",
+        "PRJP",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.2: Rédiger des livrables (résultats) intermédiaires et livrable final de qualité",
+      "modules": [
+        "PFE",
+        "PRJP",
+        "PRJS",
+        "PRJS",
+        "PROJ"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.3: Adopter une posture professionnelle (Assuiduité \u0026 sérieux)",
+      "modules": [
+        "PFE",
+        "PRJP",
+        "PRJS",
+        "PRJS"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.4: Exploiter un outil de gestion de projet afin de quantifier les ressources en temps, matériels, moyens humains et en financement",
+      "modules": [
+        "CPROJ",
+        "GPS",
+        "PROJ"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.5: Planifier des plans de secours afin de prendre en charge les risques entourant un projet",
+      "modules": [
+        "CPROJ",
+        "GPS",
+        "PRJS",
+        "PROJ"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.2: Adopter une démarche projet",
+      "ElemdeCompetence": "C92.6: S\u0027organiser et travailler en équipe en vue de réaliser un projet commun",
+      "modules": [
+        "GPS",
+        "PRJP"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.3: Adopter, concevoir, réaliser une solution selon une méthodologie",
+      "ElemdeCompetence": "C931: Concevoir un système implémentant des fonctionnalités selon un cahier de charge",
+      "modules": [
+        "PFE",
+        "PRJS",
+        "PROJ"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.3: Adopter, concevoir, réaliser une solution selon une méthodologie",
+      "ElemdeCompetence": "C932: Développer une solution informatique (IHM / Jeu d\u0027essai/ tests/ degré d\u0027intégration/ documentation technique)",
+      "modules": [
+        "PFE",
+        "PRJS"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.1: Respecter le temps alloué ( par diapo, global) et clarté de la présentation  (lisiblité, enchaînements, illustration, ... )",
+      "modules": [
+        "PFE"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.2: Synthètiser les éléments principaux/essentiels/importants dans une présentation",
+      "modules": [
+        "EMM",
+        "PFE",
+        "PRJP",
+        "PRJS",
+        "PRJS",
+        "PROJ",
+        "SPE"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.3: Valoriser le produit réalisé durant une démonstration",
+      "modules": [
+        "PFE",
+        "PRJS",
+        "PRJS",
+        "PROJ"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.4: Adapter la force de la voix, le regard et la posture dans une communication",
+      "modules": [
+        "TEO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.5: Répondre aux questions avec aisance et précision",
+      "modules": [
+        "EMM",
+        "PFE",
+        "SPE"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.6: Effectuer une communication orale de qualité (prononciation, articulation, volume, débit, intonation, posture, aisance, présence)",
+      "modules": [
+        "TEO",
+        "EMM",
+        "PFE",
+        "PRJP"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.7: Adapter la communication à l\u0027auditoire",
+      "modules": [
+        "TEO"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.8: Gérer le stress",
+      "modules": [
+        "TEO"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.4: Soutenir et défendre une solution devant un auditoire",
+      "ElemdeCompetence": "C94.9: Effectuer une communication verbale et non-verbale",
+      "modules": [
+        "TEO"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.1: Acquérir le vocabulaire de l`anglais spécifique à l`informatique",
+      "modules": [
+        "ANG1",
+        "ANG2",
+        "ANG3",
+        "LANG1",
+        "LANG2"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.2: Organiser et participer avec succès à un entretien d`embauche",
+      "modules": [
+        "LANG1"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.3: Rédiger efficacement en anglais : Courriels, CV, articles scientifiques, etc.",
+      "modules": [
+        "LANG1",
+        "LANG2"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.4: Ecrire en anglais dans un style académique",
+      "modules": [
+        "ANG1",
+        "ANG2",
+        "ANG3"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.5: Ecouter et inférer le sens d\u0027un discours en anglais",
+      "modules": [
+        "ANG1",
+        "ANG2",
+        "ANG3"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.5: S\u0027exprimer et rédiger efficacement en langue anglaise",
+      "ElemdeCompetence": "C95.6: S’exprimer correctement, en considérant le niveau de maitrise de la langue",
+      "modules": [
+        "ANG1",
+        "ANG2",
+        "ANG3",
+        "LANG1",
+        "LANG2"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.6: Mettre en oeuvre une démarche de conduite de changement",
+      "ElemdeCompetence": "C96.1: Adopter une posture de leader et sponsor d\u0027un projet",
+      "modules": [
+        "MPSI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Comprendre l’importance du leadership et sponsoring du projet"
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.6: Mettre en oeuvre une démarche de conduite de changement",
+      "ElemdeCompetence": "C96.2: Mettre en oeuvre un plan de conduite de changement",
+      "modules": [
+        "MPSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Accompagner la mise en œuvre du SI par une démarche de conduite de changement"
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.6: Mettre en oeuvre une démarche de conduite de changement",
+      "ElemdeCompetence": "C96.3: Mettre en oeuvre un plan de communication",
+      "modules": [
+        "MPSI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.6: Mettre en oeuvre une démarche de conduite de changement",
+      "ElemdeCompetence": "C96.4: Analyser, concevoir et réaliser une formation pour des adultes",
+      "modules": [
+        "MPSI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.6: Mettre en oeuvre une démarche de conduite de changement",
+      "ElemdeCompetence": "C96.5: Résoudre les conflits",
+      "modules": [
+        "MPSI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.7: Elaborer un projet d\u0027entreprise",
+      "ElemdeCompetence": "C97.1: Adopter une posture entreprenarial",
+      "modules": [
+        "ENTP"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": "Adopter un mode de pensée entrepreneurial ; Evaluer et développer leur potentiel entrepreneurial ;"
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.7: Elaborer un projet d\u0027entreprise",
+      "ElemdeCompetence": "C97.2: Exploiter des outils pour élaborer un projet d\u0027entrepsie",
+      "modules": [
+        "ENTP"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Mettre en place des actions entrepreneuriales ; Prototyper leur projet de démarrage ;"
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.7: Elaborer un projet d\u0027entreprise",
+      "ElemdeCompetence": "C97.3: Défendre un projet d\u0027entreprise",
+      "modules": [
+        "ENTP"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Défendre un projet entrepreneurial."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.7: Elaborer un projet d\u0027entreprise",
+      "ElemdeCompetence": "C97.4: Identifier le rôle de l\u0027entreprise dans l\u0027économie d\u0027une nation",
+      "modules": [
+        "ECON"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "L’étudiant doit être capable de comprendre le rôle de l’entreprise dans l’activité économique d’une nation et l’aborder comme un système ouvert."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.7: Elaborer un projet d\u0027entreprise",
+      "ElemdeCompetence": "C97.5: Analyser les missions et responsabilités de chacune des grandes fonctions (opérationnelles et de soutien) de l’entreprise",
+      "modules": [
+        "ECON"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.8: Effectuer une analyse comptable et financière",
+      "ElemdeCompetence": "C98.1: Identifier et analyser les documents comptables",
+      "modules": [
+        "COFI"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Faire connaître les documents comptables, leur objet, et la logique de comptabilisation qui est structurée par une codification."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.8: Effectuer une analyse comptable et financière",
+      "ElemdeCompetence": "C98.2: Analyser l’activité et les résultats de son entreprise au quotidien, afin d’en tirer le maximum d’informations susceptible d\u0027aider à la prise de décision",
+      "modules": [
+        "COFI"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "Comprendre et identifier les états financiers. Etre capable d’analyser l’activité et les résultats de son entreprise au quotidien compte tenu de la réglementation en vigueur, afin d’en tirer le maximum d’informations susceptibles d’aider à la prise des décisions des décideurs au sein des entreprises."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.8: Effectuer une analyse comptable et financière",
+      "ElemdeCompetence": "C98.3: Exploiter les méthodes qui permettent d’optimiser la rentabilité des entreprises par une meilleure gestion des coûts et le calcul des écarts.",
+      "modules": [
+        "COFI"
+      ],
+      "type": "MET",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.1: Effectuer une communication par e-mail et gérer efficacement sa messagerie.",
+      "modules": [
+        "BW"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.2: Utiliser efficacement les outils de recherche d’information pertinente (collecte, tri) devant l’hétérogénéité des sources documentaires",
+      "modules": [
+        "BW"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.3: Utiliser efficacement les outils de la bureautique (Word, Powerpoint, Excel,..)",
+      "modules": [
+        "BW",
+        "EMM"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": ""
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.4: Elaborer un support de communication synthétique et pertinent",
+      "modules": [
+        "EMM"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Elaborer une présentation ou un poster avec les outils de bureautique adéquats synthétisant les éléments essentiels d\u0027un sujet."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.5: Elaborer un support de communication bien organisé",
+      "modules": [
+        "EMM"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Mettre en oeuvre un support de communication faisant valoir les parties clés d\u0027une communication dans un ordre correct: résumé, introduction, développement, évaluation, conclusions etc."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.6: Mettre en oeuvre un support de communication avec un visuel clair",
+      "modules": [
+        "EMM"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Utiliser les outils de bureautique adéquats pour faire un support de communication (poster, dépliant, projection, etc.) avec un visuel clair, épuré, non encombré, etc."
+    },
+    {
+      "FamilledeCompetence": "CF9: Gérer des projets de toute nature",
+      "Competence": "C9.9: Exploiter les TIC pour effectuer une communication efficace",
+      "ElemdeCompetence": "C99.6: Mettre en oeuvre un support de communication avec un visuel clair",
+      "modules": [
+        "EMM"
+      ],
+      "type": "OPE",
+      "ObjectifPédagogique": "Utiliser les outils de bureautique adéquats pour faire un support de communication (poster, dépliant, projection, etc.) avec un visuel clair, épuré, non encombré, etc."
+    },
+    {
+      "FamilledeCompetence": "",
+      "Competence": "",
+      "ElemdeCompetence": "realiser des interfaces graphiques avec javafx",
+      "modules": [
+        "POO"
+      ],
+      "type": "TEC",
+      "ObjectifPédagogique": "apprendre le dev en graphique"
+    }
+  ]
+}

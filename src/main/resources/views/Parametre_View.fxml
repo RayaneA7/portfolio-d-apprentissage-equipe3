@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="monAnchorpane1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.parametre.Parametre_Controller">
+    <children>
+        <ImageView fitHeight="630.0" fitWidth="830.0" layoutX="5.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icons/parametre/Parametres2.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="425.0" layoutY="214.0" mnemonicParsing="false" style="-fx-background-color: F8F8F8;" />
+        <Button layoutX="375.0" layoutY="215.0" mnemonicParsing="false" style="-fx-background-color: F8F8F8;" />
+        <ImageView fx:id="BarreImage" fitHeight="28.0" fitWidth="41.0" layoutX="73.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icons/parametre/menu.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="ProjetButton" layoutX="16.0" layoutY="282.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+            <graphic>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/parametre/layers1.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Projets" textFill="#666666">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="PortfolioButton" layoutX="16.0" layoutY="346.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+            <graphic>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/parametre/Vector.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Portfolios" textFill="#666666">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="AideButton" layoutX="16.0" layoutY="494.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
+            <graphic>
+                <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="125.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <children>
+                        <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="20.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/parametre/Vector2.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="AideLabel" layoutX="58.0" layoutY="11.0" style="-fx-font-family: Open Sans;" text="Aide" textFill="#666666">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Button>
+        <Button fx:id="ParametresButton" layoutX="16.0" layoutY="430.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+            <graphic>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/parametre/paramtreGris.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" style="-fx-font-family: Open Sans;" text="Parametres" textFill="#666666">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="AccueilButton" layoutX="16.0" layoutY="218.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;" textFill="#ffffff00">
+            <graphic>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/parametre/Accueil.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" style="-fx-font-family: Open Sans;" text="Accueil" textFill="#666666">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="info_Button" layoutX="224.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="190.0" style="-fx-background-color: FAFAFA;" textFill="#ffffff00">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+                <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="174.0">
+                    <children>
+                        <Label fx:id="AccueilLabel1" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="168.0" style="-fx-font-family: Work Sans;" text="Informations presonnel" textAlignment="CENTER" textFill="#444444">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+        </Button>
+        <Button fx:id="passe_Button" layoutX="414.0" layoutY="135.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="120.0" style="-fx-background-color: FAFAFA;">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+                <AnchorPane prefHeight="26.0" prefWidth="139.0">
+                    <children>
+                        <Label fx:id="AccueilLabel11" alignment="CENTER" prefHeight="25.0" prefWidth="103.0" style="-fx-font-family: Work Sans;" text="Mot de passe" textAlignment="CENTER" textFill="#444444">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Button>
+        <Button fx:id="Adress_Button" layoutX="532.0" layoutY="135.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: FAFAFA;" textFill="#ffffff00">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+                <AnchorPane prefHeight="52.0" prefWidth="87.0">
+                    <children>
+                        <Label fx:id="AccueilLabel12" layoutX="6.0" layoutY="1.0" prefHeight="25.0" prefWidth="90.0" style="-fx-font-family: Work Sans;" text="Adress Email" textAlignment="CENTER" textFill="#444444">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+        </Button>
+        <Button fx:id="contact_Button" layoutX="651.0" layoutY="135.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="82.0" style="-fx-background-color: FAFAFA;">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+                <AnchorPane prefHeight="26.0" prefWidth="139.0">
+                    <children>
+                        <Label fx:id="AccueilLabel111" alignment="CENTER" layoutY="1.0" prefHeight="25.0" prefWidth="66.0" style="-fx-font-family: Work Sans;" text="Contact" textAlignment="CENTER" textFill="#444444">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </graphic>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Button>
+        <Button layoutX="627.0" layoutY="522.0" mnemonicParsing="false" style="-fx-background-color: FAFAFA;" textAlignment="CENTER" />
+        <Line fx:id="monlignePassword" endX="-65.0" layoutX="555.0" layoutY="173.0" opacity="0.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line fx:id="line1" endX="26.0" layoutX="135.0" layoutY="280.0" startX="-100.0" stroke="#b7b5b5" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="monligneInfo" endX="-65.0" layoutX="409.0" layoutY="174.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line fx:id="monligneEmail" endX="-65.0" layoutX="673.0" layoutY="173.0" opacity="0.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line fx:id="monligneContacts" endX="-65.0" layoutX="779.0" layoutY="173.0" opacity="0.0" startX="-100.0" stroke="#305380" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line fx:id="line2" endX="26.0" layoutX="136.0" layoutY="344.0" startX="-100.0" stroke="#b7b5b5" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line4" endX="26.0" layoutX="139.0" layoutY="491.0" startX="-100.0" stroke="#b7b5b5" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line3" endX="26.0" layoutX="138.0" layoutY="408.0" startX="-100.0" stroke="#b7b5b5" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="26.0" layoutX="144.0" layoutY="555.0" startX="-100.0" stroke="#b7b5b5" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <AnchorPane fx:id="monAnchorpane" layoutX="202.0" layoutY="190.0" prefHeight="320.0" prefWidth="540.0" style="-fx-background-color: white;">
+         </AnchorPane>
+        <VBox layoutX="249.0" layoutY="510.0" prefHeight="60.0" prefWidth="493.0" style="-fx-background-color: white;" />
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="709.0" layoutY="48.0" radius="30.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
+      <ImageView fx:id="logOut" fitHeight="50.0" fitWidth="50.0" layoutX="755.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Deconnexion.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="RetourButton" layoutX="530.0" layoutY="530.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-text-fill: white; -fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: #184173; -fx-font-family: Open sans; -fx-font-weight: bold;" text="Retour">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>

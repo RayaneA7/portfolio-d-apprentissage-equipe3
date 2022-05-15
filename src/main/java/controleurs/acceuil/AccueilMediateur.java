@@ -1,6 +1,9 @@
 package controleurs.acceuil;
 
 import controleurs.authentification.ConnectController;
+import controleurs.passage.Commutateur;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Duration;
 import models.Utilisateur;
 
 import java.io.File;
@@ -30,6 +34,8 @@ public class AccueilMediateur implements Initializable {
    public static Utilisateur utilisateur;
    public static ArrayList<Parent> memory;
    public static Image image;
+   public static Timeline timeLine1;
+   public static Commutateur commutateur;
     private Stage stage;
     private Scene scene;
     private File file;
@@ -59,7 +65,7 @@ public class AccueilMediateur implements Initializable {
             e.printStackTrace();
             System.out.println("probleme se génere losrs de chargement de l'image");
          }
-         /***********************************/
+         /*********************0**************/
          memory = new ArrayList<>();
          FXMLLoader loader = new FXMLLoader();
          loader = new FXMLLoader(getClass().getResource("/views/AccueilView.fxml"));
@@ -68,53 +74,87 @@ public class AccueilMediateur implements Initializable {
          } catch (IOException e) {
          e.printStackTrace();
          }
-         /****************************************/
+         /**********************1******************/
          loader = new FXMLLoader(getClass().getResource("/views/Accueil_1View.fxml"));
          try {
          memory.add(loader.load());
          } catch (IOException e) {
          e.printStackTrace();
          }
-         /************************/
-        loader =new FXMLLoader(getClass().getResource("/views/Parametre_1View.fxml"));
-        try {
-            memory.add(loader.load());
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        /***********************/
-        loader =new FXMLLoader(getClass().getResource("/views/Parametre_2View.fxml"));
-        try {
-            memory.add(loader.load());
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        /************************/
-        loader =new FXMLLoader(getClass().getResource("/views/Parametre_3View.fxml"));
-        try {
-            memory.add(loader.load());
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        /**************************/
-        loader =new FXMLLoader(getClass().getResource("/views/Parametre_4View.fxml"));
-        try {
-            memory.add(loader.load());
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-         /********************************************************************/
+         /**********************************************************************************/
+         /**********************************************************************************/
+         timeLine1 = new Timeline(new KeyFrame(Duration.seconds(0.1), event4 -> {
+            System.out.println("welcome in our application****************************");
+            /******************2**********************/
+            FXMLLoader loader1;
+            loader1 = new FXMLLoader(getClass().getResource("/views/Parametre_View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /***********************3*****************************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/Portfolio1View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /*********************************4*******************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /************************5*****************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /**********************6*********************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /***********************7************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioShowPage.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /***********************8***********/
+            loader1 = new FXMLLoader(getClass().getResource("/views/profile.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }));
+        timeLine1.setRate(1);
+        timeLine1.setDelay(Duration.seconds(0.2));
+        timeLine1.setCycleCount(1);
+        timeLine1.play();
+        /********************************************************************/
          monPagination =new Pagination();
-         monPagination.setPageCount(6);
+         monPagination.setPageCount(12);
          monPagination.setCurrentPageIndex(0);
          monPagination.setMaxPageIndicatorCount(1);
          monPagination.setPageFactory(new Callback<Integer, Node>() {
          @Override
            public Node call(Integer pageIndex) {
-           System.out.println("welcome in acceuil mediateur hhhhshsh");
+           System.out.println("la page courant est :"+pageIndex);
            return memory.get(pageIndex);
          }
          });
         monAnchorPane.getChildren().addAll(monPagination);
+        /***********************************************/
+        commutateur =new Commutateur();
+        /***********************************************/
     }
 }

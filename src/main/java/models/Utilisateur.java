@@ -3,23 +3,45 @@ package models;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Utilisateur {
   public DonnesPersonnels donnes;
   public Contacts contacts;
 
-  public static void serialize(Utilisateur user) {
+  public ArrayList<Project> getListProjets() {
+    return listProjets;
+  }
+
+  public void setListProjets(ArrayList<Project> listProjets) {
+    this.listProjets = listProjets;
+  }
+
+  public ArrayList<Project> listProjets ;
+
+  public ArrayList<Portfolio> getListPortfolio() {
+    return listPortfolio;
+  }
+
+  public void setListPortfolio(ArrayList<Portfolio> listPortfolio) {
+    this.listPortfolio = listPortfolio;
+  }
+
+  public ArrayList<Portfolio> listPortfolio ;
+
+  public static void serialize(Utilisateur user,String studentFolder) {
 
     Writer writer = null;
     try {
-      writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateur/user.json"));
+      writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/"+studentFolder+"/user.json"));
       Gson gson = new GsonBuilder().setPrettyPrinting().create();
       gson.toJson(user, writer);
 

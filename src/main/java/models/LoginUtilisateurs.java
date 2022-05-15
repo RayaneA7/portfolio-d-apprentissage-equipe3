@@ -11,28 +11,48 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class LoginUtilisateurs {
-    public ArrayList<LoginUser> getList() throws IOException {
-        Reader reader ;
-        Writer writer ;
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
-        LoginUtilisateurs loginUtilisateurs = gson.fromJson(reader,LoginUtilisateurs.class);
-        return loginUtilisateurs.list;
+    private ArrayList<LoginUser> list = new ArrayList<>();
+
+    public LoginUtilisateurs() {
+        Reader reader;
+        try {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
+            ListLoginUtilisateur loginUtilisateurs = gson.fromJson(reader, ListLoginUtilisateur.class);
+            list = loginUtilisateurs.list;
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("une probléme se génere à cuase de fichier loginUtilisateurs ");
+        }
     }
 
-    public void ajouteUtilisateurToList(LoginUser loginUser) throws IOException {
-        Reader reader ;
-        Writer writer ;
+    public ArrayList<LoginUser> getList() throws IOException {
+        return list;
+    }
+
+    public void serializeList() throws IOException {
+        Writer writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
-        LoginUtilisateurs loginUtilisateurs = gson.fromJson(reader,LoginUtilisateurs.class);
-        reader.close();
-        loginUtilisateurs.list.add(loginUser);
-        /*****************************/
-        writer =Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
-        gson.toJson(loginUtilisateurs, writer);
+        ListLoginUtilisateur loginUtilisateur = new ListLoginUtilisateur(list);
+        gson.toJson(loginUtilisateur, writer);
         writer.close();
     }
 
-    private  ArrayList<LoginUser> list =new ArrayList<>();
-}
+    public void ajouteUtilisateurToList(LoginUser loginUser) throws IOException {
+        Writer writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/LoginUtilisateurs.json"));
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        list.add(loginUser);
+        ListLoginUtilisateur loginUtilisateur = new ListLoginUtilisateur(list);
+        gson.toJson(loginUtilisateur, writer);
+        writer.close();
+    }
+
+    class ListLoginUtilisateur {
+        public ArrayList<LoginUser> list = new ArrayList<>();
+
+          public ListLoginUtilisateur(ArrayList<LoginUser> list) {
+             this.list = list;
+         }
+      }
+   }

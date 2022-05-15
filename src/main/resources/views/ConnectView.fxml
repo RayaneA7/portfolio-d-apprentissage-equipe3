@@ -15,7 +15,7 @@
 
 <AnchorPane fx:id="myAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.ConnectController">
    <children>
-      <ImageView fitHeight="570.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/Connect.png" />
          </image>
@@ -66,7 +66,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <JFXButton layoutX="587.0" layoutY="444.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="Se connecter">
+      <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="444.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="Se connecter">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>

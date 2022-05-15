@@ -1,34 +1,72 @@
 package References;
 
+import java.util.ArrayList;
+
 public class Competence {
-
-    private String intitule;//vision général sur le module
-    private String objectif;
-    private String code;  //le code de compétence EX : C11
-    private String module;//l'abréviation du nom de module EX: ANAL1
-    private String titre; //le nom de module EX: Analyse1
-
-    public String getModule() {
-        return module;
+    private String FamilledeCompetence;
+    private String Competence;
+    private String ElemdeCompetence;
+    private ArrayList<String> modules;
+    private TypeCompetence type;
+    private String ObjectifPédagogique;
+/******************************************************/
+    public String getFamilledeCompetence() {
+        return FamilledeCompetence;
     }
-    public String getCode() {
-        return code;
+    public void setFamilledeCompetence(String familledeCompetence) {
+        FamilledeCompetence = familledeCompetence;
     }
-    public String getTitre() {
-        return titre;
+    public String getCompetence() {
+        return Competence;
     }
-    public String getIntitule() {
-        return intitule;
+    public void setCompetence(String competence) {
+        Competence = competence;
     }
-    public String getObjectif() {
-        return objectif;
+    public String getElemdeCompetence() {
+        return ElemdeCompetence;
     }
-
-    public Competence(String module,String code,String titre,String intitule,String objectif) {
-        this.module = module;
-        this.code=code;
-        this.titre=titre;
-        this.intitule=intitule;
-        this.objectif=objectif;
+    public void setElemdeCompetence(String elemdeCompetence) {
+        ElemdeCompetence = elemdeCompetence;
+    }
+    public TypeCompetence getType() {
+        return type;
+    }
+    public void setType(TypeCompetence type) {
+        this.type = type;
+    }
+    public ArrayList<String> getModules() {
+        return modules;
+    }
+    public void setModules(ArrayList<String> modules) {
+        this.modules = modules;
+    }
+    public String getObjectifPédagogique() {
+        return ObjectifPédagogique;
+    }
+    public void setObjectifPédagogique(String objectifPédagogique) {
+        ObjectifPédagogique = objectifPédagogique;
+    }
+    /********************************************************************************************/
+    public Competence(String FamilledeCompetence,String Competence,String ElemCompetence,String type,String modules,String objectif) {
+        this.FamilledeCompetence = FamilledeCompetence;
+        this.Competence=Competence;
+        this.ElemdeCompetence=ElemCompetence;
+        this.ObjectifPédagogique=objectif;
+        /*******************/
+        switch (type){
+            case "MET" : this.type =TypeCompetence.MET;
+            break;
+            case "TEC" : this.type=TypeCompetence.TEC;
+            break;
+            case "OPE" : this.type=TypeCompetence.OPE;
+            break;
+            case "MOD" : this.type=TypeCompetence.MOD;
+        }
+        /**************************/
+        String[] data = modules.split(" ");
+        this.modules =new ArrayList<>();
+        for(String module : data){
+            this.modules.add(module);
+        }
     }
 }

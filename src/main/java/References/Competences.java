@@ -1,47 +1,57 @@
 package References;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import models.Utilisateur;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Locale;
 
 public class Competences {
 private ArrayList<Competence> listcompetences;
+    Listcompetences competences;
   public Competences() throws IOException {
       String row="";
-      listcompetences =new ArrayList<>();
-      File file =new File("References/competences.csv");
-      BufferedReader csvReader = new BufferedReader(new FileReader(file));
-      while ((row = csvReader.readLine()) != null) {
-          if(row!="") {
-              String[] data = row.split(",");
-              listcompetences.add(new Competence(data[0], data[2], data[1], data[3], data[4]));
-          }
+      Reader reader = null;
+      Gson gson = new Gson();
+      try {
+          reader = Files.newBufferedReader(Paths.get("References/competencesJson.json"));
+          competences  = gson.fromJson(reader, Listcompetences.class);
+          this.listcompetences =competences.listcompetences;
+      } catch (FileNotFoundException ex) {
+          ex.printStackTrace();
       }
-      csvReader.close();
+      finally {
+          reader.close();
+      }
   }
-  /***********************Les fonctions de recherche**********************************************/
+  /**********************Les fonctions de recherche**********************************************/
   public ArrayList<Competence> RecherchModule(String motclé){
      return RechModule(listcompetences,motclé);
   }
-  public ArrayList<Competence> RecherchTitre(String motclé){
-      return RechTitre(listcompetences,motclé);
+  public ArrayList<Competence> RecherchType(String motclé){
+      return RechType(listcompetences,motclé);
   }
-  public ArrayList<Competence> RecherchCode(String motclé){
-      return RechCode(listcompetences,motclé);
+  public ArrayList<Competence> RecherchElemCompetence(String motclé){
+      return RechElemCompetence(listcompetences,motclé);
   }
   public ArrayList<Competence> RecherchObjectif(String motclé){
       return RechObjectif(listcompetences,motclé);
   }
-  public ArrayList<Competence> Recherche_Module_Titre_Code_Objectif(String module,String titre,String code,String objectif )
+  public ArrayList<Competence> Recherche_Module_Titre_Code_Objectif(String module,String competence,String type,String objectif )
   {
       ArrayList<Competence> resultat =new ArrayList<>();
       if(module!=""){
         resultat =RechModule(listcompetences,module);
-        if(titre!=""){
-            resultat=RechTitre(resultat,titre);
-            if(code!=""){
-               resultat=RechCode(resultat,code);
+        if(competence!=""){
+            resultat=RechElemCompetence(resultat,competence);
+            if(type!=""){
+               resultat=RechType(resultat,type);
                if(objectif!=""){
                    resultat=RechObjectif(resultat,objectif);
                }
@@ -51,8 +61,9 @@ private ArrayList<Competence> listcompetences;
                 }
             }
         }else{
-            if(code!=""){
-                resultat=RechCode(resultat,code);
+            if(type!=""){
+                System.out.println("welcome in rceh type");
+                resultat=RechType(resultat,type);
                 if(objectif!=""){
                     resultat=RechObjectif(resultat,objectif);
                 }
@@ -63,10 +74,10 @@ private ArrayList<Competence> listcompetences;
             }
         }
       }else{
-          if(titre!=""){
-              resultat=RechTitre(listcompetences,titre);
-              if(code!=""){
-                  resultat=RechCode(resultat,code);
+          if(competence!=""){
+              resultat=RechElemCompetence(listcompetences,module);
+              if(type!=""){
+                  resultat=RechType(resultat,type);
                   if(objectif!=""){
                       resultat=RechObjectif(resultat,objectif);
                   }
@@ -77,8 +88,8 @@ private ArrayList<Competence> listcompetences;
               }
           }
           else{
-              if(code!=""){
-                  resultat=RechCode(resultat,code);
+              if(type!=""){
+                  resultat=RechType(resultat,type);
                   if(objectif!=""){
                       resultat=RechObjectif(resultat,objectif);
                   }
@@ -91,13 +102,14 @@ private ArrayList<Competence> listcompetences;
       }
       return resultat;
   }
-  public void AjouteCompetence(String module,String titre,String intitule,String objectif) throws IOException {
-    Competence comp =new Competence(module,"",titre,intitule,objectif);
+  public void AjouteCompetence(String FamilleDecompetence ,String competence,String elemCompetence,String type,String module,String objectif) throws IOException {
+    Competence comp =new Competence(FamilleDecompetence,competence,elemCompetence,type,module,objectif);
     listcompetences.add(comp);
-      File file =new File("References/competences.csv");
-      Writer writer =new FileWriter(file,true);
-      writer.append('\n'+module+","+titre+","+""+","+intitule+","+objectif);
-      writer.close();
+    competences.listcompetences.add(comp);
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    Writer writer = Files.newBufferedWriter(Paths.get("References/competencesJson.json"));
+    gson.toJson(competences, writer);
+    writer.close();
   }
 
 
@@ -106,23 +118,25 @@ private ArrayList<Competence> listcompetences;
   {
       ArrayList<Competence> resultat =new ArrayList<>();
       if(motclé!=""&&listcompetences.size()!=0){
-        listcompetences.sort(ComparCompetences.comparatorModule);
         for(int i=0;i<listcompetences.size();i++) {
-          if(listcompetences.get(i).getModule().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
-            resultat.add(listcompetences.get(i));
-          }
+            for(int j=0;j<listcompetences.get(i).getModules().size();j++) {
+                if (listcompetences.get(i).getModules().get(j).toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))) {
+                    resultat.add(listcompetences.get(i));
+                }
+            }
         }
       }
       return resultat;
   }
   /***************************/
-  ArrayList<Competence> RechTitre(ArrayList<Competence> listcompetences,String motclé)
+  ArrayList<Competence> RechType(ArrayList<Competence> listcompetences,String motclé)
   {
       ArrayList<Competence> resultat =new ArrayList<>();
       if(motclé!=""&&listcompetences.size()!=0){
-          listcompetences.sort(ComparCompetences.comparatorTitre);
+         // listcompetences.sort(ComparCompetences.comparatorTitre);
           for(int i=0;i<listcompetences.size();i++) {
-              if(listcompetences.get(i).getTitre().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
+              System.out.println(listcompetences.get(i).getType().toString()+" VS "+motclé.toLowerCase(Locale.ROOT));
+              if(listcompetences.get(i).getType().toString().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
                   resultat.add(listcompetences.get(i));
               }
           }
@@ -130,13 +144,12 @@ private ArrayList<Competence> listcompetences;
       return resultat;
   }
   /*******************************/
-  ArrayList<Competence> RechCode(ArrayList<Competence> listcompetences,String motclé)
+  ArrayList<Competence> RechElemCompetence(ArrayList<Competence> listcompetences,String motclé)
   {
       ArrayList<Competence> resultat =new ArrayList<>();
       if(motclé!=""&&listcompetences.size()!=0){
-          listcompetences.sort(ComparCompetences.comparatorCode);
           for(int i=0;i<listcompetences.size();i++) {
-              if(listcompetences.get(i).getCode().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
+              if(listcompetences.get(i).getElemdeCompetence().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
                   resultat.add(listcompetences.get(i));
               }
           }
@@ -148,16 +161,16 @@ private ArrayList<Competence> listcompetences;
   {
       ArrayList<Competence> resultat =new ArrayList<>();
       if(motclé!=""&&listcompetences.size()!=0){
-          listcompetences.sort(ComparCompetences.comparatorObjectif);
+         // listcompetences.sort(ComparCompetences.comparatorObjectif);
           for(int i=0;i<listcompetences.size();i++) {
-              if(listcompetences.get(i).getObjectif().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
+              if(listcompetences.get(i).getObjectifPédagogique().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
                   resultat.add(listcompetences.get(i));
               }
           }
       }
       return resultat;
   }
-  /***************************************************************************/
+  /***************************************************************************
   class ComparCompetences {
       public static  Comparator<Competence> comparatorModule =new Comparator<Competence>() {
           @Override
@@ -184,5 +197,8 @@ private ArrayList<Competence> listcompetences;
           }
       };
   }
-
+/*****************************************************/
+}
+class Listcompetences {
+    public ArrayList<Competence> listcompetences;
 }
