@@ -217,7 +217,7 @@ public class SignUp2Controller implements Initializable {
             Projet projet = new Projet();
             projet.setId(new UUID(5,6));
             projet.setTitre("fsfds");
-            ConnectController.user.ajouterProjet(projet);
+            //ConnectController.user.ajouterProjet(projet);
            ConnectController.create(ConnectController.user);
             /***************/
             LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),

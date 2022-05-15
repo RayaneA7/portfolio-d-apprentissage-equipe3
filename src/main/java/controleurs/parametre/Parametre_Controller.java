@@ -338,8 +338,9 @@ public class Parametre_Controller implements Initializable {
             ParametresIamge.setImage(ParametresImg);
             line4.setStyle("-fx-stroke: #b7b5b5");
         });
-        ParametresButton.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.AllerParametres(event);
+        /******************************************************************/
+        imagePersonnel.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.AllerProfile(event);
         });
         /*****************************************************************************************/
         AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{

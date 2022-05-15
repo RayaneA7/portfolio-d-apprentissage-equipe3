@@ -23,7 +23,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import de.neuland.pug4j.Pug4J;
 import javafx.util.Callback;
 //import modele.Contacts;
 //import modele.DonnesPersonnels;

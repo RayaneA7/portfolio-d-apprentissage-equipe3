@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -86,14 +87,11 @@ public class Accueil_1Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*********************Image personnel********************/
-            if(AccueilMediateur.image!=null){
+            if(AccueilMediateur.image!=null) {
                 imagePersonnnel.setFill(new ImagePattern(AccueilMediateur.image));
             }
-            imagePersonnnel.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                AccueilMediateur.monPagination.setCurrentPageIndex(6);
-            }
+            imagePersonnnel.setOnMouseClicked(e->{
+              AccueilMediateur.commutateur.AllerProfile(e);
             });
             /**************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
@@ -107,55 +105,67 @@ public class Accueil_1Controller implements Initializable {
             AccueilImage.setImage(AccueilImg);
             line1.setStyle("-fx-stroke: #b7b5b5");
         });
-
+        /***********************************************************************************/
         ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
         });
-
         ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
             ProjetsImage.setImage(ProjetImg);
             line2.setStyle("-fx-stroke: #b7b5b5");
         });
-
+        ProjetButton.setOnMouseClicked(event->{
+            AccueilMediateur.commutateur.AllerProjet(event);
+        });
+       /*******************************************************************************************/
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
-       /**********************************************************************************/
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
             PortfolioImage.setImage(PortfolioImg);
             line3.setStyle("-fx-stroke: #b7b5b5");
         });
+        PortfolioButton.setOnMouseClicked(event->{
+            AccueilMediateur.commutateur.AllerPortfolio(event);
+        });
+        /******************************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
-        ParametresButton.setOnMouseClicked(event -> {
-            AccueilMediateur.monPagination.setCurrentPageIndex(2);
-        });
-        /*******************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
             ParametresIamge.setImage(ParametresImg);
             line4.setStyle("-fx-stroke: #b7b5b5");
         });
-
+        ParametresButton.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.AllerParametres(event);
+        });
+        /*****************************************************************************************/
         AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: #f1c53c");
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
-
         AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: F5F5F5");
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #b7b5b5");
+        });
+        AideButton.setOnMouseClicked(event -> {
+            try {
+                AccueilMediateur.commutateur.AllerAide(event);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         /*******************************************************************************/
         WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getNom()+" "+
@@ -165,17 +175,7 @@ public class Accueil_1Controller implements Initializable {
         });
         /*******************************************************************************/
         logOut.setOnMouseClicked(event -> {
-            FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
-            Scene scene = null;
-            try {
-                scene = new Scene(loader.load(),800,568);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+            AccueilMediateur.commutateur.Déconnecter(event);
         });
         /*************************Aller au profile personnel**********************************/
 

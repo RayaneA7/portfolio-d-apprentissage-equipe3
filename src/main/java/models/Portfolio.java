@@ -1,26 +1,51 @@
 package models;
-
-import java.util.ArrayList;
-import java.util.UUID;
+import java.util.List;
 
 public class Portfolio {
-    private UUID id;
-    private int numeroPortfolio;
-    ArrayList<UUID> projets;
+    public int id;
+    private List<Project> ListProject;
+    private static int numPort;
 
-    public UUID getId() {
-        return id;
+    public Portfolio(int num , List<Project> listProject) {
+        this.id = num;
+        this.ListProject = listProject;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public int getId() {
+        return this.id;
     }
 
-    public int getNumeroPortfolio() {
-        return numeroPortfolio;
+    public void setId(int id) {this.id = id; }
+
+    public List<Project> getListProject() {
+        return ListProject;
     }
 
-    public void setNumeroPortfolio(int numeroPortfolio) {
-        this.numeroPortfolio = numeroPortfolio;
+    public void setListProject(List<Project> listProject) {
+        ListProject = listProject;
+    }
+
+    public int nbrPersoProjects(){
+        int cpt = 0;
+        for(Project p : this.ListProject){
+            if (p.getType().equals("Personnel")) cpt++;
+        }
+        return cpt;
+    }
+
+    public int nbrClubProjects(){
+        int cpt = 0;
+        for(Project p : this.ListProject){
+            if (p.getType().equals("Club")) cpt++;
+        }
+        return cpt;
+    }
+
+    public int nbrPedagProjects(){
+        int cpt = 0;
+        for(Project p : this.ListProject){
+            if (p.getType().equals("Pédagogique")) cpt++;
+        }
+        return cpt;
     }
 }
