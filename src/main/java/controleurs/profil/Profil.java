@@ -61,6 +61,16 @@ public class Profil implements Initializable {
  void openLink (ActionEvent event ) throws URISyntaxException,IOException{
         Desktop.getDesktop().browse(new URI("https://www.linkedin.com/feed/"));
     }
+    private Hyperlink facebook;
+    @FXML
+    void openfacebook (ActionEvent event ) throws URISyntaxException,IOException{
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com"));
+    }
+    private Hyperlink github;
+    @FXML
+    void opengithub (ActionEvent event ) throws URISyntaxException,IOException{
+        Desktop.getDesktop().browse(new URI("https://www.github.com"));
+    }
 
     @FXML
     private Label lab2;
