@@ -75,11 +75,31 @@ public class Utilisateur {
 
   }
 
+  public boolean supprimerProjet(Projet projet) {
 
-  //ovveride equals in order to fix the problem of deletion
-//  public Portfolio supprimerProjet() {
-//
-//  }
+    for (int s = 0; s < mesProjets.size(); s++) {
+      if(mesProjets.get(s).equals(projet)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void ajouterPortfolio(Portfolio portfolio) {
+    setMesPortfolios(mesPortfolios);
+    mesPortfolios.add(portfolio);
+
+  }
+
+  public boolean supprimerPortfolio(Portfolio portfolio) {
+
+    for (int s = 0; s < mesPortfolios.size(); s++) {
+      if(mesPortfolios.get(s).equals(portfolio)) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   public DonnesPersonnels getDonnes() {
     return donnes;

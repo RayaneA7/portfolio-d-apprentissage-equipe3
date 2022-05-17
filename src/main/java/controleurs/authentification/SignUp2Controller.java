@@ -215,7 +215,7 @@ public class SignUp2Controller implements Initializable {
             copyFolder(srcDir.toPath(), destDir.toPath());
             System.out.println("faite2");
             Projet projet = new Projet();
-            projet.setId(new UUID(5,6));
+            projet.setId(UUID.randomUUID());
             projet.setTitre("fsfds");
             ConnectController.user.ajouterProjet(projet);
            ConnectController.create(ConnectController.user);

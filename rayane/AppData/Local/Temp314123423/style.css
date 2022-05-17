@@ -20,7 +20,7 @@ main, aside {
 
 body {
     background-color: #ffffff;
-  /* font-family: "Open Sans", sans-serif; */
+    /* font-family: "Open Sans", sans-serif; */
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     max-width: 1080px;
@@ -32,10 +32,22 @@ body {
 }
 
 table {
+    border: none;
     border-left: 5px solid #F1C53C;
     border-right: 5px solid #F1C53C;
-    width:100%; border-collapse:collapse; font:14px Arial,sans-serif;
+    border-collapse:collapse;
 }
+
+
+/*tr {*/
+/*    margin-bottom: 20px;*/
+
+/*}*/
+
+td {
+    padding: 10px;
+}
+
 ul.projects {
 
     list-style: none;
@@ -110,14 +122,19 @@ footer {
 /*    position: relative;*/
 /*}*/
 
-.project {
-    background: rgba( 255, 255, 255, 0.25 );
-    border-radius: 10px;
+.project  {
     border-bottom: 1px solid #666666;
     margin: 0 0px;
     padding: 1em;
     margin-bottom: 10px;
 
+}
+
+.project > a {
+    text-decoration: none;
+}
+.project p {
+    color: #666666;
 }
 .technologies {
     background-color: #fafafa;
@@ -134,6 +151,8 @@ footer {
 td h2 {
     color: #184173;
     border-bottom: 2px solid ;
+    padding-bottom: 2px;
+    margin-bottom: 0;
     border-color: #184173;
 }
 
@@ -159,6 +178,9 @@ td h2 {
 
 .rights {
     color: #fafafa ;
+    padding:0px;
+    background-color:#F1C53C;
+    text-align:center;
 }
 
 .rights * {
@@ -166,13 +188,16 @@ td h2 {
 
 }
 .logo {
-    display: inline-block; width: 20px; vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    vertical-align: middle;
 }
 
 .skills {
     background-color: #F1C53C;
     text-align: center;
-    display: block;
+    padding: 2px;
+
 }
 .skills > div {
     display: inline;
@@ -201,13 +226,4 @@ td h2 {
     display: inline;
     border-bottom: 2px solid #ffffff;
     padding-bottom: 2px;
-}
-
-tr {
-    margin-bottom: 20px;
-
-}
-
-td {
-    padding: 10px;
 }

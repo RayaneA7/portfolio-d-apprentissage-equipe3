@@ -2,64 +2,51 @@ doctype html
 html
     head
         title= pageName
+        link(rel='stylesheet', href='./style.css')
+        //include ./style.css
     body
-        header
-            .studentInfo
+    table
+        tr.Header
+            td
                 h1= info.nom + " " +info.prenom
                 p.niveau= info.niveauEtude
                 p= info.bioPersonnel
-                .contact
-                    div
-                        a
-                        p
-                    div
-                        a
-                        p
-            img.studentImage(src='/' + url)
-        main
-            section.Education
-                h2 Education
-                ul.projects
-                    each projet in projets
-                        if (projet.type == 'PEDAGOGIQUE')
-                            li.project
+                //.contact
+                //    div
+                //        a(href="#"): img(src="./assets/icons8-contacts.svg" alt="tel")
+                //        p= 0
+                //            span= contact.nbTelephone
+                //    div
+                //        a(href="#"): img(src="./assets/icons8-google-plus.svg" alt="email")
+                //        p= info.Email
+            td(style="padding:5px; background-color:#F1C53C; text-align:center;")
+                img(class="StudentImage" src="./assets/rayane.jpg" alt="student picture")
+        tr
+            td(colspan="2")
+                h2 Pedagogique
+        tr
+            each projet in projets
+                if (projet.type == 'PEDAGOGIQUE')
+                td(colspan="2" class="project")
+                            a(href='//google.com' target="_blank")
                                 div
-                                    h3= projet.titre
-                                        span= projet.date
+                                    h3.projectTitle= projet.titre
+                                        span.projectDate  [
+                                        span.projectDate= projet.date
+                                        span.projectDate ]
                                     p= projet.description
                                     div.technologies
-                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
+
+        tr
+            td.skills
+                if (contact.countFacebook != "")
+                    a(href="#" target="_blank"): img(src="./assets/icons8-facebook.svg" alt="facebook")
+                if (contact.countGithub != "")
+                    a(href="#" target="_blank"): img(src="./assets/icons8-linkedin.svg" alt="github")
+                if (contact.countLinkedIn != "")
+                    a(href="#" target="_blank"): img(src="./assets/icons8-github.svg" alt="linkedin")
+            td.rights
+                p powered by
+                img(class="logo" src="./assets/Ecareer2.png")
 
 
-
-            section.Clubs
-                h2 Education
-                ul.projects
-                    each projet in projets
-                        if (projet.type == 'CLUB')
-                            li.projet
-                                div
-                                    h3= projet.titre
-                                        span= projet.date
-                                    p= projet.description
-                                    div.technologies
-                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
-
-            section.Extra
-                h2 Education
-                ul.projects
-                    each projet in projets
-                        if (project.type == 'PERSONNEL')
-                            li.project
-                                div
-                                    h3= projet.titre
-                                        span= projet.date
-                                    p= projet.description
-                                    div.technologies
-                                img(class= "bleuShape shape" src='/' + url alt="bleu shape")
-        footer
-            div.skills
-                div
-                    a(href="#"): img(src='/' + url alt="facebook")
-                    a(href="#"): img(src='/' + url alt="github")
-                    a(href="#"): img(src='/' + url alt="linkedin")
