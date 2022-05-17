@@ -1,13 +1,17 @@
 package controleurs.passage;
 
 import controleurs.acceuil.AccueilMediateur;
+import controleurs.portfolio.ModifyPortfolioController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import models.Portfolio;
+import models.Utilisateur;
 
 import java.awt.*;
 import java.io.IOException;
@@ -24,22 +28,22 @@ public class Commutateur {
     public void AllerProjet(MouseEvent event){
         loader = new FXMLLoader(getClass().getResource("/views/Project1View.fxml"));
         try {
-            if(AccueilMediateur.memory.get(9)!=null) {
-                AccueilMediateur.memory.remove(9);
+            if(AccueilMediateur.memory.get(10)!=null) {
+                AccueilMediateur.memory.remove(10);
             }
-            AccueilMediateur.memory.add(9,loader.load());
+            AccueilMediateur.memory.add(10,loader.load());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        AccueilMediateur.monPagination.setCurrentPageIndex(9);
+        AccueilMediateur.monPagination.setCurrentPageIndex(10);
     }
-    public void AllerPortfolio(MouseEvent event){
-        loader = new FXMLLoader(getClass().getResource("/views/Portfolio1View.fxml"));
+    public void AllerPortfolio(MouseEvent event) {
+        loader = new FXMLLoader(getClass().getResource("/views/PortfolioShowPage.fxml"));
         try {
-            if(AccueilMediateur.memory.get(8)!=null) {
-                AccueilMediateur.memory.remove(8);
+            if(AccueilMediateur.memory.get(3)!=null) {
+                AccueilMediateur.memory.remove(3);
             }
-            AccueilMediateur.memory.add(8,loader.load());
+            AccueilMediateur.memory.add(3,loader.load());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,14 +64,14 @@ public class Commutateur {
     public void AllerProfile(MouseEvent event){
         loader = new FXMLLoader(getClass().getResource("/views/profile.fxml"));
         try {
-            if(AccueilMediateur.memory.get(8)!=null) {
-                AccueilMediateur.memory.remove(8);
+            if(AccueilMediateur.memory.get(9)!=null) {
+                AccueilMediateur.memory.remove(9);
             }
-            AccueilMediateur.memory.add(8,loader.load());
+            AccueilMediateur.memory.add(9,loader.load());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        AccueilMediateur.monPagination.setCurrentPageIndex(8);
+        AccueilMediateur.monPagination.setCurrentPageIndex(9);
     }
     public void AllerAcceuil(MouseEvent event){
         loader = new FXMLLoader(getClass().getResource("/views/AccueilView.fxml"));
@@ -83,6 +87,22 @@ public class Commutateur {
     }
     public void AllerAide(MouseEvent event) throws URISyntaxException, IOException {
         Desktop.getDesktop().browse(new URI("https://ecareer-documentation.netlify.app/"));
+    }
+    public void AllerModificationPortfolio(Portfolio portfolio) throws IOException {
+        AccueilMediateur.utilisateur=Utilisateur.deserialization(AccueilMediateur.studentFolder);
+        loader = new FXMLLoader(getClass().getResource("/views/ModifyPortfolio.fxml"));
+        try {
+            if(AccueilMediateur.memory.get(8)!=null) {
+                AccueilMediateur.memory.remove(8);
+            }
+            AccueilMediateur.memory.add(8,loader.load());
+            ModifyPortfolioController modifyPortfolioController = loader.getController();
+            modifyPortfolioController.SelectedProjects(portfolio);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        AccueilMediateur.monPagination.setCurrentPageIndex(8);
     }
     public void Déconnecter(MouseEvent event){
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));

@@ -211,6 +211,7 @@ public class Parametre_Controller implements Initializable {
         monPagination.setPageCount(4);
         monPagination.setCurrentPageIndex(0);
         monPagination.setMaxPageIndicatorCount(1);
+        monPagination.setStyle(" -fx-arrows-visible : false ; -fx-page-information-visible : false");
         monPagination.setPageFactory(new Callback<Integer, Node>() {
             @Override
             public Node call(Integer pageIndex) {

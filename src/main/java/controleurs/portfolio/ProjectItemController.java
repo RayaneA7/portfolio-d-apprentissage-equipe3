@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 import models.Project;
+import models.TypeProjet;
 
 public class ProjectItemController implements Initializable {
     @FXML
@@ -47,14 +48,16 @@ public class ProjectItemController implements Initializable {
         this.project = project;
         this.myProject = myProject;
         TitleLabel.setText(project.getTitle());
+
         DateLabel.setText(project.getDate().toString());
-        if(project.getType().equals("pédagogique")){
+        if(project.getType().equals(TypeProjet.PEDAGOGIQUE)){
             TypeImage.setImage(PedImage);
+            System.out.println("pédagogique");
         }
-        if(project.getType().equals("Club")){
+        if(project.getType().equals(TypeProjet.CLUB)){
             TypeImage.setImage(ClubImage);
         }
-        if(project.getType().equals("Personnel")){
+        if(project.getType().equals(TypeProjet.PERSONEL)){
             TypeImage.setImage(PersoImage);
         }
     }
@@ -65,11 +68,10 @@ public class ProjectItemController implements Initializable {
             if(checkButton.isSelected()) {
                 PaneProject.setStyle("-fx-background-color : #f1c53c;");
                 click(e);
-                System.out.println(project.getId());
-            } else{
+            }
+            if(!checkButton.isSelected()){
                 PaneProject.setStyle("-fx-background-color : #ffffff;");
                 click(e);
-                System.out.println(project.getId());
             }
         });
     }

@@ -24,14 +24,6 @@
          <children>
             <VBox alignment="CENTER" layoutX="-4.0" prefHeight="161.0" prefWidth="66.0" spacing="10.0">
                <children>
-                  <ImageView fx:id="star" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/Portfolio/star.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
                   <ImageView fx:id="delete" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/Portfolio/delete.png" />
@@ -92,7 +84,7 @@
                               <Label fx:id="nbrPersoProjects" layoutX="27.0" layoutY="2.0" prefHeight="20.0" prefWidth="76.0" text="8 personnels" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="88.0">
+                        <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="24.0" prefWidth="88.0">
                            <children>
                               <Label fx:id="nbrClubProjects" layoutX="25.0" layoutY="2.0" prefHeight="20.0" prefWidth="48.0" text="5 Clubs" />
                               <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">

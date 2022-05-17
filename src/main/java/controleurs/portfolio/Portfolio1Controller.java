@@ -18,8 +18,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import models.Utilisateur;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -113,164 +115,153 @@ public class Portfolio1Controller implements Initializable {
 
         CreatePag();
         /*****************************************************************************/
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
             AccueilLabel.setTextFill(Color.BLACK);
             AccueilImage.setImage(AccueilImg);
             line1.setStyle("-fx-stroke: #666666");
         });
-        AccueilButton.setOnMouseClicked(e->{
-            AccueilMediateur.monPagination.setCurrentPageIndex(0);
+        AccueilButton.setOnMouseClicked(e -> {
+            AccueilMediateur.commutateur.AllerAcceuil(e);
         });
         /******************************************************************************/
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
             ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
         });
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
             ProjetLabel.setTextFill(Color.BLACK);
             ProjetsImage.setImage(ProjetImg);
             line2.setStyle("-fx-stroke: #666666");
         });
+        ProjetButton.setOnMouseClicked(e -> {
+            AccueilMediateur.commutateur.AllerProjet(e);
+        });
         /******************************************************************************/
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
             PortfolioLabel.setTextFill(Color.WHITE);
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
             PortfolioLabel.setTextFill(Color.BLACK);
             PortfolioImage.setImage(PortfolioImg);
             line3.setStyle("-fx-stroke: #666666");
         });
-        PortfolioButton.setOnMouseClicked(e->{
-            AccueilMediateur.monPagination.setCurrentPageIndex(10);
+        PortfolioButton.setOnMouseClicked(e -> {
+            AccueilMediateur.commutateur.AllerPortfolio(e);
         });
         /*******************************************************************************/
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
             ParametresLabel.setTextFill(Color.BLACK);
             ParametresIamge.setImage(ParametresImg);
             line4.setStyle("-fx-stroke: #666666");
         });
-        ParametresButton.setOnMouseClicked(e->{
-            AccueilMediateur.monPagination.setCurrentPageIndex(2);
+        ParametresButton.setOnMouseClicked(e -> {
+            AccueilMediateur.commutateur.AllerParametres(e);
         });
         /************************************************************************************/
-        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             AideButton.setStyle("-fx-background-color: #f1c53c");
             AideLabel.setTextFill(Color.WHITE);
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
-        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             AideButton.setStyle("-fx-background-color: F5F5F5");
             AideLabel.setTextFill(Color.BLACK);
             AideImage.setImage(AideImg);
             line5.setStyle("-fx-stroke: #666666");
         });
-        /*********************************************************************************
-        SwitchButton.setOnAction(e->{
+        AideButton.setOnMouseClicked(e -> {
             try {
-                SwtichScene(e);
+                AccueilMediateur.commutateur.AllerAide(e);
+            } catch (URISyntaxException ex) {
+                ex.printStackTrace();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         });
-        /***********************************************************************************
-        AccueilButton.setOnAction(e->{
-            try{
-                GoToAccueil(e);
-            } catch(Exception ex){
-                ex.printStackTrace();
-            }
-        });
-        /***************************************************************************************
-        PortfolioButton.setOnAction(e->{
-            try{
-                GoToPortfolio(e);
-            }
-            catch (IOException ex){
-                ex.printStackTrace();
-            }
-        });
-        /***************************************************************************************/
-        Next.setOnMouseClicked(e->{
+        /*********************************************************************************
+         SwitchButton.setOnAction(e->{
+         try {
+         SwtichScene(e);
+         } catch (IOException ex) {
+         ex.printStackTrace();
+         }
+         });
+         /***********************************************************************************
+         AccueilButton.setOnAction(e->{
+         try{
+         GoToAccueil(e);
+         } catch(Exception ex){
+         ex.printStackTrace();
+         }
+         });
+         /***************************************************************************************
+         PortfolioButton.setOnAction(e->{
+         try{
+         GoToPortfolio(e);
+         }
+         catch (IOException ex){
+         ex.printStackTrace();
+         }
+         });
+         /***************************************************************************************/
+        Next.setOnMouseClicked(e -> {
             NextPag();
         });
 
-        Previous.setOnMouseClicked(e->{
+        Previous.setOnMouseClicked(e -> {
             PreviousPag();
         });
 
-        PortModel1.setOnMouseClicked(e-> {
-            try{
+        PortModel1.setOnMouseClicked(e -> {
+            try {
                 Preview(e, pagination.getCurrentPageIndex());
-            } catch (Exception exception){
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        Mod1.setOnMouseClicked(e->{
+        Mod1.setOnMouseClicked(e -> {
             try {
                 Preview(e, pagination.getCurrentPageIndex());
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         });
-
-        DeconnexionBut.setOnMouseClicked(e->{
-            try{
-                SeDeconnecter(e);
-            } catch(Exception exception){
+        DeconnexionBut.setOnMouseClicked(e -> {
+            try {
+               AccueilMediateur.commutateur.Déconnecter(e);
+            } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
-
         Currentpag = pagination.getCurrentPageIndex();
     }
 
-    public void SwtichScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Portfolio12View.fxml"));
-        Stage stage = (Stage)SwitchButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 850,600));
-        stage.getIcons().addAll(IconImg);
-    }
-
-    public void GoToPortfolio(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/PortfolioShowPage.fxml"));
-        Stage stage = (Stage)PortfolioButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 850,600));
-        stage.getIcons().addAll(IconImg);
-    }
-
-    public void GoToAccueil(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/AccueilView.fxml"));
-        Stage stage = (Stage)AccueilButton.getScene().getWindow();
-        stage.setScene(new Scene(root,850,600));
-        stage.getIcons().add(IconImg);
-    }
-
-    public AnchorPane CreatePage(int pageIndex){
+    public AnchorPane CreatePage(int pageIndex) {
         AnchorPane pane = new AnchorPane();
-        if(pageIndex == 0){
+        if (pageIndex == 0) {
             Mod1.setImage(ModelProf1);
             Mod2.setImage(ModelAnim1);
             Mod1.setLayoutX(35);
@@ -282,10 +273,10 @@ public class Portfolio1Controller implements Initializable {
             PortModel2.setLayoutX(238);
             PortModel2.setLayoutY(20);
             pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1,Mod2);
+            pane.getChildren().addAll(Mod1, Mod2);
             return pane;
         }
-        if(pageIndex == 1) {
+        if (pageIndex == 1) {
             Mod1.setImage(ModelAnim1);
             Mod2.setImage(ModelAnim1);
             Mod1.setLayoutX(35);
@@ -301,7 +292,7 @@ public class Portfolio1Controller implements Initializable {
             pane.getChildren().add(Mod2);
             return pane;
         }
-        if(pageIndex == 2) {
+        if (pageIndex == 2) {
             Mod1.setImage(ModelProf1);
             Mod2.setImage(ModelAnim1);
             Mod1.setLayoutX(35);
@@ -313,60 +304,56 @@ public class Portfolio1Controller implements Initializable {
             PortModel2.setLayoutX(238);
             PortModel2.setLayoutY(20);
             pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1,Mod2);
+            pane.getChildren().addAll(Mod1, Mod2);
             return pane;
         }
         return null;
     }
 
-    public void CreatePag(){
+    public void CreatePag() {
         pagination.setPageCount(nbrPag);
         pagination.setCurrentPageIndex(Currentpag);
         pagination.setPageFactory((Integer pageIndex) -> CreatePage(pageIndex));
         pagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
-        pagination.getStylesheets().add("/css/PortfolioPag.css");
+       // pagination.getStylesheets().add("/css/PortfolioPag.css");
     }
 
-    public void NextPag(){
-        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex()+1)%nbrPag);
+    public void NextPag() {
+        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex() + 1) % nbrPag);
     }
 
-    public void PreviousPag(){
-        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex()+1)%nbrPag);
+    public void PreviousPag() {
+        pagination.setCurrentPageIndex((pagination.getCurrentPageIndex() + 1) % nbrPag);
     }
 
     public void Preview(MouseEvent event, int numPag) throws IOException {
+        //faire une mise à jour pour la liste
+        AccueilMediateur.utilisateur= Utilisateur.deserialization(AccueilMediateur.studentFolder);
         FXMLLoader loader = null;
-        if(numPag == 0){
-        //loader =new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
-        AccueilMediateur.monPagination.setCurrentPageIndex(7);
+        if (numPag == 0) {
+            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
+            try {
+                if(AccueilMediateur.memory.get(5)!=null) {
+                    AccueilMediateur.memory.remove(5);
+                }
+                AccueilMediateur.memory.add(5,loader.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            AccueilMediateur.monPagination.setCurrentPageIndex(5);
         }
-        if(numPag == 1){
-        //loader =new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
-            AccueilMediateur.monPagination.setCurrentPageIndex(8);
+        /***************A realiser *********************/
+        /************************************************/
+        /*********************************************
+        if (numPag == 1) {
+            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
+            AccueilMediateur.monPagination.setCurrentPageIndex(6);
         }
-        if(numPag == 2){
-        //loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
-            AccueilMediateur.monPagination.setCurrentPageIndex(9);
+        if (numPag == 2) {
+            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
+            AccueilMediateur.monPagination.setCurrentPageIndex(7);
         }
-        /************************************************
-        Scene scene = new Scene(loader.load(),850,600);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-        stage.getIcons().add(IconImg);
-        /***********************************/
-    }
-
-    public void SeDeconnecter(MouseEvent event) throws IOException {
-        FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
-        Scene scene = new Scene(loader.load(),800,568);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-        stage.getIcons().add(IconImg);
+        /************************************************/
     }
 }
 /*195 80 gridPane ScrPane*/

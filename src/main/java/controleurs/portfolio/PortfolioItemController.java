@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Ordre;
 import models.Portfolio;
+import models.Statistiques;
 
 import java.io.IOException;
 import java.net.URL;
@@ -64,24 +65,30 @@ public class PortfolioItemController implements Initializable {
     /*********************************************************************/
 
     @FXML
-    private void click(MouseEvent e){
+    private void clickRemove(){
         myPortfolio.removePortfolio(portfolio);
     }
+
+    @FXML
+    private void clickModify(){myPortfolio.modifyPortfolio(portfolio);};
 
     public void setData(Portfolio portfolio, MyPortfolio myPortfolio){
         this.portfolio = portfolio;
         this.myPortfolio = myPortfolio;
+        /********************************/
+        Statistiques statistiques =new Statistiques(portfolio.getListProject());
+        statistiques.CalculerNbprojetsType();
+        System.out.println(statistiques.getNbProjetsPersonnels()+" "+statistiques.getNbProjetsClubs()+" "+statistiques.getNbProjetsPédagogiques());
         titleLabel.setText(StringNumber(portfolio.getId())+" portfolio");
-        //dateLabel.setText();
-        nbrPersoProjects.setText(portfolio.nbrPersoProjects() + " personnels");
-        nbrClubProjects.setText(portfolio.nbrClubProjects() + " Clubs");
-        nbrPedaProjects.setText(portfolio.nbrPedagProjects() + " pédagogiques");
+        nbrPersoProjects.setText(statistiques.getNbProjetsPersonnels() + " personnels");
+        nbrClubProjects.setText(statistiques.getNbProjetsClubs() + " Clubs");
+        nbrPedaProjects.setText(statistiques.getNbProjetsPédagogiques()+ " pédagogiques");
+        LabelSum.setText(portfolio.getListProject().size() + " projets");
         if(portfolio.getId() % 2 == 0) {
             PaneColor.setStyle("-fx-background-color : #caede3; -fx-background-radius : 20px;");
         } else {
             PaneColor.setStyle("-fx-background-color : #eddeca; -fx-background-radius : 20px;");
         }
-        LabelSum.setText(portfolio.nbrPedagProjects() + portfolio.nbrClubProjects() + portfolio.nbrPedagProjects() + " projets");
     }
 
     private String StringNumber(int id) {
@@ -103,8 +110,8 @@ public class PortfolioItemController implements Initializable {
         delete.setOnMouseClicked(event->{
             /*******************************/
            monScrollXPosition=PortfolioShowController.MonScrollPane.getHvalue();
-                   /**********************************************/
-            click(event);
+           /**********************************************/
+            clickRemove();
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/PortfolioShowPage.fxml"));
             System.out.println("une suppresio*n se passe");
             Scene scene = null;
@@ -119,6 +126,12 @@ public class PortfolioItemController implements Initializable {
             stage.show();
             PortfolioShowController.MonScrollPane.setHvalue(monScrollXPosition);
         });
+
+        modify.setOnMouseClicked(event->{
+            clickModify();
+        });
+
+
 
     }
 }

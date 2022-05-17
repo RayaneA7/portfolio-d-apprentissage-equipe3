@@ -93,56 +93,63 @@ public class AccueilMediateur implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /***********************3***********************/
-            loader1 = new FXMLLoader(getClass().getResource("/views/Portfolio1View.fxml"));
-            try {
-                memory.add(loader1.load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            /*********************************4***********/
-            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
-            try {
-                memory.add(loader1.load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            /************************5*****************************************/
-            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
-            try {
-                memory.add(loader1.load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            /**********************6*******************************************/
-            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
-            try {
-                memory.add(loader1.load());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            /***********************7******************************************/
+            /***********************3******************************************/
             loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioShowPage.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /***********************8****************************************/
-            loader1 = new FXMLLoader(getClass().getResource("/views/profile.fxml"));
+            /***********************4***********************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/Portfolio1View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /************************9****************************************/
+            /*********************************5*********************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /************************6*****************************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /**********************7*******************************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            /**************************8*************************************/
+            loader1 = new FXMLLoader(getClass().getResource("/views/ModifyPortfolio.fxml"));
+            try {
+                memory.add(loader1.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+             /**************************9*************************************/
+             loader1 = new FXMLLoader(getClass().getResource("/views/profile.fxml"));
+             try {
+                 memory.add(loader1.load());
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+            /************************10****************************************/
              loader1 = new FXMLLoader(getClass().getResource("/views/Project1View.fxml"));
              try {
                  memory.add(loader1.load());
              } catch (IOException e) {
                  e.printStackTrace();
              }
-             /************************10****************************************/
+             /************************11****************************************/
              loader1 = new FXMLLoader(getClass().getResource("/views/AddProjectView.fxml"));
              try {
                  memory.add(loader1.load());
@@ -156,6 +163,7 @@ public class AccueilMediateur implements Initializable {
         timeLine1.play();
         /********************************************************************/
          monPagination =new Pagination();
+         monPagination.setStyle(" -fx-arrows-visible : false ; -fx-page-information-visible : false");
          monPagination.setPageCount(12);
          monPagination.setCurrentPageIndex(0);
          monPagination.setMaxPageIndicatorCount(1);

@@ -24,7 +24,16 @@ public class Project {
     }
 
     private UUID id;
-    private String type;
+
+    public TypeProjet getType() {
+        return type;
+    }
+
+    public void setType(TypeProjet type) {
+        this.type = type;
+    }
+
+    private TypeProjet type;
     private ArrayList<Competence> competences = new ArrayList<>();
 
     public String getDate() {
@@ -44,7 +53,7 @@ public class Project {
     }
 
     //Project(titleInput.getText(),tempType,tempComp,date,tempImg,tempDocs,descriptionInput.getText());
-    public Project(String title, String type, ArrayList<Competence> competences, String date, ArrayList<String> docs, String descreption) {
+    public Project(String title,TypeProjet type, ArrayList<Competence> competences, String date, ArrayList<String> docs, String descreption) {
         this.title = title;
         this.type = type;
         //System.out.println(title+ " has the competnce  of size () " + competences.size());
@@ -72,14 +81,6 @@ public class Project {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public ArrayList<Competence> getCompetences() {

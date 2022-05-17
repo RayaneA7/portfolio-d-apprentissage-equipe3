@@ -14,7 +14,25 @@ import java.util.ArrayList;
 public class Utilisateur {
   public DonnesPersonnels donnes;
   public Contacts contacts;
+
+  public ArrayList<Project> getListProjets() {
+    return listProjets;
+  }
+
+  public void setListProjets(ArrayList<Project> listProjets) {
+    this.listProjets = listProjets;
+  }
+
   public ArrayList<Project> listProjets ;
+
+  public ArrayList<Portfolio> getListPortfolio() {
+    return listPortfolio;
+  }
+
+  public void setListPortfolio(ArrayList<Portfolio> listPortfolio) {
+    this.listPortfolio = listPortfolio;
+  }
+
   public ArrayList<Portfolio> listPortfolio;
 
 
