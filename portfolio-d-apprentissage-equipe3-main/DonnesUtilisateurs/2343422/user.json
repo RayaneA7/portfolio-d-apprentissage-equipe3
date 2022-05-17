@@ -1,0 +1,26 @@
+{
+  "donnes": {
+    "matricule": "2343422",
+    "nom": "dfakfsdl",
+    "prenom": "dlajffdf",
+    "Datenaissance": "5/11/2002",
+    "sex": "MALE",
+    "motdePasse": "2fd44f10bbc065c0ec8e60a060b4d12a972a87d0134932bdd6843584902cc6b3",
+    "Email": "K_kebir@esi.dz",
+    "niveauEtude": "1CP",
+    "bioPersonnel": "dlskfa\u0027lsjfklas;"
+  },
+  "contacts": {
+    "nbTelephone": 4324323,
+    "countFacebook": "dskjfalksdj",
+    "countGithub": "dsfajdkls",
+    "countLinkedln": "dksjfsdkljf"
+  },
+  "mesProjets": [
+    {
+      "id": "00000000-0000-0005-0000-000000000006",
+      "titre": "fsfds",
+      "competences": []
+    }
+  ]
+}

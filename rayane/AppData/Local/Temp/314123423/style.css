@@ -1,0 +1,229 @@
+/* todos :
+- flex contact 
+- header we will make a title and picture and description also flex
+- the main will be devided into 3 sections 
+- each section will have a list of the projects
+- add the absolute shapes in the sides 
+- footer will be skills (soft hard ..)
+- add facebook github insta phone number juste abode the first line
+
+
+
+
+*/
+@import url('https://fonts.googleapis.com/css2&display=swap');
+
+main, aside {
+    border-left: 5px solid #F1C53C;
+    border-right: 5px solid #F1C53C;
+}
+
+body {
+    background-color: #ffffff;
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: 1;
+    color: #666666;
+
+    /* place-items: center; */
+}
+
+table {
+    border: none;
+    border-left: 5px solid #F1C53C;
+    border-right: 5px solid #F1C53C;
+    border-collapse:collapse;
+}
+
+
+/*tr {*/
+/*    margin-bottom: 20px;*/
+
+/*}*/
+
+td {
+    padding: 10px;
+}
+
+ul.projects {
+
+    list-style: none;
+    position:relative;
+
+    padding: 0px 30px;
+
+
+}
+
+.Header {
+    padding: 10px 30px;
+    background-color: #F1C53C;
+    /* border-bottom: 2px solid #184173; */
+}
+
+.Header td {
+    padding:20px;
+}
+main {
+
+    padding: 10px 20px;
+
+
+}
+
+footer {
+    background-color: #F1C53C;
+
+}
+
+.Header  h1 {
+    color: #ffffff;
+    /* border-bottom: 2px solid ;
+    border-color: #ffffff */
+
+}
+
+
+.studentInfo {
+    display: inline;
+
+}
+
+.niveau {
+    color: #fafafa;
+    font-size: medium;
+    font-weight: 900;
+    border-bottom: 1px solid ;
+    padding-bottom: 4px;
+    border-color: #ffffff;
+    display: inline;
+    margin-left: 5px;
+
+}
+
+.StudentImage {
+    display: inline-block; width: 150px; vertical-align: middle;border: 2px solid #ffffff;background-color:#ffffff;
+}
+.projectTitle {
+    color: #F1C53C;
+    font-weight: bolder;
+    color: #000000;
+
+
+
+
+
+}
+
+/*.project {*/
+/*    position: relative;*/
+/*}*/
+
+.project  {
+    border-bottom: 1px solid #666666;
+    margin: 0 0px;
+    padding: 1em;
+    margin-bottom: 10px;
+
+}
+
+.project > a {
+    text-decoration: none;
+}
+.project p {
+    color: #666666;
+}
+.technologies {
+    background-color: #fafafa;
+    display: inline;
+    font-style: italic;
+    font-size: small;
+}
+.projectDate {
+    color: #666666;
+    font-size: small;
+    vertical-align: middle
+}
+
+td h2 {
+    color: #184173;
+    border-bottom: 2px solid ;
+    padding-bottom: 2px;
+    margin-bottom: 0;
+    border-color: #184173;
+}
+
+.shape {
+    z-index: 0;
+    position:relative;
+    width: 10%;
+}
+.bleuShape {
+    top: -100px;
+    float:right;
+    right: -50px;
+    /* top: -340px;
+    left: 0em; */
+}
+.yellowShape {
+
+    /* right: -800px; */
+    /* bottom: 200px; */
+    float: right;
+    top: -60px;
+}
+
+.rights {
+    color: #fafafa ;
+    padding:0px;
+    background-color:#F1C53C;
+    text-align:center;
+}
+
+.rights * {
+    display: inline-block;
+
+}
+.logo {
+    display: inline-block;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.skills {
+    background-color: #F1C53C;
+    text-align: center;
+    padding: 2px;
+
+}
+.skills > div {
+    display: inline;
+    border-bottom: 2px solid #fafafa;
+
+}
+
+.contact {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contact > div {
+    font-size: medium;
+    font-weight: bolder;
+    color: #184173;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.contact > div > p {
+    display: inline;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}

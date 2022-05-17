@@ -1,0 +1,25 @@
+.anchorpane{
+    -fx-background-color : #ffffff;
+    -fx-background-radius : 20px;
+    -fx-effect: dropShadow(three-pass-box, black, 10, 0, 0, 0);
+}
+
+.checkbutton .box{
+    -fx-background-color : white;
+    -fx-border-color : grey;
+    -fx-border-radius : 4px;
+}
+
+.checkbutton:selected .box{
+    -fx-background-color : #1a4173;
+}
+
+.checkbutton:selected .mark{
+    -fx-background-color : white;
+}
+
+.anchorePane1 {
+    -fx-background-color: #ffffff;
+    -fx-background-radius : 20px;
+    -fx-effect: dropShadow(three-pass-box, black, 10, 0, 0, 0);
+}

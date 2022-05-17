@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="245.0" styleClass="anchorePane1" stylesheets="@../css/Model.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.portfolio.PortfolioItemController">
+   <children>
+    <AnchorPane fx:id="PaneColor" minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="245.0" style="-fx-background-radius: 20px;">
+         <children>
+            <ImageView fx:id="portfimg" fitHeight="137.0" fitWidth="103.0" layoutX="71.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Portfolio/Mod1.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+    <AnchorPane layoutX="183.0" layoutY="162.0" minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="65.0" style="-fx-background-color: 000000;">
+         <children>
+            <VBox alignment="CENTER" layoutX="-4.0" prefHeight="161.0" prefWidth="66.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="star" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/star.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="delete" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/delete.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="export" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/export.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="modify" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/modify.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="160.0" prefHeight="174.0" prefWidth="183.0" style="-fx-background-radius: 20px;">
+         <children>
+            <Label fx:id="titleLabel" layoutX="4.0" layoutY="2.0" text="Premier Portfolio">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="4.0" layoutY="29.0" text="15-2-2019">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="55.0" text="Analytics">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line endX="175.0" endY="-0.5" layoutX="4.0" layoutY="75.0" startY="-0.5" />
+            <VBox alignment="CENTER" layoutY="77.0" prefHeight="91.0" prefWidth="183.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="176.0">
+                     <children>
+                        <AnchorPane prefHeight="24.0" prefWidth="88.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/Portfolio/Rec1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="nbrPersoProjects" layoutX="27.0" layoutY="2.0" prefHeight="20.0" prefWidth="76.0" text="8 personnels" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="88.0">
+                           <children>
+                              <Label fx:id="nbrClubProjects" layoutX="25.0" layoutY="2.0" prefHeight="20.0" prefWidth="48.0" text="5 Clubs" />
+                              <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/Portfolio/Rec3.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="176.0">
+                     <children>
+                        <AnchorPane prefHeight="24.0" prefWidth="88.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/Portfolio/Rec2.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="nbrPedaProjects" layoutX="27.0" layoutY="2.0" prefHeight="20.0" prefWidth="76.0" text="3pédagoqiues">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="88.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/Portfolio/Sum.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="LabelSum" layoutX="22.0" layoutY="2.0" prefHeight="20.0" prefWidth="58.0" text="16 projets" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="38.0" prefWidth="179.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+{
+  "donnes": {
+    "matricule": "20_256",
+    "nom": "Moh",
+    "prenom": "Ara",
+    "Datenaissance": "6/2/2002",
+    "sex": "MALE",
+    "motdePasse": "a883a98d3d7922b19b43deb89ba85ee3d2ff205c32c91758122cb75739c4627e",
+    "Email": "km_Bobo@esi.dz",
+    "niveauEtude": "2CP",
+    "bioPersonnel": "je suis jhh \nmon age est fhfhfh .\nhhdhdhh"
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
+  }
+}

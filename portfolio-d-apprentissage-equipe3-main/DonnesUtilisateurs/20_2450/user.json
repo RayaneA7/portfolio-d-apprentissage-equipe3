@@ -1,0 +1,18 @@
+{
+  "donnes": {
+    "matricule": "20_2450",
+    "nom": "Abdo Mohammed",
+    "prenom": "Seddiki",
+    "Datenaissance": "4/27/2002",
+    "sex": "MALE",
+    "motdePasse": "ceaecf664efd8f9a0d860fdd7742b98aca09cb84477c771555177e39e84f7886",
+    "Email": "ky_Seddiki@esi.dz",
+    "niveauEtude": "2ST"
+  },
+  "contacts": {
+    "nbTelephone": 74551235,
+    "countFacebook": "hhhch",
+    "countGithub": "dddduud12",
+    "countLinkedln": "djjddj@lindeln.com"
+  }
+}

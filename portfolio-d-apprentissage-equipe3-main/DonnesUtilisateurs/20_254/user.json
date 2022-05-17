@@ -1,0 +1,19 @@
+{
+  "donnes": {
+    "matricule": "20_254",
+    "nom": "Mohammed",
+    "prenom": "Arab",
+    "Datenaissance": "6/1/2002",
+    "sex": "MALE",
+    "motdePasse": "405a0c00cbd2148134e750e9a34f9e802dfaba42688cc1f7b23ad4bb5644c454",
+    "Email": "Km_arab@esi.dz",
+    "niveauEtude": "2CP",
+    "bioPersonnel": ""
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
+  }
+}
