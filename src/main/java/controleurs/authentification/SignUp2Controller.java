@@ -213,10 +213,6 @@ public class SignUp2Controller implements Initializable {
             File srcDir = new File("DonnesUtilisateurs/Etudiant");
             File destDir = new File("DonnesUtilisateurs/" + studentFolder);
             copyFolder(srcDir.toPath(), destDir.toPath());
-            System.out.println("faite2");
-            Projet projet = new Projet();
-            projet.setId(new UUID(5,6));
-            projet.setTitre("fsfds");
             //ConnectController.user.ajouterProjet(projet);
            ConnectController.create(ConnectController.user);
             /***************/

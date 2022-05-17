@@ -17,6 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
 
 <AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.profil.Profil">
    <children>
@@ -49,40 +50,8 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <JFXButton buttonType="RAISED" layoutX="706.0" layoutY="540.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
-         <ripplerFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.9450980424880981" green="0.772549033164978" blue="0.23529411852359772" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </ripplerFill>
-      </JFXButton>
+      <Button fx:id="retourButton" layoutX="706.0" layoutY="540.0"  prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+      </Button>
       <BarChart fx:id="barChart" layoutX="309.0" layoutY="397.0" prefHeight="161.0" prefWidth="269.0" stylesheets="@../css/Inscription.css">
         <xAxis>
           <CategoryAxis fx:id="projects" side="BOTTOM" />

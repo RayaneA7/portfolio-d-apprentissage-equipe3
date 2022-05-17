@@ -39,6 +39,7 @@ public class AccueilMediateur implements Initializable {
     private Stage stage;
     private Scene scene;
     private File file;
+    FXMLLoader loader1;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*********************************/
@@ -66,7 +67,7 @@ public class AccueilMediateur implements Initializable {
             System.out.println("probleme se génere losrs de chargement de l'image");
          }
          /*********************0**************/
-         memory = new ArrayList<>();
+         memory = new ArrayList<>(10);
          FXMLLoader loader = new FXMLLoader();
          loader = new FXMLLoader(getClass().getResource("/views/AccueilView.fxml"));
          try {
@@ -86,55 +87,68 @@ public class AccueilMediateur implements Initializable {
          timeLine1 = new Timeline(new KeyFrame(Duration.seconds(0.1), event4 -> {
             System.out.println("welcome in our application****************************");
             /******************2**********************/
-            FXMLLoader loader1;
             loader1 = new FXMLLoader(getClass().getResource("/views/Parametre_View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /***********************3*****************************************/
+            /***********************3***********************/
             loader1 = new FXMLLoader(getClass().getResource("/views/Portfolio1View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /*********************************4*******************************/
+            /*********************************4***********/
             loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /************************5*****************/
+            /************************5*****************************************/
             loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /**********************6*********************/
+            /**********************6*******************************************/
             loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /***********************7************/
+            /***********************7******************************************/
             loader1 = new FXMLLoader(getClass().getResource("/views/PortfolioShowPage.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            /***********************8***********/
+            /***********************8****************************************/
             loader1 = new FXMLLoader(getClass().getResource("/views/profile.fxml"));
             try {
                 memory.add(loader1.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            /************************9****************************************/
+             loader1 = new FXMLLoader(getClass().getResource("/views/Project1View.fxml"));
+             try {
+                 memory.add(loader1.load());
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+             /************************10****************************************/
+             loader1 = new FXMLLoader(getClass().getResource("/views/AddProjectView.fxml"));
+             try {
+                 memory.add(loader1.load());
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
         }));
         timeLine1.setRate(1);
         timeLine1.setDelay(Duration.seconds(0.2));

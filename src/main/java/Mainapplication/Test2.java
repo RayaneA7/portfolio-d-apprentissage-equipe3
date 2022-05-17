@@ -20,23 +20,12 @@ public class Test2 {
         System.out.println();
     }
     public static void main(String args[]) throws IOException {
-        Timeline timeLine1 = new Timeline(new KeyFrame(Duration.seconds(0), event4 -> {
-            System.out.println("welcome in our application");
-        }));
-        timeLine1.setRate(1);
-        timeLine1.setDelay(Duration.seconds(2));
-        timeLine1.setCycleCount(Timeline.INDEFINITE);
-        timeLine1.play();
          /*************************************/
-        String motcle="baba";
-        Scanner scanner =new Scanner(System.in);
-        System.out.println("entrez le mot clé");
-        motcle= scanner.nextLine();
-        if(motcle.contains("baba"))
-        {
-            System.out.println("Goood");
-            timeLine1.play();
-        }
+         ArrayList<String> lists =new ArrayList<>(8);
+         lists.add("bingbang");
+         if(lists.get(4)==null){
+             lists.add(4,"hbdshdvh");
+         }
         Competences comp =new Competences();
         /*******/
         ArrayList<Competence> result;
@@ -53,7 +42,7 @@ public class Test2 {
         result=competences.RecherchObjectif("signal");
         Afficher(result);
         System.out.println("****************Test4*************");
-        result=competences.Recherche_Module_Titre_Code_Objectif("ANA","","TEC","");
+        result=competences.Recherche_Module_Titre_Code_Objectif("AN","","","");
         Afficher(result);
         System.out.println("****************Test5*************");
         result=competences.Recherche_Module_Titre_Code_Objectif("poo","realise","TEC","");

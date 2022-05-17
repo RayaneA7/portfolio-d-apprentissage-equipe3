@@ -3,7 +3,6 @@ package models;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
@@ -11,31 +10,13 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Utilisateur {
   public DonnesPersonnels donnes;
   public Contacts contacts;
-
-  public ArrayList<Project> getListProjets() {
-    return listProjets;
-  }
-
-  public void setListProjets(ArrayList<Project> listProjets) {
-    this.listProjets = listProjets;
-  }
-
   public ArrayList<Project> listProjets ;
+  public ArrayList<Portfolio> listPortfolio;
 
-  public ArrayList<Portfolio> getListPortfolio() {
-    return listPortfolio;
-  }
-
-  public void setListPortfolio(ArrayList<Portfolio> listPortfolio) {
-    this.listPortfolio = listPortfolio;
-  }
-
-  public ArrayList<Portfolio> listPortfolio ;
 
   public static void serialize(Utilisateur user,String studentFolder) {
 

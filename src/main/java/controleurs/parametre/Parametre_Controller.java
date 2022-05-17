@@ -160,9 +160,15 @@ public class Parametre_Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /****************l'ajoute du button de modification*****************/
+        /***********************Chargement de photo Personnel**************************************************/
+        if(AccueilMediateur.image!=null) {
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
+        imagePersonnel.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerProfile(e);
+        });
         ModifierButton =new Button("Modifier");
-        ModifierButton.setStyle("-fx-bacground-color : white ; -fx-background-radius :10;-fx-border-radius :10 ;" +
-                "-fx-font-size : 14");
+        ModifierButton.setStyle("-fx-bacground-color : white ; -fx-background-radius :10;-fx-border-radius :10 ;" + "-fx-font-size : 14");
         ModifierButton.setPrefSize(90,35);
         ModifierButton.setLayoutY(530);
         ModifierButton.setLayoutX(630);
@@ -244,8 +250,6 @@ public class Parametre_Controller implements Initializable {
         });
         /************************************************************************/
         RetourButton.setOnMouseClicked(e->{
-            /*****************les serialization des nouveau donnes de l'utilisateur ******************/
-
         });
         info_Button.setOnMouseClicked(e->{
             monPagination.setCurrentPageIndex(0);
@@ -277,13 +281,6 @@ public class Parametre_Controller implements Initializable {
         });
         /*****************************************************************************************************/
         /**************************************************************************************************/
-        /***********************Chargement de photo Personnel**************************************************/
-        if(AccueilMediateur.image!=null) {
-            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
-        }
-        imagePersonnel.setOnMouseClicked(e->{
-            AccueilMediateur.commutateur.AllerProfile(e);
-        });
         /**************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");

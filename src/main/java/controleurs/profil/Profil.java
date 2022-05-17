@@ -4,12 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import java.awt.*;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import models.Utilisateur;
 import controleurs.acceuil.*;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -55,6 +56,8 @@ public class Profil implements Initializable {
     private NumberAxis years;
     @FXML
     private Label poucentage;
+    @FXML
+    private Button retourButton ;
    @FXML
     private Hyperlink linkdin;
     @FXML
@@ -128,24 +131,12 @@ public class Profil implements Initializable {
         }
         /**************************************************/
         logout.setOnMouseClicked(event -> {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
-            Scene scene = null;
-            Stage stage = null;
-            try {
-                scene = new Scene(loader.load(), 800, 568);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
+            AccueilMediateur.commutateur.Déconnecter(event);
         });
-    }
-
-    public void PreviousPage(ActionEvent actionEvent) {
-
-        AccueilMediateur.monPagination.setCurrentPageIndex(0);
+        /*************************************************************/
+        retourButton.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerAcceuil(e);
+        });
     }
 }
 /*******************************************************************************/
