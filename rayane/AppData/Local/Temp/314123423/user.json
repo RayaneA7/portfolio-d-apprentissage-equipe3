@@ -20,10 +20,147 @@
     {
       "id": "c7f9208d-2235-43cf-bd1f-ed7268952eeb",
       "titre": "Creation d'un site web pour le projet 2cp",
-      "competences": [],
       "type": "PEDAGOGIQUE",
       "date": "2019-09-26",
-      "description": "ceci est un sous projet du projet 2cp creee principalement pour montrer la documentation de notre application"
+      "description": "ceci est un sous projet du projet 2cp creee principalement pour montrer la documentation de notre application",
+      "competences": [
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        },        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.A: Analyser et concevoir des algorithmes",
+          "ElemdeCompetence": "C4A.1: Etudier les structures de données et de fichiers et analyser l’efficacité des algorithmes",
+          "modules": [
+            "ALSDD",
+            "SFSD",
+            "TPRO",
+            "CRP"
+          ],
+          "type": "MET",
+          "ObjectifPédagogique": ""
+        }
+      ]
 
     }
   ]

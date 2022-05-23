@@ -26,27 +26,75 @@ html
                 h2 Pedagogique
         tr
             each projet in projets
-                if (projet.type == 'PEDAGOGIQUE')
-                td(colspan="2" class="project")
-                            a(href='//google.com' target="_blank")
+                if projet.type == 'PEDAGOGIQUE'
+                    td(colspan="2" class="project")
+                                a(href='//google.com' target="_blank")
+                                        h3.projectTitle= projet.titre
+                                            span.projectDate [
+                                            span.projectDate= projet.date
+                                            span.projectDate ]
                                 div
-                                    h3.projectTitle= projet.titre
-                                        span.projectDate  [
-                                        span.projectDate= projet.date
-                                        span.projectDate ]
-                                    p= projet.description
-                                    div.technologies
-
+                                    div
+                                        p= projet.description
+                                        div.technologies
+                                    div.competence
+                                         each competence in projet.competences
+                                             div
+                                                p= competence.ElemdeCompetence
         tr
-            td.skills
-                if (contact.countFacebook != "")
-                    a(href="#" target="_blank"): img(src="./assets/icons8-facebook.svg" alt="facebook")
-                if (contact.countGithub != "")
-                    a(href="#" target="_blank"): img(src="./assets/icons8-linkedin.svg" alt="github")
-                if (contact.countLinkedIn != "")
-                    a(href="#" target="_blank"): img(src="./assets/icons8-github.svg" alt="linkedin")
-            td.rights
-                p powered by
-                img(class="logo" src="./assets/Ecareer2.png")
+            td(colspan="2")
+                h2 Clubs
+        tr
+            each projet in projets
+                if (projet.type == 'CLUB')
+                    td(colspan="2" class="project")
+                                a(href='//google.com' target="_blank")
+                                        h3.projectTitle= projet.titre
+                                            span.projectDate [
+                                            span.projectDate= projet.date
+                                            span.projectDate ]
+                                div
+                                    div
+                                        p= projet.description
+                                        div.technologies
+                                    div.competence
+                                         each competence in projet.competences
+                                            div
+                                                p= competence.ElemdeCompetence
+        tr
+            td(colspan="2")
+                h2 Personnels
+        tr
+            each projet in projets
+                if (projet.type == 'PERSONNEL')
+                    td(colspan="2" class="project")
+                                a(href='https://drive.google.com/drive/u/0/folders/1DuLtnvRDoJ_LM43aaOxrBvMTbiizhxx0' target="_blank")
+                                        h3.projectTitle= projet.titre
+                                            span.projectDate [
+                                            span.projectDate= projet.date
+                                            span.projectDate ]
+                                div
+                                    div
+                                        p= projet.description
+                                        div.technologies
+                                    div.competence
+                                         each competence in projet.competences
+                                             div
+                                                p= competence.ElemdeCompetence
+        tr
+            td(colspan="2" class="skills")
+                div
+                    span
+                        if (contact.countFacebook != "")
+                            a(href="#" target="_blank"): img(src="./assets/icons8-facebook.svg" alt="facebook")
+                        if (contact.countGithub != "")
+                            a(href="#" target="_blank"): img(src="./assets/icons8-linkedin.svg" alt="github")
+                        if (contact.countLinkedIn != "")
+                            a(href="www.google.com" target="_blank"): img(src="./assets/icons8-github.svg" alt="linkedin")
+        tr
+            td(colspan="2" class="rights")
+                div
+                    p powered by
+                    img(class="logo" src="./assets/Ecareer2.png")
 
 

@@ -77,6 +77,11 @@ public class AccueilMediateur implements Initializable {
         model.put("pageName", "Ecareer");
         model.put("info", utilisateur.getDonnes());
         model.put("contact", utilisateur.getContacts());
+//        System.out.println(utilisateur.getMesProjets());
+//        utilisateur.getMesProjets().forEach(project -> {
+//            project.competences.
+//        });
+//        model.put("competences", utilisateur.getMesProjets());
         String html;
         try {
 

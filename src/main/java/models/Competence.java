@@ -1,52 +1,42 @@
 package models;
 
 public class Competence {
-    private String competence;
-    private String matiere;
-    private String familleDeCompetence;
-    private String elementDeCompetence;
+    private String Competence;
+    private String modules[];
+    private String FamilledeCompetence;
+    private String ElemdeCompetence;
     private String type;
-    private String objectifPedagoqique;
-
-    public Competence(String competence, String matiere, String familleDeCompetence, String elementDeCompetence, String type, String objectifPedagoqique) {
-        this.setCompetence(competence);
-        this.setMatiere(matiere);
-        this.setFamilleDeCompetence(familleDeCompetence);
-        this.setElementDeCompetence(elementDeCompetence);
-        this.setType(type);
-        this.setObjectifPedagoqique(objectifPedagoqique);
-    }
 
     public String getCompetence() {
-        return competence;
+        return Competence;
     }
 
     public void setCompetence(String competence) {
-        this.competence = competence;
+        Competence = competence;
     }
 
-    public String getMatiere() {
-        return matiere;
+    public String[] getModules() {
+        return modules;
     }
 
-    public void setMatiere(String matiere) {
-        this.matiere = matiere;
+    public void setModules(String[] modules) {
+        this.modules = modules;
     }
 
-    public String getFamilleDeCompetence() {
-        return familleDeCompetence;
+    public String getFamilledeCompetence() {
+        return FamilledeCompetence;
     }
 
-    public void setFamilleDeCompetence(String familleDeCompetence) {
-        this.familleDeCompetence = familleDeCompetence;
+    public void setFamilledeCompetence(String familledeCompetence) {
+        FamilledeCompetence = familledeCompetence;
     }
 
-    public String getElementDeCompetence() {
-        return elementDeCompetence;
+    public String getElemdeCompetence() {
+        return ElemdeCompetence;
     }
 
-    public void setElementDeCompetence(String elementDeCompetence) {
-        this.elementDeCompetence = elementDeCompetence;
+    public void setElemdeCompetence(String elemdeCompetence) {
+        ElemdeCompetence = elemdeCompetence;
     }
 
     public String getType() {
@@ -57,11 +47,16 @@ public class Competence {
         this.type = type;
     }
 
-    public String getObjectifPedagoqique() {
-        return objectifPedagoqique;
+    public String getObjectifPédagogique() {
+        return ObjectifPédagogique;
     }
 
-    public void setObjectifPedagoqique(String objectifPedagoqique) {
-        this.objectifPedagoqique = objectifPedagoqique;
+    public void setObjectifPédagogique(String objectifPédagogique) {
+        ObjectifPédagogique = objectifPédagogique;
     }
+
+    private String ObjectifPédagogique;
+
+
+
 }

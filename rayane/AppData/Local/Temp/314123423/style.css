@@ -1,18 +1,5 @@
-/* todos :
-- flex contact 
-- header we will make a title and picture and description also flex
-- the main will be devided into 3 sections 
-- each section will have a list of the projects
-- add the absolute shapes in the sides 
-- footer will be skills (soft hard ..)
-- add facebook github insta phone number juste abode the first line
-
-
-
-
-*/
+@page {  margin: 0.01in; }
 @import url('https://fonts.googleapis.com/css2&display=swap');
-
 main, aside {
     border-left: 5px solid #F1C53C;
     border-right: 5px solid #F1C53C;
@@ -20,12 +7,8 @@ main, aside {
 
 body {
     background-color: #ffffff;
-    /* font-family: "Open Sans", sans-serif; */
+    /*font-family: "Open Sans", sans-serif;*/
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    max-width: 1080px;
-    display: grid;
-    grid-template-columns: 1;
     color: #666666;
 
     /* place-items: center; */
@@ -35,7 +18,7 @@ table {
     border: none;
     border-left: 5px solid #F1C53C;
     border-right: 5px solid #F1C53C;
-    border-collapse:collapse;
+    width:100%; border-collapse:collapse; font:14px Arial,sans-serif;
 }
 
 
@@ -105,7 +88,8 @@ footer {
 }
 
 .StudentImage {
-    display: inline-block; width: 150px; vertical-align: middle;border: 2px solid #ffffff;background-color:#ffffff;
+    display: inline-block; width: 160px; vertical-align: middle;border: 2px solid #ffffff;background-color:#ffffff;
+    border-radius: 5px;
 }
 .projectTitle {
     color: #F1C53C;
@@ -122,20 +106,47 @@ footer {
 /*    position: relative;*/
 /*}*/
 
-.project  {
+.project {
+    background: rgba( 255, 255, 255, 0.25 );
+    border-radius: 10px;
     border-bottom: 1px solid #666666;
     margin: 0 0px;
     padding: 1em;
     margin-bottom: 10px;
 
 }
+.project > div > div:last-child{
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-start;*/
+    /*height: calc(30vw/4);*/
+    /*flex-wrap: wrap;*/
+    /*overflow: clip;*/
+    /*max-height: 500px;*/
+}
+.project > div > div:last-child *{
+    max-width: 180px;
+    min-width: 120px;
+    display: inline-block;
+}
 
-.project > a {
-    text-decoration: none;
+.project > div > div:nth-child(1) > p{
+    font-size: 15px;
+    margin-bottom: 10px;
 }
-.project p {
-    color: #666666;
+
+/*.project div > div:last-child > * {*/
+/*                        border-right: 2px solid #666666;*/
+/*                        padding-right: 20px;*/
+/*                    }*/
+.project div > div > :last-child {
+    padding-left: 20px;
+    font-size: 14px;
+    /*line-height: 0.8;*/
+
 }
+
 .technologies {
     background-color: #fafafa;
     display: inline;
@@ -151,7 +162,6 @@ footer {
 td h2 {
     color: #184173;
     border-bottom: 2px solid ;
-    padding-bottom: 2px;
     margin-bottom: 0;
     border-color: #184173;
 }
@@ -177,49 +187,62 @@ td h2 {
 }
 
 .rights {
+
+    /*vertical-align: middle;*/
     color: #fafafa ;
-    padding:0px;
+    padding:1px;
     background-color:#F1C53C;
     text-align:center;
 }
 
 .rights * {
-    display: inline-block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .logo {
-    display: inline-block;
+    align-items: center;
+    justify-content: center;
     width: 20px;
-    vertical-align: middle;
+    margin-left: 5px;
+
+    /*vertical-align: middle;*/
 }
 
 .skills {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
     background-color: #F1C53C;
     text-align: center;
     padding: 2px;
 
 }
+.skills span {
+    border-bottom: 1px solid #fafafa;
+
+}
 .skills > div {
-    display: inline;
-    border-bottom: 2px solid #fafafa;
+    /*width: fit-content;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    margin: 2px;
 
 }
 
 .contact {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    align-items: center;
+
 }
 
 .contact > div {
     font-size: medium;
     font-weight: bolder;
     color: #184173;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
+    margin: 1px;
 }
 
 .contact > div > p {

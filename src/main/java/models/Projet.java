@@ -13,7 +13,7 @@ public class Projet {
     private String document;
     private String description;
     private String date;
-    ArrayList<Competence> competences =  new ArrayList<Competence>();
+    private ArrayList<Competence> competences =  new ArrayList<Competence>();
 
     public String getTitre() {
         return titre;
@@ -82,5 +82,13 @@ public class Projet {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public ArrayList<models.Competence> getCompetences() {
+        return competences;
+    }
+
+    public void setCompetences(ArrayList<models.Competence> competences) {
+        this.competences = competences;
     }
 }
