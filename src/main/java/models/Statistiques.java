@@ -1,5 +1,8 @@
 package models;
 
+import References.Competence;
+import controleurs.acceuil.AccueilMediateur;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,23 +44,45 @@ public class Statistiques {
     public Statistiques(List<Project> listProjects){
         this.listProjects=listProjects;
     }
-    public void  CalculerNbprojetsType(){
-        System.out.println("le nombre des projets en statisques est :"+listProjects.size());
-      for(int i=0;i<listProjects.size();i++){
-          TypeProjet type =listProjects.get(i).getType();
-          switch (type){
-              case CLUB :
-                  NbProjetsClubs++;
-                  System.out.println("club");
-              break;
-              case PEDAGOGIQUE:
-                  NbProjetsPédagogiques++;
-                  System.out.println("pedagigique");
-              break;
-              case PERSONEL:
-                  NbProjetsPersonnels++;
-                  System.out.println("personnel");
-          }
-      }
+    public void  CalculerNbprojetsType() {
+        System.out.println("le nombre des projets en statisques est :" + listProjects.size());
+        for (int i = 0; i < listProjects.size(); i++) {
+            TypeProjet type = listProjects.get(i).getType();
+            switch (type) {
+                case CLUB:
+                    NbProjetsClubs++;
+                    break;
+                case PEDAGOGIQUE:
+                    NbProjetsPédagogiques++;
+                    break;
+                case PERSONEL:
+                    NbProjetsPersonnels++;
+                    break;
+
+            }
+        }
+    }
+      public void CalculerTypeCompetance (){
+            for (int i = 0; i < listProjects.size() ; i++) {
+                for (int j = 0; j < listProjects.get(i).getCompetences().size() ; j++){
+                    Competence competence =listProjects.get(i).getCompetences().get(j);
+                    switch (competence.getType()){
+                        case MOD :
+                            NbSoftsSkills++;
+                            break;
+                        case MET :
+                            NbSoftsSkills++;
+                            break;
+                        case TEC :
+                            NbHardSkills++;
+                            break;
+                        case OPE :
+                            NbHardSkills++;
+                            break;
+                    }
+                }
+
+            }
+
     }
 }

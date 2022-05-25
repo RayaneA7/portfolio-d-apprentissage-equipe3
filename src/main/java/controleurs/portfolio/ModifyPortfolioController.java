@@ -1,10 +1,13 @@
 package controleurs.portfolio;
 
 import controleurs.acceuil.AccueilMediateur;
+import controleurs.parametre.CustomDialog;
+import controleurs.passage.RealiserAlert;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -25,9 +28,7 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ModifyPortfolioController implements Initializable {
 
@@ -124,6 +125,12 @@ public class ModifyPortfolioController implements Initializable {
     @FXML
     private Button ModifyBut;
 
+    @FXML
+    private Label ModifierLabel;
+
+    @FXML
+    private Label ErreurLabel;
+
     private Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut.png"));
     private Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut1.png"));
     private Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioBut.png"));
@@ -142,6 +149,8 @@ public class ModifyPortfolioController implements Initializable {
 
     MyProject myProject = null;
     private Portfolio portfolio;
+    private int dureeErreur = 4000;
+    public CustomDialog customDialog;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -192,7 +201,7 @@ public class ModifyPortfolioController implements Initializable {
             line3.setStyle("-fx-stroke: #666666");
         });
         PortfolioButton.setOnMouseClicked(e -> {
-            AccueilMediateur.commutateur.AllerPortfolio(e);
+            AccueilMediateur.commutateur.AllerPortfolio();
         });
         /*******************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
@@ -235,7 +244,20 @@ public class ModifyPortfolioController implements Initializable {
         /********************************************************************/
         /********************************************************************/
         ModifyBut.setOnAction(e->{
-            Utilisateur.serialize(AccueilMediateur.utilisateur, AccueilMediateur.studentFolder);
+            customDialog = new CustomDialog("Confirmer Modification","Si vous voulez vraiment modifier le portfolio, cliquez sur OK, sinon Csur Canel");
+            customDialog.show();
+            customDialog.buttonOk.setOnAction(event->{
+                /*if(AccueilMediateur.utilisateur.getListPortfolio(){
+                TraiterAlert(ErreurLabel);
+            } else{*/
+                Utilisateur.serialize(AccueilMediateur.utilisateur, AccueilMediateur.studentFolder);
+                TraiterAlert(ModifierLabel);/*}*/
+                customDialog.closeDialog();
+            });
+            customDialog.buttonCancel.setOnAction(event->{
+                customDialog.closeDialog();
+            });
+
         });
         RetourBut.setOnMouseClicked(e->{
             try {
@@ -243,7 +265,7 @@ public class ModifyPortfolioController implements Initializable {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-            AccueilMediateur.commutateur.AllerPortfolio(e);
+            AccueilMediateur.commutateur.AllerPortfolio();
         });
     }
 
@@ -253,7 +275,7 @@ public class ModifyPortfolioController implements Initializable {
         int column2 = 0;
         int row1 = 0;
         int row2 = 0;
-        int id  = portfolio.getId();
+        int id  = portfolio.getNum();
 
         //*********************//
         if(id == 1) NbrPoerfolio.setText(Ordre.Premier.toString() + "Portfolio");
@@ -320,6 +342,14 @@ public class ModifyPortfolioController implements Initializable {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
+    }
+
+    public void TraiterAlert(Node node)
+    {
+        Timer timer =new Timer();
+        TimerTask task =new RealiserAlert(node, timer);
+        node.setOpacity(1);
+        timer.schedule(task,dureeErreur);
     }
 
 }

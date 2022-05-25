@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import controleurs.passage.Commutateur;
 import controleurs.passage.RealiserAlert;
 import hashage.GenererHashage;
+import hashage.ZipUnZip;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -29,6 +30,7 @@ import javafx.util.Callback;
 //import modele.Utilisateur;
 import models.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URISyntaxException;
@@ -141,16 +143,21 @@ public class ConnectController implements Initializable {
     static void create(Utilisateur user ) throws IOException {
 
         Writer writer = null;
+        File file =null;
+         try{
+             file =new File("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule());
+             file.mkdirs();
+             file =new File("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule()+"/user.json");
+             file.createNewFile();
+         }catch (IOException e){
+             System.out.println("erreur se genre lors de la creation de fichier des donnes personnels");
+         }
         try {
-            System.out.println("baa");
             writer = Files. newBufferedWriter(Paths.get("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule()+"/user.json"));
-            System.out.println("baa1");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            System.out.println("baa2");
             gson.toJson(user, writer);
-            System.out.println("baa3");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("la classe ConnectController ");
             System.out.println("un probleme se genere lors de la sérialisation des données personnels");
         }
         finally {
@@ -159,7 +166,11 @@ public class ConnectController implements Initializable {
     }
     public void procedureRecupération(ActionEvent actionEvent) {
     }
-    /***************************/
+
+    /**************************************************************************************************/
+    /************voici l'operation d'extraction de fichier des donnes personnels se passe***************/
+    /***********************************************************************************************/
+
     public void allerPageAcceuil(ActionEvent event) throws IOException, NoSuchAlgorithmException {
         int index =vérifierLogin(listLogins,monEmail.getText(),monMotDePasse.getText());
         switch (index)
@@ -174,11 +185,13 @@ public class ConnectController implements Initializable {
                 break;
             case 2:
                 /************passage à l'acceuil*******************/
+               ZipUnZip.ExtractFile(studentFolder);
                accedreAcceuil(event);
                /*****************************************************/
         }
     }
-     /******************************/
+    /*************************************************************************/
+
     public  int vérifierLogin(ArrayList<LoginUser> list, String email, String motPasse) throws NoSuchAlgorithmException {
         int validation =0 ,stop=0;
         int i=0;

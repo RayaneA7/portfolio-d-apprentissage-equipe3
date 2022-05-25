@@ -10,6 +10,22 @@ public class Project {
 
 
     private String title;
+    private String ClubName;
+    private ArrayList<String> ModuleArray;
+
+    public String getClubName() {
+        return ClubName;
+    }
+    public void setClubName(String clubName) {
+        ClubName = clubName;
+    }
+
+    public ArrayList<String> getModuleArray() {
+        return ModuleArray;
+    }
+    public void setModuleArray(ArrayList<String> moduleArray) {
+        ModuleArray = moduleArray;
+    }
 
     public Project(String s, String personnel, Object o, Date parse, Object o1, Object o2, Object o3) {
 
@@ -92,7 +108,7 @@ public class Project {
     }
 
 
-    public ArrayList<String> etDocs() {
+    public ArrayList<String> getDocs() {
         return docs;
     }
 

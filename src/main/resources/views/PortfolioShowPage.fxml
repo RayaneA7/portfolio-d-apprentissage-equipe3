@@ -14,20 +14,9 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/Portfolio/ShowPortfolio.png" />
+            <Image url="@../icons/Portfolio/PortfolioShowNew.png" />
          </image>
       </ImageView>
-      <Button fx:id="SwitchButton" layoutX="-16.0" layoutY="132.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: F5F5F5;" translateX="75.0">
-         <graphic>
-            <ImageView fx:id="BarreImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/Acceuil/Barre.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -133,7 +122,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="45.0" fitWidth="55.0" layoutX="760.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="31.0" fitWidth="25.0" layoutX="768.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Deconnexion.png" />
          </image>
@@ -150,13 +139,17 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Circle>
-      <ImageView fx:id="addPort" fitHeight="50.0" fitWidth="50.0" layoutX="556.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/Portfolio/add.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
+      <Button fx:id="addPort" layoutX="554.0" layoutY="60.0" mnemonicParsing="false" style="-fx-background-color: 000000;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Portfolio/add.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

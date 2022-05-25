@@ -23,6 +23,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Stream;
 
 public class SignUp2Controller implements Initializable {
@@ -128,9 +129,9 @@ public class SignUp2Controller implements Initializable {
             chooser.setTitle("Choisir une photo de profile");
             chooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("PNG Files", "*.png")
-                    , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
-                    , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
-                    , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
+                  //  , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
+                  //  , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
+                  //  , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
             );
             file = chooser.showOpenDialog(null);
             System.out.println(getClass());
@@ -179,19 +180,6 @@ public class SignUp2Controller implements Initializable {
         });
     }
     //Copy methods
-    public static void copyFolder(Path src, Path dest) throws IOException {
-        try (Stream<Path> stream = Files.walk(src)) {
-            stream.forEach(source -> copy(source, dest.resolve(src.relativize(source))));
-        }
-    }
-
-    private static void copy(Path source, Path dest) {
-        try {
-            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-    }
 
     /***************Logique de fonctionnement**********************/
     public void PreviousPage(ActionEvent actionEvent) {
@@ -213,13 +201,14 @@ public class SignUp2Controller implements Initializable {
             File srcDir = new File("DonnesUtilisateurs/Etudiant");
             File destDir = new File("DonnesUtilisateurs/" + studentFolder);
             copyFolder(srcDir.toPath(), destDir.toPath());
-            //ConnectController.user.ajouterProjet(projet);
-           ConnectController.create(ConnectController.user);
-            /***************/
+            /******************creation de dossier de l'utilisateur****************************/
+            ConnectController.create(ConnectController.user);
+            /*********************************************/
             LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
                     ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
             LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
             utilisateurs.ajouteUtilisateurToList(loginUser);
+            /**************************************/
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -232,7 +221,9 @@ public class SignUp2Controller implements Initializable {
         /************Passage à la page d'acceuil *************/
         ConnectController.studentFolder=ConnectController.user.donnes.getMatricule();
         ConnectController.accedreAcceuil(event);
+        /*********************************************************/
     }
+
     public boolean verifiNumeroTelephone(String numerotelephone){
         int i=0;
         boolean validate =true;
@@ -247,5 +238,22 @@ public class SignUp2Controller implements Initializable {
             }
             else{validate=false ;}
         return validate;
+    }
+
+    public static void copyFolder(Path src, Path dest) throws IOException {
+        try (Stream<Path> stream = Files.walk(src)) {
+            stream.forEach(source -> copy(source, dest.resolve(src.relativize(source))));
+        }catch (Exception e){
+            System.out.println("probleme se genere lors de la creation de dossier des donnes personnels");
+        }
+    }
+
+    private static void copy(Path source, Path dest) {
+        try {
+            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            System.out.println("probleme se genere lors de la creation de dossier des donnes personnels");
+            //throw new RuntimeException(e.getMessage(), e);
+        }
     }
 }

@@ -1,0 +1,172 @@
+package controleurs.Projet;
+
+import References.Competence;
+import References.Competences;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import models.Project;
+import models.TypeProjet;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+
+public class editCompetenceController implements Initializable {
+    @FXML
+    private TextField competenceSearchField;
+    @FXML
+    private TextField typeSearchField;
+    @FXML
+    private TextField matiereSearchField;
+    @FXML
+    private TextField objectifSearchField;
+    @FXML
+    private TextField customCompField;
+    @FXML
+    private Button addCustomBtn;
+    @FXML
+    private Button searchBtn;
+    @FXML
+    private Button retourBtn;
+    @FXML
+    private Button validerBtn;
+    @FXML
+    private MenuButton customTypeMenu;
+    @FXML
+    private ListView<String> availableCompetenceList;
+    private ArrayList<Competence> availableCompetenceArray = new ArrayList<>();
+    @FXML
+    private ListView<String> myProjectCompetenceList;
+
+    private ArrayList<Competence> listeCompetence =new ArrayList<>() ;
+    private ArrayList<Competence> myProjectArrayList = new ArrayList<>();
+
+    Competences competences = new Competences();
+    public static Project comProject = new Project("",
+            TypeProjet.CLUB,new ArrayList<Competence>(),"",new ArrayList<String>(),"");
+
+    public editCompetenceController() throws IOException {
+    }
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+
+
+        myProjectCompetenceList.getItems().clear();
+
+        for(int i = 0 ; i<editProjectController.project.getCompetences().size() ; i++){
+            myProjectCompetenceList.getItems().add(editProjectController.project.getCompetences().get(i).getElemdeCompetence());
+            myProjectArrayList.add(editProjectController.project.getCompetences().get(i));
+        }
+
+        searchBtn.setOnMouseClicked(event -> {
+            availableCompetenceList.getItems().clear();
+
+            /**List with search result**/
+            listeCompetence = competences.Recherche_Module_Titre_Code_Objectif(
+                    matiereSearchField.getText(),competenceSearchField.getText(),
+                    typeSearchField.getText(),objectifSearchField.getText()   );
+            /***********************************************/
+            ObservableList<String> availableCompNames = FXCollections.observableArrayList();
+            for (int i = 0 ; i<listeCompetence.size() ; i++){
+                availableCompNames.add(listeCompetence.get(i).getElemdeCompetence());
+            }
+            availableCompetenceList.getItems().addAll(availableCompNames);
+            // System.out.println("the number of items : " + listeCompetence.size());
+
+        });
+
+        availableCompetenceList.setOnMouseClicked(event -> {
+            if(availableCompetenceList.getSelectionModel().getSelectedItem() != null){
+                //ObservableList<String> myCompNames = FXCollections.observableArrayList();
+                Boolean existesDeja = false;
+                for (int i = 0; i < myProjectCompetenceList.getItems().size(); i++) {
+                    if (myProjectCompetenceList.getItems().get(i).equals(availableCompetenceList.getSelectionModel().getSelectedItem())) {
+                        existesDeja = true;
+                    }
+                }
+                if (!existesDeja) {
+                    myProjectCompetenceList.getItems().add(availableCompetenceList.getSelectionModel().getSelectedItem());
+                    for (int i = 0; i < listeCompetence.size(); i++) {
+                        if (listeCompetence.get(i).getElemdeCompetence().equals(availableCompetenceList.getSelectionModel().getSelectedItem())) {
+                            myProjectArrayList.add(listeCompetence.get(i));
+                        }
+                    }
+                }
+            }
+        });
+        addCustomBtn.setDisable(true);
+
+        customTypeMenu.setOnMouseClicked(event -> {
+            for(int i = 0 ; i<customTypeMenu.getItems().size() ; i++){
+                MenuItem item  = customTypeMenu.getItems().get(i);
+
+                item.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        customTypeMenu.setText(item.getText());
+                        addCustomBtn.setDisable(false);
+                    }
+                });
+            }
+        });
+
+        addCustomBtn.setOnMouseClicked(event -> {
+            Boolean existesDeja = false;
+            for(int i = 0 ; i<myProjectCompetenceList.getItems().size() ; i++){
+                if(myProjectCompetenceList.getItems().get(i).equals(customCompField.getText())){
+                    existesDeja = true;
+                }
+            }
+            if(!existesDeja){
+                myProjectCompetenceList.getItems().add(customCompField.getText());
+                Competence competence = new Competence("","",customCompField.getText(),customTypeMenu.getText(),"","");
+                myProjectArrayList.add(competence);
+            }
+            customCompField.setText("");
+        });
+
+
+        /**Supprimer competences **/
+
+        myProjectCompetenceList.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode() == KeyCode.BACK_SPACE){
+                    String toDelete = myProjectCompetenceList.getSelectionModel().getSelectedItem();
+                    // System.out.println(toDelete + " To delete ");
+                    for (int i = 0 ; i<myProjectArrayList.size() ; i++){
+                        if(myProjectArrayList.get(i).getElemdeCompetence().equals(toDelete)){
+                            myProjectArrayList.remove(myProjectArrayList.get(i));
+                            myProjectCompetenceList.getItems().remove(i);
+                        }
+                    }
+                }
+            }
+        });
+
+        validerBtn.setOnMouseClicked(event -> {
+
+            editProjectController.projectComp = myProjectArrayList;
+            editProjectController.stage.close();
+
+        });
+
+        retourBtn.setOnMouseClicked(event -> {
+            editProjectController.stage.close();
+            editProjectController.onEditAction = false;
+        });
+    }
+}

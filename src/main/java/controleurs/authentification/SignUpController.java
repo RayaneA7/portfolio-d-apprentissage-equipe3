@@ -83,6 +83,7 @@ public class SignUpController implements Initializable {
     /****************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //monDateNaissance.setStyle("-fx-background-color : #184173");
         EventHandler<MouseEvent > event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -218,6 +219,7 @@ public class SignUpController implements Initializable {
         }
       return result;
     }
+    /***********************/
     public int VerifierNom(){
         if(monNom.getText()=="")
         {

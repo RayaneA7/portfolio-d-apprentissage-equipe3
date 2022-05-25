@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -141,38 +142,34 @@ public class Parametre_Controller implements Initializable {
      private ImageView logOut ;
     @FXML
      private Circle  imagePersonnel ;
+    @FXML
+    Button ModifierButton;
     /**********************************les images ************************************************/
-    Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
+    Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/Accueil.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
-    Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut.png"));
+    Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/Vector.png"));
     Image PortfolioImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/PortfolioBut1.png"));
     Image ProjetImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/ProjetsBut.png"));
     Image ProjetImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ProjetsBut1.png"));
-    Image ParametresImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut.png"));
+    Image ParametresImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/paramtreGris.png"));
     Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut1.png"));
-    Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
+    Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/Vector2.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
     /**********************************************************************************************/
     public static Pagination monPagination ;
-    public static Button ModifierButton;
+
     private ArrayList<Parent> memory ;
     public static LoginUtilisateurs loginUtilisateurs =new LoginUtilisateurs();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /****************l'ajoute du button de modification*****************/
-        /***********************Chargement de photo Personnel**************************************************/
-        if(AccueilMediateur.image!=null) {
-            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
-        }
-        imagePersonnel.setOnMouseClicked(e->{
-            AccueilMediateur.commutateur.AllerProfile(e);
-        });
-        ModifierButton =new Button("Modifier");
-        ModifierButton.setStyle("-fx-bacground-color : white ; -fx-background-radius :10;-fx-border-radius :10 ;" + "-fx-font-size : 14");
+      /* ModifierButton =new Button("Modifier");
+        ModifierButton.setStyle("-fx-bacground-color : white ; -fx-background-radius :10;-fx-border-radius :10 ;" +
+                "-fx-font-size : 14");
         ModifierButton.setPrefSize(90,35);
         ModifierButton.setLayoutY(530);
         ModifierButton.setLayoutX(630);
-        monAnchorpane1.getChildren().add(ModifierButton);
+        monAnchorpane1.getChildren().add(ModifierButton);*/
         /***********************Pagination entre les parametres*********************/
         /**************0************/
         FXMLLoader loader1 ;
@@ -206,12 +203,13 @@ public class Parametre_Controller implements Initializable {
         }
         /********************************************************************/
         monPagination =new Pagination();
-        monPagination.setPrefSize(560,330);
-        monPagination.setMaxSize(560,330);
+        monPagination.setPrefSize(520,330);
+        monPagination.setMaxSize(520,330);
         monPagination.setPageCount(4);
         monPagination.setCurrentPageIndex(0);
         monPagination.setMaxPageIndicatorCount(1);
-        monPagination.setStyle(" -fx-arrows-visible : false ; -fx-page-information-visible : false");
+       // monPagination.getStylesheets().add("/css/PortfolioPag.css");
+        monPagination.setStyle(" -fx-arrows-visible : false; -fx-page-information-visible : false;");
         monPagination.setPageFactory(new Callback<Integer, Node>() {
             @Override
             public Node call(Integer pageIndex) {
@@ -251,8 +249,11 @@ public class Parametre_Controller implements Initializable {
         });
         /************************************************************************/
         RetourButton.setOnMouseClicked(e->{
+            /*****************les serialization des nouveau donnes de l'utilisateur ******************/
+
         });
         info_Button.setOnMouseClicked(e->{
+            monPagination.setStyle(" -fx-arrows-visible : false; -fx-page-information-visible : false;");
             monPagination.setCurrentPageIndex(0);
             monligneInfo.setOpacity(1);
             monligneEmail.setOpacity(0);
@@ -260,6 +261,7 @@ public class Parametre_Controller implements Initializable {
             monligneContacts.setOpacity(0);
         });
         Adress_Button.setOnMouseClicked(e->{
+            monPagination.setStyle(" -fx-arrows-visible : false; -fx-page-information-visible : false;");
             monPagination.setCurrentPageIndex(1);
             monligneInfo.setOpacity(0);
             monligneEmail.setOpacity(1);
@@ -267,6 +269,7 @@ public class Parametre_Controller implements Initializable {
             monligneContacts.setOpacity(0);
         });
         passe_Button.setOnMouseClicked(e->{
+            monPagination.setStyle(" -fx-arrows-visible : false; -fx-page-information-visible : false;");
             monPagination.setCurrentPageIndex(2);
             monligneInfo.setOpacity(0);
             monligneEmail.setOpacity(0);
@@ -274,6 +277,7 @@ public class Parametre_Controller implements Initializable {
             monligneContacts.setOpacity(0);
         });
         contact_Button.setOnMouseClicked(e->{
+            monPagination.setStyle(" -fx-arrows-visible : false; -fx-page-information-visible : false;");
             monPagination.setCurrentPageIndex(3);
             monligneInfo.setOpacity(0);
             monligneEmail.setOpacity(0);
@@ -282,17 +286,26 @@ public class Parametre_Controller implements Initializable {
         });
         /*****************************************************************************************************/
         /**************************************************************************************************/
+        /***********************Chargement de photo Personnel**************************************************/
+        if(AccueilMediateur.image!=null) {
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
+        imagePersonnel.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerProfile(e);
+        });
         /**************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
+            AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
 
         AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            AccueilButton.setStyle("-fx-background-color:  F5F5F5");
+            AccueilButton.setStyle("-fx-background-color:  #F5F5F5");
+            AccueilLabel.setTextFill(Color.web("#666666"));
             AccueilImage.setImage(AccueilImg);
-            line1.setStyle("-fx-stroke: #b7b5b5");
+            line1.setStyle("-fx-stroke: #d7d6d6");
         });
         AccueilButton.setOnMouseClicked(e->{
             AccueilMediateur.commutateur.AllerAcceuil(e);
@@ -300,13 +313,15 @@ public class Parametre_Controller implements Initializable {
         /***********************************************************************************/
         ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
+            ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
         });
         ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
+            ProjetLabel.setTextFill(Color.web("#666666"));
             ProjetsImage.setImage(ProjetImg);
-            line2.setStyle("-fx-stroke: #b7b5b5");
+            line2.setStyle("-fx-stroke: #d7d6d6");
         });
         ProjetButton.setOnMouseClicked(event->{
             AccueilMediateur.commutateur.AllerProjet(event);
@@ -314,27 +329,31 @@ public class Parametre_Controller implements Initializable {
         /*******************************************************************************************/
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
+            PortfolioLabel.setTextFill(Color.WHITE);
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
+            PortfolioLabel.setTextFill(Color.web("#666666"));
             PortfolioImage.setImage(PortfolioImg);
-            line3.setStyle("-fx-stroke: #b7b5b5");
+            line3.setStyle("-fx-stroke: #d7d6d6");
         });
         PortfolioButton.setOnMouseClicked(event->{
-            AccueilMediateur.commutateur.AllerPortfolio(event);
+            AccueilMediateur.commutateur.AllerPortfolio();
         });
         /******************************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
+            ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
+            ParametresLabel.setTextFill(Color.web("#666666"));
             ParametresIamge.setImage(ParametresImg);
-            line4.setStyle("-fx-stroke: #b7b5b5");
+            line4.setStyle("-fx-stroke:#d7d6d6");
         });
         /******************************************************************/
         imagePersonnel.setOnMouseClicked(event -> {
@@ -343,13 +362,15 @@ public class Parametre_Controller implements Initializable {
         /*****************************************************************************************/
         AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: #f1c53c");
+           AideLabel.setTextFill(Color.WHITE);
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
         AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: F5F5F5");
+            AideLabel.setTextFill(Color.web("#666666"));
             AideImage.setImage(AideImg);
-            line5.setStyle("-fx-stroke: #b7b5b5");
+            line5.setStyle("-fx-stroke: #d7d6d6");
         });
         /*********/
         AideButton.setOnMouseClicked(event -> {

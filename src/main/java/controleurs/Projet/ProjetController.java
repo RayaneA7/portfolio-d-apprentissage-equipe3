@@ -2,25 +2,24 @@ package controleurs.Projet;
 
 import controleurs.acceuil.AccueilMediateur;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import models.Project;
 import models.Utilisateur;
@@ -90,15 +89,31 @@ public class ProjetController implements Initializable {
     Circle imagePersonnel;
 
     @FXML
-    private ImageView addProjectBtn;
+    private Button addProjectBtn;
     @FXML
     private ScrollPane monScrollPane ;
 
+
     public static VBox cardLayout;
+
+    @FXML
+    private Button searchProjetBtn;
+    @FXML
+    private TextField searchProjectTextField;
+
+
+    public static Project projectToEdit ;
+    public static Project projectToDelete;
 
 
     private List<Project> projectList;
 
+
+
+
+    @FXML
+    private ListView<String> foundProjet;
+    private ArrayList<Project> foundProjetList = new ArrayList<Project>();
     /****************************************************************/
     String user = null;
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
@@ -114,6 +129,7 @@ public class ProjetController implements Initializable {
 
     /********************************************************/
 
+    public static Label label;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -121,19 +137,23 @@ public class ProjetController implements Initializable {
         imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
         /****************************************************/
         cardLayout = new VBox();
-        cardLayout.setPrefSize(550,260);
+        cardLayout.setPrefSize(466,303);
         cardLayout.setSpacing(20);
         cardLayout.setAlignment(Pos.CENTER);
-        monScrollPane.setStyle("-fx-padding: 5 ;");
+        cardLayout.setStyle("-fx-background-color: transparent;");
+        //cardLayout.getChildren().setStyle("-fx-background-color: transparent;");
+        monScrollPane.setStyle("-fx-background: transparent;");
+
         monScrollPane.setContent(cardLayout);
         /*********/
         if(AccueilMediateur.utilisateur.listProjets.size() == 0){
-         Label label = new Label("You don't have any Project , Please add by clicking on the + Btn");
+         label = new Label("La liste de projets est vide , cliquer sur (+) pour ajouter un projet ");
          label.setPrefSize(600,300);
          label.setWrapText(true);
-         label.setFont(new Font(20));
+         label.setFont(new Font(25));
          label.setTextFill(Color.RED);
-         label.setAlignment(Pos.CENTER);
+         label.setTextAlignment(TextAlignment.CENTER);
+         cardLayout.setAlignment(Pos.CENTER);
          cardLayout.getChildren().add(label);
         }else {
             cardLayout.getChildren().clear();
@@ -141,7 +161,7 @@ public class ProjetController implements Initializable {
 
         /********/
         if (AccueilMediateur.utilisateur.listProjets.size() > 0) {
-            System.out.println("LIst des Projet n'est pas vide " );
+           // System.out.println("List des Projet n'est pas vide " );
             try {
                 AccueilMediateur.utilisateur = Utilisateur.deserialization(AccueilMediateur.studentFolder);
             } catch (IOException e) {
@@ -151,22 +171,27 @@ public class ProjetController implements Initializable {
             for (int i = 0; i < AccueilMediateur.utilisateur.listProjets.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/views/ProjectCard.fxml"));
-                VBox vBox = null;
+                AnchorPane anchorPane = null;
                 try {
-                    vBox = fxmlLoader.load();
+                    anchorPane = fxmlLoader.load();
+
+                    anchorPane.setStyle("-fx-background-image: url('icons/Project/Card2022.png');" +
+                            "-fx-background-size: 100% 100%;-fx-padding:0;");
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 ProjectCardController projectCardController = fxmlLoader.getController();
-                System.out.println("### : "+ AccueilMediateur.utilisateur.listProjets.get(i).getTitle());
-                System.out.println("@@@ : "+ AccueilMediateur.utilisateur.listProjets.get(i).getCompetences());
+//                System.out.println("### : "+ AccueilMediateur.utilisateur.listProjets.get(i).getTitle());
+//                System.out.println("@@@ : "+ AccueilMediateur.utilisateur.listProjets.get(i).getCompetences());
 
                 try {
                     projectCardController.setData(AccueilMediateur.utilisateur.listProjets.get(i));
+                    projectCardController.setProject(AccueilMediateur.utilisateur.listProjets.get(i));
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                ProjetController.cardLayout.getChildren().add(vBox);
+                ProjetController.cardLayout.getChildren().add(anchorPane);
             }
         }
         /****************************************************/
@@ -214,7 +239,7 @@ public class ProjetController implements Initializable {
             line3.setStyle("-fx-stroke: #b7b5b5");
         });
         PortfolioButton.setOnMouseClicked(event->{
-         AccueilMediateur.commutateur.AllerPortfolio(event);
+         AccueilMediateur.commutateur.AllerPortfolio();
         });
 
 
@@ -256,10 +281,45 @@ public class ProjetController implements Initializable {
             }
         });
         addProjectBtn.setOnMouseClicked(event -> {
-            System.out.println("welcome in adding project ");
-            AccueilMediateur.monPagination.setCurrentPageIndex(11);
+            AccueilMediateur.monPagination.setCurrentPageIndex(10);
         });
-        //projectList = new ArrayList<>(myProjectList());
-    }
 
+//        ProjectCardController.customDialog.buttonOk.setOnMouseClicked(event -> {
+//            File file = new File("DonnesUtilisateurs/"+AccueilMediateur.studentFolder +"/"+projectToDelete.getId()+".png") ;
+//            System.out.println("DonnesUtilisateurs/"+AccueilMediateur.studentFolder +"/"+projectToDelete.getId()+".png");
+//            System.out.println(file.delete()+ " resultat de suprission image . dans apres Custm");
+//        });
+
+
+
+        searchProjetBtn.setOnMouseClicked(event -> {
+            if(!searchProjectTextField.getText().equals("")){
+                foundProjet.getItems().clear();
+                foundProjetList.clear();
+                for(int i=0 ; i<AccueilMediateur.utilisateur.listProjets.size() ; i++){
+                    if(AccueilMediateur.utilisateur.listProjets.get(i).getTitle().contains(searchProjectTextField.getText())){
+                        foundProjet.getItems().add(AccueilMediateur.utilisateur.listProjets.get(i).getTitle());
+                        foundProjetList.add(AccueilMediateur.utilisateur.listProjets.get(i));
+                    }
+                }
+                if(foundProjet.getItems().size() != 0){
+                    foundProjet.setVisible(true);
+                    foundProjet.setPrefHeight(foundProjet.getItems().size() * 25);
+                }
+            }else {
+                foundProjet.setVisible(false);
+            }
+        });
+
+        foundProjet.setOnMouseClicked(event -> {
+            for(int i = 0 ; i<foundProjetList.size()  ; i++){
+                if(foundProjet.getSelectionModel().getSelectedItem().equals(foundProjetList.get(i).getTitle())){
+                    editProjectController.project = foundProjetList.get(i);
+                }
+            }
+            AccueilMediateur.commutateur.AllerModificationProjet(event);
+        });
+
+
+    }
 }

@@ -1,5 +1,7 @@
 package controleurs.acceuil;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,6 +10,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -19,6 +24,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import models.LoginUtilisateurs;
+import models.Statistiques;
 import models.Utilisateur;
 
 import java.io.File;
@@ -26,6 +32,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class AccueilController implements Initializable {
@@ -41,6 +49,12 @@ public class AccueilController implements Initializable {
     Label ProjetLabel;
     @FXML
     Button PortfolioButton;
+    @FXML
+    private PieChart softhardpie;
+    @FXML
+    private Label labstat;
+    @FXML
+    private BarChart<String, Integer> barCharta;
     @FXML
     Button AideButton;
     @FXML
@@ -97,6 +111,92 @@ public class AccueilController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        /********************************** statistique ******************************************************/
+        //la classe statistique
+        Statistiques statistiques =new Statistiques(AccueilMediateur.utilisateur.getListProjets());
+        statistiques.CalculerNbprojetsType();
+        try {
+            statistiques.CalculerTypeCompetance();
+        }catch (Exception e){
+            System.out.println("Erreur se génere lors de calcul des competences");
+        }
+        /**************************pieChart soft/hard********************************/
+        statistiques.CalculerTypeCompetance();
+        ObservableList<PieChart.Data> pieChartData1 =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Soft skills",statistiques.getNbSoftsSkills()),
+                        new PieChart.Data("Hard skills", statistiques.getNbHardSkills()));
+        softhardpie.getData().addAll(pieChartData1);
+        float nbcmpt = statistiques.getNbHardSkills()+ statistiques.getNbSoftsSkills();
+        float pourcentagehard = (statistiques.getNbHardSkills()/ nbcmpt )*100;
+        labstat.setText( (int)pourcentagehard +"%");
+        /************************barChart ********************************/
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        series.setName("project");
+        int projets2022 = 0;
+        int projets2021 = 0;
+        int projets2020 = 0;
+        int projets2019 = 0;
+        int projets2018 = 0;
+        int projets2016 = 0;
+        int projets2017 = 0;
+        int projets2023 = 0;
+        int projets2024 = 0;
+        int projets2025 = 0;
+        int projets2026 = 0;
+        for (int j = 0; j < AccueilMediateur.utilisateur.getListProjets().size(); j++) {
+            String input = String.valueOf(AccueilMediateur.utilisateur.getListProjets().get(j).getDate());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate localDate = LocalDate.parse(input, formatter);
+            int year = localDate.getYear();
+            switch (year){
+                case 2026 :
+                    projets2026 ++;
+                    break;
+                case 2025 :
+                    projets2025 ++;
+                    break;
+                case 2024 :
+                    projets2024 ++;
+                    break;
+                case 2023 :
+                    projets2023 ++;
+                    break;
+                case 2022 :
+                    projets2022 ++;
+                    break;
+                case 2021 :
+                    projets2021++;
+                    break;
+                case 2020 :
+                    projets2020++;
+                    break;
+                case 2019 :
+                    projets2019++;
+                    break;
+                case 2018 :
+                    projets2018++;
+                    break;
+                case 2017 :
+                    projets2017++;
+                    break;
+                case 2016 :
+                    projets2016++;
+                    break;
+            }
+        }
+        series.getData().add(new XYChart.Data<>("2016", projets2016));
+        series.getData().add(new XYChart.Data<>("2017", projets2017));
+        series.getData().add(new XYChart.Data<>("2018", projets2018));
+        series.getData().add(new XYChart.Data<>("2019", projets2019));
+        series.getData().add(new XYChart.Data<>("2020", projets2020));
+        series.getData().add(new XYChart.Data<>("2021", projets2021));
+        series.getData().add(new XYChart.Data<>("2022",projets2022));
+        series.getData().add(new XYChart.Data<>("2023",projets2023));
+        series.getData().add(new XYChart.Data<>("2024",projets2024));
+        series.getData().add(new XYChart.Data<>("2025",projets2025));
+        series.getData().add(new XYChart.Data<>("2026",projets2026));
+        barCharta.getData().add(series);
         /*********************Image personnel********************/
             if(AccueilMediateur.image!=null){
                 imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
@@ -149,7 +249,7 @@ public class AccueilController implements Initializable {
         });
         PortfolioButton.setOnMouseClicked(e->{
             //AccueilMediateur.monPagination.setCurrentPageIndex(6);
-            AccueilMediateur.commutateur.AllerPortfolio(e);
+            AccueilMediateur.commutateur.AllerPortfolio();
         });
         /***********************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
@@ -190,11 +290,14 @@ public class AccueilController implements Initializable {
                 e.printStackTrace();
             }
         });
-        /*********************************************************************************/
+        /*********************************************************************************
         WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getNom()+" "+ AccueilMediateur.utilisateur.donnes.getPrenom());
         SwitchButton.setOnAction(e->{
             AccueilMediateur.monPagination.setCurrentPageIndex(1);
         });
+        /************************************************************************************/
+        WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getPrenom());
+
         /***********************************************************/
         logOut.setOnMouseClicked(event -> {
             AccueilMediateur.commutateur.Déconnecter(event);

@@ -54,13 +54,15 @@ public class Competence {
         this.ObjectifPédagogique=objectif;
         /*******************/
         switch (type){
-            case "MET" : this.type =TypeCompetence.MET;
+            case "Technique" : this.type =TypeCompetence.MET;
             break;
-            case "TEC" : this.type=TypeCompetence.TEC;
+            case "Méthodologique" : this.type=TypeCompetence.TEC;
             break;
-            case "OPE" : this.type=TypeCompetence.OPE;
+            case "Modélisation" : this.type=TypeCompetence.OPE;
             break;
-            case "MOD" : this.type=TypeCompetence.MOD;
+            case "Opérationnel" : this.type=TypeCompetence.MOD;
+            default :
+                this.type=TypeCompetence.TEC;
         }
         /**************************/
         String[] data = modules.split(" ");

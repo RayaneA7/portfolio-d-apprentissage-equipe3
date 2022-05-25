@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.Accueil_1Controller">
+<AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.Accueil_1Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -185,5 +189,38 @@
       <Line fx:id="line5" endX="-43.0" layoutX="115.0" layoutY="536.0" startX="-84.0" stroke="#666666" />
       <Circle fx:id="imagePersonnnel" fill="WHITE" layoutX="715.0" layoutY="38.0" radius="25.0" stroke="#666666" strokeType="INSIDE" strokeWidth="3.0" />
       <HBox layoutX="573.0" layoutY="2.0" />
+      <PieChart fx:id="softhardpie" layoutX="221.0" layoutY="385.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="101.0" stylesheets="@../css/Inscription.css" />
+      <ImageView fitHeight="37.0" fitWidth="85.0" layoutX="231.0" layoutY="491.0">
+         <image>
+            <Image url="@../icons/Profil/Frame%2077.png" />
+         </image>
+      </ImageView>
+      <Circle fill="WHITE" layoutX="272.0" layoutY="441.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="labstat" layoutX="260.0" layoutY="432.0" text="Label">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="barCharta" barGap="1.0" layoutX="348.0" layoutY="395.0" legendVisible="false" prefHeight="168.0" prefWidth="345.0" style="-fx-background-color: transparent;" stylesheets="@../css/Inscription.css">
+         <xAxis>
+            <CategoryAxis fx:id="projects" side="BOTTOM" style="-fx-background-color: #EEEEEEE;" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="years" side="LEFT" style="-fx-background-color: #EEEEEE;" />
+         </yAxis>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </BarChart>
+      <ImageView fitHeight="16.0" fitWidth="200.0" layoutX="422.0" layoutY="379.0">
+         <image>
+            <Image url="@../icons/Acceuil/Nombre%20de%20projets%20realisés.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="126.0" layoutX="215.0" layoutY="378.0">
+         <image>
+            <Image url="@../icons/Acceuil/Mes%20Compétences.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

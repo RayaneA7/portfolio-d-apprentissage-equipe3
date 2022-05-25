@@ -6,12 +6,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -106,7 +108,7 @@ public class PortfolioShowController implements Initializable {
     @FXML
     private Circle imagePersonnel;
     @FXML
-    private ImageView addPort;
+    private Button addPort;
     @FXML
     public  AnchorPane monAnchorpane ;
 
@@ -125,6 +127,7 @@ public class PortfolioShowController implements Initializable {
     public static GridPane gridPane;
     public static ScrollPane MonScrollPane;
     private MyPortfolio myPortfolio;
+    private Tooltip tooltip1 = new Tooltip("Créer un portfolio");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -137,6 +140,9 @@ public class PortfolioShowController implements Initializable {
         MonScrollPane.setLayoutX(226);
         MonScrollPane.setLayoutY(172);
         /**********************************************/
+        addPort.setTooltip(tooltip1);
+        addPort.setCursor(Cursor.HAND);
+        /*********************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
@@ -183,7 +189,7 @@ public class PortfolioShowController implements Initializable {
             line3.setStyle("-fx-stroke: #666666");
         });
         PortfolioButton.setOnMouseClicked(e->{
-           AccueilMediateur.commutateur.AllerPortfolio(e);
+           AccueilMediateur.commutateur.AllerPortfolio();
         });
         /*****************************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
@@ -217,7 +223,7 @@ public class PortfolioShowController implements Initializable {
         /*******************************************************/
         /********************************************************/
         addPort.setOnMouseClicked(event->{
-            AccueilMediateur.monPagination.setCurrentPageIndex(4);
+            AccueilMediateur.monPagination.setCurrentPageIndex(3);
         });
         /*******************************************************/
         /*****************************************************/
@@ -233,8 +239,8 @@ public class PortfolioShowController implements Initializable {
                     int i = 1;
                     ArrayList<Portfolio> PrtfBag =new ArrayList<>();
                     for (Portfolio p : AccueilMediateur.utilisateur.getListPortfolio()){
-                        if (p.getId() != portfolio.getId()){
-                            p.setId(i);
+                        if (p.getNum() != portfolio.getNum()){
+                            p.setNum(i);
                             i++;
                             PrtfBag.add(p);
                         }
@@ -248,7 +254,7 @@ public class PortfolioShowController implements Initializable {
                     try {
                         Portfolio portfolio1 = null;
                         for(Portfolio p : AccueilMediateur.utilisateur.getListPortfolio()){
-                            if (p.getId() == portfolio.getId()){
+                            if (p.getNum() == portfolio.getNum()){
                                 portfolio1 = p;
                             }
                         }
@@ -305,12 +311,4 @@ public class PortfolioShowController implements Initializable {
             }
         }
     }
-
-    public void GoToModify() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/ModifyPortfolio.fxml"));
-        Stage stage = (Stage)PortfolioButton.getScene().getWindow();
-        stage.setScene(new Scene(root, 850,600));
-        stage.getIcons().addAll(IconImg);
-    }
-
 }

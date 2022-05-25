@@ -34,11 +34,11 @@ public class Parametre_2Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         monAncienEmail =new TextField();
-        monAncienEmail.setPrefSize(200,30);
+        monAncienEmail.setPrefSize(160,30);
         monAnchorEmailActuel.getChildren().add(monAncienEmail);
 
         monNouveauEmail =new TextField();
-        monNouveauEmail.setPrefSize(200,30);
+        monNouveauEmail.setPrefSize(160,30);
         monAnchorNouveauEmail.getChildren().add(monNouveauEmail);
 
         ErreurEmail =new Label();
@@ -49,7 +49,7 @@ public class Parametre_2Controller implements Initializable {
 
         ModificationLabel =new Label("Email modifié avec succés ! ");
         ModificationLabel.setStyle("-fx-text-fill :#19c62a ; -fx-font-family : Open Sans ; -fx-font-size : 16");
-        ModificationLabel.setPrefSize(300,30);
+        ModificationLabel.setPrefSize(200,25);
         ModificationLabel.setOpacity(0);
         monAnchorConfirmation.getChildren().add(ModificationLabel);
         /******************************/

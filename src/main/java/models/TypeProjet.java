@@ -2,7 +2,6 @@ package models;
 
 public enum TypeProjet {
     CLUB("Club"), PEDAGOGIQUE("Pédagogique"), PERSONEL("Personnel");
-
     public String getTypeProjet() {
         return typeProjet;
     }

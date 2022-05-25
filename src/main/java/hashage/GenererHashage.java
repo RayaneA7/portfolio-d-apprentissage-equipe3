@@ -1,7 +1,6 @@
 package hashage;
 
 import org.bouncycastle.util.encoders.Hex;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

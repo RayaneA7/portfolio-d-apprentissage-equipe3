@@ -24,7 +24,7 @@ public  class CustomDialog extends Stage {
 
     //  private SequentialTransition anim = new SequentialTransition(scale1, scale2);
 
-    CustomDialog(String header, String content) {
+    public CustomDialog(String header, String content) {
         Pane root = new Pane();
         initStyle(StageStyle.TRANSPARENT);
         initModality(Modality.APPLICATION_MODAL);

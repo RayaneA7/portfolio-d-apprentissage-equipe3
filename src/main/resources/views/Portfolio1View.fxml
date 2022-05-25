@@ -15,20 +15,9 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/Portfolio/PortfolioPage.png" />
+            <Image url="@../icons/Portfolio/ChoisirModelNew.png" />
          </image>
       </ImageView>
-      <Button fx:id="SwitchButton" layoutX="-16.0" layoutY="132.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: F5F5F5;" translateX="75.0">
-         <graphic>
-            <ImageView fx:id="BarreImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/Portfolio/Barre.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -136,9 +125,9 @@
       <Line fx:id="line3" endX="27.0" layoutX="111.0" layoutY="379.0" startX="-79.0" stroke="#666666" />
       <Line fx:id="line5" endX="27.0" layoutX="111.0" layoutY="537.0" startX="-79.0" stroke="#666666" />
       <Line fx:id="line4" endX="35.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
-      <Button fx:id="DeconnexionBut" layoutX="760.0" layoutY="15.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="58.0" style="-fx-background-color: 000000;">
+      <Button fx:id="DeconnexionBut" layoutX="762.0" layoutY="22.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: 000000;">
          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Portfolio/Deconnexion.png" />
                </image>

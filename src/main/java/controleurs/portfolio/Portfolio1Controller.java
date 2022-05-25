@@ -160,7 +160,7 @@ public class Portfolio1Controller implements Initializable {
             line3.setStyle("-fx-stroke: #666666");
         });
         PortfolioButton.setOnMouseClicked(e -> {
-            AccueilMediateur.commutateur.AllerPortfolio(e);
+            AccueilMediateur.commutateur.AllerPortfolio();
         });
         /*******************************************************************************/
         ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
@@ -315,7 +315,7 @@ public class Portfolio1Controller implements Initializable {
         pagination.setCurrentPageIndex(Currentpag);
         pagination.setPageFactory((Integer pageIndex) -> CreatePage(pageIndex));
         pagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
-       // pagination.getStylesheets().add("/css/PortfolioPag.css");
+        pagination.getStylesheets().add("/css/PortfolioPag.css");
     }
 
     public void NextPag() {
@@ -333,14 +333,14 @@ public class Portfolio1Controller implements Initializable {
         if (numPag == 0) {
             loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
             try {
-                if(AccueilMediateur.memory.get(5)!=null) {
-                    AccueilMediateur.memory.remove(5);
+                if(AccueilMediateur.memory.get(4)!=null) {
+                    AccueilMediateur.memory.remove(4);
                 }
-                AccueilMediateur.memory.add(5,loader.load());
+                AccueilMediateur.memory.add(4,loader.load());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            AccueilMediateur.monPagination.setCurrentPageIndex(5);
+            AccueilMediateur.monPagination.setCurrentPageIndex(4);
         }
         /***************A realiser *********************/
         /************************************************/

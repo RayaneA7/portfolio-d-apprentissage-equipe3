@@ -17,13 +17,12 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.control.Button?>
 
 <AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.profil.Profil">
    <children>
-      <ImageView fx:id="github" fitHeight="600.0" fitWidth="850.0">
+      <ImageView fitHeight="600.0" fitWidth="842.0">
          <image>
-            <Image url="@../icons/Profil/Profil.png" />
+            <Image url="@../icons/Profil/Profil%20(5).png" />
          </image>
       </ImageView>
       <Label fx:id="Nom" layoutX="94.0" layoutY="260.0" prefHeight="26.0" prefWidth="113.0" text="nom">
@@ -46,31 +45,66 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="Bio" layoutX="40.0" layoutY="442.0" prefHeight="76.0" prefWidth="210.0" text="BIO">
+      <Label fx:id="Bio" layoutX="40.0" layoutY="442.0" prefHeight="76.0" prefWidth="199.0" text="BIO">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button fx:id="retourButton" layoutX="706.0" layoutY="540.0"  prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
-      </Button>
-      <BarChart fx:id="barChart" layoutX="309.0" layoutY="397.0" prefHeight="161.0" prefWidth="269.0" stylesheets="@../css/Inscription.css">
+      <JFXButton buttonType="RAISED" layoutX="706.0" layoutY="530.0" onAction="#PreviousPage" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9450980424880981" green="0.772549033164978" blue="0.23529411852359772" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <BarChart fx:id="barChart" barGap="1.0" layoutX="300.0" layoutY="365.0" prefHeight="174.0" prefWidth="328.0" style="-fx-background-color: white;" stylesheets="@../css/Inscription.css">
         <xAxis>
           <CategoryAxis fx:id="projects" side="BOTTOM" />
         </xAxis>
         <yAxis>
           <NumberAxis fx:id="years" side="LEFT" />
         </yAxis>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </BarChart>
-      <PieChart fx:id="pieChart" layoutX="417.0" layoutY="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="164.0" stylesheets="@../css/Inscription.css" />
-      <Label fx:id="Nbprojects" layoutX="625.0" layoutY="202.0" prefHeight="26.0" prefWidth="40.0" style="-fx-font-family: Arial;" text="Nbprojects">
+      <PieChart fx:id="pieChart" layoutX="417.0" layoutY="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="164.0" stylesheets="@../css/Inscription.css" />
+      <Label fx:id="Nbprojects" layoutX="665.0" layoutY="404.0" prefHeight="26.0" prefWidth="40.0" style="-fx-font-family: Arial;" text="Nbprojects">
          <font>
             <Font name="Arial Bold" size="26.0" />
          </font></Label>
-      <ImageView fitHeight="20.0" fitWidth="52.0" layoutX="686.0" layoutY="192.0">
+      <ImageView fitHeight="20.0" fitWidth="52.0" layoutX="731.0" layoutY="394.0">
          <image>
             <Image url="@../icons/Profil/Group 101.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="85.0" layoutX="639.0" layoutY="408.0">
+      <ImageView fitHeight="37.0" fitWidth="85.0" layoutX="672.0" layoutY="274.0">
          <image>
             <Image url="@../icons/Profil/Frame 77.png" />
          </image>
@@ -95,12 +129,7 @@
             <Image url="@../icons/Profil/ImagePersonnel.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="94.0" fitWidth="92.0" layoutX="325.0" layoutY="212.0">
-         <image>
-            <Image url="@../icons/Profil/Group 154 (1).png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="logout" fitHeight="28.0" fitWidth="22.0" layoutX="747.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logout" fitHeight="28.0" fitWidth="40.0" layoutX="743.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Deconnexion.png" />
          </image>
@@ -109,14 +138,29 @@
          </cursor>
       </ImageView>
       <Label fx:id="poucentage" layoutX="485.0" layoutY="203.0" />
-      <PieChart fx:id="pie2" layoutX="631.0" layoutY="293.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="101.0" stylesheets="@../css/Inscription.css" />
-      <Circle fx:id="circle" fill="WHITE" layoutX="682.0" layoutY="348.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label fx:id="lab2" layoutX="668.0" layoutY="341.0" text="Label">
+      <PieChart fx:id="pie2" layoutX="660.0" layoutY="164.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="101.0" stylesheets="@../css/Inscription.css" />
+      <Circle fx:id="circle" fill="WHITE" layoutX="711.0" layoutY="219.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="lab2" layoutX="698.0" layoutY="211.0" text="Label">
          <font>
-            <Font name="Arial Bold" size="20.0" />
+            <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
       <Hyperlink fx:id="linkdin" layoutX="191.0" layoutY="45.0" onAction="#openLink" prefHeight="28.0" prefWidth="28.0" />
-      <Hyperlink fx:id="facebook" layoutX="191.0" layoutY="115.0" onAction="#openLink" prefHeight="28.0" prefWidth="28.0" />
+      <Hyperlink fx:id="facebook" layoutX="191.0" layoutY="115.0" onAction="#openfacebook" prefHeight="28.0" prefWidth="28.0" />
+      <Hyperlink fx:id="github" layoutX="190.0" layoutY="80.0" onAction="#opengithub" prefHeight="28.0" prefWidth="28.0" />
+      <ImageView fitHeight="94.0" fitWidth="92.0" layoutX="325.0" layoutY="212.0">
+         <image>
+            <Image url="@../icons/Profil/Group%20157reasdf%20(1).png" />
+         </image>
+      </ImageView>
+      <Label fx:id="pcct" layoutX="505.0" layoutY="181.0" prefHeight="31.0" prefWidth="80.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <ImageView fitHeight="94.0" fitWidth="92.0" layoutX="325.0" layoutY="212.0">
+         <image>
+            <Image url="@../icons/Profil/Group%20157reasdf%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

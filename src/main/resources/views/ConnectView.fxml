@@ -13,44 +13,44 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane fx:id="myAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.ConnectController">
+<AnchorPane fx:id="myAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="794.0" stylesheets="@../css/Inscription.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.ConnectController">
    <children>
-      <ImageView fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="570.0" fitWidth="800.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/Connect.png" />
          </image>
       </ImageView>
-      <Pane fx:id="myPane" layoutX="366.0" layoutY="155.0" prefHeight="204.0" prefWidth="420.0">
+      <Pane fx:id="myPane" layoutX="354.0" layoutY="155.0" prefHeight="195.0" prefWidth="420.0">
          <children>
-            <PasswordField fx:id="monMotDePasse" layoutX="36.0" layoutY="128.0" prefHeight="25.0" prefWidth="340.0" promptText="Mot de passe" style="-fx-font-size: 14;" />
-            <TextField fx:id="monEmail" layoutX="36.0" layoutY="59.0" prefHeight="30.0" prefWidth="340.0" promptText="Email" style="-fx-font-size: 14;" />
-            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="379.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <PasswordField fx:id="monMotDePasse" layoutX="36.0" layoutY="128.0" prefHeight="29.0" prefWidth="314.0" promptText="Mot de passe" style="-fx-font-size: 14; -fx-font-family: Open Sans;" />
+            <TextField fx:id="monEmail" layoutX="36.0" layoutY="59.0" prefHeight="30.0" prefWidth="313.0" promptText="Email" style="-fx-font-size: 14; -fx-font-family: Open Sans;" />
+            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="355.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="376.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="353.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Inscription/RedStar.png" />
                </image>
             </ImageView>
-            <Line fx:id="monLigneEmail" endX="245.0" endY="0.3333282470703125" layoutX="138.0" layoutY="91.0" startX="-100.0" startY="0.3333282470703125" stroke="#666666" strokeWidth="3.0" style="-fx-fill: #666666;" />
-            <Line fx:id="monLigneMotPasse" endX="520.0" endY="10.0" layoutX="-134.0" layoutY="148.0" startX="171.66665649414062" startY="10.0" stroke="#666666" strokeWidth="3.0" />
+            <Line fx:id="monLigneEmail" endX="225.0" endY="0.3333282470703125" layoutX="138.0" layoutY="91.0" startX="-100.0" startY="0.3333282470703125" stroke="#b7b5b5" strokeWidth="3.0" style="-fx-fill: #666666;" />
+            <Line fx:id="monLigneMotPasse" endX="498.0" endY="10.0" layoutX="-134.0" layoutY="148.0" startX="171.66665649414062" startY="10.0" stroke="#b7b5b5" strokeWidth="3.0" />
             <Label fx:id="alertEmail" layoutX="37.0" layoutY="96.0" opacity="0.0" prefHeight="17.0" prefWidth="348.0" text="Email inexistant !" textFill="RED" />
             <Label fx:id="alertMotPasse" layoutX="37.0" layoutY="163.0" opacity="0.0" prefHeight="17.0" prefWidth="348.0" text="Mot de passe incorrect !" textFill="RED" />
          </children>
       </Pane>
-      <Button layoutX="580.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#procedureRecupération" prefHeight="30.0" prefWidth="190.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe oublié ?">
+      <Button layoutX="569.0" layoutY="367.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#procedureRecupération" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-size: 16; -fx-font-weight: bold; -fx-font-family: Open Sans;" text="Mot de passe oublié ?">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <CheckBox fx:id="myCheck" layoutX="403.0" layoutY="376.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Rappelez-moi">
+      <CheckBox fx:id="myCheck" layoutX="393.0" layoutY="370.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-font-family: Open Sans;" text="Rappelez-moi">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </CheckBox>
-      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="513.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/Help.png" />
          </image>
@@ -58,23 +58,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="emailEsi" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="130.0" layoutX="425.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/Inscription/LoginEsi.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="444.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;" text="Se connecter">
+      <JFXButton layoutX="471.0" layoutY="434.0" onAction="#allerPageAcceuil" prefHeight="38.0" prefWidth="180.0" ripplerFill="WHITE" style="-fx-background-radius: 8; -fx-border-radius: 10; -fx-background-color: #184173; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-font-family: Open Sans;" text="Se connecter">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXButton layoutX="623.0" layoutY="517.0" onAction="#inscription" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: white; -fx-font-size: 16; -fx-text-fill: #184173; -fx-font-weight: bold;" text="Inscrivez-vous">
+      <JFXButton layoutX="608.0" layoutY="512.0" onAction="#inscription" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: white; -fx-font-size: 16; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-font-family: Open Sans;" text="Inscrivez-vous">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="400.0" layoutY="520.0" prefHeight="30.0" prefWidth="225.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Vous n'avez pas de compte ?" />
+      <Label layoutX="388.0" layoutY="513.0" prefHeight="30.0" prefWidth="225.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-font-family: Open Sans;" text="Vous n'avez pas de compte ?" />
    </children>
 </AnchorPane>

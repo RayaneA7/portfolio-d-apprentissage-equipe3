@@ -18,20 +18,9 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/Portfolio/ModifierPortfolioPage.png" />
+            <Image url="@../icons/Portfolio/ModifierPortfolioNew.png" />
          </image>
       </ImageView>
-      <Button fx:id="SwitchButton" layoutX="-16.0" layoutY="132.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: F5F5F5;" translateX="75.0">
-         <graphic>
-            <ImageView fx:id="BarreImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../IdeaProjects/demo1/demo/portfolio-d-apprentissage-equipe3/src/main/resources/icons/Acceuil/Barre.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
       <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -144,7 +133,7 @@
       </Button>
       <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="25.0" fitWidth="19.0" layoutX="767.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../IdeaProjects/demo1/demo/portfolio-d-apprentissage-equipe3/src/main/resources/icons/Acceuil/Deconnexion.png" />
+            <Image url="@../icons/Portfolio/Deconnexion.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -196,5 +185,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="ModifierLabel" layoutX="401.0" layoutY="174.0" opacity="0.0" text="Portfolio modifié avec succès" textFill="#079e1b">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="ErreurLabel" layoutX="354.0" layoutY="174.0" opacity="0.0" text="Veuillez sélectionner au moins un projet" textFill="#e81515">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

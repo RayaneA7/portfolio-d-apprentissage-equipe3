@@ -20,14 +20,18 @@ public class Test2 {
         System.out.println();
     }
     public static void main(String args[]) throws IOException {
-         /*************************************/
+          File file =new File("DonnesUtilisateurs/20_0253/user.json");
+          if(file.isFile()){
+             boolean result = file.delete();
+             System.out.println("la resultat est : "+result);
+          }
+         /********************************************************
          ArrayList<String> lists =new ArrayList<>(8);
          lists.add("bingbang");
          if(lists.get(4)==null){
              lists.add(4,"hbdshdvh");
          }
         Competences comp =new Competences();
-        /*******/
         ArrayList<Competence> result;
         int i=1;
         String row="";

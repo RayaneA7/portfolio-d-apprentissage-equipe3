@@ -8,7 +8,6 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,14 +18,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.authentification.SignUpController">
    <children>
       <ImageView fx:id="myErreurMatricule" fitHeight="568.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/SignUp.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="520.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myHelp" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="150.0" layoutX="115.0" layoutY="513.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/Help.png" />
          </image>
@@ -34,35 +33,87 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="690.0" layoutY="520.0" onAction="#NextPage" prefHeight="30.0" prefWidth="80.0" ripplerFill="#f8f8f8" style="-fx-text-fill: white; -fx-background-color: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Suivant">
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" />
-                     </color>
-                  </Stop>
-               </stops>
-            </RadialGradient>
-         </textFill>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow blurType="ONE_PASS_BOX" offsetX="4.0" offsetY="4.0">
-               <color>
-                  <Color opacity="0.5" />
-               </color>
-            </DropShadow>
-         </effect>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="390.0" layoutY="520.0" onAction="#PreviousPage" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: white; -fx-text-fill: #184173; -fx-font-weight: bold; -fx-background-radius: 5;" text="Retour">
+      <DatePicker fx:id="monDateNaissance" layoutX="383.0" layoutY="335.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" promptText="Date de naissance" style="-fx-font-size: 13; -fx-background-color: D8D8D8;" />
+      <MenuButton fx:id="monSexe" layoutX="635.0" layoutY="335.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="68.0" style="-fx-background-color: D8D8D8; -fx-font-family: Open Sans;" text="Sexe" textFill="#666666">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Male" />
+            <MenuItem mnemonicParsing="false" text="Femelle" />
+         </items>
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </MenuButton>
+      <MenuButton fx:id="monNiveauEtude" layoutX="628.0" layoutY="405.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" style="-fx-background-color: D8D8D8; -fx-font-family: Open Sans;" text="Niveau d'étude" textFill="#666666">
+         <items>
+            <MenuItem mnemonicParsing="false" text="1CP" />
+            <MenuItem mnemonicParsing="false" text="2CP" />
+            <MenuItem mnemonicParsing="false" text="1CS" />
+            <Menu mnemonicParsing="false" text="2CS">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="2SQ" />
+                  <MenuItem mnemonicParsing="false" text="2SL" />
+                  <MenuItem mnemonicParsing="false" text="2ST" />
+                  <MenuItem mnemonicParsing="false" text="2SD" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="3CS">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="3SL" />
+                  <MenuItem mnemonicParsing="false" text="3ST" />
+                  <MenuItem mnemonicParsing="false" text="3SQ" />
+                  <MenuItem mnemonicParsing="false" text="3SD" />
+                  <MenuItem mnemonicParsing="false" text="MSQ" />
+                  <MenuItem mnemonicParsing="false" text="MSL" />
+                  <MenuItem mnemonicParsing="false" text="MST" />
+                  <MenuItem mnemonicParsing="false" text="MSD" />
+               </items>
+            </Menu>
+            <MenuItem>
+               <graphic>
+                  <TextField fx:id="newNiveauEtude" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" promptText="Ajouter un niveau d'étude">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </graphic>
+            </MenuItem>
+         </items>
+      </MenuButton>
+      <AnchorPane fx:id="monAnchorpane" layoutX="331.0" layoutY="159.0" prefHeight="176.0" prefWidth="455.0">
+         <children>
+            <Line fx:id="monLigneNom" endX="240.0" layoutX="154.0" layoutY="136.0" startX="-100.0" stroke="#b5b3b3d0" strokeWidth="3.0" />
+            <TextField fx:id="monPrenom" layoutX="54.0" layoutY="26.0" prefHeight="30.0" prefWidth="331.0" promptText="Prenom" style="-fx-font-size: 14; -fx-background-color: white; -fx-font-family: Open Sans;" />
+            <Line fx:id="monLignePrenom" endX="240.0" layoutX="155.0" layoutY="58.0" startX="-100.0" stroke="#b7b5b5" strokeWidth="3.0" />
+            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="384.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Inscription/RedStar.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="monNom" layoutX="52.0" layoutY="103.0" prefHeight="31.0" prefWidth="331.0" promptText="Nom" style="-fx-font-size: 14; -fx-background-color: white; -fx-font-family: Open Sans;" />
+            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="384.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Inscription/RedStar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="erreurPrenom" layoutX="55.0" layoutY="68.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red; -fx-background-color: white;" text="Ce champ ne doit pas être vide !" />
+            <Label fx:id="erreurNom" layoutX="54.0" layoutY="149.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red; -fx-background-color: white;" text="Ce champ ne doit pas être vide !" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="monAnchorpane1" layoutX="365.0" layoutY="394.0" prefHeight="83.0" prefWidth="223.0">
+         <children>
+            <TextField fx:id="monMatricule" layoutX="20.0" layoutY="4.0" prefHeight="30.0" prefWidth="150.0" promptText="Matricule" style="-fx-background-color: white; -fx-font-size: 14; -fx-font-family: Open Sans;" />
+            <Line fx:id="monLigneMatricule" endX="60.0" endY="-3.0517578125E-5" layoutX="121.0" layoutY="36.0" startX="-100.0" stroke="#b7b5b5" strokeWidth="3.0" />
+            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="173.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Inscription/RedStar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="erreurMatricule" layoutX="20.0" layoutY="44.0" opacity="0.0" prefHeight="17.0" prefWidth="233.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide !" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="erreurDateNaissance" layoutX="383.0" layoutY="373.0" opacity="0.0" prefHeight="17.0" prefWidth="223.0" style="-fx-text-fill: red;" text="Veuillez choisir votre date de naissance !" />
+      <Label fx:id="erreurSexe" layoutX="623.0" layoutY="372.0" opacity="0.0" prefHeight="17.0" prefWidth="144.0" style="-fx-text-fill: red;" text="Veuillez chiosir votre sexe !" />
+      <Label fx:id="erreurNiveauEtude" layoutX="622.0" layoutY="440.0" opacity="0.0" prefHeight="40.0" prefWidth="144.0" style="-fx-text-fill: red;" text="Veuillez chiosir votre niveau d'étude !" wrapText="true" />
+      <JFXButton buttonType="RAISED" layoutX="399.0" layoutY="500.0" onAction="#PreviousPage" prefHeight="34.0" prefWidth="81.0" style="-fx-background-color: white; -fx-text-fill: #215DA7; -fx-font-weight: bold; -fx-background-radius: 7; -fx-font-family: Open Sans;" text="Retour">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>
@@ -95,93 +146,10 @@
                </stops>
             </LinearGradient>
          </ripplerFill>
-         <effect>
-            <DropShadow blurType="ONE_PASS_BOX" offsetX="4.0" offsetY="4.0">
-               <color>
-                  <Color opacity="0.5" />
-               </color>
-            </DropShadow>
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </JFXButton>
-      <DatePicker fx:id="monDateNaissance" layoutX="391.0" layoutY="364.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" promptText="Date de naissance" style="-fx-font-size: 14;" />
-      <MenuButton fx:id="monSexe" layoutX="643.0" layoutY="364.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Sexe">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Male" />
-          <MenuItem mnemonicParsing="false" text="Femelle" />
-        </items>
-      </MenuButton>
-      <MenuButton fx:id="monNiveauEtude" layoutX="643.0" layoutY="443.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Niveau d'étude">
-        <items>
-          <MenuItem mnemonicParsing="false" text="1CP" />
-            <MenuItem mnemonicParsing="false" text="2CP" />
-            <MenuItem mnemonicParsing="false" text="1CS" />
-            <Menu mnemonicParsing="false" text="2CS">
-              <items>
-                <MenuItem mnemonicParsing="false" text="2SQ" />
-                  <MenuItem mnemonicParsing="false" text="2SL" />
-                  <MenuItem mnemonicParsing="false" text="2ST" />
-                  <MenuItem mnemonicParsing="false" text="2SD" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="3CS">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="3SL" />
-                  <MenuItem mnemonicParsing="false" text="3ST" />
-                  <MenuItem mnemonicParsing="false" text="3SQ" />
-                  <MenuItem mnemonicParsing="false" text="3SD" />
-                  <MenuItem mnemonicParsing="false" text="MSQ" />
-                  <MenuItem mnemonicParsing="false" text="MSL" />
-                  <MenuItem mnemonicParsing="false" text="MST" />
-                  <MenuItem mnemonicParsing="false" text="MSD" />
-               </items>
-            </Menu>
-            <MenuItem>
-               <graphic>
-                  <TextField fx:id="newNiveauEtude" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" promptText="Ajouter un niveau d'étude">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-               </graphic>
-            </MenuItem>
-        </items>
-      </MenuButton>
-      <AnchorPane fx:id="monAnchorpane" layoutX="340.0" layoutY="159.0" prefHeight="200.0" prefWidth="455.0">
-         <children>
-            <Line fx:id="monLigneNom" endX="270.0" layoutX="154.0" layoutY="151.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
-            <TextField fx:id="monPrenom" layoutX="54.0" layoutY="26.0" prefHeight="30.0" prefWidth="360.0" promptText="Prenom" style="-fx-font-size: 14; -fx-background-color: white;" />
-            <Line fx:id="monLignePrenom" endX="270.0" layoutX="155.0" layoutY="58.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
-            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="418.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/Inscription/RedStar.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="monNom" layoutX="52.0" layoutY="118.0" prefHeight="31.0" prefWidth="360.0" promptText="Nom" style="-fx-font-size: 14; -fx-background-color: white;" />
-            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="416.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/Inscription/RedStar.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="erreurPrenom" layoutX="55.0" layoutY="68.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red; -fx-background-color: white;" text="Ce champ ne doit pas être vide !" />
-            <Label fx:id="erreurNom" layoutX="54.0" layoutY="164.0" opacity="0.0" prefHeight="17.0" prefWidth="175.0" style="-fx-text-fill: red; -fx-background-color: white;" text="Ce champ ne doit pas être vide !" />
-         </children></AnchorPane>
-      <AnchorPane fx:id="monAnchorpane1" layoutX="372.0" layoutY="410.0" prefHeight="105.0" prefWidth="200.0">
-         <children>
-            <TextField fx:id="monMatricule" layoutX="20.0" layoutY="28.0" prefHeight="30.0" prefWidth="150.0" promptText="Matricule" style="-fx-background-color: white; -fx-font-size: 14;" />
-            <Line fx:id="monLigneMatricule" endX="60.0" endY="-3.0517578125E-5" layoutX="121.0" layoutY="60.0" startX="-100.0" stroke="#666666" strokeWidth="3.0" />
-            <ImageView fitHeight="10.0" fitWidth="8.0" layoutX="173.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../icons/Inscription/RedStar.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="erreurMatricule" layoutX="20.0" layoutY="70.0" opacity="0.0" prefHeight="17.0" prefWidth="233.0" style="-fx-text-fill: red;" text="Ce champ ne doit pas être vide !" />
-         </children>
-      </AnchorPane>
-      <Label fx:id="erreurDateNaissance" layoutX="391.0" layoutY="403.0" opacity="0.0" prefHeight="17.0" prefWidth="223.0" style="-fx-text-fill: red;" text="Veuillez choisir votre date de naissance !" />
-      <Label fx:id="erreurSexe" layoutX="642.0" layoutY="403.0" opacity="0.0" prefHeight="17.0" prefWidth="144.0" style="-fx-text-fill: red;" text="Veuillez chiosir votre sexe !" />
-      <Label fx:id="erreurNiveauEtude" layoutX="644.0" layoutY="478.0" opacity="0.0" prefHeight="40.0" prefWidth="144.0" style="-fx-text-fill: red;" text="Veuillez chiosir votre niveau d'étude !" wrapText="true" />
+      <JFXButton buttonType="RAISED" layoutX="661.0" layoutY="500.0" onAction="#NextPage" prefHeight="34.0" prefWidth="81.0" ripplerFill="#f8f8f8" style="-fx-text-fill: white; -fx-background-color: #215DA7; -fx-font-weight: bold; -fx-background-radius: 7; -fx-font-family: Open Sans;" text="Suivant" textFill="#f7f7f7" />
    </children>
 </AnchorPane>
