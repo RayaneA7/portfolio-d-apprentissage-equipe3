@@ -20,10 +20,13 @@ import models.Sex;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Pattern;
 
 
 public class SignUpController implements Initializable {
@@ -83,7 +86,9 @@ public class SignUpController implements Initializable {
     /****************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //monDateNaissance.setStyle("-fx-background-color : #184173");
+        /**************************************/
+        monDateNaissance.setTooltip(new Tooltip("Cliquez sur Ok si vous voulez modifier la date par clavier"));
+        /*************************************/
         EventHandler<MouseEvent > event =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -169,7 +174,7 @@ public class SignUpController implements Initializable {
         monSexe.setOnMouseClicked(event3);
 
         String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeA="-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
         monAnchorpane.setOnMouseEntered(event4 -> {
             monNom.setOnMouseClicked(event5->{
                 monLigneNom.setStyle(typeB);
@@ -193,21 +198,15 @@ public class SignUpController implements Initializable {
     public int VerifierDate(){
         int result=0;
         if(monDateNaissance.getEditor().getText().length()!=0) {
+
             char ch='0' ;
             String Annee="";
-            StringBuilder builder =new StringBuilder();
-            String date = monDateNaissance.getEditor().getText();
-            int i =date.length()-4;
-            while(i<date.length())
-            {
-               ch=date.charAt(i);
-               builder.append(ch);
-               i++;
-            }
-            Annee =builder.toString();
+            LocalDate date1 =monDateNaissance.getValue();
+            String date =date1.toString();
            // System.out.println("année naissance est :"+Annee);
-            int AnneeNaissance = Integer.valueOf(Annee);
+            int AnneeNaissance = date1.getYear();
             LocalDateTime now = LocalDateTime.now();
+
             int AnneeActuel = now.getYear();
             if ((AnneeActuel - AnneeNaissance) >= ageMinimal) {
                 result = 1;
@@ -243,26 +242,34 @@ public class SignUpController implements Initializable {
         }
     }
     public int VerifierMatricule(){
-        String nom= monMatricule.getText().replace('/','_');
-        monMatricule.setText(nom);
-        int resultat =1;
-        if(monMatricule.getText()!="")
-        {
-            int i=0;
-            int stop=0;
-            while (i < ConnectController.listLogins.size() && stop !=1) {
-                if (ConnectController.listLogins.get(i).getMatricule().equals(monMatricule.getText())) {
-                    stop=1;
-                    resultat=0;
-                    erreurMatricule.setText("Ce matricule appartient déja à un étudiant !");
-                }
-                i++;
-            }
+        int resultat = 1;
+        if(Pattern.matches("\\d{2}[/]\\d{4}",monMatricule.getText())) {
+            LocalDate date =LocalDate.now();
+             int AnneeActuel = date.getYear()%100;
+             int AnneeMatricule = Integer.parseInt(monMatricule.getText().substring(0,2));
+             System.out.println("le matricule : "+AnneeMatricule+" "+AnneeActuel);
+             if(AnneeMatricule<=AnneeActuel) {
+                 int i = 0;
+                 int stop = 0;
+                 while (i < ConnectController.listLogins.size() && stop != 1) {
+                     if (ConnectController.listLogins.get(i).getMatricule().equals(monMatricule.getText())) {
+                         stop = 1;
+                         resultat = 0;
+                         erreurMatricule.setText("Ce matricule appartient déja à un étudiant !");
+                     }
+                     i++;
+                 }
+             }else{
+                 erreurMatricule.setText(" Matricule incorrect !");
+                 resultat=0;
+             }
+        } else if(monMatricule.getText().equals("")) {
+        erreurMatricule.setText("Ce champ ne doit pas étre vide !");
+        resultat = 0;
         }
-        else
-        {
-         erreurMatricule.setText("Ce champ ne doit pas étre vide !");
-         resultat=0;
+        else{
+            erreurMatricule.setText(" Matricule incorrect !");
+            resultat=0;
         }
         if(resultat==0){ConnectController.commutateur.TraiterAlert(erreurMatricule);}
         return resultat;
@@ -309,7 +316,7 @@ public class SignUpController implements Initializable {
                 sex= Sex.FEMELLE;
             }
             ConnectController.user.donnes.setSex(sex);
-            ConnectController.user.donnes.setDatenaissance(monDateNaissance.getEditor().getText());
+            ConnectController.user.donnes.setDatenaissance(monDateNaissance.getValue().toString());
             ConnectController.user.donnes.setNiveauEtude(monNiveauEtude.getText());
             ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex()+1);
         }

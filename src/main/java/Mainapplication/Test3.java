@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.DosFileAttributes;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -43,6 +44,8 @@ public class Test3 {
         zipfile.addFolder(new File("DonnesUtilisateurs"), zipParameters);
         /*******************************/
         /*******************************/
+        //System.out.println(Pattern.matches("[/]","/"));
+        //System.out.println(Pattern.matches("\\d\\d","20"));
     }
     static void SerialiseFile(String studentFolder) throws IOException {
         ZipFile zipFile = new ZipFile("compressed.zip", "password".toCharArray());

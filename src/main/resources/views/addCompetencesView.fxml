@@ -6,57 +6,97 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.addCompetenceController">
+<AnchorPane prefHeight="467.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.addCompetenceController">
    <children>
-      <Label layoutX="37.0" layoutY="90.0" prefHeight="33.0" prefWidth="198.0" text="Available Competences">
+      <Label layoutX="37.0" layoutY="106.0" prefHeight="33.0" prefWidth="219.0" text="Compétences disponibles" textFill="#184173">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="424.0" layoutY="100.0" text="Click to add to your Project" />
-      <Label layoutX="32.0" layoutY="21.0" prefHeight="46.0" prefWidth="164.0" text="Search Competence">
+      <Label layoutX="270.0" layoutY="115.0" text="Cliquer pour ajouter à votre projet" textFill="#666666">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="32.0" prefHeight="33.0" prefWidth="261.0" text="Rechercher de compétences" textFill="#184173">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="availableCompetenceList" layoutX="32.0" layoutY="127.0" prefHeight="73.0" prefWidth="541.0" />
-      <HBox layoutX="27.0" layoutY="228.0" prefHeight="25.0" prefWidth="365.0">
+      <ListView fx:id="availableCompetenceList" layoutX="32.0" layoutY="142.0" prefHeight="73.0" prefWidth="541.0" style="-fx-background-color: E9E9E9;" />
+      <HBox layoutX="32.0" layoutY="228.0" prefHeight="25.0" prefWidth="365.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="163.0" text="Custom Competence">
+            <Label prefHeight="25.0" prefWidth="125.0" text="Autre compétence">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="customCompField" prefHeight="25.0" prefWidth="214.0" />
+            <TextField fx:id="customCompField" prefHeight="25.0" prefWidth="208.0" style="-fx-background-color: E9E9E9;" />
          </children>
       </HBox>
-      <ListView fx:id="myProjectCompetenceList" layoutX="27.0" layoutY="292.0" prefHeight="109.0" prefWidth="541.0" />
-      <Label layoutX="27.0" layoutY="265.0" prefHeight="20.0" prefWidth="217.0" text="My Project Competence List">
+      <ListView fx:id="myProjectCompetenceList" layoutX="27.0" layoutY="308.0" prefHeight="109.0" prefWidth="541.0" style="-fx-background-color: E9E9E9;" />
+      <Label layoutX="36.0" layoutY="273.0" prefHeight="27.0" prefWidth="299.0" text="Mes compétences" textFill="#184173">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <HBox layoutX="399.0" layoutY="428.0">
          <children>
-            <Button fx:id="retourBtn" mnemonicParsing="false" text="Retour" />
+            <Button fx:id="retourBtn" mnemonicParsing="false" style="-fx-background-color: FFFFFF;" text="Retour" textFill="#215da7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow offsetX="-1.0" offsetY="1.0">
+                     <color>
+                        <Color opacity="0.36000001430511475" />
+                     </color>
+                  </DropShadow>
+               </effect></Button>
             <VBox prefHeight="25.0" prefWidth="52.0" />
-            <Button fx:id="validerBtn" mnemonicParsing="false" text="Valider" />
+            <Button fx:id="validerBtn" mnemonicParsing="false" style="-fx-background-color: #215da7;" text="Valider" textFill="WHITE">
+               <effect>
+                  <DropShadow offsetX="-1.0" offsetY="1.0">
+                     <color>
+                        <Color opacity="0.36000001430511475" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </HBox>
-      <Label layoutX="244.0" layoutY="269.0" text="Clickto delete " />
+      <Label layoutX="204.0" layoutY="280.0" text="Cliquer pour enlever la compétence" textFill="#666666">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <HBox alignment="CENTER" layoutX="31.0" layoutY="65.0" prefHeight="25.0" prefWidth="533.0">
          <children>
-            <TextField fx:id="competenceSearchField" prefHeight="25.0" prefWidth="125.0" promptText="Competence" />
-            <TextField fx:id="matiereSearchField" prefHeight="25.0" prefWidth="125.0" promptText="Matiere" />
-            <TextField fx:id="typeSearchField" prefHeight="25.0" prefWidth="137.0" promptText="Type" />
-            <TextField fx:id="objectifSearchField" prefWidth="138.0" promptText="Objectif" />
+            <TextField fx:id="competenceSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="125.0" promptText="Competence" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="matiereSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="125.0" promptText="Matiere" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="typeSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="137.0" promptText="Type" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="objectifSearchField" alignment="CENTER" prefWidth="138.0" promptText="Objectif" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
             <Button fx:id="searchBtn" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
@@ -68,8 +108,11 @@
             </Button>
          </children>
       </HBox>
-      <Button fx:id="addCustomBtn" layoutX="522.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="42.0" text="Add" />
-      <MenuButton fx:id="customTypeMenu" layoutX="399.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Type">
+      <Button fx:id="addCustomBtn" layoutX="489.0" layoutY="225.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: F1C53C;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <MenuButton fx:id="customTypeMenu" layoutX="399.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: E9E9E9;" text="Type">
          <items>
             <MenuItem mnemonicParsing="false" text="Technique" />
             <MenuItem mnemonicParsing="false" text="Méthodologique" />

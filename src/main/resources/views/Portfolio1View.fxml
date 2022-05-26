@@ -127,7 +127,7 @@
       <Line fx:id="line4" endX="35.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
       <Button fx:id="DeconnexionBut" layoutX="762.0" layoutY="22.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: 000000;">
          <graphic>
-            <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logOut" fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Portfolio/Deconnexion.png" />
                </image>

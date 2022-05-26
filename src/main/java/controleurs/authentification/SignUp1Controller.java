@@ -87,7 +87,7 @@ public class SignUp1Controller implements Initializable {
         String typeA="-fx-stroke:#EFEFEF ;-fx-stroke-width:4 ";
         /*****************/
         String typeB1="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA1="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeA1="-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
         String typeC1="-fx-stroke: red ;-fx-stroke-width:3";
         String typeD1="-fx-stroke:#19C62A ;-fx-stroke-width:3 ";
         /******************************************************************/

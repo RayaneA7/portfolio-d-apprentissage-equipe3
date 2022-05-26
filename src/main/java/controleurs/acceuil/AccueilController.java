@@ -213,9 +213,9 @@ public class AccueilController implements Initializable {
         });
         AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
-            AccueilLabel.setTextFill(Color.BLACK);
+            AccueilLabel.setTextFill(Color.web("#666666"));
             AccueilImage.setImage(AccueilImg);
-            line1.setStyle("-fx-stroke: #b7b5b5");
+            line1.setStyle("-fx-stroke: #d7d6d6");
         });
 
         ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
@@ -227,9 +227,9 @@ public class AccueilController implements Initializable {
         });
         ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
-            ProjetLabel.setTextFill(Color.BLACK);
+            ProjetLabel.setTextFill(Color.web("#666666"));
             ProjetsImage.setImage(ProjetImg);
-            line2.setStyle("-fx-stroke: #b7b5b5");
+            line2.setStyle("-fx-stroke: #d7d6d6");
         });
         ProjetButton.setOnMouseClicked(event -> {
             AccueilMediateur.commutateur.AllerProjet(event);
@@ -243,9 +243,9 @@ public class AccueilController implements Initializable {
         });
         PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
-            PortfolioLabel.setTextFill(Color.BLACK);
+            PortfolioLabel.setTextFill(Color.web("#666666"));
             PortfolioImage.setImage(PortfolioImg);
-            line3.setStyle("-fx-stroke: #b7b5b5");
+            line3.setStyle("-fx-stroke: #d7d6d6");
         });
         PortfolioButton.setOnMouseClicked(e->{
             //AccueilMediateur.monPagination.setCurrentPageIndex(6);
@@ -260,9 +260,9 @@ public class AccueilController implements Initializable {
         });
         ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
-            ParametresLabel.setTextFill(Color.BLACK);
+            ParametresLabel.setTextFill(Color.web("#666666"));
             ParametresIamge.setImage(ParametresImg);
-            line4.setStyle("-fx-stroke: #b7b5b5");
+            line4.setStyle("-fx-stroke: #d7d6d6");
         });
         ParametresButton.setOnMouseClicked(event -> {
            // AccueilMediateur.monPagination.setCurrentPageIndex(2);
@@ -277,9 +277,9 @@ public class AccueilController implements Initializable {
         });
         AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: F5F5F5");
-            AideLabel.setTextFill(Color.BLACK);
+            AideLabel.setTextFill(Color.web("#666666"));
             AideImage.setImage(AideImg);
-            line5.setStyle("-fx-stroke: #b7b5b5");
+            line5.setStyle("-fx-stroke: #d7d6d6");
         });
         AideButton.setOnMouseClicked(event -> {
             try {

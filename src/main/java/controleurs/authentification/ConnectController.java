@@ -112,7 +112,7 @@ public class ConnectController implements Initializable {
             }
         });
         String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeA="-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
      /*   EventHandler<MouseEvent> event3 =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -145,15 +145,15 @@ public class ConnectController implements Initializable {
         Writer writer = null;
         File file =null;
          try{
-             file =new File("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule());
+             file =new File("DonnesUtilisateurs/" + studentFolder);
              file.mkdirs();
-             file =new File("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule()+"/user.json");
+             file =new File("DonnesUtilisateurs/" + studentFolder+"/user.json");
              file.createNewFile();
          }catch (IOException e){
              System.out.println("erreur se genre lors de la creation de fichier des donnes personnels");
          }
         try {
-            writer = Files. newBufferedWriter(Paths.get("DonnesUtilisateurs/" + ConnectController.user.donnes.getMatricule()+"/user.json"));
+            writer = Files. newBufferedWriter(Paths.get("DonnesUtilisateurs/" + studentFolder+"/user.json"));
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(user, writer);
         } catch (IOException e) {
@@ -200,7 +200,9 @@ public class ConnectController implements Initializable {
                 GenererHashage hashage =new GenererHashage(motPasse);
                 if (list.get(i).getMotPasse().equals(hashage.RécupereHashage())) {
                     validation= 2;
-                    studentFolder=list.get(i).getMatricule();
+                    /******************************************/
+                    /********************formattage de l'email *********************/
+                    studentFolder=list.get(i).getMatricule().replace('/','_');
                 } else {
                     validation= 1;
                 }

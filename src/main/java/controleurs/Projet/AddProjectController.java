@@ -217,7 +217,7 @@ public class AddProjectController implements Initializable {
         Tooltip tooltipType1 = new Tooltip("Choisir le type du projet ");
         Tooltip tooltipTypeList = new Tooltip("La liste des modules choisis");
 
-
+        dateInput.setTooltip((new Tooltip("Cliquez sur Ok si vous voulez modifier la date manuellement")));
         titleInput.setTooltip(tooltipTitle);
         descriptionInput.setTooltip(tooltipDescription);
         dateInput.setTooltip(tooltipDate);
@@ -242,83 +242,85 @@ public class AddProjectController implements Initializable {
         /********************************Les Buttons Fixes *************************************/
         /***************************************************************************************/
 
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+        /***************************************************************************************/
+        /********************************Les Btns Variables*************************************/
+        /***************************************************************************************/
+
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
-            AccueilLabel.setTextFill(Color.BLACK);
+            AccueilLabel.setTextFill(Color.web("#666666"));
             AccueilImage.setImage(AccueilImg);
-            line1.setStyle("-fx-stroke: #b7b5b5");
+            line1.setStyle("-fx-stroke: #d7d6d6");
         });
-        AccueilButton.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.AllerAcceuil(event);
+        AccueilButton.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerAcceuil(e);
         });
 
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
             ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
 
         });
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
-            ProjetLabel.setTextFill(Color.BLACK);
+            ProjetLabel.setTextFill(Color.web("#666666"));
             ProjetsImage.setImage(ProjetImg);
-            line2.setStyle("-fx-stroke: #b7b5b5");
+            line2.setStyle("-fx-stroke: #d7d6d6");
         });
-        ProjetButton.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.AllerProjet(event);
-        });
-
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+        /****************************************************************************/
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
             PortfolioLabel.setTextFill(Color.WHITE);
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
-            PortfolioLabel.setTextFill(Color.BLACK);
+            PortfolioLabel.setTextFill(Color.web("#666666"));
             PortfolioImage.setImage(PortfolioImg);
-            line3.setStyle("-fx-stroke: #b7b5b5");
+            line3.setStyle("-fx-stroke: #d7d6d6");
         });
-        PortfolioButton.setOnMouseClicked(event -> {
+        PortfolioButton.setOnMouseClicked(e->{
+            //AccueilMediateur.monPagination.setCurrentPageIndex(6);
             AccueilMediateur.commutateur.AllerPortfolio();
         });
-
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+        /***********************************************************************************/
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
-            ParametresLabel.setTextFill(Color.BLACK);
+            ParametresLabel.setTextFill(Color.web("#666666"));
             ParametresIamge.setImage(ParametresImg);
-            line4.setStyle("-fx-stroke: #b7b5b5");
+            line4.setStyle("-fx-stroke: #d7d6d6");
         });
         ParametresButton.setOnMouseClicked(event -> {
+            // AccueilMediateur.monPagination.setCurrentPageIndex(2);
             AccueilMediateur.commutateur.AllerParametres(event);
         });
-
-
-        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+        /***********************************************************************************/
+        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: #f1c53c");
             AideLabel.setTextFill(Color.WHITE);
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
-        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
             AideButton.setStyle("-fx-background-color: F5F5F5");
-            AideLabel.setTextFill(Color.BLACK);
+            AideLabel.setTextFill(Color.web("#666666"));
             AideImage.setImage(AideImg);
-            line5.setStyle("-fx-stroke: #b7b5b5");
+            line5.setStyle("-fx-stroke: #d7d6d6");
         });
         AideButton.setOnMouseClicked(event -> {
             try {
@@ -329,14 +331,11 @@ public class AddProjectController implements Initializable {
                 e.printStackTrace();
             }
         });
-
-        /***************************************************************************************/
-        /********************************Les Btns Variables*************************************/
-        /***************************************************************************************/
-
+        /********************************************************************************/
+        logOut.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.Déconnecter(event);
+        });
         /********************************Ajouter Projet BTN*************************************/
-
-
         AjouterBtn.setOnAction(e -> {
             if(titleInput.getText().equals("")){
                 titlewarning.setVisible(true);
@@ -655,7 +654,7 @@ public class AddProjectController implements Initializable {
 
 
         Project projet = new Project(titleInput.getText(),typeProjet,projectComp,
-                dateInput.getEditor().getText(),projectDocs,descriptionInput.getText());
+                dateInput.getValue().toString(),projectDocs,descriptionInput.getText());
         projet.setClubName(typeListView.getSelectionModel().getSelectedItem());
         ArrayList<String> modules = new ArrayList<>();
         for(int i = 0 ; i <moduleChoisiListView.getItems().size() ; i++){

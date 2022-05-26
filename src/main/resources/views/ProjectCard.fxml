@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,50 +11,48 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="myCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.ProjectCardController">
+<AnchorPane fx:id="myCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.ProjectCardController">
    <children>
-      <Button fx:id="editProjectBtn" layoutX="81.0" layoutY="179.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="41.0" style="-fx-background-color: rgba(0,0,0,0); -fx-padding: 0;">
+      <Button fx:id="editProjectBtn" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0" style="-fx-background-color: rgba(0,0,0,0);">
          <graphic>
-            <ImageView fx:id="editBtnImage" fitHeight="25.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="editBtnImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Project/blueEdit.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="DeleteProjectBtn" layoutX="30.0" layoutY="179.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="41.0" style="-fx-background-color: transparent; -fx-padding: 0;">
+      <Button fx:id="DeleteProjectBtn" layoutX="73.0" layoutY="24.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: rgba(0,0,0,0);">
          <graphic>
             <ImageView fx:id="deleteBtnImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Project/BlueDelete.png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
          </graphic></Button>
-      <ImageView fx:id="myCardImg" fitHeight="145.0" fitWidth="130.0" layoutX="17.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myCardImg" fitHeight="145.0" fitWidth="128.0" layoutX="16.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Inscription/ImagePersonnel.png" />
          </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
       </ImageView>
-      <Label fx:id="myProjectTitle" layoutX="156.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="296.0" text="Project Title" wrapText="true">
+      <Label fx:id="myProjectTitle" layoutX="151.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="292.0" text="Project Title" wrapText="true">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
-      <Label fx:id="myProjectType" alignment="CENTER" layoutX="247.0" layoutY="58.0" prefHeight="25.0" prefWidth="196.0" text="Type Projet">
+      <Label fx:id="myProjectType" layoutX="274.0" layoutY="58.0" prefHeight="25.0" prefWidth="170.0" text="Type Projet">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label fx:id="myProjectDate" layoutX="152.0" layoutY="58.0" prefHeight="25.0" prefWidth="117.0" text="Projet Date ">
          <font>
             <Font name="System Italic" size="15.0" />
          </font></Label>
-      <Label fx:id="myProjectDate" layoutX="162.0" layoutY="58.0" prefHeight="25.0" prefWidth="87.0" text="Projet Date ">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <ScrollPane hbarPolicy="NEVER" layoutX="163.0" layoutY="88.0" prefHeight="128.0" prefWidth="280.0" style="-fx-background-color: transparent;">
+      <ScrollPane hbarPolicy="NEVER" layoutX="151.0" layoutY="88.0" prefHeight="128.0" prefWidth="292.0" style="-fx-background-color: transparent;">
          <content>
             <VBox fx:id="myProjectComp" alignment="CENTER_LEFT" prefHeight="126.0" prefWidth="289.0" spacing="10.0" style="-fx-padding: 10; -fx-background-color: rgba(0,0,0,0.05); -fx-background-radius: 10; -fx-border-radius: 10;" />
          </content>
       </ScrollPane>
-      <Line endX="208.0" endY="-1.0" layoutX="242.0" layoutY="51.0" startX="-79.0" startY="-1.0" stroke="#f1c53c" strokeWidth="3.0" />
-      <Label fx:id="MyProjectDesc" alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="216.0" prefHeight="83.0" prefWidth="440.0" stylesheets="@../css/project.css" text="Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Line endX="193.0" layoutX="251.0" layoutY="52.0" startX="-100.0" stroke="#f1c53c" strokeWidth="3.0" />
+      <Label fx:id="MyProjectDesc" alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" layoutY="220.0" prefHeight="83.0" prefWidth="473.0" style="-fx-label-padding: 12;" text="Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description Projet Description " textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -64,7 +60,4 @@
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
    </children>
-   <effect>
-      <DropShadow height="10.0" radius="4.5" spread="0.05" width="10.0" />
-   </effect>
 </AnchorPane>

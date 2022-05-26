@@ -44,7 +44,7 @@ public class Parametre_1Controller implements Initializable {
     @FXML
     private AnchorPane monAnchorConfirmation;
     @FXML
-    private Circle monImage;
+    public Circle monImage;
 
     @FXML
     private ImageView SupprimePhoto;
@@ -60,18 +60,18 @@ public class Parametre_1Controller implements Initializable {
 
     public static Label confirmationLabel;
 
-    private File file;
+    private File file=null ;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         monBio = new TextArea();
         monBio.setWrapText(true);
-        monBio.setPrefSize(130, 100);
+        monBio.setPrefSize(200, 100);
         monAnchorBio.getChildren().add(monBio);
         monNom = new TextField();
-        monNom.setPrefSize(160, 30);
+        monNom.setPrefSize(200, 30);
         monAnchorNom.getChildren().add(monNom);
         monPrenom = new TextField();
-        monPrenom.setPrefSize(160, 30);
+        monPrenom.setPrefSize(200, 30);
         monAnchorPrenom.getChildren().add(monPrenom);
         monPrenom.requestFocus();
         confirmationLabel = new Label();
@@ -84,21 +84,23 @@ public class Parametre_1Controller implements Initializable {
         monBio.setText(AccueilMediateur.utilisateur.donnes.getBioPersonnel());
         monNom.setText(AccueilMediateur.utilisateur.donnes.getNom());
         monPrenom.setText(AccueilMediateur.utilisateur.donnes.getPrenom());
-        monImage.setFill(new ImagePattern(AccueilMediateur.image));
+        if(AccueilMediateur.image!=null) {
+            monImage.setFill(new ImagePattern(AccueilMediateur.image));
+        }
         /**************Suppresion et ajoute de la photo personnels********************/
         AjoutePhoto.setOnMouseClicked(e -> {
             FileChooser chooser = new FileChooser();
             chooser.setTitle("Choisir une photo de profile");
             chooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("PNG Files", "*.png")
-                    , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
-                    , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
-                    , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
+                  //  , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
+                  //  , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
+                  //  , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
             );
             file = chooser.showOpenDialog(null);
             System.out.println(getClass());
             FileInputStream input = null;
-            /*******************************/
+            /********************************************/
             if(file!=null){
                 try {
                     input = new FileInputStream(file);
@@ -107,13 +109,14 @@ public class Parametre_1Controller implements Initializable {
                 }
                 Image image = new Image(input);
                 monImage.setFill(new ImagePattern(image));
-              //  AccueilMediateur.image=image;
+                Parametre_Controller.imagePersonnel.setFill(new ImagePattern(image));
+                AccueilMediateur.image=image;//on mettre la nouvelle image personnels
                 try {
                     input.close();
                 } catch (IOException e3) {
                     e3.printStackTrace();
                 }
-                /*******le changement de l'image dans le fichier ImagePersonnels***********/
+                /*******le changement de l'image dans le fichier ImagePersonnels******************/
                 OutputStream output = null;
                 try {
                     System.out.println("welcome");
@@ -125,6 +128,18 @@ public class Parametre_1Controller implements Initializable {
                 } catch (IOException ex1) {
                     ex1.printStackTrace();
                     System.out.println("welcome3");
+                }
+                /********************Rechargement de la page****************************************/
+                FXMLLoader loader1;
+                loader1 = new FXMLLoader(getClass().getResource("/views/Parametre_View.fxml"));
+                try {
+                    System.out.println(AccueilMediateur.memory.size());
+                    AccueilMediateur.memory.remove(2);
+                   AccueilMediateur.memory.add(2,loader1.load());
+                   System.out.println(AccueilMediateur.memory.size());
+                   AccueilMediateur.commutateur.AllerParametres(e);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
                 /**********************************************/
             }
@@ -157,6 +172,7 @@ public class Parametre_1Controller implements Initializable {
             }
             Image image = new Image(input);
             monImage.setFill(new ImagePattern(image));
+            Parametre_Controller.imagePersonnel.setFill(new ImagePattern(image));
             AccueilMediateur.image=image;
             try {
                 input.close();

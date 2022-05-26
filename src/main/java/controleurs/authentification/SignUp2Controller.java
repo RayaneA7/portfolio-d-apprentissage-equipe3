@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +25,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
 public class SignUp2Controller implements Initializable {
@@ -80,7 +82,7 @@ public class SignUp2Controller implements Initializable {
             }
         });
         String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA="-fx-stroke:#666666 ;-fx-stroke-width:3 ";
+        String typeA="-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
         monAnchorpane.setOnMouseEntered(event2 -> {
             monGithub.setOnMouseClicked( event3 -> {
                 monLigneFacebook.setStyle(typeA);
@@ -100,12 +102,22 @@ public class SignUp2Controller implements Initializable {
                 monLigneLinkedln.setStyle(typeB);
                 monLigneGithub.setStyle(typeA);
             });
+            /**********************le formatteur de date ***************************/
+            UnaryOperator<TextFormatter.Change> integerFilter = change -> {
+                String input = change.getText();
+                if (input.matches("[0-9]*")){
+                    return change;
+                }
+                return null;
+            };
+            monNumeroTelephone.setTextFormatter(new TextFormatter<String>(integerFilter));
             monNumeroTelephone.setOnMouseClicked(event3 -> {
                 monLigneFacebook.setStyle(typeA);
                 monLigneNumeroTelephone.setStyle(typeB);
                 monLigneLinkedln.setStyle(typeA);
                 monLigneGithub.setStyle(typeA);
             });
+            /*****************************************************************************/
         });
         EventHandler<MouseEvent> event5 =new EventHandler<MouseEvent>() {
             @Override
@@ -152,7 +164,7 @@ public class SignUp2Controller implements Initializable {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+
                 }
             }
             /********************************
@@ -196,30 +208,32 @@ public class SignUp2Controller implements Initializable {
         }
         /********************************************************************/
         try {
-            studentFolder =ConnectController.user.donnes.getMatricule();
+            String nom = ConnectController.user.donnes.getMatricule();
+            studentFolder =nom.replace('/', '_');
             System.out.println("le folder d'étudiant est : " + studentFolder);
             File srcDir = new File("DonnesUtilisateurs/Etudiant");
             File destDir = new File("DonnesUtilisateurs/" + studentFolder);
             copyFolder(srcDir.toPath(), destDir.toPath());
-            /******************creation de dossier de l'utilisateur****************************/
-            ConnectController.create(ConnectController.user);
-            /*********************************************/
-            LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
-                    ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
-            LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
-            utilisateurs.ajouteUtilisateurToList(loginUser);
             /**************************************/
         } catch (IOException e) {
             e.printStackTrace();
         }
+        File file1 =new File("DonnesUtilisateurs/" + studentFolder);
+        file1.mkdirs();
         if (file != null){
             OutputStream output;
             output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateurs/" + studentFolder + "/ImagePersonnel.png"));
             Files.copy(Path.of(file.getPath()), output);
             output.close();
         }
+        /******************creation de dossier de l'utilisateur****************************/
+            ConnectController.studentFolder=studentFolder;
+            ConnectController.create(ConnectController.user);
+            LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
+                    ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
+            LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
+            utilisateurs.ajouteUtilisateurToList(loginUser);
         /************Passage à la page d'acceuil *************/
-        ConnectController.studentFolder=ConnectController.user.donnes.getMatricule();
         ConnectController.accedreAcceuil(event);
         /*********************************************************/
     }
