@@ -13,9 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import models.*;
+import org.graalvm.compiler.api.replacements.Fold;
 
 import java.io.*;
 import java.net.URL;
@@ -58,6 +60,7 @@ public class SignUp2Controller implements Initializable {
     private File file ;
     private Stage stage ;
     String studentFolder;
+    String studentDirectory =ConnectController.StudentDirectory ;
     /****************Logique d'affichage ****************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -198,46 +201,50 @@ public class SignUp2Controller implements Initializable {
         ConnectController.pagination.setCurrentPageIndex(ConnectController.pagination.getCurrentPageIndex() - 1);
     }
     public void NextPage(ActionEvent event) throws IOException {
-        ConnectController.user.contacts.setCountFacebook(monFacebook.getText());
-        ConnectController.user.contacts.setCountGithub(monGithub.getText());
-        ConnectController.user.contacts.setCountLinkedln(monLinkedln.getText());
-        ConnectController.user.donnes.setBioPersonnel(monBio.getText());
-        String numerotelephone = monNumeroTelephone.getText();
-        if (verifiNumeroTelephone(monNumeroTelephone.getText()) == true) {
-            ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
-        }
-        /********************************************************************/
-        try {
-            String nom = ConnectController.user.donnes.getMatricule();
-            studentFolder =nom.replace('/', '_');
-            System.out.println("le folder d'étudiant est : " + studentFolder);
-            File srcDir = new File("DonnesUtilisateurs/Etudiant");
-            File destDir = new File("DonnesUtilisateurs/" + studentFolder);
-            copyFolder(srcDir.toPath(), destDir.toPath());
-            /**************************************/
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        File file1 =new File("DonnesUtilisateurs/" + studentFolder);
-        file1.mkdirs();
-        if (file != null){
-            OutputStream output;
-            output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateurs/" + studentFolder + "/ImagePersonnel.png"));
-            Files.copy(Path.of(file.getPath()), output);
-            output.close();
-        }
-        /******************creation de dossier de l'utilisateur****************************/
-            ConnectController.studentFolder=studentFolder;
+        /********************************************************/
+        /********************chemin de dossier dans le pc de l'utilisateur*************************************/
+            ConnectController.user.contacts.setCountFacebook(monFacebook.getText());
+            ConnectController.user.contacts.setCountGithub(monGithub.getText());
+            ConnectController.user.contacts.setCountLinkedln(monLinkedln.getText());
+            ConnectController.user.donnes.setBioPersonnel(monBio.getText());
+
+            if (verifiNumeroTelephone(monNumeroTelephone.getText()) == true) {
+                ConnectController.user.contacts.setNbTelephone(Long.parseLong(monNumeroTelephone.getText()));
+            }
+            /********************************************************************/
+            File destDir=null;
+            try {
+                String nom = ConnectController.user.donnes.getMatricule();
+                studentFolder = nom.replace('/', '_');
+                System.out.println("le folder d'étudiant est : " + studentFolder);
+                File srcDir = new File("DonnesUtilisateurs/Etudiant");
+                 destDir = new File(studentDirectory+"/DonnesUtilisateurs/" + studentFolder);
+                copyFolder(srcDir.toPath(), destDir.toPath());
+                /**************************************/
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            destDir.mkdirs();
+            if (file != null) {
+                OutputStream output;
+                output = new BufferedOutputStream(new FileOutputStream(studentDirectory+"/DonnesUtilisateurs/" + studentFolder + "/ImagePersonnel.png"));
+                Files.copy(Path.of(file.getPath()), output);
+                output.close();
+            }
+            /****************** creation de dossier de l'utilisateur****************************/
+            ConnectController.studentFolder = studentFolder;
             ConnectController.create(ConnectController.user);
             LoginUser loginUser = new LoginUser(ConnectController.user.donnes.getMotdePasse(),
-                    ConnectController.user.donnes.getEmail(), ConnectController.user.donnes.getMatricule());
+                    ConnectController.user.donnes.getEmail(),
+                    ConnectController.user.donnes.getMatricule());
             LoginUtilisateurs utilisateurs = new LoginUtilisateurs();
             utilisateurs.ajouteUtilisateurToList(loginUser);
-        /************Passage à la page d'acceuil *************/
-        ConnectController.accedreAcceuil(event);
-        /*********************************************************/
+            /************Passage à la page d'acceuil *************/
+            ConnectController.accedreAcceuil(event);
+            /*********************************************************/
     }
-
+    /*************************************************************************/
+    /***********************************************************************/
     public boolean verifiNumeroTelephone(String numerotelephone){
         int i=0;
         boolean validate =true;

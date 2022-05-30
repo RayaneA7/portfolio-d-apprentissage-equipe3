@@ -20,11 +20,28 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="850.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/Project/mes_projets.png" />
+            <Image url="@../icons/Project/ProjectViewBG7.png" />
          </image>
       </ImageView>
-      <ScrollPane fx:id="monScrollPane" hbarPolicy="NEVER" layoutX="205.0" layoutY="143.0" prefHeight="394.0" prefWidth="543.0" stylesheets="@../css/project.css" />
-      <Button fx:id="addProjectBtn" layoutX="487.0" layoutY="51.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="33.0" style="-fx-background-color: rgba(0,0,0,0);">
+      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="45.0" fitWidth="55.0" layoutX="760.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Acceuil/Deconnexion.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Circle>
+      <ScrollPane fx:id="monScrollPane" hbarPolicy="NEVER" layoutX="195.0" layoutY="149.0" prefHeight="394.0" prefWidth="556.0" stylesheets="@../css/project.css" />
+      <Label layoutX="205.0" layoutY="43.0" text="Mes Projets" textFill="#1a4173">
+         <font>
+            <Font name="Arial Bold" size="44.0" />
+         </font>
+      </Label>
+      <Button fx:id="addProjectBtn" layoutX="493.0" layoutY="49.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="33.0" style="-fx-background-color: rgba(0,0,0,0);">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -40,11 +57,11 @@
          <children>
             <HBox prefHeight="36.0" prefWidth="318.0">
                <children>
-                  <TextField fx:id="searchProjectTextField" prefHeight="36.0" prefWidth="330.0" promptText="Rechercher Projet" style="-fx-background-radius: 5; -fx-background-color: E7E7E7;" />
+                  <TextField fx:id="searchProjectTextField" prefHeight="36.0" prefWidth="330.0" promptText="Rechercher Projet" />
                   <VBox prefHeight="36.0" prefWidth="10.0" />
-                  <Button fx:id="searchProjetBtn" mnemonicParsing="false" prefHeight="36.0" prefWidth="35.0" style="-fx-background-color: #f1c53c; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0;">
+                  <Button fx:id="searchProjetBtn" mnemonicParsing="false" prefHeight="36.0" prefWidth="39.0" style="-fx-background-color: #f1c53c; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0;">
                      <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/Project/search.png" />
                            </image>
@@ -62,26 +79,13 @@
             <ListView fx:id="foundProjet" prefHeight="30.0" prefWidth="244.0" visible="false" />
          </children>
       </VBox>
-      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="38.0" fitWidth="35.0" layoutX="754.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/Acceuil/Deconnexion.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="712.0" layoutY="71.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Circle>
-      <Button fx:id="ProjetButton" layoutX="12.0" layoutY="232.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="ProjetButton" layoutX="11.0" layoutY="235.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../mouh/src/main/resources/icons/parametre/layers1.png" />
+                        <Image url="@../icons/Portfolio/ProjetsBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" text="Projets" textFill="#666666">
@@ -96,13 +100,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="PortfolioButton" layoutX="12.0" layoutY="292.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="295.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../mouh/src/main/resources/icons/parametre/Vector.png" />
+                        <Image url="@../icons/Portfolio/PortfolioBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" text="Portfolios" textFill="#666666">
@@ -117,13 +121,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="AideButton" layoutX="12.0" layoutY="442.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
+      <Button fx:id="AideButton" layoutX="11.0" layoutY="445.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F1;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="23.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../mouh/src/main/resources/icons/parametre/Vector2.png" />
+                        <Image url="@../icons/Portfolio/AideBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="AideLabel" layoutX="61.0" layoutY="14.0" text="Aide" textFill="#666666">
@@ -132,22 +136,19 @@
                      </font>
                   </Label>
                </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </AnchorPane>
          </graphic>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="ParametresButton" layoutX="12.0" layoutY="382.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="ParametresButton" layoutX="11.0" layoutY="385.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../mouh/src/main/resources/icons/parametre/paramtreGris.png" />
+                        <Image url="@../icons/Portfolio/ParametresBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" text="Parametres" textFill="#666666">
@@ -162,13 +163,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="AccueilButton" layoutX="12.0" layoutY="174.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="AccueilButton" layoutX="11.0" layoutY="177.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../mouh/src/main/resources/icons/parametre/Accueil.png" />
+                        <Image url="@../icons/Portfolio/AccueilBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" text="Accueil" textFill="#666666">
@@ -183,10 +184,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Line fx:id="line1" endX="35.0" layoutX="117.0" layoutY="231.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
-      <Line fx:id="line2" endX="35.0" layoutX="117.0" layoutY="291.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
-      <Line fx:id="line3" endX="35.0" layoutX="117.0" layoutY="352.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
-      <Line fx:id="line5" endX="35.0" layoutX="117.0" layoutY="501.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
-      <Line fx:id="line4" endX="35.0" layoutX="117.0" layoutY="441.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
+      <Line fx:id="line1" endX="35.0" layoutX="116.0" layoutY="238.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line2" endX="35.0" layoutX="116.0" layoutY="294.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line4" endX="35.0" layoutX="116.0" layoutY="444.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="116.0" layoutY="504.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line3" endX="35.0" layoutX="116.0" layoutY="355.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
    </children>
 </AnchorPane>

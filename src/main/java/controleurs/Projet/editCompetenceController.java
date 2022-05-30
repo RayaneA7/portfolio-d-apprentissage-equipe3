@@ -2,6 +2,7 @@ package controleurs.Projet;
 
 import References.Competence;
 import References.Competences;
+import controleurs.acceuil.AccueilMediateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,8 +10,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import models.Project;
 import models.TypeProjet;
 
@@ -29,6 +34,11 @@ public class editCompetenceController implements Initializable {
     private TextField matiereSearchField;
     @FXML
     private TextField objectifSearchField;
+
+    @FXML
+    private MenuButton customTypeMenu;
+
+
     @FXML
     private TextField customCompField;
     @FXML
@@ -40,10 +50,13 @@ public class editCompetenceController implements Initializable {
     @FXML
     private Button validerBtn;
     @FXML
-    private MenuButton customTypeMenu;
+    private HBox CustomCompHbox ;
+    //les competences issus de la recherche
     @FXML
     private ListView<String> availableCompetenceList;
     private ArrayList<Competence> availableCompetenceArray = new ArrayList<>();
+
+    //les competences choisi pour le projet
     @FXML
     private ListView<String> myProjectCompetenceList;
 
@@ -57,18 +70,18 @@ public class editCompetenceController implements Initializable {
     public editCompetenceController() throws IOException {
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-
-        myProjectCompetenceList.getItems().clear();
-
-        for(int i = 0 ; i<editProjectController.project.getCompetences().size() ; i++){
-            myProjectCompetenceList.getItems().add(editProjectController.project.getCompetences().get(i).getElemdeCompetence());
-            myProjectArrayList.add(editProjectController.project.getCompetences().get(i));
+        if(editProjectController.project.getType()==TypeProjet.PEDAGOGIQUE){
+            CustomCompHbox.setDisable(true);
+        }
+        else{
+            CustomCompHbox.setDisable(false);
+        }
+        for(int i = 0 ; i<editProjectController.projectComp.size() ; i++){
+            myProjectCompetenceList.getItems().add(editProjectController.projectComp.get(i).getElemdeCompetence());
+            myProjectArrayList.add(editProjectController.projectComp.get(i));
         }
 
         searchBtn.setOnMouseClicked(event -> {
@@ -140,7 +153,6 @@ public class editCompetenceController implements Initializable {
 
 
         /**Supprimer competences **/
-
         myProjectCompetenceList.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -157,16 +169,28 @@ public class editCompetenceController implements Initializable {
             }
         });
 
+        /**Valider et Retour **/
         validerBtn.setOnMouseClicked(event -> {
 
             editProjectController.projectComp = myProjectArrayList;
+            if(myProjectArrayList.size()!=0){
+                editProjectController.comp_added = true;
+            }else {
+                editProjectController.comp_added = false;
+            }
+
             editProjectController.stage.close();
 
         });
-
         retourBtn.setOnMouseClicked(event -> {
             editProjectController.stage.close();
-            editProjectController.onEditAction = false;
         });
+
+        AddProjectController.projectComp = myProjectArrayList;
+        if(myProjectArrayList.size()!=0){
+            editProjectController.comp_added = true;
+        }else {
+            editProjectController.comp_added = false;
+        }
     }
 }

@@ -5,6 +5,7 @@ import References.Clubs;
 import References.Competence;
 import References.Modules;
 import controleurs.acceuil.AccueilMediateur;
+import controleurs.parametre.CustomDialog;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,6 +13,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -24,20 +30,29 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Project;
 import models.TypeProjet;
 import models.Utilisateur;
 
+import java.awt.*;
 import java.io.*;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class editProjectController implements Initializable {
 
     public static boolean onEditAction;
+    public static boolean Addcustomcompetence=true ;
+    /********************************Les Elements FXML *************************************/
 
     @FXML
     private Label titlewarning;
@@ -57,6 +72,7 @@ public class editProjectController implements Initializable {
     @FXML
     private Label typeWarning;
 
+    public static  Stage stage ;
     @FXML
     private Button SwitchButton;
     @FXML
@@ -114,6 +130,10 @@ public class editProjectController implements Initializable {
     @FXML
     private TextField titleInput;
     @FXML
+    private VBox displayNoneVbox;//Pour faire Display : none ; au DocList dans docListVbox
+    @FXML
+    private ListView<String> moduleChoisiListView;
+    @FXML
     private TextArea descriptionInput;
     @FXML
     private DatePicker dateInput;
@@ -128,15 +148,17 @@ public class editProjectController implements Initializable {
     @FXML
     private Button addDocBtn;
     @FXML
-    private VBox displayNoneVbox;
-    @FXML
-    private VBox docListVbox;
+    private VBox docListVbox;//qui contient docList
     @FXML
     private ListView<String> docsList;
     @FXML
-    private HBox typeContainer;
+    private HBox typeContainer;//toute l'operation de choisir type est la
     @FXML
     private MenuButton typeInput;
+    @FXML
+    private VBox SearchResultVbox;
+    @FXML
+    private Label foundTypeLabel;
     @FXML
     private MenuItem clubItem;
     @FXML
@@ -144,9 +166,14 @@ public class editProjectController implements Initializable {
     @FXML
     private MenuItem PersoItem;
     @FXML
+    private Label notification;
+
+    @FXML
     private Label afterChoosingTypeLabel;
     @FXML
-    private ListView<String> moduleChoisiListView;
+    private Label ajouteDoneLabel;
+    @FXML
+    private HBox TypeHbox;
     @FXML
     private VBox SearchVBox;
     @FXML
@@ -154,21 +181,9 @@ public class editProjectController implements Initializable {
     @FXML
     private Button searchTypeBtn;
     @FXML
-    private VBox SearchResultVbox;
-    @FXML
-    private Label foundTypeLabel;
-    @FXML
     private ListView<String> typeListView;
-
-    /*********************************Declaration*******************************/
-    public static Project project = new Project(" ", TypeProjet.CLUB,new ArrayList<Competence>()," ",new ArrayList<String>()," ") ;
-    ArrayList<String> moduleChoisis = new ArrayList<>();
-    ArrayList<String> projectDocs = new ArrayList<>();
-    private FXMLLoader loader ;
-    private File file;
-    public static  Stage stage ;
-    private  Boolean moduleExists ;
-    public static ArrayList<Competence> projectComp = new ArrayList<>() ;
+    @FXML
+    private ImageView competenceImage;
     /********************************Les Images*************************************/
     Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut.png"));
     Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AccueilBut1.png"));
@@ -180,8 +195,23 @@ public class editProjectController implements Initializable {
     Image ParametresImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/ParametresBut1.png"));
     Image AideImg = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut.png"));
     Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Acceuil/AideBut1.png"));
+    Image greenComp = new Image(getClass().getResourceAsStream("/icons/Project/VectorGreen.png"));
+    Image grayComp = new Image(getClass().getResourceAsStream("/icons/Project/Vector.png"));
+
+
+    /*********************************Declaration*******************************/
+    public static Project project = new Project("", TypeProjet.PERSONEL,new ArrayList<Competence>(),"",new ArrayList<String>(),"") ;
+    String new_img_path = project.getId().toString();
+    ArrayList<String> moduleChoisis = new ArrayList<>();
+    ArrayList<String> projectDocs = new ArrayList<>();
+    private FXMLLoader loader ;
+    private File file;
+    private  Boolean moduleExists ;
+    public static ArrayList<Competence> projectComp = new ArrayList<>() ;
     /******************Initializa()***********************************/
     private String Typeprecedent =" ";
+    public static boolean comp_added;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         titlewarning.setVisible(false);
@@ -189,11 +219,10 @@ public class editProjectController implements Initializable {
         compWarning.setVisible(false);
         descWarning.setVisible(false);
         typeWarning.setVisible(false);
-        docListLabel.setVisible(false);
-
+        SearchResultVbox.setVisible(false);
         /***************************tooltips****************************/
         Tooltip tooltipTitle = new Tooltip("Donner le nom du projet ");
-        Tooltip tooltipDate = new Tooltip("Donner la date du creation du projet ");
+        Tooltip tooltipDate = new Tooltip("Cliquez sur Ok si vous voulez modifier la date par clavier");
         Tooltip tooltipDescription = new Tooltip("Donner la description du projet");
         Tooltip tooltipImage = new Tooltip("Choisir une image descriptive du projet ");
         Tooltip tooltipCompetence = new Tooltip("Choisir la liste des competences du projet");
@@ -203,8 +232,6 @@ public class editProjectController implements Initializable {
         Tooltip tooltipTypeList = new Tooltip("La liste des modules choisis");
         Tooltip tooltipProfile = new Tooltip("Profile Utilisateur");
         Tooltip tooltipLogOut = new Tooltip("Log Out de Ecareer");
-
-
         titleInput.setTooltip(tooltipTitle);
         descriptionInput.setTooltip(tooltipDescription);
         dateInput.setTooltip(tooltipDate);
@@ -214,101 +241,94 @@ public class editProjectController implements Initializable {
         typeInput.setTooltip(tooltipType1);
         typeListView.setTooltip(tooltipTypeList);
         //logOut.setTooltip
-
         /*****************************************************/
 
+
         /*********************Image personnel********************/
-        imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        if(AccueilMediateur.image!=null) {
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
         /***************************************************************************************/
         /********************************Les Buttons Fixes *************************************/
         /***************************************************************************************/
-        /*********************Image personnel********************/
-        if(AccueilMediateur.image!=null){
-            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
-        }
-        imagePersonnel.setOnMouseClicked(e-> {
-            AccueilMediateur.commutateur.AllerProfile(e);
-        });
-        /****************************************************/
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             AccueilButton.setStyle("-fx-background-color: #f1c53c");
             AccueilLabel.setTextFill(Color.WHITE);
             AccueilImage.setImage(AccueilImg1);
             line1.setStyle("-fx-stroke: #f1c53c");
         });
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             AccueilButton.setStyle("-fx-background-color:  F5F5F5");
             AccueilLabel.setTextFill(Color.web("#666666"));
             AccueilImage.setImage(AccueilImg);
-            line1.setStyle("-fx-stroke: #d7d6d6");
+            line1.setStyle("-fx-stroke: #b7b5b5");
         });
-         AccueilButton.setOnMouseClicked(e->{
-             AccueilMediateur.commutateur.AllerAcceuil(e);
-         });
+        AccueilButton.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.AllerAcceuil(event);
+        });
 
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             ProjetButton.setStyle("-fx-background-color: #f1c53c");
             ProjetLabel.setTextFill(Color.WHITE);
             ProjetsImage.setImage(ProjetImg1);
             line2.setStyle("-fx-stroke: #f1c53c");
 
         });
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             ProjetButton.setStyle("-fx-background-color: F5F5F5");
             ProjetLabel.setTextFill(Color.web("#666666"));
             ProjetsImage.setImage(ProjetImg);
-            line2.setStyle("-fx-stroke: #d7d6d6");
+            line2.setStyle("-fx-stroke: #b7b5b5");
         });
-        /***********************
         ProjetButton.setOnMouseClicked(event -> {
             AccueilMediateur.commutateur.AllerProjet(event);
         });
-        /****************************************************************************/
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             PortfolioButton.setStyle("-fx-background-color: #f1c53c");
             PortfolioLabel.setTextFill(Color.WHITE);
             PortfolioImage.setImage(PortfolioImg1);
             line3.setStyle("-fx-stroke: #f1c53c");
         });
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             PortfolioButton.setStyle("-fx-background-color: F5F5F5");
             PortfolioLabel.setTextFill(Color.web("#666666"));
             PortfolioImage.setImage(PortfolioImg);
-            line3.setStyle("-fx-stroke: #d7d6d6");
+            line3.setStyle("-fx-stroke: #b7b5b5");
         });
-        PortfolioButton.setOnMouseClicked(e->{
-            //AccueilMediateur.monPagination.setCurrentPageIndex(6);
+        PortfolioButton.setOnMouseClicked(event -> {
             AccueilMediateur.commutateur.AllerPortfolio();
         });
-        /***********************************************************************************/
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             ParametresButton.setStyle("-fx-background-color: #f1c53c");
             ParametresLabel.setTextFill(Color.WHITE);
             ParametresIamge.setImage(ParametresImg1);
             line4.setStyle("-fx-stroke: #f1c53c");
         });
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             ParametresButton.setStyle("-fx-background-color: F5F5F5");
             ParametresLabel.setTextFill(Color.web("#666666"));
             ParametresIamge.setImage(ParametresImg);
-            line4.setStyle("-fx-stroke: #d7d6d6");
+            line4.setStyle("-fx-stroke: #b7b5b5");
         });
         ParametresButton.setOnMouseClicked(event -> {
-            // AccueilMediateur.monPagination.setCurrentPageIndex(2);
             AccueilMediateur.commutateur.AllerParametres(event);
         });
-        /***********************************************************************************/
-        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+
+
+        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             AideButton.setStyle("-fx-background-color: #f1c53c");
             AideLabel.setTextFill(Color.WHITE);
             AideImage.setImage(AideImg1);
             line5.setStyle("-fx-stroke: #f1c53c");
         });
-        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             AideButton.setStyle("-fx-background-color: F5F5F5");
             AideLabel.setTextFill(Color.web("#666666"));
             AideImage.setImage(AideImg);
-            line5.setStyle("-fx-stroke: #d7d6d6");
+            line5.setStyle("-fx-stroke: #b7b5b5");
         });
         AideButton.setOnMouseClicked(event -> {
             try {
@@ -319,45 +339,74 @@ public class editProjectController implements Initializable {
                 e.printStackTrace();
             }
         });
-        /********************************************************************************/
-        logOut.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.Déconnecter(event);
-        });
+
         /******************************************************************************/
         /****************************Initialization***********************************/
         /*****************************************************************************/
+        WelcomeLabel.setText("Modifier "+project.getTitle());
+        ajouteDoneLabel.setVisible(false);
         titleInput.setText(project.getTitle());
-        dateInput.getEditor().setText(project.getDate());
+        if(project.getDate()!="") {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate localDate = LocalDate.parse(project.getDate(), formatter);
+            dateInput.setValue(localDate);
+        }
         descriptionInput.setText(project.getDescription());
         projectComp = project.getCompetences();
+        if(projectComp.size() !=0){
+            competenceImage.setImage(greenComp);
+            notification.setVisible(true);
+            notification.setText(projectComp.size()+"");
+            System.out.println("Greeen Screen");
+        }else {
+            competenceImage.setImage(grayComp);
+            notification.setVisible(false);
+            System.out.println("Greay screeen");
+        }
+        //project.setClubName(editProjectController.project.getClubName());
+        docListLabel.setVisible(true);
+        if(project.getDocs().size()==0){
+            docListLabel.setVisible(false);
+        }else {
+            docListLabel.setVisible(true);
+        }
+        /*************************************************************/
+        /**********************l'ajoute de ******/
+        /************************************************************/
         try {
-            File file =new File("DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/" + project.getImgPath());
-             if(file!=null) {
-                 InputStream input =new FileInputStream(file);
-                 Image image = new Image(input);
-                 myImage.setImage(image);
-             }
+            File file =new File(AccueilMediateur.StudentDirectory+"DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/" + project.getImgPath()+".png");
+            if(file!=null) {
+                InputStream input =new FileInputStream(file);
+                System.out.println(input + " is there ");
+                Image image = new Image(input);
+                myImage.setImage(image);
+                System.out.println(myImage.getImage().getUrl()+ " is the url of the image we added ----->>");
+            }
         } catch (FileNotFoundException e) {
             System.out.println("fichier image de projet introuvable");
         }
-        if(!docsList.getItems().isEmpty()) {
+        if(project.getDocs().size()==0) {
             docsList.getItems().clear();
+            docListLabel.setVisible(false);
+        }else {
+            docListLabel.setVisible(true);
         }
         for(int i = 0 ; i<project.getDocs().size() ; i++){
             docsList.getItems().add(project.getDocs().get(i));
         }
         typeInput.setText(project.getType().toString());
-        SearchVBox.setVisible(false);
-        afterChoosingTypeLabel.setVisible(false);
+        searchTextField.setVisible(true);
+        searchTypeBtn.setVisible(true);
         typeInput.setDisable(true);
+        moduleChoisiListView.setVisible(false);
+        afterChoosingTypeLabel.setVisible(false);
 
-        if(typeInput.getText().equals("Club")){
-            moduleChoisiListView.setVisible(true);
+        if(project.getType().equals(TypeProjet.CLUB)){
             searchTextField.setPromptText("Rechercher Club");
             SearchVBox.setVisible(true);
             afterChoosingTypeLabel.setVisible(true);
             afterChoosingTypeLabel.setText("Le Club Choisi est "+ project.getClubName());
-        }else if(typeInput.getText().equals("Pédagogique")){
+        }else if(project.getType().equals(TypeProjet.PEDAGOGIQUE)){
             SearchVBox.setVisible(true);
             searchTextField.setPromptText("Rechercher Module");
             afterChoosingTypeLabel.setVisible(true);
@@ -366,8 +415,9 @@ public class editProjectController implements Initializable {
             for(int i = 0 ; i<project.getModuleArray().size() ; i++){
                 moduleChoisiListView.getItems().add(project.getModuleArray().get(i));
             }
-        }else if(typeInput.getText().equals("Personnel")){
+        }else if(project.getType().equals(TypeProjet.PERSONEL)){
             SearchVBox.setVisible(false);
+
         }
 
         /********************************Retour Vers Page Projet Btn****************************/
@@ -382,15 +432,54 @@ public class editProjectController implements Initializable {
 
         /********************************Ajouter Docs Btn **************************************/
 
+        docsList.setCellFactory(cell -> {
+            return new ListCell<String>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (item != null) {
+                        try {
+                            if( isURL(item)){
+                                setText(item);
+                                setUnderline(true);
+                                setTextFill(Color.BLUE);
+                            }
+                        } catch (IOException e) {
+                            setText(item);
+                            setUnderline(true);
+                            setTextFill(Color.RED);
+                        }
+                    }
+                }
+            };
+        }) ;
+
         addDocBtn.setOnMouseClicked(event -> {
-            if(!docsInput.getText().equals("")){
+            try {
+                if(!docsInput.getText().equals("") && isURL(docsInput.getText())){
+                    docsList.getItems().add(docsInput.getText());
+                    projectDocs.add(docsInput.getText());
+                }
+            } catch (IOException e) {
                 docsList.getItems().add(docsInput.getText());
+                projectDocs.add(docsInput.getText());
             }
-            projectDocs.add(docsInput.getText());
-            if(docsList.getItems().size() == 1 ) {
+            if(docsList.getItems().size() == 1  && docsInput.getText().length()!=0) {
                 displayNoneVbox.getChildren().add(0,docListVbox);
+                docListLabel.setVisible(true);
             }
             docsInput.setText("");
+        });
+
+        docsList.setOnMouseClicked(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI(docsList.getSelectionModel().getSelectedItem()));
+            } catch (IOException e) {
+                System.out.println("IOEXCeption when clicking the link maybe not corrce");
+            } catch (URISyntaxException e) {
+                System.out.println("URL exception");
+            }
+
         });
 
         /********************************La Liste de Docs Choisis*******************************/
@@ -403,15 +492,12 @@ public class editProjectController implements Initializable {
                     projectDocs.remove(docsList.getSelectionModel().getSelectedItem());
                     if(docsList.getItems().size() == 0){
                         displayNoneVbox.getChildren().remove(0);
+                        docListLabel.setVisible(false);
                     }
                 }
 
             }
         });
-
-        /***************************************************************************************/
-
-        SearchVBox.setVisible(false);
 
 
         /********************************Choisir Type Projet************************************/
@@ -460,45 +546,52 @@ public class editProjectController implements Initializable {
         addImageBtn.setOnMouseClicked(event -> {
             FileChooser chooser = new FileChooser();
             chooser.setTitle("Choisir une photo de profile");
-            chooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("PNG Files", "*.png")
-                    // , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
-                    // , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
-                    // , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
-                    // ,new FileChooser.ExtensionFilter("JPG Files","*.jpg")
-            );
+            chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG Files", "*.png"));
             file = chooser.showOpenDialog(null);
-            // System.out.println(getClass());
             FileInputStream input = null;
             /*******************************/
             try {
                 input = new FileInputStream(file);
                 Image image = new Image(input);
                 myImage.setImage(image);
-            } catch (NullPointerException e) {
-                e.printStackTrace();
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
+            } catch (NullPointerException e) {System.out.println("NullPoint Exception in addImgeBtn");}
+            catch (Exception e) {System.out.println("Exception catched in addImgBtn");}
             finally {
                 try {
                     input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                } catch (Exception e) {System.out.println("IOException in addImgBtnFinnaly");}
             }
+
+            /***************************************************/
+            OutputStream output = null;
+            try {
+                output = new BufferedOutputStream(new FileOutputStream(AccueilMediateur.StudentDirectory+"DonnesUtilisateurs/"
+                        +AccueilMediateur.studentFolder + "/"+project.getImgPath()+".png"));
+            } catch (FileNotFoundException ex2) {
+            System.out.println("FleNotFound Second Exception ");
+            }
+            try {
+                Files.copy(Path.of(file.getPath()), output);
+            } catch (Exception ex1) {
+                System.out.println("Il est preferable d'ajouter une photo XD");
+            }
+            try {
+                output.close();
+            } catch (IOException ex) {
+                System.out.println("FleNotFound Second Exception 2 ");
+            }
+            /***************************************************/
+
         });
 
         /********************************Recherche Club/Module**********************************/
 
-        System.out.println(project.getType().toString()+ " * ** * * * * * * * ");
 
-        if(project.getType().toString().equals("Club")){
+        if(project.getType().equals(TypeProjet.CLUB)){
             searchTextField.setPromptText("Rechercher Club");
-        }else if(project.getType().toString().equals("Pedagogique")){
+        }else if(project.getType().equals(TypeProjet.PEDAGOGIQUE)){
             searchTextField.setPromptText("Rechercher Module");
-        }else if(project.getType().toString().equals("Personnel")){
+        }else if(project.getType().equals(TypeProjet.PERSONEL)){
             System.out.println("personal ");
         }
 
@@ -507,6 +600,7 @@ public class editProjectController implements Initializable {
             foundClub.clear();
             ArrayList<String> foundModule = new ArrayList<>();
             foundModule.clear();
+            SearchResultVbox.setVisible(true);
 
             SearchVBox.getChildren().remove(SearchResultVbox);
             if(!searchTextField.getText().equals("")){
@@ -517,7 +611,7 @@ public class editProjectController implements Initializable {
                 try {
                     clubs = new Clubs();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("list club Null");
                 }
                 typeListView.getItems().clear();
                 foundClub = clubs.RechercheClub(searchTextField.getText());
@@ -534,7 +628,7 @@ public class editProjectController implements Initializable {
                 try {
                     modules = new Modules();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("List moduels vide");
                 }
                 typeListView.getItems().clear();
                 foundModule = modules.RecherchModules(searchTextField.getText());
@@ -547,11 +641,8 @@ public class editProjectController implements Initializable {
 
         /********************************Resultat Recherche*************************************/
 
-        moduleChoisiListView.setVisible(false);
-
-
         typeListView.setOnMouseClicked(event -> {
-            if(searchTextField.getPromptText().equals("Rechercher Module")){//Cas Module
+            if(project.getType().equals(TypeProjet.PEDAGOGIQUE)){//Cas Module
                 moduleExists = false;
 
                 for(int i = 0 ; i<moduleChoisis.size() ; i++){
@@ -568,10 +659,12 @@ public class editProjectController implements Initializable {
 
                     moduleChoisiListView.setVisible(true);
                 }
-            }else if(searchTextField.getPromptText().equals("Rechercher Club")){//Cas d'un Club
+            }else if(project.getType().equals(TypeProjet.CLUB)){//Cas d'un Club
                 afterChoosingTypeLabel.setVisible(true);
-                project.setClubName(typeListView.getSelectionModel().getSelectedItem());
-                afterChoosingTypeLabel.setText("Le Club choisi est "+typeListView.getSelectionModel().getSelectedItem());
+                if(!typeListView.getSelectionModel().getSelectedItem().equals(null)){
+                    project.setClubName(typeListView.getSelectionModel().getSelectedItem());
+                    afterChoosingTypeLabel.setText("Le Club choisi est "+typeListView.getSelectionModel().getSelectedItem());
+                }
             }
         });
         /********************************Supprimer List Choisies*********************************/
@@ -595,20 +688,31 @@ public class editProjectController implements Initializable {
         /********************************Ajouter Competence Btn*************************************/
 
         competenceInput.setOnMouseClicked(event1 -> {
-            onEditAction = true;
+            comp_added = false;
             loader =new FXMLLoader(getClass().getResource("/views/editCompetencesView.fxml"));
-            //editCompetenceController.comProject = projectComp;
             try {
                 Scene scene = new Scene(loader.load());
                 stage= new Stage();
+                stage.setTitle("Modifier Competences");
+                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setScene(scene);
-                stage.show();
+                stage.showAndWait();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("An error is here");
+            }
+            if(comp_added){
+                competenceImage.setImage(greenComp);
+                notification.setVisible(true);
+                notification.setText(projectComp.size()+"");
+                System.out.println("Greeen Screen");
+            }else {
+                competenceImage.setImage(grayComp);
+                notification.setVisible(false);
+                System.out.println("Greay screeen");
             }
         });
 
-        editBtn.setOnMouseClicked(event -> {
+        editBtn.setOnAction(e -> {
             if(titleInput.getText().equals("")){
                 titlewarning.setVisible(true);
             }else titlewarning.setVisible(false);
@@ -624,55 +728,59 @@ public class editProjectController implements Initializable {
             if(projectComp.size()==0){
                 compWarning.setVisible(true);
             }else compWarning.setVisible(false);
-            try {
+
+            CustomDialog customDialog = new CustomDialog("Confirmation",
+                    "Confimer les modifications sur " + titleInput.getText() + " .");
+            if(allFieldNotEmpty()){
+                customDialog.show();
+            }
+            customDialog.buttonOk.setOnAction(event -> {
                 if (allFieldNotEmpty()) {
-                    System.out.println("the boolean value is "+ allFieldNotEmpty());
-
-                    projectDocs.clear();
-
+                    /*************************************************************************/
                     project.setTitle(titleInput.getText());
                     project.setDescription(descriptionInput.getText());
-                    project.setDate(dateInput.getEditor().getText());
+                    project.setDate(dateInput.getValue().toString());
                     project.setDocs(projectDocs);
+                    moduleChoisis.clear();
+                    for(int i = 0 ; i<moduleChoisiListView.getItems().size() ; i++){
+                        moduleChoisis.add(moduleChoisiListView.getItems().get(i));
+                    }
                     project.setModuleArray(moduleChoisis);
-                    project.setClubName(typeListView.getSelectionModel().getSelectedItem());
+                    if(typeListView.getSelectionModel().getSelectedItem()!=null){
+                        project.setClubName(typeListView.getSelectionModel().getSelectedItem());
+                    }
+                    projectDocs.clear();
                     for(int i= 0 ; i<docsList.getItems().size() ; i++){
                         projectDocs.add(docsList.getItems().get(i));
                     }
                     project.setCompetences(projectComp);
-                    int i= 0 ;
-                    while(AccueilMediateur.utilisateur.listProjets.get(i).getId() != project.getId() ){
-                        i++;
-                    }
-                    System.out.println("L'ordre du projet est "+i);
-                    AccueilMediateur.utilisateur.listProjets.set(i,project);
-                    Utilisateur.serialize(AccueilMediateur.utilisateur,AccueilMediateur.studentFolder);
 
-//                    //reInitatilsation des chemps
-//                    titleInput.setText("");
-//                    descriptionInput.setText("");
-//                    dateInput.getEditor().setText("");
-//                    docsInput.setText("");
-//                    if(docsList.getItems().size() == 0  && displayNoneVbox.getChildren().size()==2){
-//                        displayNoneVbox.getChildren().remove(0);
-//                        docListLabel.setVisible(false);
-//                    }
+                    int i= 0 ;
+                    try {
+                        while(AccueilMediateur.utilisateur.listProjets.get(i).getId() != project.getId() ){
+                            i++;
+                        }
+                        AccueilMediateur.utilisateur.listProjets.set(i,project);
+                    }catch (IndexOutOfBoundsException indexOutOfBoundsException){
+                        System.out.println("Index out of bound");
+                    }
+
+                    Utilisateur.serialize(AccueilMediateur.utilisateur,AccueilMediateur.studentFolder);
+                    /************************************************************************/
+                    customDialog.closeDialog();
+                    ajouteDoneLabel.setVisible(true);
+
                 }else {
                     System.out.println("create projet till you enter all field required");
                 }
-            } finally {
-//                if (allFieldNotEmpty()){
-//                    SearchVBox.setVisible(false);
-//                    afterChoosingTypeLabel.setVisible(false);
-//                    //docsList.getItems().clear();
-//                    if(displayNoneVbox.getChildren().size()==2){
-//                        displayNoneVbox.getChildren().remove(0);
-//                    }
-//                    moduleChoisiListView.setVisible(false);
-//                }
-            }
+
+            });
+            customDialog.buttonCancel.setOnAction(event -> {
+                customDialog.closeDialog();
+            });
 
         });
+
     }
 
     private boolean allFieldNotEmpty() {
@@ -686,6 +794,11 @@ public class editProjectController implements Initializable {
             return true;
         }
     }
+    public boolean isURL(String url) throws IOException {
 
+        (new java.net.URL(url)).openStream().close();
+        return true;
+
+    }
 }
 

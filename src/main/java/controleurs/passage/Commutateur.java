@@ -1,6 +1,7 @@
 package controleurs.passage;
 
 import controleurs.acceuil.AccueilMediateur;
+import controleurs.authentification.ConnectController;
 import controleurs.parametre.CustomDialog;
 import controleurs.portfolio.ModifyPortfolioController;
 import controleurs.portfolio.PortfolioItemController;
@@ -135,6 +136,7 @@ public class Commutateur {
                 System.out.println("probléme en page ZipUnZip");
                 System.out.println("une probléme se genere lors de la sérialisation des info personnels");
             }
+               ConnectController.StudentDirectory=AccueilMediateur.StudentDirectory;
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/views/ConnectView.fxml"));
             try {
                 scene = new Scene(loader.load());
@@ -163,6 +165,12 @@ public class Commutateur {
             e.printStackTrace();
         }
         AccueilMediateur.monPagination.setCurrentPageIndex(11);
+    }
+    public void AllerAddProjet(MouseEvent event){
+        AccueilMediateur.monPagination.setCurrentPageIndex(10);
+    }
+    public void AllerAddPortfolio(MouseEvent event){
+        AccueilMediateur.monPagination.setCurrentPageIndex(3);
     }
     public void TraiterAlert(Node node)
     {

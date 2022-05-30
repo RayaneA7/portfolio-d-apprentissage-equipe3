@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Project;
@@ -49,8 +50,13 @@ public class addCompetenceController implements Initializable {
     @FXML
     private Button validerBtn;
     @FXML
+    private HBox CustomCompHbox ;
+    //les competences issus de la recherche
+    @FXML
     private ListView<String> availableCompetenceList;
     private ArrayList<Competence> availableCompetenceArray = new ArrayList<>();
+
+    //les competences choisi pour le projet
     @FXML
     private ListView<String> myProjectCompetenceList;
 
@@ -64,15 +70,17 @@ public class addCompetenceController implements Initializable {
     public addCompetenceController() throws IOException {
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        myProjectCompetenceList.getItems().clear();
-
-        for(int i = 0 ; i<myProjectArrayList.size() ; i++){
-            myProjectCompetenceList.getItems().add(myProjectArrayList.get(i).getElemdeCompetence());
+        if(AddProjectController.Addcustomcompetence==false){
+            CustomCompHbox.setDisable(true);
+        }else{
+            CustomCompHbox.setDisable(false);
+        }
+        for(int i = 0 ; i<AddProjectController.projectComp.size() ; i++){
+            myProjectCompetenceList.getItems().add(AddProjectController.projectComp.get(i).getElemdeCompetence());
+            myProjectArrayList.add(AddProjectController.projectComp.get(i));
         }
 
         searchBtn.setOnMouseClicked(event -> {
@@ -144,7 +152,6 @@ public class addCompetenceController implements Initializable {
 
 
         /**Supprimer competences **/
-
         myProjectCompetenceList.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -160,20 +167,28 @@ public class addCompetenceController implements Initializable {
                 }
             }
         });
-
+        /**Valider et Retour **/
         validerBtn.setOnMouseClicked(event -> {
-            //if(myProjectArrayList.size()!=0) {
-            //System.out.println(" size myProjectArrayList : ( add competence ) " + myProjectArrayList.size());
-                AddProjectController.projectComp = myProjectArrayList;
-           // }
+
+            AddProjectController.projectComp = myProjectArrayList;
+            if(myProjectArrayList.size()!=0){
+                AddProjectController.comp_added = true;
+            }else {
+                AddProjectController.comp_added = false;
+            }
+
             AddProjectController.stage.close();
 
         });
-
         retourBtn.setOnMouseClicked(event -> {
             AddProjectController.stage.close();
-            editProjectController.onEditAction = false;
-            AddProjectController.onAddAction = false;
         });
+
+        AddProjectController.projectComp = myProjectArrayList;
+        if(myProjectArrayList.size()!=0){
+            AddProjectController.comp_added = true;
+        }else {
+            AddProjectController.comp_added = false;
+        }
     }
 }

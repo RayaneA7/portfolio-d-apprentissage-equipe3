@@ -68,34 +68,35 @@ public class ConnectController implements Initializable {
     private Label alertMotPasse;
     /*************************Variables de classe********/
     public static String studentFolder ;
+    public static  String StudentDirectory;
     private int dureeErreur=3000;
     /*********************Logique d'affichage************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        commutateur =new Commutateur();
+        commutateur = new Commutateur();
         /*****************chargement de la liste des utilisateurs ******************************/
-        LoginUtilisateurs loginUtilisateurs =new LoginUtilisateurs();
+        LoginUtilisateurs loginUtilisateurs = new LoginUtilisateurs();
         try {
-            listLogins=loginUtilisateurs.getList();
+            listLogins = loginUtilisateurs.getList();
         } catch (IOException e) {
             e.printStackTrace();
         }
         /**********************l'Aide en ligne *************************/
-        EventHandler<MouseEvent> event =new EventHandler<MouseEvent>() {
+        EventHandler<MouseEvent> event = new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 myHelp.setOpacity(1);
             }
         };
         myHelp.setOnMouseEntered(event);
-        EventHandler<MouseEvent > event1 =new EventHandler<MouseEvent>() {
+        EventHandler<MouseEvent> event1 = new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 myHelp.setOpacity(0.5);
             }
         };
         myHelp.setOnMouseExited(event1);
-        myHelp.setOnMouseClicked(event2->{
+        myHelp.setOnMouseClicked(event2 -> {
             try {
                 ConnectController.commutateur.AllerAide(event2);
             } catch (URISyntaxException e) {
@@ -111,8 +112,8 @@ public class ConnectController implements Initializable {
 
             }
         });
-        String typeB="-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
-        String typeA="-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
+        String typeB = "-fx-stroke:#F1C53C ;-fx-stroke-width:3 ";
+        String typeA = "-fx-stroke:#b7b5b5 ;-fx-stroke-width:3 ";
      /*   EventHandler<MouseEvent> event3 =new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -120,14 +121,14 @@ public class ConnectController implements Initializable {
             }
         };*/
         myPane.setOnMouseEntered(event2 -> {
-                monEmail.setOnMouseClicked(event3 -> {
-                    monLigneEmail.setStyle(typeB);
-                    monLigneMotPasse.setStyle(typeA);
-                });
-                monMotDePasse.setOnMouseClicked(event3 -> {
-                    monLigneEmail.setStyle(typeA);
-                    monLigneMotPasse.setStyle(typeB);
-                });
+            monEmail.setOnMouseClicked(event3 -> {
+                monLigneEmail.setStyle(typeB);
+                monLigneMotPasse.setStyle(typeA);
+            });
+            monMotDePasse.setOnMouseClicked(event3 -> {
+                monLigneEmail.setStyle(typeA);
+                monLigneMotPasse.setStyle(typeB);
+            });
         });
         myPane.setOnMouseExited(event2 -> {
             monLigneEmail.setStyle(typeA);
@@ -136,24 +137,32 @@ public class ConnectController implements Initializable {
      /*   myPane.setOnMouseEntered(event2 -> {
           for(int i=0;i<myPane.getChildren().size();i++)
         });*/
+        /************************************************************/
+        File fileTest = new File("C:/Users/PCS/Documents");
+        if (fileTest.exists()) {
+            fileTest = new File("C:/Users/PCS/Documents/Ecarrer");
+            fileTest.mkdirs();
+        } else {
+            fileTest = new File("C:/Ecareer");
+            fileTest.mkdirs();
+        }
+       StudentDirectory =fileTest.toURI().toString().substring(6);
     }
-
     /********************Logique de fonctionnement************************/
-
     static void create(Utilisateur user ) throws IOException {
 
         Writer writer = null;
         File file =null;
          try{
-             file =new File("DonnesUtilisateurs/" + studentFolder);
+             file =new File(StudentDirectory+"/DonnesUtilisateurs/" + studentFolder);
              file.mkdirs();
-             file =new File("DonnesUtilisateurs/" + studentFolder+"/user.json");
+             file =new File(StudentDirectory+"/DonnesUtilisateurs/" + studentFolder+"/user.json");
              file.createNewFile();
          }catch (IOException e){
              System.out.println("erreur se genre lors de la creation de fichier des donnes personnels");
          }
         try {
-            writer = Files. newBufferedWriter(Paths.get("DonnesUtilisateurs/" + studentFolder+"/user.json"));
+            writer = Files. newBufferedWriter(Paths.get(StudentDirectory+"/DonnesUtilisateurs/" + studentFolder+"/user.json"));
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(user, writer);
         } catch (IOException e) {
@@ -185,6 +194,7 @@ public class ConnectController implements Initializable {
                 break;
             case 2:
                 /************passage à l'acceuil*******************/
+
                ZipUnZip.ExtractFile(studentFolder);
                accedreAcceuil(event);
                /*****************************************************/
@@ -221,6 +231,9 @@ public class ConnectController implements Initializable {
         node.setOpacity(1);
         timer.schedule(task,dureeErreur);
     }
+    /*******************************************************************/
+    /*************L'inscription d'un nouveau étudiant*******************/
+    /******************************************************************/
     public void inscription(ActionEvent event) throws IOException {
         /*********Creation d'un nouveau Utilisatur****************/
         user =new Utilisateur();

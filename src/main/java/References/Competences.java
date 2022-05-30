@@ -163,7 +163,7 @@ private ArrayList<Competence> listcompetences;
       if(motclé!=""&&listcompetences.size()!=0){
          // listcompetences.sort(ComparCompetences.comparatorObjectif);
           for(int i=0;i<listcompetences.size();i++) {
-              if(listcompetences.get(i).getObjectifPédagogique().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
+              if(listcompetences.get(i).getObjectifsPedagogiques().toLowerCase(Locale.ROOT).contains(motclé.toLowerCase(Locale.ROOT))){
                   resultat.add(listcompetences.get(i));
               }
           }

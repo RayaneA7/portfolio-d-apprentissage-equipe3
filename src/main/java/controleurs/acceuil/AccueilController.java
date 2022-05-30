@@ -38,8 +38,6 @@ import java.util.ResourceBundle;
 
 public class AccueilController implements Initializable {
     @FXML
-    Button SwitchButton;
-    @FXML
     Button AccueilButton;
     @FXML
     Label AccueilLabel;
@@ -84,6 +82,10 @@ public class AccueilController implements Initializable {
     Circle imagePersonnel ;
     @FXML
     ImageView imageTest;
+    @FXML
+    private Button AjProButton ;
+    @FXML
+    private Button AjPorButton ;
     /*******************les lignes **********************/
     @FXML
     Line line1;
@@ -289,6 +291,13 @@ public class AccueilController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        });
+        /***********************************************************************************/
+        AjPorButton.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerAddPortfolio(e);
+        });
+        AjProButton.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerAddProjet(e);
         });
         /*********************************************************************************
         WelcomeLabel.setText("Bonjour ,"+AccueilMediateur.utilisateur.donnes.getNom()+" "+ AccueilMediateur.utilisateur.donnes.getPrenom());

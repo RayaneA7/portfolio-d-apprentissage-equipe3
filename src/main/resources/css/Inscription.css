@@ -15,8 +15,8 @@
 -fx-stroke-width:10;
 }
 .default-color0.chart-pie { -fx-pie-color: #184173; }
-.default-color1.chart-pie { -fx-pie-color: #B7B5B5; }
-.default-color2.chart-pie { -fx-pie-color: #F1C53C; }
+.default-color1.chart-pie { -fx-pie-color: #F1C53C; }
+.default-color2.chart-pie { -fx-pie-color: #B7B5B5; }
 
 
 .default-color0.chart-bar { -fx-bar-fill: #184173; }

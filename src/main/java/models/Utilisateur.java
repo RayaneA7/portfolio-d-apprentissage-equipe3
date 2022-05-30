@@ -2,6 +2,7 @@ package models;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import controleurs.acceuil.AccueilMediateur;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class Utilisateur {
 
     Writer writer = null;
     try {
-      writer = Files.newBufferedWriter(Paths.get("DonnesUtilisateurs/"+studentFolder+"/user.json"));
+      writer = Files.newBufferedWriter(Paths.get(AccueilMediateur.StudentDirectory+"/DonnesUtilisateurs/"+studentFolder+"/user.json"));
       Gson gson = new GsonBuilder().setPrettyPrinting().create();
       gson.toJson(user, writer);
 
@@ -57,7 +58,7 @@ public class Utilisateur {
     Gson gson = new Gson();
     Reader reader =null;
     try {
-      reader = Files.newBufferedReader(Paths.get("DonnesUtilisateurs/"+studentFolder+"/user.json"));
+      reader = Files.newBufferedReader(Paths.get(AccueilMediateur.StudentDirectory+"/DonnesUtilisateurs/"+studentFolder+"/user.json"));
       user = gson.fromJson(reader, Utilisateur.class);
 
     } catch (FileNotFoundException ex) {

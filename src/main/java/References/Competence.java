@@ -8,7 +8,7 @@ public class Competence {
     private String ElemdeCompetence;
     private ArrayList<String> modules;
     private TypeCompetence type;
-    private String ObjectifPédagogique;
+    private String ObjectifsPedagogiques;
 /******************************************************/
     public String getFamilledeCompetence() {
         return FamilledeCompetence;
@@ -40,18 +40,19 @@ public class Competence {
     public void setModules(ArrayList<String> modules) {
         this.modules = modules;
     }
-    public String getObjectifPédagogique() {
-        return ObjectifPédagogique;
+    public String getObjectifsPedagogiques() {
+        return ObjectifsPedagogiques;
     }
-    public void setObjectifPédagogique(String objectifPédagogique) {
-        ObjectifPédagogique = objectifPédagogique;
+    public void setObjectifsPedagogiques(String objectifsPedagogiques) {
+        ObjectifsPedagogiques = objectifsPedagogiques;
     }
+
     /********************************************************************************************/
     public Competence(String FamilledeCompetence,String Competence,String ElemCompetence,String type,String modules,String objectif) {
         this.FamilledeCompetence = FamilledeCompetence;
         this.Competence=Competence;
         this.ElemdeCompetence=ElemCompetence;
-        this.ObjectifPédagogique=objectif;
+        this.ObjectifsPedagogiques=objectif;
         /*******************/
         switch (type){
             case "Technique" : this.type =TypeCompetence.MET;

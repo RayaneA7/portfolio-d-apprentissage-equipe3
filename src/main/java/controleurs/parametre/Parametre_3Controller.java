@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 import models.LoginUser;
-import models.Utilisateur;
 
 import java.io.IOException;
 import java.net.URL;
@@ -193,7 +192,8 @@ public class Parametre_3Controller implements Initializable {
                                 String email = AccueilMediateur.utilisateur.donnes.getEmail();
                                 String motpasse = AccueilMediateur.utilisateur.donnes.getMotdePasse();
                                 String matricule = AccueilMediateur.utilisateur.donnes.getMatricule();
-                                LoginUser user = new LoginUser(motpasse, email, matricule);
+                                String Folder =AccueilMediateur.StudentDirectory;
+                                LoginUser user = new LoginUser(motpasse, email,matricule);
                                 while (indexStudent < Parametre_Controller.loginUtilisateurs.getList().size() && stop != 1) {
                                     indexStudent++;
                                     if (user.equals(Parametre_Controller.loginUtilisateurs.getList().get(indexStudent))) {

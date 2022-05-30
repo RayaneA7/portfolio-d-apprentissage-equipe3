@@ -50,6 +50,7 @@ public class AccueilMediateur implements Initializable {
     /***********************/
    public static Pagination monPagination;
    public static String studentFolder ;
+   public static String StudentDirectory;
    public static Utilisateur utilisateur;
    public static ArrayList<Parent> memory;
    public static Image image =null;
@@ -59,139 +60,12 @@ public class AccueilMediateur implements Initializable {
     private Scene scene=null;
     private File file=null;
     FXMLLoader loader1;
-
-    /***************generation de HTML******************************/
-    /***************************************************************/
-    public String genererHtml(Utilisateur utilisateur) {
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("projets", utilisateur.listProjets);
-        model.put("pageName", "Ecareer");
-        model.put("info", utilisateur.getDonnes());
-        model.put("contact", utilisateur.getContacts());
-//        System.out.println(utilisateur.getMe.................sProjets());
-//        utilisateur.getMesProjets().forEach(project -> {
-//            project.competences.
-//        });
-//        model.put("competences", utilisateur.getMesProjets());
-        String html;
-        try {
-
-            html = Pug4J.render("./index.pug", model);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return html;
-    }
-//    public void genererPdf(File pdfFile, Utilisateur utilisateur) {
-//        String tmpLocation = System.getProperty("user.name")+"/AppData/Local/Temp/"+studentFolder;
-//        File file = new File(tmpLocation);
-//        copyDirectory("./DonnesUtilisateurs/314123423/",tmpLocation);
-//        saveSystem(new File(file.getAbsolutePath()+"/index.html"),genererHtml(utilisateur));
-//        try {
-//            // Source HTML file
-//            String inputHTML = file.getAbsolutePath()+"/index.html";
-//            // Generated PDF file name
-//            String outputPdf = pdfFile.getAbsolutePath();
-//            htmlToPdf(inputHTML, outputPdf);
-//            System.out.println("pdf generation ");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-    /********************************************************************/
-    /****************generation de pdf***********************************/
-    /*******************************************************************/
-    public void genererPdf(File pdfFile, Utilisateur utilisateur) {
-        String tmpLocation = System.getProperty("user.name")+"/AppData/Local/Temp/"+studentFolder;
-        File file = new File(tmpLocation);
-        copyDirectory("./DonnesUtilisateurs/314123423/",tmpLocation);
-        saveSystem(new File(file.getAbsolutePath()+"/index.html"),genererHtml(utilisateur));
-        // Source HTML file
-        String inputHTML = file.getAbsolutePath()+"/index.html";
-        // Generated PDF file name
-        String outputPdf = pdfFile.getAbsolutePath();
-        PdfWriter writer = null;
-        try {
-            writer = new PdfWriter("./ehxexhe.pdf");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        ConverterProperties properties = new ConverterProperties();
-        FontProvider fontProvider = new DefaultFontProvider(false, false, false);
-        fontProvider.addDirectory("./Cairo,Open_Sans,Roboto/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf");
-        properties.setFontProvider(fontProvider);
-
-        PdfDocument pdf = new PdfDocument(writer);
-//        convertToPdf(content, writer );
-//            File file = new File("./output1.pdf");
-        try {
-            convertToPdf(new File( file.getAbsolutePath()+ "/index.html"), pdfFile );
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("pdf generation ");
-    }
-//    public static Document html5ParseDocument(String inputHTML) throws IOException{
-//        org.jsoup.nodes.Document doc;
-//        System.out.println("parsing ...");
-//        doc = Jsoup.parse(new File(inputHTML), "UTF-8");
-//        System.out.println("parsing done ..." + doc);
-//        return new W3CDom().fromJsoup(doc);
-//    }
-//
-//    public static void htmlToPdf(String inputHTML, String outputPdf) throws IOException {
-//        Document doc = html5ParseDocument(inputHTML);
-//        String baseUri = FileSystems.getDefault()
-//                .getPath(".")
-//                .toUri()
-//                .toString();
-//        OutputStream os = new FileOutputStream(outputPdf);
-//        PdfRendererBuilder builder = new PdfRendererBuilder();
-//        builder.withUri(outputPdf);
-//        builder.toStream(os);
-//        // using absolute path here
-////        builder.useFont(new File("F:\\knpcode\\Java\\Java Programs\\PDF using Java\\PDFBox\\Gabriola.ttf"),
-////                "Gabriola");
-//        builder.withW3cDocument(doc, baseUri);
-//        //builder.useUriResolver(new MyResolver());
-//        builder.run();
-//        System.out.println("PDF generation complxeted");
-//        os.close();
-//
-    /*******************************************************/
-    public void saveSystem(File file, String content) {
-        try {
-            PrintWriter printWriter = new PrintWriter(file);
-            System.out.println(content);
-            printWriter.write(content);
-            printWriter.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-    /*****************************************************************************/
-    /*****************************************************************************/
-    public void copyDirectory(String sourcePath, String destinationPath) {
-        File srcDir = new File(sourcePath);
-        File destDir = new File(destinationPath);
-
-        try {
-            FileUtils.copyDirectory(srcDir, destDir);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    /*********************************************************************************/
-
-
-
-
     /************************************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*********************************/
          studentFolder = ConnectController.studentFolder;
+         StudentDirectory=ConnectController.StudentDirectory;
          System.out.println("le student folder est :"+studentFolder);
          try {
             utilisateur = Utilisateur.deserialization(studentFolder);
@@ -201,19 +75,13 @@ public class AccueilMediateur implements Initializable {
          /*****************photo personnel*********************/
         try {
             System.out.println("wel");
-            file = new File("DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png");
+            file = new File(StudentDirectory+"/DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png");
             if(file.exists()) {
                 image = new Image(String.valueOf(file.toURI().toURL()));
             }
         } catch (MalformedURLException e) {
            System.out.println("fichier de l'image personnel introuvable");
         }
-        catch (IOException e) {
-            System.out.println("probleme se génere losrs de chargement de l'image");
-        }
-         catch (Exception e){
-            System.out.println("probleme se génere lors de chargement de l'image");
-         }
          /*********************0**************/
          memory = new ArrayList<>(10);
          FXMLLoader loader = new FXMLLoader();

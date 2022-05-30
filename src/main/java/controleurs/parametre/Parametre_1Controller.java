@@ -1,35 +1,26 @@
 package controleurs.parametre;
 
 import controleurs.acceuil.AccueilMediateur;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Duration;
-import models.*;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Parametre_1Controller implements Initializable {
     @FXML
@@ -51,6 +42,12 @@ public class Parametre_1Controller implements Initializable {
 
     @FXML
     private ImageView AjoutePhoto;
+    @FXML
+    private Button TelechargementButton;
+    @FXML
+    private Label TelechargementConfirmation;
+    Image Img1 = new Image(getClass().getResourceAsStream("/icons/parametre/UpdateCompetence.png"));
+    Image Img = new Image(getClass().getResourceAsStream("/icons/parametre/UpdateCompetence1.png"));
     /**********************************************************************************/
     public static TextField monPrenom;
 
@@ -65,13 +62,13 @@ public class Parametre_1Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         monBio = new TextArea();
         monBio.setWrapText(true);
-        monBio.setPrefSize(200, 100);
+        monBio.setPrefSize(140, 70);
         monAnchorBio.getChildren().add(monBio);
         monNom = new TextField();
-        monNom.setPrefSize(200, 30);
+        monNom.setPrefSize(110, 30);
         monAnchorNom.getChildren().add(monNom);
         monPrenom = new TextField();
-        monPrenom.setPrefSize(200, 30);
+        monPrenom.setPrefSize(110, 30);
         monAnchorPrenom.getChildren().add(monPrenom);
         monPrenom.requestFocus();
         confirmationLabel = new Label();
@@ -120,7 +117,7 @@ public class Parametre_1Controller implements Initializable {
                 OutputStream output = null;
                 try {
                     System.out.println("welcome");
-                    output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png"));
+                    output = new BufferedOutputStream(new FileOutputStream(AccueilMediateur.StudentDirectory+"/DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png"));
                     System.out.println("welcome1");
                     Files.copy(Path.of(file.getPath()), output);
                     System.out.println("welcome2");
@@ -144,13 +141,93 @@ public class Parametre_1Controller implements Initializable {
                 /**********************************************/
             }
         });
-        /**********************************************************/
-        /*****************suppression de la photo personnel*********/
+        /**********************Telechargement des compétences************************************/
+        Tooltip tipInformation =new Tooltip("Télécharger la nouvelle version du fichier des compétences à partir du site d'aide , et puis charger la d'ici");
+        tipInformation.setWrapText(true);
+        tipInformation.setMaxWidth(250);
+        tipInformation.setShowDelay(Duration.ZERO);
+        TelechargementButton.setTooltip(tipInformation);
+        TelechargementButton.setOnMouseEntered(e->{
+            ImageView view =new ImageView(Img1);
+            view.setFitWidth(30);
+            view.setFitHeight(30);
+            TelechargementButton.setGraphic(view);
+        });
+        TelechargementButton.setOnMouseExited(e->{
+            ImageView view =new ImageView(Img);
+            view.setFitWidth(30);
+            view.setFitHeight(30);
+            TelechargementButton.setGraphic(view);
+        });
+
+        TelechargementButton.setOnMouseClicked(e->{
+                    FileChooser chooser = new FileChooser();
+                    chooser.setTitle("Choisir le nouveau fichier des compétences");
+                    chooser.getExtensionFilters().addAll(
+                            new FileChooser.ExtensionFilter("Json Files", "*.json")
+                            //  , new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
+                            //  , new FileChooser.ExtensionFilter("GIF Files", "*.gif")
+                            //  , new FileChooser.ExtensionFilter("BMP Files", "*.bmp")
+                    );
+                    File file1 = chooser.showOpenDialog(null);
+                    File file2  = new File("References/competencesJson.json");
+                    BufferedOutputStream output = null;
+                    /********************************************/
+                    if(file1!=null){
+                        int i = 0;
+                        TelechargementButton.setCursor(Cursor.WAIT);
+                        FileReader reader = null;
+                        FileWriter writer =null;
+                        try {
+                             reader =new FileReader(file1);
+                        } catch (FileNotFoundException ex) {
+                           // ex.printStackTrace();
+                        }
+                        try {
+                            writer =new FileWriter(file2);
+                        } catch (IOException ex) {
+                            //ex.printStackTrace();
+                        }
+                        String str = "";
+                        while (true) {
+                            try {
+                                if (!((i = reader.read()) != -1)) break;
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                            str += (char)i;
+                        }
+                        /*******************
+                        int nb=str.length();
+                        str =str.concat("\"}]}");
+                        System.out.println("\"}]}");
+                        System.out.println("la fin des compétences est :"+str.substring(nb));
+                        /*********************/
+                        try {
+                            writer.write(str);
+                            TelechargementConfirmation.setTextFill(Paint.valueOf("#19C62A"));
+                            TelechargementConfirmation.setText("chargement fait avec succés !");
+                            AccueilMediateur.commutateur.TraiterAlert(TelechargementConfirmation);
+                        } catch (IOException ex) {
+                            TelechargementConfirmation.setTextFill(Paint.valueOf("red"));
+                            TelechargementConfirmation.setText("Probléme se génere lors de chargement !");
+                            AccueilMediateur.commutateur.TraiterAlert(TelechargementConfirmation);
+                           /// ex.printStackTrace();
+                        }
+                        try {
+                            writer.close();
+                            reader.close();
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+        });
+        /*****************suppression de la photo personnel***************************************/
         SupprimePhoto.setOnMouseClicked(event->{
             OutputStream output = null;
             file =new File("DonnesUtilisateurs/Etudiant/ImagePersonnel.png");
             try {
-                output = new BufferedOutputStream(new FileOutputStream("DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png"));
+                output = new BufferedOutputStream(new FileOutputStream(AccueilMediateur.StudentDirectory+"/DonnesUtilisateurs/" + AccueilMediateur.studentFolder + "/ImagePersonnel.png"));
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }

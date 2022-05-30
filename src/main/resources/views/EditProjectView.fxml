@@ -9,11 +9,13 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -25,127 +27,11 @@
                 <Image url="@../icons/Project/ProjectViewBG7.png" />
             </image>
         </ImageView>
-        <Button fx:id="SwitchButton" layoutX="-16.0" layoutY="132.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: F5F5F5;" translateX="75.0">
-            <graphic>
-                <ImageView fx:id="BarreImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../icons/Acceuil/Barre.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor></Button>
-        <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
-            <graphic>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F1C53C;">
-                    <children>
-                        <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Acceuil/ProjetsBut1.png" />
-                            </image></ImageView>
-                        <Label fx:id="ProjetLabel" layoutX="56.0" layoutY="16.0" text="Projets">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
-            <graphic>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Acceuil/PortfolioBut.png" />
-                            </image></ImageView>
-                        <Label fx:id="PortfolioLabel" layoutX="56.0" layoutY="16.0" text="Portfolios">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button fx:id="AideButton" layoutX="11.0" layoutY="477.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
-            <graphic>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="AideImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Acceuil/AideBut.png" />
-                            </image></ImageView>
-                        <Label fx:id="AideLabel" layoutX="66.0" layoutY="11.0" text="Aide">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </AnchorPane>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button fx:id="ParametresButton" layoutX="11.0" layoutY="412.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
-            <graphic>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Acceuil/ParametresBut.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="ParametresLabel" layoutX="45.0" layoutY="14.0" text="Parametres">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Label fx:id="WelcomeLabel" layoutX="204.0" layoutY="42.0" prefHeight="45.0" prefWidth="444.0" text="Modifier votre Projet" textFill="#184173">
+        <Label fx:id="WelcomeLabel" layoutX="204.0" layoutY="42.0" prefHeight="45.0" prefWidth="453.0" text="Modifier " textFill="#184173">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Button fx:id="AccueilButton" layoutX="11.0" layoutY="199.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
-            <graphic>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Acceuil/AccueilBut.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="AccueilLabel" layoutX="56.0" layoutY="16.0" text="Accueil">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
         <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="45.0" fitWidth="55.0" layoutX="760.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../icons/Acceuil/Deconnexion.png" />
@@ -154,21 +40,20 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-        <Line fx:id="line3" endX="27.0" layoutX="111.0" layoutY="379.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line5" endX="27.0" layoutX="111.0" layoutY="537.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line4" endX="27.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
         <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0" />
-        <Button fx:id="RetourBtn" layoutX="554.0" layoutY="550.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Retour" />
-        <Button fx:id="editBtn" layoutX="654.0" layoutY="550.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Modifier" />
-        <Line fx:id="line2" endX="27.0" layoutX="112.0" layoutY="317.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line1" endX="27.0" layoutX="113.0" layoutY="263.0" startX="-79.0" stroke="#666666" />
         <HBox layoutX="238.0" layoutY="446.0" prefHeight="31.0" prefWidth="283.0" />
-        <AnchorPane layoutX="188.0" layoutY="83.0" minHeight="0.0" minWidth="0.0" prefHeight="442.0" prefWidth="542.0">
+        <AnchorPane layoutX="188.0" layoutY="83.0" minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="563.0">
             <children>
-                <TextField fx:id="titleInput" layoutX="14.0" layoutY="28.0" prefHeight="31.0" prefWidth="219.0" promptText="Titre du Projet" />
-                <TextArea fx:id="descriptionInput" layoutX="17.0" layoutY="71.0" prefHeight="80.0" prefWidth="213.0" promptText="Description" wrapText="true" />
-                <DatePicker fx:id="dateInput" layoutX="259.0" layoutY="28.0" prefHeight="30.0" prefWidth="262.0" promptText="Date de realisation" />
-                <Button fx:id="addImageBtn" layoutX="259.0" layoutY="75.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="262.0" text="Modifier Photo">
+                <TextField fx:id="titleInput" layoutX="14.0" layoutY="28.0" prefHeight="31.0" prefWidth="273.0" promptText="Titre du Projet" styleClass="inputY" stylesheets="@../css/project.css">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <TextArea fx:id="descriptionInput" layoutX="16.0" layoutY="78.0" prefHeight="80.0" prefWidth="273.0" promptText="Description" styleClass="inputB" stylesheets="@../css/project.css" wrapText="true">
+                    <font>
+                        <Font size="13.0" />
+                    </font></TextArea>
+                <DatePicker fx:id="dateInput" layoutX="313.0" layoutY="28.0" prefHeight="31.0" prefWidth="235.0" promptText="Date de realisation" styleClass="inputY" stylesheets="@../css/project.css" />
+                <Button fx:id="addImageBtn" layoutX="314.0" layoutY="81.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="235.0" styleClass="inputB" stylesheets="@../css/project.css" text="Modifier la photo">
                     <graphic>
                         <ImageView fx:id="myImage" fitHeight="37.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -180,38 +65,39 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="competenceInput" alignment="CENTER" contentDisplay="RIGHT" layoutX="352.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" text="Modifier Competences">
+                <Button fx:id="competenceInput" alignment="CENTER" contentDisplay="RIGHT" layoutX="316.0" layoutY="157.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="231.0" styleClass="inputB" stylesheets="@../css/project.css" text="Modifier les Competences">
                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="competenceImage" fitHeight="40.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../icons/Project/Vector.png" />
                             </image>
                         </ImageView>
                     </graphic>
-                </Button>
-                <TextField fx:id="docsInput" layoutX="24.0" layoutY="179.0" prefHeight="31.0" prefWidth="262.0" promptText="Donner un lien valide" />
-                <Button fx:id="addDocBtn" layoutX="290.0" layoutY="180.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="32.0" text="+">
                     <font>
-                        <Font size="11.0" />
+                        <Font name="System Bold" size="13.0" />
                     </font>
                 </Button>
-                <VBox fx:id="displayNoneVbox" layoutX="23.0" layoutY="226.0" prefHeight="212.0" prefWidth="497.0">
+                <TextField fx:id="docsInput" layoutX="18.0" layoutY="176.0" prefHeight="37.0" prefWidth="242.0" promptText="Donner un lien valide" styleClass="inputY" stylesheets="@../css/project.css">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></TextField>
+                <VBox fx:id="displayNoneVbox" layoutX="19.0" layoutY="238.0" prefHeight="212.0" prefWidth="532.0">
                     <children>
                         <VBox fx:id="docListVbox" alignment="CENTER" minWidth="-Infinity" prefHeight="53.0" prefWidth="497.0">
                             <children>
-                                <ListView fx:id="docsList" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="491.0" />
+                                <ListView fx:id="docsList" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="533.0" stylesheets="@../css/project.css" />
                             </children>
                         </VBox>
-                        <HBox fx:id="typeContainer" alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="497.0">
+                        <HBox fx:id="typeContainer" alignment="CENTER_LEFT" prefHeight="151.0" prefWidth="532.0">
                             <children>
-                                <VBox prefHeight="0.0" prefWidth="232.0">
+                                <VBox prefHeight="151.0" prefWidth="261.0">
                                     <children>
-                                        <Label prefHeight="30.0" prefWidth="231.0" text="Choose Project Type">
+                                        <Label prefHeight="29.0" prefWidth="181.0" text="Choisir Type du Projet ">
                                             <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
-                                        <MenuButton fx:id="typeInput" mnemonicParsing="false" prefHeight="24.0" prefWidth="232.0" text="Type du Projet">
+                                        <MenuButton fx:id="typeInput" mnemonicParsing="false" prefHeight="36.0" prefWidth="261.0" styleClass="inputY" stylesheets="@../css/project.css" text="Type du Projet">
                                             <items>
                                                 <MenuItem fx:id="clubItem" mnemonicParsing="false" text="Club" />
                                                 <MenuItem fx:id="PedaItem" mnemonicParsing="false" text="Pedagogique" />
@@ -220,10 +106,10 @@
                                         </MenuButton>
                                         <Label fx:id="afterChoosingTypeLabel" prefHeight="27.0" prefWidth="232.0" text="Le Club Choisi :">
                                             <font>
-                                                <Font size="13.0" />
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </Label>
-                                        <ListView fx:id="moduleChoisiListView" prefHeight="69.0" prefWidth="231.0" />
+                                        <ListView fx:id="moduleChoisiListView" prefHeight="69.0" prefWidth="231.0" stylesheets="@../css/project.css" />
                                     </children>
                                 </VBox>
                                 <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="32.0" />
@@ -234,10 +120,10 @@
                                                 <VBox prefHeight="28.0" prefWidth="234.0" />
                                                 <HBox prefHeight="28.0" prefWidth="214.0">
                                                     <children>
-                                                        <TextField fx:id="searchTextField" prefHeight="47.0" prefWidth="197.0" />
-                                                        <Button fx:id="searchTypeBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="48.0">
+                                                        <TextField fx:id="searchTextField" prefHeight="42.0" prefWidth="203.0" promptText="Search / Add" styleClass="inputY" stylesheets="@../css/project.css" />
+                                                        <Button fx:id="searchTypeBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" style="-fx-padding: 3; -fx-border-width: 3; -fx-background-color: rgba(24, 65, 115, 0.3);" styleClass="inputB" stylesheets="@../css/project.css">
                                                             <graphic>
-                                                                <ImageView fx:id="search_addBtn" fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                                                <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                                                     <image>
                                                                         <Image url="@../icons/Project/search.png" />
                                                                     </image>
@@ -252,10 +138,10 @@
                                             <children>
                                                 <Label fx:id="foundTypeLabel" prefHeight="36.0" prefWidth="234.0" text="Search Result ">
                                                     <font>
-                                                        <Font size="13.0" />
+                                                        <Font name="System Bold" size="13.0" />
                                                     </font>
                                                 </Label>
-                                                <ListView fx:id="typeListView" prefHeight="75.0" prefWidth="234.0" />
+                                                <ListView fx:id="typeListView" prefHeight="75.0" prefWidth="234.0" stylesheets="@../css/project.css" />
                                             </children>
                                         </VBox>
                                     </children>
@@ -264,7 +150,180 @@
                         </HBox>
                     </children>
                 </VBox>
+                <Label fx:id="titlewarning" layoutX="17.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champs Obligatoire" textFill="RED">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font></Label>
+                <Label fx:id="dateWarning" layoutX="318.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champs Obligatoire" textFill="RED">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font></Label>
+                <Label fx:id="descWarning" layoutX="22.0" layoutY="158.0" prefHeight="17.0" prefWidth="121.0" text="Champs Obligatoire" textFill="RED">
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font></Label>
+                <Label fx:id="docListLabel" layoutX="24.0" layoutY="216.0" prefHeight="21.0" prefWidth="262.0" text="La liste de documents attestants">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="compWarning" layoutX="436.0" layoutY="215.0" prefHeight="17.0" prefWidth="107.0" text="Champs Obligatoire" textFill="RED" />
+            <Button fx:id="addDocBtn" layoutX="262.0" layoutY="176.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="32.0" style="-fx-background-color: #215da7; -fx-background-radius: 15; -fx-padding: 0;" stylesheets="@../css/project.css" text="+" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
+        <Label fx:id="typeWarning" layoutX="393.0" layoutY="378.0" prefHeight="17.0" prefWidth="66.0" text="Obligatoire" textFill="RED" />
+        <Label fx:id="ajouteDoneLabel" layoutX="205.0" layoutY="78.0" prefHeight="26.0" prefWidth="235.0" text="Projet modifé avec succés" textFill="#00ff37">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <Label fx:id="notification" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="701.0" layoutY="247.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: red; -fx-background-radius: 10;" text="1" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="14.0" />
+            </font>
+        </Label>
+      <Button fx:id="ProjetButton" layoutX="9.0" layoutY="240.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/ProjetsBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" text="Projets" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="PortfolioButton" layoutX="9.0" layoutY="300.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/PortfolioBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" text="Portfolios" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AideButton" layoutX="9.0" layoutY="450.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F1;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="23.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/AideBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AideLabel" layoutX="61.0" layoutY="14.0" text="Aide" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ParametresButton" layoutX="9.0" layoutY="390.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/ParametresBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" text="Parametres" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AccueilButton" layoutX="9.0" layoutY="182.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Portfolio/AccueilBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" text="Accueil" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Line fx:id="line1" endX="35.0" layoutX="114.0" layoutY="243.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line2" endX="35.0" layoutX="114.0" layoutY="299.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line4" endX="35.0" layoutX="114.0" layoutY="449.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="114.0" layoutY="509.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line3" endX="35.0" layoutX="114.0" layoutY="360.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <HBox layoutX="537.0" layoutY="539.0">
+         <children>
+            <Button fx:id="RetourBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="81.0" style="-fx-background-color: FFFFFF;" text="Retour" textFill="#215da7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow offsetX="-1.0" offsetY="1.0">
+                     <color>
+                        <Color opacity="0.36000001430511475" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <VBox prefHeight="25.0" prefWidth="52.0" />
+            <Button fx:id="editBtn" mnemonicParsing="false" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #215da7;" text="Modifier" textFill="WHITE">
+               <effect>
+                  <DropShadow offsetX="-1.0" offsetY="1.0">
+                     <color>
+                        <Color opacity="0.36000001430511475" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
     </children>
 </AnchorPane>

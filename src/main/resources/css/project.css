@@ -3,3 +3,60 @@
     -fx-padding : 20;
     -fx-background-color: transparent;
 }
+
+.description-label{
+-fx-border-radius : 0 0 20 20;
+-fx-background-radius : 0 0 20 20;
+-fx-padding: 0 10 0 10;
+-fx-background-color : #f1c53c;
+}
+
+
+.inputY{
+-fx-background-color:rgba(233, 233, 233, 0.8);
+-fx-background-radius: 15;
+-fx-border-radius: 15;
+-fx-border-color:rgba(241, 197, 60, 0.8);
+-fx-border-width: 0 0 3 0;
+}
+
+.inputB{
+-fx-background-color:rgba(233, 233, 233, 0.8);
+-fx-background-radius: 15;
+-fx-border-radius: 15;
+-fx-border-color:rgba(24, 65, 115, 0.8);
+-fx-border-width: 0 0 3 0;
+}
+
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+.list-view {
+    -fx-background-radius: 15;
+}
+.list-cell, .list-cell::focused {
+    -fx-border-radius: 15;
+}
+
+
+.date-picker {
+    -fx-background-radius:  15;
+}
+.date-picker > .text-field {
+    -fx-background-radius: 15 0 0 15;
+    -fx-background-color : rgba(233, 233, 233, 0.8);
+}
+
+.date-picker > .arrow-button {
+    -fx-background-radius: 0 15 15 0;
+}
+
+
+

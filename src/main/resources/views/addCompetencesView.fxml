@@ -6,100 +6,82 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.addCompetenceController">
+<AnchorPane prefHeight="415.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.addCompetenceController">
    <children>
-      <Label layoutX="37.0" layoutY="106.0" prefHeight="33.0" prefWidth="219.0" text="Compétences disponibles" textFill="#184173">
+      <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="87.0" prefHeight="59.0" prefWidth="548.0" style="-fx-background-color: rgba(241, 197, 60, 0.6); -fx-label-padding: 0 10 0 10; -fx-background-radius: 10 10 0 0;" text="Les Competences trouvées">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="270.0" layoutY="115.0" text="Cliquer pour ajouter à votre projet" textFill="#666666">
+      <Label layoutX="454.0" layoutY="92.0" text="Cliquer pour ajouter " textFill="RED" />
+      <Label alignment="TOP_LEFT" layoutX="24.0" layoutY="12.0" prefHeight="26.0" prefWidth="206.0" style="-fx-border-width: 0 0 0 7; -fx-border-color: rgba(24, 65, 115, 0.8); -fx-label-padding: 2;" text="Rechercher competence">
          <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Label layoutX="37.0" layoutY="32.0" prefHeight="33.0" prefWidth="261.0" text="Rechercher de compétences" textFill="#184173">
-         <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <ListView fx:id="availableCompetenceList" layoutX="32.0" layoutY="142.0" prefHeight="73.0" prefWidth="541.0" style="-fx-background-color: E9E9E9;" />
-      <HBox layoutX="32.0" layoutY="228.0" prefHeight="25.0" prefWidth="365.0">
+      <ListView fx:id="availableCompetenceList" layoutX="25.0" layoutY="113.0" prefHeight="73.0" prefWidth="548.0" stylesheets="@../css/project.css" />
+      <HBox fx:id="CustomCompHbox" alignment="CENTER" layoutX="24.0" layoutY="196.0" prefHeight="43.0" prefWidth="548.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="125.0" text="Autre compétence">
+            <Label prefHeight="29.0" prefWidth="206.0" style="-fx-border-width: 0 0 0 7; -fx-border-color: rgba(241, 197, 60, 0.8); -fx-padding: 2;" text="Competence personalisée">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="customCompField" prefHeight="25.0" prefWidth="208.0" style="-fx-background-color: E9E9E9;" />
-         </children>
-      </HBox>
-      <ListView fx:id="myProjectCompetenceList" layoutX="27.0" layoutY="308.0" prefHeight="109.0" prefWidth="541.0" style="-fx-background-color: E9E9E9;" />
-      <Label layoutX="36.0" layoutY="273.0" prefHeight="27.0" prefWidth="299.0" text="Mes compétences" textFill="#184173">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <HBox layoutX="399.0" layoutY="428.0">
-         <children>
-            <Button fx:id="retourBtn" mnemonicParsing="false" style="-fx-background-color: FFFFFF;" text="Retour" textFill="#215da7">
+            <TextField fx:id="customCompField" prefHeight="29.0" prefWidth="187.0" styleClass="inputY" stylesheets="@../css/project.css" />
+            <MenuButton fx:id="customTypeMenu" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-border-width: 3;" styleClass="inputY" stylesheets="@../css/project.css" text="Type">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Technique" />
+                  <MenuItem mnemonicParsing="false" text="Méthodologique" />
+                  <MenuItem mnemonicParsing="false" text="Modélisation" />
+                  <MenuItem mnemonicParsing="false" text="Opérationnel" />
+               </items>
+            </MenuButton>
+            <Button fx:id="addCustomBtn" mnemonicParsing="false" prefHeight="17.0" prefWidth="51.0" style="-fx-border-width: 3; -fx-background-color: rgba(241, 197, 60, 0.4);" styleClass="inputY" stylesheets="@../css/project.css" text="Add">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
-               <effect>
-                  <DropShadow offsetX="-1.0" offsetY="1.0">
-                     <color>
-                        <Color opacity="0.36000001430511475" />
-                     </color>
-                  </DropShadow>
-               </effect></Button>
-            <VBox prefHeight="25.0" prefWidth="52.0" />
-            <Button fx:id="validerBtn" mnemonicParsing="false" style="-fx-background-color: #215da7;" text="Valider" textFill="WHITE">
-               <effect>
-                  <DropShadow offsetX="-1.0" offsetY="1.0">
-                     <color>
-                        <Color opacity="0.36000001430511475" />
-                     </color>
-                  </DropShadow>
-               </effect>
+            </Button>
+         </children>
+      </HBox>
+      <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="246.0" prefHeight="73.0" prefWidth="548.0" style="-fx-background-color: rgba(24, 65, 115, 0.6); -fx-label-padding: 0 10 0 10; -fx-background-radius: 10 10 0 0;" text="Les Competences Selectionnées" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ListView fx:id="myProjectCompetenceList" layoutX="27.0" layoutY="273.0" prefHeight="88.0" prefWidth="548.0" stylesheets="@../css/project.css" />
+      <HBox layoutX="397.0" layoutY="369.0">
+         <children>
+            <Button fx:id="retourBtn" mnemonicParsing="false" prefHeight="34.0" prefWidth="72.0" style="-fx-border-width: 2; -fx-background-color: rgba(241, 197, 60, 0.4);" styleClass="inputY" stylesheets="@../css/project.css" text="Retour">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <VBox prefHeight="34.0" prefWidth="25.0" />
+            <Button fx:id="validerBtn" mnemonicParsing="false" style="-fx-border-width: 2; -fx-background-color: rgba(24, 65, 115, 0.4);" styleClass="inputB" stylesheets="@../css/project.css" text="Valider">
+               <font>
+                  <Font name="System Bold" size="14.0" />
                </font></Button>
          </children>
       </HBox>
-      <Label layoutX="204.0" layoutY="280.0" text="Cliquer pour enlever la compétence" textFill="#666666">
+      <Label layoutX="394.0" layoutY="248.0" prefHeight="20.0" prefWidth="172.0" text="Cliquer sur &lt;= pour suprimer " textFill="WHITE">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold Italic" size="12.0" />
          </font></Label>
-      <HBox alignment="CENTER" layoutX="31.0" layoutY="65.0" prefHeight="25.0" prefWidth="533.0">
+      <HBox alignment="CENTER" layoutX="24.0" layoutY="40.0" prefHeight="35.0" prefWidth="548.0">
          <children>
-            <TextField fx:id="competenceSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="125.0" promptText="Competence" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></TextField>
-            <TextField fx:id="matiereSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="125.0" promptText="Matiere" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></TextField>
-            <TextField fx:id="typeSearchField" alignment="CENTER" prefHeight="25.0" prefWidth="137.0" promptText="Type" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></TextField>
-            <TextField fx:id="objectifSearchField" alignment="CENTER" prefWidth="138.0" promptText="Objectif" style="-fx-background-color: E9E9E9; -fx-background-radius: 0;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></TextField>
-            <Button fx:id="searchBtn" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);">
+            <TextField fx:id="competenceSearchField" prefHeight="25.0" prefWidth="125.0" promptText="Competence" styleClass="inputB" stylesheets="@../css/project.css" />
+            <TextField fx:id="matiereSearchField" prefHeight="25.0" prefWidth="125.0" promptText="Matiere" styleClass="inputB" stylesheets="@../css/project.css" />
+            <TextField fx:id="typeSearchField" prefHeight="25.0" prefWidth="137.0" promptText="Type" styleClass="inputB" stylesheets="@../css/project.css" />
+            <TextField fx:id="objectifSearchField" prefWidth="138.0" promptText="Objectif" styleClass="inputB" stylesheets="@../css/project.css" />
+            <Button fx:id="searchBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="42.0" style="-fx-border-width: 3; -fx-padding: 2; -fx-background-color: rgba(24, 65, 115, 0.4);" styleClass="inputB" stylesheets="@../css/project.css">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/Project/search.png" />
                      </image>
@@ -108,17 +90,5 @@
             </Button>
          </children>
       </HBox>
-      <Button fx:id="addCustomBtn" layoutX="489.0" layoutY="225.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: F1C53C;" text="Ajouter">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Button>
-      <MenuButton fx:id="customTypeMenu" layoutX="399.0" layoutY="228.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: E9E9E9;" text="Type">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Technique" />
-            <MenuItem mnemonicParsing="false" text="Méthodologique" />
-            <MenuItem mnemonicParsing="false" text="Modélisation" />
-            <MenuItem mnemonicParsing="false" text="Opérationnel" />
-         </items>
-      </MenuButton>
    </children>
 </AnchorPane>

@@ -20,17 +20,8 @@ public class Test2 {
         System.out.println();
     }
     public static void main(String args[]) throws IOException {
-          File file =new File("DonnesUtilisateurs/20_0253/user.json");
-          if(file.isFile()){
-             boolean result = file.delete();
-             System.out.println("la resultat est : "+result);
-          }
-         /********************************************************
-         ArrayList<String> lists =new ArrayList<>(8);
-         lists.add("bingbang");
-         if(lists.get(4)==null){
-             lists.add(4,"hbdshdvh");
-         }
+
+         /********************************************************/
         Competences comp =new Competences();
         ArrayList<Competence> result;
         int i=1;
@@ -59,7 +50,7 @@ public class Test2 {
     static void Afficher(ArrayList<Competence> list){
         if(list.size()!=0) {
             for (Competence comp : list) {
-                System.out.println(comp.getModules().toString()+"<->"+comp.getType()+"<->"+comp.getElemdeCompetence()+"<->"+comp.getObjectifPédagogique());
+                System.out.println(comp.getModules().toString()+"<->"+comp.getType()+"<->"+comp.getElemdeCompetence()+"<->"+comp.getObjectifsPedagogiques());
             }
         }else{System.out.println("la liste est vide ");}
     }

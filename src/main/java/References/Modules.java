@@ -52,6 +52,7 @@ import java.util.Map;
     }
     public void RecherchModule(String key){
        Trie curr = this;
+       key=key.toUpperCase(Locale.ROOT);
         for (char c: key.toCharArray())
         {
             System.out.println(c);

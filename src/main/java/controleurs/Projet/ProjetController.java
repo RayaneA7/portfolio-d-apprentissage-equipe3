@@ -1,11 +1,13 @@
 package controleurs.Projet;
 
 import controleurs.acceuil.AccueilMediateur;
+import controleurs.parametre.CustomDialog;
 import javafx.event.ActionEvent;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -102,6 +104,8 @@ public class ProjetController implements Initializable {
     private TextField searchProjectTextField;
 
 
+
+
     public static Project projectToEdit ;
     public static Project projectToDelete;
 
@@ -131,126 +135,36 @@ public class ProjetController implements Initializable {
 
     public static Label label;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         /*********************Image personnel********************/
-        if(AccueilMediateur.image!=null){
-            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
-        }
-        imagePersonnel.setOnMouseClicked(e-> {
-            AccueilMediateur.commutateur.AllerProfile(e);
-        });
-        /*******************************************************************************/
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-            AccueilButton.setStyle("-fx-background-color: #f1c53c");
-            AccueilLabel.setTextFill(Color.WHITE);
-            AccueilImage.setImage(AccueilImg1);
-            line1.setStyle("-fx-stroke: #f1c53c");
-        });
-        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            AccueilButton.setStyle("-fx-background-color:  F5F5F5");
-            AccueilLabel.setTextFill(Color.web("#666666"));
-            AccueilImage.setImage(AccueilImg);
-            line1.setStyle("-fx-stroke: #d7d6d6");
-        });
-        AccueilButton.setOnMouseClicked(e->{
-            AccueilMediateur.commutateur.AllerAcceuil(e);
-        });
-
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-            ProjetButton.setStyle("-fx-background-color: #f1c53c");
-            ProjetLabel.setTextFill(Color.WHITE);
-            ProjetsImage.setImage(ProjetImg1);
-            line2.setStyle("-fx-stroke: #f1c53c");
-
-        });
-        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            ProjetButton.setStyle("-fx-background-color: F5F5F5");
-            ProjetLabel.setTextFill(Color.web("#666666"));
-            ProjetsImage.setImage(ProjetImg);
-            line2.setStyle("-fx-stroke: #d7d6d6");
-        });
-        /****************************************************************************/
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-            PortfolioButton.setStyle("-fx-background-color: #f1c53c");
-            PortfolioLabel.setTextFill(Color.WHITE);
-            PortfolioImage.setImage(PortfolioImg1);
-            line3.setStyle("-fx-stroke: #f1c53c");
-        });
-        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            PortfolioButton.setStyle("-fx-background-color: F5F5F5");
-            PortfolioLabel.setTextFill(Color.web("#666666"));
-            PortfolioImage.setImage(PortfolioImg);
-            line3.setStyle("-fx-stroke: #d7d6d6");
-        });
-        PortfolioButton.setOnMouseClicked(e->{
-            //AccueilMediateur.monPagination.setCurrentPageIndex(6);
-            AccueilMediateur.commutateur.AllerPortfolio();
-        });
-        /***********************************************************************************/
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-            ParametresButton.setStyle("-fx-background-color: #f1c53c");
-            ParametresLabel.setTextFill(Color.WHITE);
-            ParametresIamge.setImage(ParametresImg1);
-            line4.setStyle("-fx-stroke: #f1c53c");
-        });
-        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            ParametresButton.setStyle("-fx-background-color: F5F5F5");
-            ParametresLabel.setTextFill(Color.web("#666666"));
-            ParametresIamge.setImage(ParametresImg);
-            line4.setStyle("-fx-stroke: #d7d6d6");
-        });
-        ParametresButton.setOnMouseClicked(event -> {
-            // AccueilMediateur.monPagination.setCurrentPageIndex(2);
-            AccueilMediateur.commutateur.AllerParametres(event);
-        });
-        /***********************************************************************************/
-        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
-            AideButton.setStyle("-fx-background-color: #f1c53c");
-            AideLabel.setTextFill(Color.WHITE);
-            AideImage.setImage(AideImg1);
-            line5.setStyle("-fx-stroke: #f1c53c");
-        });
-        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
-            AideButton.setStyle("-fx-background-color: F5F5F5");
-            AideLabel.setTextFill(Color.web("#666666"));
-            AideImage.setImage(AideImg);
-            line5.setStyle("-fx-stroke: #d7d6d6");
-        });
-        AideButton.setOnMouseClicked(event -> {
-            try {
-                AccueilMediateur.commutateur.AllerAide(event);
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        /********************************************************************************/
-        logOut.setOnMouseClicked(event -> {
-            AccueilMediateur.commutateur.Déconnecter(event);
-        });
-        /***************************************************************/
+        imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        /****************************************************/
         cardLayout = new VBox();
         cardLayout.setPrefSize(466,303);
         cardLayout.setSpacing(20);
         cardLayout.setAlignment(Pos.CENTER);
         cardLayout.setStyle("-fx-background-color: transparent;");
-        //cardLayout.getChildren().setStyle("-fx-background-color: transparent;");
+        cardLayout.setPadding(new Insets(15));
         monScrollPane.setStyle("-fx-background: transparent;");
         monScrollPane.setContent(cardLayout);
+
+        label = new Label("La liste de projets est vide , cliquer sur (+) pour ajouter un projet ");
+        label.setPrefSize(600,100);
+        label.setWrapText(true);
+        label.setFont(new Font(25));
+        label.setTextFill(Color.RED);
+        label.setTextAlignment(TextAlignment.CENTER);
+
         /*********/
         if(AccueilMediateur.utilisateur.listProjets.size() == 0){
-         label = new Label("La liste de projets est vide , cliquer sur (+) pour ajouter un projet ");
-         label.setPrefSize(600,300);
-         label.setWrapText(true);
-         label.setFont(new Font(25));
-         label.setTextFill(Color.RED);
-         label.setTextAlignment(TextAlignment.CENTER);
          cardLayout.setAlignment(Pos.CENTER);
          cardLayout.getChildren().add(label);
         }else {
             cardLayout.getChildren().clear();
+            //label.setVisible(false);
         }
 
         /********/
@@ -271,7 +185,6 @@ public class ProjetController implements Initializable {
 
                     anchorPane.setStyle("-fx-background-image: url('icons/Project/Card2022.png');" +
                             "-fx-background-size: 100% 100%;-fx-padding:0;");
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -285,19 +198,101 @@ public class ProjetController implements Initializable {
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                ProjetController.cardLayout.getChildren().add(anchorPane);
+                cardLayout.getChildren().add(anchorPane);
             }
         }
+        /****************************************************/
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+            AccueilButton.setStyle("-fx-background-color: #f1c53c");
+            AccueilLabel.setTextFill(Color.WHITE);
+            AccueilImage.setImage(AccueilImg1);
+            line1.setStyle("-fx-stroke: #f1c53c");
+        });
 
+        AccueilButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            AccueilButton.setStyle("-fx-background-color:  F5F5F5");
+            AccueilLabel.setTextFill(Color.web("#666666"));
+            AccueilImage.setImage(AccueilImg);
+            line1.setStyle("-fx-stroke: #b7b5b5");
+        });
+        AccueilButton.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.AllerAcceuil(event);
+        });
+
+      ProjetButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+            ProjetButton.setStyle("-fx-background-color: #f1c53c");
+            ProjetLabel.setTextFill(Color.WHITE);
+            ProjetsImage.setImage(ProjetImg1);
+            line2.setStyle("-fx-stroke: #f1c53c");
+
+        });
+        ProjetButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            ProjetButton.setStyle("-fx-background-color: F5F5F5");
+            ProjetLabel.setTextFill(Color.web("#666666"));
+            ProjetsImage.setImage(ProjetImg);
+            line2.setStyle("-fx-stroke: #b7b5b5");
+        });
+
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+            PortfolioButton.setStyle("-fx-background-color: #f1c53c");
+            PortfolioLabel.setTextFill(Color.WHITE);
+            PortfolioImage.setImage(PortfolioImg1);
+            line3.setStyle("-fx-stroke: #f1c53c");
+        });
+        PortfolioButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            PortfolioButton.setStyle("-fx-background-color: F5F5F5");
+            PortfolioLabel.setTextFill(Color.web("#666666"));
+            PortfolioImage.setImage(PortfolioImg);
+            line3.setStyle("-fx-stroke: #b7b5b5");
+        });
+        PortfolioButton.setOnMouseClicked(event->{
+         AccueilMediateur.commutateur.AllerPortfolio();
+        });
+
+
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+            ParametresButton.setStyle("-fx-background-color: #f1c53c");
+            ParametresLabel.setTextFill(Color.WHITE);
+            ParametresIamge.setImage(ParametresImg1);
+            line4.setStyle("-fx-stroke: #f1c53c");
+        });
+        ParametresButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            ParametresButton.setStyle("-fx-background-color: F5F5F5");
+            ParametresLabel.setTextFill(Color.web("#666666"));
+            ParametresIamge.setImage(ParametresImg);
+            line4.setStyle("-fx-stroke: #b7b5b5");
+        });
+        ParametresButton.setOnMouseClicked(event->{
+            AccueilMediateur.commutateur.AllerParametres(event);
+        });
+
+        AideButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+            AideButton.setStyle("-fx-background-color: #f1c53c");
+            AideLabel.setTextFill(Color.WHITE);
+            AideImage.setImage(AideImg1);
+            line5.setStyle("-fx-stroke: #f1c53c");
+        });
+        AideButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e)->{
+            AideButton.setStyle("-fx-background-color: F5F5F5");
+            AideLabel.setTextFill(Color.web("#666666"));
+            AideImage.setImage(AideImg);
+            line5.setStyle("-fx-stroke: #b7b5b5");
+        });
+        AideButton.setOnMouseClicked(event->{
+            try {
+                AccueilMediateur.commutateur.AllerAide(event);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         addProjectBtn.setOnMouseClicked(event -> {
             AccueilMediateur.monPagination.setCurrentPageIndex(10);
         });
 
-//        ProjectCardController.customDialog.buttonOk.setOnMouseClicked(event -> {
-//            File file = new File("DonnesUtilisateurs/"+AccueilMediateur.studentFolder +"/"+projectToDelete.getId()+".png") ;
-//            System.out.println("DonnesUtilisateurs/"+AccueilMediateur.studentFolder +"/"+projectToDelete.getId()+".png");
-//            System.out.println(file.delete()+ " resultat de suprission image . dans apres Custm");
-//        });
+
+
 
 
 
