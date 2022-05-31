@@ -1,0 +1,269 @@
+@page {  margin: 0.01in; }
+@import url('https://fonts.googleapis.com/css2&display=swap');
+main, aside {
+    border-left: 5px solid #184173;
+    border-right: 5px solid #184173;
+}
+
+body {
+    background-color: #ffffff;
+    /*font-family: "Open Sans", sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+    color: #666666;
+
+    /* place-items: center; */
+}
+
+table {
+    border: none;
+    border-left: 5px solid #184173;
+    border-right: 5px solid #184173;
+    width:100%; border-collapse:collapse; font:14px Arial,sans-serif;
+}
+
+
+/*tr {*/
+/*    margin-bottom: 20px;*/
+
+/*}*/
+
+td {
+    padding: 10px;
+}
+
+td > img { 
+  padding:5px; background-color:#184173; text-align:center;
+}
+
+
+ul.projects {
+
+    list-style: none;
+    position:relative;
+
+    padding: 0px 30px;
+
+
+}
+
+.Header {
+    padding: 10px 30px;
+    background-color: #184173;
+    /* border-bottom: 2px solid #184173; */
+}
+
+.Header td {
+    padding:20px;
+}
+main {
+
+    padding: 10px 20px;
+
+
+}
+
+footer {
+    background-color: #184173;
+
+}
+
+.Header  h1 {
+    color: #ffffff;
+    /* border-bottom: 2px solid ;
+    border-color: #ffffff */
+
+}
+
+
+.studentInfo {
+    display: inline;
+
+}
+
+.niveau {
+    color: #fafafa;
+    font-size: medium;
+    font-weight: 900;
+    border-bottom: 1px solid ;
+    padding-bottom: 4px;
+    border-color: #ffffff;
+    display: inline;
+    margin-left: 5px;
+
+}
+
+.StudentImage {
+    display: inline-block; width: 160px; vertical-align: middle;border: 2px solid #ffffff;background-color:#ffffff;
+    border-radius: 5px;
+}
+.projectTitle {
+    color: #184173;
+    font-weight: bolder;
+    color: #000000;
+
+
+
+
+
+}
+
+/*.project {*/
+/*    position: relative;*/
+/*}*/
+
+.project {
+    background: rgba( 255, 255, 255, 0.25 );
+    border-radius: 10px;
+    border-bottom: 1px solid #666666;
+    margin: 0 0px;
+    padding: 1em;
+    margin-bottom: 10px;
+
+}
+
+tr:first-child p:last-child {
+color: #fafafa;
+
+}
+.project > div > div:last-child{
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-start;*/
+    /*height: calc(30vw/4);*/
+    /*flex-wrap: wrap;*/
+    /*overflow: clip;*/
+    /*max-height: 500px;*/
+}
+.project > a {
+    text-decoration: none;
+}
+
+.project > div > div:last-child *{
+    max-width: 180px;
+    min-width: 120px;
+    display: none;
+}
+
+.project > div > div:nth-child(1) > p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/*.project div > div:last-child > * {*/
+/*                        border-right: 2px solid #666666;*/
+/*                        padding-right: 20px;*/
+/*                    }*/
+.project div > div > :last-child {
+    padding-left: 20px;
+    font-size: 14px;
+    /*line-height: 0.8;*/
+
+}
+
+.technologies {
+    background-color: #fafafa;
+    display: inline;
+    font-style: italic;
+    font-size: small;
+}
+.projectDate {
+    color: #666666;
+    font-size: small;
+    vertical-align: middle
+}
+
+td h2 {
+    color: #184173;
+    border-bottom: 2px solid ;
+    margin-bottom: 0;
+    border-color: #184173;
+}
+
+.shape {
+    z-index: 0;
+    position:relative;
+    width: 10%;
+}
+.bleuShape {
+    top: -100px;
+    float:right;
+    right: -50px;
+    /* top: -340px;
+    left: 0em; */
+}
+.yellowShape {
+
+    /* right: -800px; */
+    /* bottom: 200px; */
+    float: right;
+    top: -60px;
+}
+
+.rights {
+
+    /*vertical-align: middle;*/
+    color: #fafafa ;
+    padding:1px;
+    background-color:#184173;
+    text-align:center;
+}
+
+.rights * {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logo {
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    margin-left: 5px;
+
+    /*vertical-align: middle;*/
+}
+
+.skills {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    background-color: #184173;
+    text-align: center;
+    padding: 2px;
+
+}
+.skills span {
+    border-bottom: 1px solid #fafafa;
+
+}
+.skills span img {
+    background-color: #fafafa;
+}
+.skills > div {
+    /*width: fit-content;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    margin: 2px;
+
+}
+
+.contact {
+
+}
+
+.contact > div {
+    font-size: medium;
+    font-weight: bolder;
+    color: #184173;
+    margin: 1px;
+}
+
+.contact > div > p {
+    display: inline;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}

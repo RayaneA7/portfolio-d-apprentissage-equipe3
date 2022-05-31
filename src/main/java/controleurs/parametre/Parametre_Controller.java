@@ -5,6 +5,7 @@ import controleurs.acceuil.AccueilMediateur;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -167,6 +168,7 @@ public class Parametre_Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         /****************l'ajoute du button de modification*****************/
         imagePersonnel =new Circle();
+        imagePersonnel.setCursor(Cursor.HAND);
         imagePersonnel.setFill(Paint.valueOf("white"));
         imagePersonnel.setRadius(28);
         imagePersonnel.setStroke(Paint.valueOf("#666666"));

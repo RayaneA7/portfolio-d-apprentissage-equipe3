@@ -7,6 +7,8 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.font.FontProvider;
 import controleurs.acceuil.AccueilMediateur;
 import de.neuland.pug4j.Pug4J;
+import models.Portfolio;
+import models.Project;
 import models.Utilisateur;
 import org.apache.commons.io.FileUtils;
 
@@ -14,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,12 +25,27 @@ import static com.itextpdf.html2pdf.HtmlConverter.convertToPdf;
 public class GenererHtmlPdf {
     /***************generation de HTML******************************/
     /***************************************************************/
-    public static String genererHtml(Utilisateur utilisateur) {
+    public static String genererHtml(Portfolio portfolio) {
         Map<String, Object> model = new HashMap<String, Object>();
-        model.put("projets", utilisateur.listProjets);
+        ArrayList<Project> listProjets =new ArrayList<>();
+        /********************************/
+        System.out.println("la taille : "+portfolio.getListProjUUid().size());
+        for(int i=0;i<portfolio.getListProjUUid().size();i++){
+            int j=0;
+            int stop=0;
+            while(j<AccueilMediateur.utilisateur.getListProjets().size()&&stop!=1) {
+                if (AccueilMediateur.utilisateur.getListProjets().get(j).getId().equals(portfolio.getListProjUUid().get(i))) {
+                    listProjets.add(AccueilMediateur.utilisateur.getListProjets().get(j));
+                    stop=1;
+                }
+                j++;
+            }
+        }
+        model.put("projets",listProjets);
         model.put("pageName", "Ecareer");
-        model.put("info", utilisateur.getDonnes());
-        model.put("contact", utilisateur.getContacts());
+        model.put("info", AccueilMediateur.utilisateur.getDonnes());
+        model.put("contact", AccueilMediateur.utilisateur.getContacts());
+        model.put("modeleNum",String.valueOf(portfolio.getNbModel()));
 //        System.out.println(utilisateur.getMe.................sProjets());
 //        utilisateur.getMesProjets().forEach(project -> {
 //            project.competences.
@@ -62,11 +80,11 @@ public class GenererHtmlPdf {
     /********************************************************************/
     /****************generation de pdf***********************************/
     /*******************************************************************/
-    public static void genererPdf(File pdfFile, Utilisateur utilisateur) {
+    public static void genererPdf(File pdfFile,Portfolio portfolio) {
         String tmpLocation = System.getProperty("user.name")+"/AppData/Local/Temp/"+ AccueilMediateur.studentFolder;
         File file = new File(tmpLocation);
-        copyDirectory("./DonnesUtilisateurs/314123423/",tmpLocation);
-        saveSystem(new File(file.getAbsolutePath()+"/index.html"),genererHtml(utilisateur));
+        copyDirectory(AccueilMediateur.StudentDirectory+"DonnesUtilisateurs/"+AccueilMediateur.studentFolder,tmpLocation);
+        saveSystem(new File(file.getAbsolutePath()+"/index.html"),genererHtml(portfolio));
         // Source HTML file
         String inputHTML = file.getAbsolutePath()+"/index.html";
         // Generated PDF file name

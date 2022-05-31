@@ -17,15 +17,15 @@
             <Image url="@../icons/Portfolio/PortfolioShowNew.png" />
          </image>
       </ImageView>
-      <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="ProjetButton" layoutX="11.0" layoutY="234.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Acceuil/ProjetsBut.png" />
+                        <Image url="@../icons/Acceuil/layers1.png" />
                      </image></ImageView>
-                  <Label fx:id="ProjetLabel" layoutX="56.0" layoutY="16.0" text="Projets">
+                  <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" text="Projets" textFill="#666666">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -37,7 +37,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="294.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
@@ -45,7 +45,7 @@
                      <image>
                         <Image url="@../icons/Acceuil/PortfolioBut.png" />
                      </image></ImageView>
-                  <Label fx:id="PortfolioLabel" layoutX="56.0" layoutY="16.0" text="Portfolios">
+                  <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" text="Portfolios" textFill="#666666">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -57,15 +57,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="AideButton" layoutX="11.0" layoutY="477.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
+      <Button fx:id="AideButton" layoutX="11.0" layoutY="444.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F1;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fx:id="AideImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/Acceuil/AideBut.png" />
                      </image></ImageView>
-                  <Label fx:id="AideLabel" layoutX="66.0" layoutY="11.0" text="Aide">
+                  <Label fx:id="AideLabel" layoutX="61.0" layoutY="14.0" text="Aide" textFill="#666666">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -80,7 +80,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="ParametresButton" layoutX="11.0" layoutY="412.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="ParametresButton" layoutX="11.0" layoutY="384.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
@@ -89,7 +89,7 @@
                         <Image url="@../icons/Acceuil/ParametresBut.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="ParametresLabel" layoutX="45.0" layoutY="14.0" text="Parametres">
+                  <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" text="Parametres" textFill="#666666">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -101,16 +101,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="AccueilButton" layoutX="11.0" layoutY="199.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
+      <Button fx:id="AccueilButton" layoutX="11.0" layoutY="176.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="162.0" style="-fx-background-color: F5F5F5;">
          <graphic>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Acceuil/AccueilBut.png" />
+                        <Image url="@../icons/Acceuil/Accueil.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="AccueilLabel" layoutX="56.0" layoutY="16.0" text="Accueil">
+                  <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" text="Accueil" textFill="#666666">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -122,7 +122,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="31.0" fitWidth="25.0" layoutX="768.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="38.0" fitWidth="35.0" layoutX="760.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Deconnexion.png" />
          </image>
@@ -130,18 +130,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Line fx:id="line1" endX="27.0" layoutX="111.0" layoutY="259.0" startX="-79.0" stroke="#666666" />
-      <Line fx:id="line2" endX="27.0" layoutX="111.0" layoutY="319.0" startX="-79.0" stroke="#666666" />
-      <Line fx:id="line3" endX="27.0" layoutX="111.0" layoutY="379.0" startX="-79.0" stroke="#666666" />
-      <Line fx:id="line5" endX="27.0" layoutX="111.0" layoutY="537.0" startX="-79.0" stroke="#666666" />
-      <Line fx:id="line4" endX="27.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
-      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
+      <Line fx:id="line1" endX="35.0" layoutX="116.0" layoutY="233.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line2" endX="35.0" layoutX="116.0" layoutY="293.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
+      <Line fx:id="line3" endX="35.0" layoutX="116.0" layoutY="354.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="116.0" layoutY="503.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
+      <Line fx:id="line4" endX="35.0" layoutX="116.0" layoutY="443.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="718.0" layoutY="61.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Circle>
-      <Button fx:id="addPort" layoutX="554.0" layoutY="60.0" mnemonicParsing="false" style="-fx-background-color: 000000;">
+      <Button fx:id="addPort" layoutX="568.0" layoutY="65.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="43.0" style="-fx-background-color: FAFAFA;">
          <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="43.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/Portfolio/add.png" />
                </image>

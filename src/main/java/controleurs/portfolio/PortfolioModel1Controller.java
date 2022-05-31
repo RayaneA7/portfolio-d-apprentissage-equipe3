@@ -108,7 +108,8 @@ public class PortfolioModel1Controller implements Initializable {
     private Label CreateLabel;
     @FXML
     private Circle imagePersonnel ;
-
+    @FXML
+    private ImageView monImageModel ;
     private Image AccueilImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut.png"));
     private Image AccueilImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AccueilBut1.png"));
     private Image PortfolioImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioBut.png"));
@@ -120,17 +121,34 @@ public class PortfolioModel1Controller implements Initializable {
     private Image AideImg = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut.png"));
     private Image AideImg1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/AideBut1.png"));
     private Image IconImg = new Image(getClass().getResourceAsStream("/icons/Inscription/ProjectName.png"));
-
-    public static List<Project> SelectedProject = new ArrayList<>();
+    /***************************************************************/
+    Image image1 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template1.png"));
+    Image image2 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template2.png"));
+    Image image3 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template3.png"));
+    /**************************************************************/
+    public static List<UUID> SelectedProjectsUUid = new ArrayList<>();
     private MyProject myProject;
     private int dureeErreur = 3000;
+    private Portfolio portfolio=null ;
 
     public PortfolioModel1Controller() throws ParseException, IOException {
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        /***********************************************************/
+        System.out.println("le numéro de modele : "+Portfolio1Controller.modele);
+        switch (Portfolio1Controller.modele){
+            case 1 :
+                monImageModel.setImage(image1);//maron
+                break;
+            case  2 :
+                monImageModel.setImage(image2);//noir
+                break;
+            case 3 :
+                monImageModel.setImage(image3);//maron
+                break;
+        }
         /*********************Image personnel********************/
         if(AccueilMediateur.image!=null){
             imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
@@ -247,11 +265,11 @@ public class PortfolioModel1Controller implements Initializable {
         }
         /***********************************************/
         EnregBut.setOnMouseClicked(e -> {
-            if(SelectedProject.isEmpty()){
+            if(SelectedProjectsUUid.isEmpty()){
                 TraiterAlert(LabelAlert);
             } else {
                 try {
-                    CreatePortfolio(e);
+                    portfolio = CreatePortfolio(e);
                     TraiterAlert(CreateLabel);
 
                 } catch (IOException ex) {
@@ -262,23 +280,31 @@ public class PortfolioModel1Controller implements Initializable {
         /**********************************************************/
         /****ici on cree l html ***/
         ExportHTML.setOnMouseClicked(e-> {
-                    DirectoryChooser directoryChooser = new DirectoryChooser();
-                    File file = directoryChooser.showDialog(new Stage());
-                    if (file != null) {
-                        System.out.println(file.getAbsolutePath());
-                        copyDirectory("./DonnesUtilisateurs/20_250/", file.getAbsolutePath());
-                        saveSystem(new File(file.getAbsolutePath() + "/index.html"), genererHtml(AccueilMediateur.utilisateur));
-                    }
+            if(portfolio!=null) {
+                DirectoryChooser directoryChooser = new DirectoryChooser();
+                File file = directoryChooser.showDialog(new Stage());
+                if (file != null) {
+                    System.out.println(file.getAbsolutePath());
+                    copyDirectory(AccueilMediateur.StudentDirectory + "DonnesUtilisateurs/" + AccueilMediateur.studentFolder, file.getAbsolutePath());
+                    saveSystem(new File(file.getAbsolutePath() + "/index.html"), genererHtml(portfolio));
+                }
+            }else{
+                TraiterAlert(LabelAlert);
+            }
         });
         /*****************generation pdf*********************/
         ExportPDF.setOnMouseClicked(e-> {
-            FileChooser fileChooser = new FileChooser();
-            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
-            fileChooser.getExtensionFilters().add(extFilter);
-            File file = fileChooser.showSaveDialog(new Stage());
-            if (file != null) {
-                genererPdf(file, AccueilMediateur.utilisateur);
-            }
+           if(portfolio!=null) {
+               FileChooser fileChooser = new FileChooser();
+               FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+               fileChooser.getExtensionFilters().add(extFilter);
+               File file = fileChooser.showSaveDialog(new Stage());
+               if (file != null) {
+                   genererPdf(file, portfolio);
+               }
+           }else{
+               TraiterAlert(LabelAlert);
+           }
         });
 
     }
@@ -286,19 +312,19 @@ public class PortfolioModel1Controller implements Initializable {
     /********************************************************************************************/
     /**********************************************************************************************/
     public void CreateListProject() throws ParseException {
-        SelectedProject.clear();
+        SelectedProjectsUUid.clear();
         int column = 0;
         int row = 0;
         ArrayList<Project> ListProject =  AccueilMediateur.utilisateur.getListProjets();
         myProject = new MyProject() {
             @Override
             public void mySelectedProject(Project project) {
-                SelectedProject.add(project);
+                SelectedProjectsUUid.add(project.getId());
             }
 
             @Override
             public void notSelectedProject(Project project) {
-                SelectedProject.remove(project);
+                SelectedProjectsUUid.remove(project.getId());
             }
         };
 
@@ -321,10 +347,10 @@ public class PortfolioModel1Controller implements Initializable {
         }
     }
     /**************************************************************/
-    public void CreatePortfolio(MouseEvent event) throws IOException {
-
+    public Portfolio CreatePortfolio(MouseEvent event) throws IOException {
+        Portfolio portfolio=null;
         if (AccueilMediateur.utilisateur.getListPortfolio().isEmpty()) { // no portfolio was created
-            Portfolio portfolio = new Portfolio(1, SelectedProject, LocalDate.now().toString());
+             portfolio = new Portfolio(1, SelectedProjectsUUid, LocalDate.now().toString(), Portfolio1Controller.modele);
             AccueilMediateur.utilisateur.getListPortfolio().add(portfolio);
         } else {
             int num = 0;
@@ -333,10 +359,11 @@ public class PortfolioModel1Controller implements Initializable {
                 num = p.getNum();
             }
 
-            Portfolio portfolio = new Portfolio(num + 1, SelectedProject, LocalDate.now().toString());
+            portfolio = new Portfolio(num + 1, SelectedProjectsUUid, LocalDate.now().toString(), Portfolio1Controller.modele);
             AccueilMediateur.utilisateur.getListPortfolio().add(portfolio);
         }
         Utilisateur.serialize(AccueilMediateur.utilisateur, AccueilMediateur.studentFolder);
+        return portfolio;
     }
 
     public void TraiterAlert(Node node)

@@ -256,7 +256,12 @@ public class AddProjectController implements Initializable {
         afterChoosingTypeLabel.setVisible(false);
 
         /*********************Image personnel********************/
-        imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        if(AccueilMediateur.image!=null) {
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
+        imagePersonnel.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerProfile(e);
+        });
 
         /***************************************************************************************/
         /********************************Les Buttons Fixes *************************************/
@@ -349,6 +354,10 @@ public class AddProjectController implements Initializable {
                 e.printStackTrace();
             }
         });
+        logOut.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.Déconnecter(event);
+        });
+
 
         /***************************************************************************************/
         /********************************Les Btns Variables*************************************/
@@ -421,6 +430,7 @@ public class AddProjectController implements Initializable {
                 Image image = new Image(input);
                 myImage.setImage(image);
             }
+            addImageBtn.setDisable(false);
         });
 
         /********************************Retour Vers Page Projet Btn****************************/

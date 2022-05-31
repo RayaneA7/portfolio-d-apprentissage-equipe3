@@ -5,11 +5,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.util.Duration;
 import models.Project;
 import models.TypeProjet;
 
@@ -48,7 +51,8 @@ public class ProjectItemController implements Initializable {
         this.project = project;
         this.myProject = myProject;
         TitleLabel.setText(project.getTitle());
-
+        TitleLabel.setTooltip(new Tooltip(TitleLabel.getText()));
+        TitleLabel.getTooltip().setShowDelay(Duration.ZERO);
         DateLabel.setText(project.getDate().toString());
         if(project.getType().equals(TypeProjet.PEDAGOGIQUE)){
             TypeImage.setImage(PedImage);

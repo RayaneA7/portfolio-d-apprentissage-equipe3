@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.editProjectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.Projet.editProjectController">
     <children>
         <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -32,7 +21,7 @@
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="45.0" fitWidth="55.0" layoutX="760.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="38.0" fitWidth="40.0" layoutX="746.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../icons/Acceuil/Deconnexion.png" />
             </image>
@@ -40,7 +29,10 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-        <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0" />
+        <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="705.0" layoutY="45.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Circle>
         <HBox layoutX="238.0" layoutY="446.0" prefHeight="31.0" prefWidth="283.0" />
         <AnchorPane layoutX="188.0" layoutY="83.0" minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="563.0">
             <children>
@@ -50,7 +42,7 @@
                     </font></TextField>
                 <TextArea fx:id="descriptionInput" layoutX="16.0" layoutY="78.0" prefHeight="80.0" prefWidth="273.0" promptText="Description" styleClass="inputB" stylesheets="@../css/project.css" wrapText="true">
                     <font>
-                        <Font size="13.0" />
+                        <Font name="System Bold" size="12.0" />
                     </font></TextArea>
                 <DatePicker fx:id="dateInput" layoutX="313.0" layoutY="28.0" prefHeight="31.0" prefWidth="235.0" promptText="Date de realisation" styleClass="inputY" stylesheets="@../css/project.css" />
                 <Button fx:id="addImageBtn" layoutX="314.0" layoutY="81.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="235.0" styleClass="inputB" stylesheets="@../css/project.css" text="Modifier la photo">
@@ -65,7 +57,7 @@
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="competenceInput" alignment="CENTER" contentDisplay="RIGHT" layoutX="316.0" layoutY="157.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="231.0" styleClass="inputB" stylesheets="@../css/project.css" text="Modifier les Competences">
+                <Button fx:id="competenceInput" alignment="CENTER" contentDisplay="RIGHT" layoutX="316.0" layoutY="157.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="231.0" styleClass="inputB" stylesheets="@../css/project.css" text="Modifier les compétences">
                     <graphic>
                         <ImageView fx:id="competenceImage" fitHeight="40.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -92,7 +84,7 @@
                             <children>
                                 <VBox prefHeight="151.0" prefWidth="261.0">
                                     <children>
-                                        <Label prefHeight="29.0" prefWidth="181.0" text="Choisir Type du Projet ">
+                                        <Label prefHeight="29.0" prefWidth="181.0" text="Choisir le type du projet ">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
@@ -120,7 +112,10 @@
                                                 <VBox prefHeight="28.0" prefWidth="234.0" />
                                                 <HBox prefHeight="28.0" prefWidth="214.0">
                                                     <children>
-                                                        <TextField fx:id="searchTextField" prefHeight="42.0" prefWidth="203.0" promptText="Search / Add" styleClass="inputY" stylesheets="@../css/project.css" />
+                                                        <TextField fx:id="searchTextField" prefHeight="42.0" prefWidth="203.0" promptText="Rechercher" styleClass="inputY" stylesheets="@../css/project.css">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></TextField>
                                                         <Button fx:id="searchTypeBtn" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" style="-fx-padding: 3; -fx-border-width: 3; -fx-background-color: rgba(24, 65, 115, 0.3);" styleClass="inputB" stylesheets="@../css/project.css">
                                                             <graphic>
                                                                 <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -136,7 +131,7 @@
                                         </VBox>
                                         <VBox fx:id="SearchResultVbox" prefHeight="147.0" prefWidth="247.0">
                                             <children>
-                                                <Label fx:id="foundTypeLabel" prefHeight="36.0" prefWidth="234.0" text="Search Result ">
+                                                <Label fx:id="foundTypeLabel" prefHeight="36.0" prefWidth="234.0" text="Les résultats de recherche">
                                                     <font>
                                                         <Font name="System Bold" size="13.0" />
                                                     </font>
@@ -150,24 +145,24 @@
                         </HBox>
                     </children>
                 </VBox>
-                <Label fx:id="titlewarning" layoutX="17.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champs Obligatoire" textFill="RED">
+                <Label fx:id="titlewarning" layoutX="17.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champ Obligatoire" textFill="RED">
                     <font>
                         <Font name="System Italic" size="12.0" />
                     </font></Label>
-                <Label fx:id="dateWarning" layoutX="318.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champs Obligatoire" textFill="RED">
+                <Label fx:id="dateWarning" layoutX="318.0" layoutY="59.0" prefHeight="17.0" prefWidth="146.0" text="Champ Obligatoire" textFill="RED">
                     <font>
                         <Font name="System Italic" size="12.0" />
                     </font></Label>
-                <Label fx:id="descWarning" layoutX="22.0" layoutY="158.0" prefHeight="17.0" prefWidth="121.0" text="Champs Obligatoire" textFill="RED">
+                <Label fx:id="descWarning" layoutX="22.0" layoutY="158.0" prefHeight="17.0" prefWidth="121.0" text="Champ Obligatoire" textFill="RED">
                     <font>
                         <Font name="System Italic" size="12.0" />
                     </font></Label>
-                <Label fx:id="docListLabel" layoutX="24.0" layoutY="216.0" prefHeight="21.0" prefWidth="262.0" text="La liste de documents attestants">
+                <Label fx:id="docListLabel" layoutX="24.0" layoutY="216.0" prefHeight="21.0" prefWidth="262.0" text="La liste des documents attestants">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                 </Label>
-                <Label fx:id="compWarning" layoutX="436.0" layoutY="215.0" prefHeight="17.0" prefWidth="107.0" text="Champs Obligatoire" textFill="RED" />
+                <Label fx:id="compWarning" layoutX="436.0" layoutY="215.0" prefHeight="17.0" prefWidth="107.0" text="Champ Obligatoire" textFill="RED" />
             <Button fx:id="addDocBtn" layoutX="262.0" layoutY="176.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="32.0" style="-fx-background-color: #215da7; -fx-background-radius: 15; -fx-padding: 0;" stylesheets="@../css/project.css" text="+" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -192,7 +187,7 @@
                <children>
                   <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Portfolio/ProjetsBut.png" />
+                        <Image url="@../icons/Acceuil/layers1.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" text="Projets" textFill="#666666">
@@ -213,7 +208,7 @@
                <children>
                   <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Portfolio/PortfolioBut.png" />
+                        <Image url="@../icons/Acceuil/PortfolioBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" text="Portfolios" textFill="#666666">
@@ -234,7 +229,7 @@
                <children>
                   <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="23.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Portfolio/AideBut.png" />
+                        <Image url="@../icons/Acceuil/AideBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="AideLabel" layoutX="61.0" layoutY="14.0" text="Aide" textFill="#666666">
@@ -255,7 +250,7 @@
                <children>
                   <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Portfolio/ParametresBut.png" />
+                        <Image url="@../icons/Acceuil/ParametresBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" text="Parametres" textFill="#666666">
@@ -276,7 +271,7 @@
                <children>
                   <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Portfolio/AccueilBut.png" />
+                        <Image url="@../icons/Acceuil/Accueil.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" text="Accueil" textFill="#666666">
@@ -294,7 +289,7 @@
       <Line fx:id="line1" endX="35.0" layoutX="114.0" layoutY="243.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <Line fx:id="line2" endX="35.0" layoutX="114.0" layoutY="299.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <Line fx:id="line4" endX="35.0" layoutX="114.0" layoutY="449.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
-      <Line fx:id="line5" endX="35.0" layoutX="114.0" layoutY="509.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="114.0" layoutY="505.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <Line fx:id="line3" endX="35.0" layoutX="114.0" layoutY="360.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <HBox layoutX="537.0" layoutY="539.0">
          <children>

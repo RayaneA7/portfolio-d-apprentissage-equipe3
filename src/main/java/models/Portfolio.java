@@ -32,14 +32,33 @@ public class Portfolio {
     private UUID uuid;
     private int numero;
     private String date;
-    private List<Project> ListProject;
 
-    public Portfolio(int num , List<Project> listProject, String date) {
+
+    private List<UUID> ListProjUUid;
+    private int NbModel ;
+
+    public int getNbModel() {
+        return NbModel;
+    }
+    public void setNbModel(int nbModel) {
+        NbModel = nbModel;
+    }
+
+
+    public Portfolio(int num , List<UUID> listProjUUid, String date,int NbModel) {
         this.uuid = UUID.randomUUID();
         this.numero = num;
-        this.ListProject = listProject;
+        this.ListProjUUid =listProjUUid;
         this.date = date;
+        this.NbModel=NbModel ;
 
+    }
+    public List<UUID> getListProjUUid() {
+        return ListProjUUid;
+    }
+
+    public void setListProjUUid(List<UUID> listProjUUid) {
+        ListProjUUid = listProjUUid;
     }
 
     public int getNum() {
@@ -47,14 +66,6 @@ public class Portfolio {
     }
 
     public void setNum(int num) {this.numero = num; }
-
-    public List<Project> getListProject() {
-        return ListProject;
-    }
-
-    public void setListProject(List<Project> listProject) {
-        ListProject = listProject;
-    }
 
     public UUID getUuid() {
         return uuid;

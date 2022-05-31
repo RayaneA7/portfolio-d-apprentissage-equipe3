@@ -1,0 +1,206 @@
+{
+  "donnes": {
+    "matricule": "20/0050",
+    "nom": "zjnub",
+    "prenom": "bzhdbhz",
+    "Datenaissance": "2002-05-11",
+    "sex": "MALE",
+    "motdePasse": "2d52d4b6ea00e375305cbe9cf3e98e5465bf2396fcba96390b5d113a540d4538",
+    "Email": "KLIeoi12@esi.dz",
+    "niveauEtude": "1CP",
+    "bioPersonnel": ""
+  },
+  "contacts": {
+    "nbTelephone": 0,
+    "countFacebook": "",
+    "countGithub": "",
+    "countLinkedln": ""
+  },
+  "listProjets": [
+    {
+      "title": "projet2CP",
+      "ClubName": "{PROJ}",
+      "ModuleArray": [
+        "{PROJ}"
+      ],
+      "id": "ff2862b0-6b0d-4c8e-b114-2a8ed33c42b6",
+      "type": "PEDAGOGIQUE",
+      "competences": [
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.0: Développer des programmes informatiques",
+          "ElemdeCompetence": "C40.9: Concevoir et programmer une application avec un langage orienté objet",
+          "modules": [
+            "IGL",
+            "POO"
+          ],
+          "type": "TEC",
+          "ObjectifsPedagogiques": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+          "ElemdeCompetence": "C41.1: Proposer une conception orientée objet pour un problème métier",
+          "modules": [
+            "IGL",
+            "PDC",
+            "POO"
+          ],
+          "type": "MET",
+          "ObjectifsPedagogiques": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.8: Concevoir et développer des interfaces homme-machine",
+          "ElemdeCompetence": "C48.3: Développer des interfaces graphiques avec un langage de programmation orientée objet",
+          "modules": [
+            "POO"
+          ],
+          "type": "TEC",
+          "ObjectifsPedagogiques": ""
+        }
+      ],
+      "date": "2022-05-02",
+      "imgPath": "ff2862b0-6b0d-4c8e-b114-2a8ed33c42b6",
+      "docs": [
+        "dnubdge",
+        "google.com"
+      ],
+      "description": "projet de réalisation de portfolio"
+    },
+    {
+      "title": "Projet Site",
+      "ClubName": "{GDG Algiers}",
+      "ModuleArray": [
+        "{PROJ}"
+      ],
+      "id": "421c162f-13b5-4a38-8b38-fe769c17c352",
+      "type": "CLUB",
+      "competences": [
+        {
+          "FamilledeCompetence": "CF5: Concevoir, déployer et administrer des bases de données",
+          "Competence": "C5.1: Créer et interroger une BD relationnelle",
+          "ElemdeCompetence": "C51.2: Utiliser SQL pour définir et manipuler des données relationnelles",
+          "modules": [
+            "BDD"
+          ],
+          "type": "TEC",
+          "ObjectifsPedagogiques": "None"
+        },
+        {
+          "FamilledeCompetence": "",
+          "Competence": "",
+          "ElemdeCompetence": "Apprendre le dévelopment en python",
+          "modules": [
+            ""
+          ],
+          "type": "MET",
+          "ObjectifsPedagogiques": ""
+        }
+      ],
+      "date": "2022-05-10",
+      "imgPath": "421c162f-13b5-4a38-8b38-fe769c17c352",
+      "docs": [
+        "google.com"
+      ],
+      "description": "Réalisation d\u0027un site web ."
+    },
+    {
+      "title": "projet Demo",
+      "ModuleArray": [],
+      "id": "32ab0d5c-3b63-43c3-b512-b5abef74252c",
+      "type": "PERSONEL",
+      "competences": [
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+          "ElemdeCompetence": "C41.1: Proposer une conception orientée objet pour un problème métier",
+          "modules": [
+            "IGL",
+            "PDC",
+            "POO"
+          ],
+          "type": "MET",
+          "ObjectifsPedagogiques": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.0: Développer des programmes informatiques",
+          "ElemdeCompetence": "C40.9: Concevoir et programmer une application avec un langage orienté objet",
+          "modules": [
+            "IGL",
+            "POO"
+          ],
+          "type": "TEC",
+          "ObjectifsPedagogiques": ""
+        }
+      ],
+      "date": "2022-05-02",
+      "imgPath": "32ab0d5c-3b63-43c3-b512-b5abef74252c",
+      "docs": [
+        "google.com"
+      ],
+      "description": "apprendre le development en java ."
+    },
+    {
+      "title": "Projet4",
+      "ModuleArray": [],
+      "id": "61255a95-78be-494f-9614-3bf569469aa3",
+      "type": "PERSONEL",
+      "competences": [
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.0: Développer des programmes informatiques",
+          "ElemdeCompetence": "C40.9: Concevoir et programmer une application avec un langage orienté objet",
+          "modules": [
+            "IGL",
+            "POO"
+          ],
+          "type": "TEC",
+          "ObjectifsPedagogiques": ""
+        },
+        {
+          "FamilledeCompetence": "CF4: Concevoir, réaliser et maintenir des logiciels de qualité",
+          "Competence": "C4.1: Concevoir et mettre en oeuvre l\u0027architecture d\u0027un logiciel",
+          "ElemdeCompetence": "C41.1: Proposer une conception orientée objet pour un problème métier",
+          "modules": [
+            "IGL",
+            "PDC",
+            "POO"
+          ],
+          "type": "MET",
+          "ObjectifsPedagogiques": ""
+        }
+      ],
+      "date": "2022-05-04",
+      "imgPath": "61255a95-78be-494f-9614-3bf569469aa3",
+      "docs": [
+        "google.com"
+      ],
+      "description": "projet fin d\u0027étude"
+    }
+  ],
+  "listPortfolio": [
+    {
+      "uuid": "aa388808-e933-42f5-9063-6a454d7ec68a",
+      "numero": 1,
+      "date": "2022-05-31",
+      "ListProjUUid": [
+        "421c162f-13b5-4a38-8b38-fe769c17c352",
+        "ff2862b0-6b0d-4c8e-b114-2a8ed33c42b6",
+        "32ab0d5c-3b63-43c3-b512-b5abef74252c",
+        "61255a95-78be-494f-9614-3bf569469aa3"
+      ],
+      "NbModel": 1
+    },
+    {
+      "uuid": "798ad8dd-6a00-45d2-9291-d0b0904133cb",
+      "numero": 2,
+      "date": "2022-05-31",
+      "ListProjUUid": [
+        "ff2862b0-6b0d-4c8e-b114-2a8ed33c42b6"
+      ],
+      "NbModel": 2
+    }
+  ]
+}

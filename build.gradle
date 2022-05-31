@@ -74,27 +74,38 @@ dependencies {
 
 /*************************************************************/
 launch4j {
-    outfile = 'Portfolio.exe'
-    mainClassName = 'Mainapplication.Test4'
-   // icon = "${projectDir}/icons/Ecareer2.ico"
-    productName = 'My App'
+    outfile = 'Portfolio2.exe'
+    mainClassName = 'Mainapplication.HelloApplication'
+  //  icon = "${projectDir}/icons/Ecareer2.ico"
+    productName = 'My App1'
     headerType="gui"
     /*********/
     jreMinVersion = '16'
     jdkPreference = 'preferJre'
     /*********/
-    libraryDir = 'libs'
+    libraryDir = 'libs1'
     initialHeapSize = 256
     maxHeapSize = 256
-    stayAlive = false
+   // stayAlive = true
     bundledJre64Bit = true
     dontWrapJar = true
     bundledJrePath = 'jre'
-    version ='1.0.0'
-    language ="FRANCE_FR"
+    version ='1.0.2'
+    //launch4jCmd = 'launch4j-test'
+   // outfile = 'Portfolio.exe'
+    //language ="ENGLISH_EN"
 
-   // jvmOptions = ["-Dfile.encoding=UTF8", "-Xmx256m", "-Xms256m"]
+    jvmOptions = ["-Dfile.encoding=UTF8", "-Xmx256m", "-Xms256m"]
     // jar = '../libs/Master_Mode_System_Config-all-1.0-SNAPSHOT.jar'
+}
+/******************
+launch4j {
+    mainClassName ='Mainapplication.HelloApplication'
+}
+
+task createMyApp(type: edu.sc.seis.launch4j.tasks.Launch4jExternalTask) {
+    launch4jCmd = 'launch4j-test'
+    outfile = 'MyApp.exe'
 }
 /*
 launch4j {

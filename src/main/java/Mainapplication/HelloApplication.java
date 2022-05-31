@@ -11,8 +11,7 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] args) {launch(args);
     }
 
     @Override
@@ -28,6 +27,7 @@ public class HelloApplication extends Application {
             stage.getIcons().add(icon);
         }
         stage.setResizable(false);
+        stage.setTitle("Ecareer");
         stage.show();
          /*******************
         VBox box =new VBox();

@@ -140,7 +140,9 @@ public class ProjetController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         /*********************Image personnel********************/
-        imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        if(AccueilMediateur.image!=null) {
+            imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
+        }
         /****************************************************/
         cardLayout = new VBox();
         cardLayout.setPrefSize(466,303);
@@ -290,8 +292,12 @@ public class ProjetController implements Initializable {
         addProjectBtn.setOnMouseClicked(event -> {
             AccueilMediateur.monPagination.setCurrentPageIndex(10);
         });
-
-
+        imagePersonnel.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerProfile(e);
+        });
+        logOut.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.Déconnecter(event);
+        });
 
 
 

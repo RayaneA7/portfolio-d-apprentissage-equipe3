@@ -15,14 +15,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import models.Ordre;
 import models.Portfolio;
+import models.Project;
 import models.Statistiques;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static controleurs.portfolio.GenererHtmlPdf.genererPdf;
 
 public class PortfolioItemController implements Initializable {
     @FXML
@@ -37,8 +43,6 @@ public class PortfolioItemController implements Initializable {
     @FXML
     private Label dateLabel;
 
-    @FXML
-    private ImageView star;
 
     @FXML
     private Button delete;
@@ -71,6 +75,10 @@ public class PortfolioItemController implements Initializable {
     Tooltip toolTip1 = new Tooltip("Supprimer");
     Tooltip toolTip2 = new Tooltip("Exporter");
     Tooltip tooltip3 = new Tooltip("Modifier");
+    Image image1 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template1.png"));
+    Image image2 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template2.png"));
+    Image image3 =new Image(getClass().getResourceAsStream("/icons/Portfolio/template3.png"));
+
     /*********************************************************************/
 
     @FXML
@@ -81,13 +89,30 @@ public class PortfolioItemController implements Initializable {
 
     @FXML
     private void clickModify(){myPortfolio.modifyPortfolio(portfolio);};
-
+    @FXML
+    private void clickExport(){
+        myPortfolio.exportPortfolio(portfolio);
+    };
     public void setData(Portfolio portfolio, MyPortfolio myPortfolio){
         this.portfolio = portfolio;
         this.myPortfolio = myPortfolio;
+        ArrayList<Project> lisProjets =new ArrayList<>();
         /********************************/
-        System.out.println("statistiques sur le projet !!!!!!!!!!!!");
-        Statistiques statistiques =new Statistiques(portfolio.getListProject());
+        System.out.println("la taille : "+this.portfolio.getListProjUUid().size());
+        for(int i=0;i<portfolio.getListProjUUid().size();i++){
+            int j=0;
+            int stop=0;
+            while(j<AccueilMediateur.utilisateur.getListProjets().size()&&stop!=1) {
+                if (AccueilMediateur.utilisateur.getListProjets().get(j).getId().equals(portfolio.getListProjUUid().get(i))) {
+                    lisProjets.add(AccueilMediateur.utilisateur.getListProjets().get(j));
+                    stop=1;
+                }
+                j++;
+            }
+        }
+        /**************************************************/
+        System.out.println("statistiques sur le projet !!!!!!!!!!!! :"+lisProjets.size());
+        Statistiques statistiques =new Statistiques(lisProjets);
         System.out.println(statistiques.getNbProjetsPersonnels()+" "+statistiques.getNbProjetsClubs()+" "+statistiques.getNbProjetsPédagogiques());
         statistiques.CalculerNbprojetsType();
         /******************************/
@@ -98,12 +123,24 @@ public class PortfolioItemController implements Initializable {
         nbrPersoProjects.setText(statistiques.getNbProjetsPersonnels() + " personnels");
         nbrClubProjects.setText(statistiques.getNbProjetsClubs() + " Clubs");
         nbrPedaProjects.setText(statistiques.getNbProjetsPédagogiques()+ " pédagogiques");
-        LabelSum.setText(portfolio.getListProject().size() + " projets");
-        if(portfolio.getNum() % 2 == 0) {
-            PaneColor.setStyle("-fx-background-color : #caede3; -fx-background-radius : 20px;");
-        } else {
-            PaneColor.setStyle("-fx-background-color : #eddeca; -fx-background-radius : 20px;");
+        LabelSum.setText(portfolio.getListProjUUid().size() + " projets");
+        /******************/
+
+        switch (portfolio.getNum()){
+            case 1 :
+                 portfimg.setImage(image1);//maron
+                PaneColor.setStyle("-fx-background-color :#f1c53c ; -fx-background-radius : 20px;");
+                break;
+            case  2 :
+                portfimg.setImage(image2);//noir
+                PaneColor.setStyle("-fx-background-color :white ; -fx-background-radius : 20px");
+                break;
+            case  3 :
+                portfimg.setImage(image3);//maron
+                PaneColor.setStyle("-fx-background-color :#1a4173 ; -fx-background-radius : 20px ;");
+                break;
         }
+        /*******************/
     }
 
     private String StringNumber(int id) {
@@ -133,7 +170,15 @@ public class PortfolioItemController implements Initializable {
             customDialog = new CustomDialog("Confirmer la supression du portfolio","Si vous voulez vraiment supprimer le portflio, cliquez sur Ok, sinon sur Canel");
             customDialog.show();
             customDialog.buttonOk.setOnAction(e->{
-                clickRemove();
+                /*********
+                System.out.println("*************************************************************");
+                System.out.println("*************************************************************");
+                System.out.println("la page est :"+portfolio.getNum());
+                System.out.println("*************************************************************");
+                System.out.println("*************************************************************");
+                /***************/
+                 clickRemove();
+               // PortfolioShowController.gridPane.getChildren().remove(portfolio.getNum()-1);
                 customDialog.closeDialog();
                 AccueilMediateur.commutateur.AllerPortfolio();
                 /**********************************
@@ -159,6 +204,17 @@ public class PortfolioItemController implements Initializable {
         /********************************************************/
         modify.setOnMouseClicked(event->{
             clickModify();
+        });
+        export.setOnMouseClicked(e->{
+            if(portfolio!=null) {
+                FileChooser fileChooser = new FileChooser();
+                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
+                fileChooser.getExtensionFilters().add(extFilter);
+                File file = fileChooser.showSaveDialog(new Stage());
+                if (file != null) {
+                    genererPdf(file, portfolio);
+                }
+            }
         });
     }
 

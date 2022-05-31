@@ -248,6 +248,12 @@ public class editProjectController implements Initializable {
         if(AccueilMediateur.image!=null) {
             imagePersonnel.setFill(new ImagePattern(AccueilMediateur.image));
         }
+        imagePersonnel.setOnMouseClicked(e->{
+            AccueilMediateur.commutateur.AllerProfile(e);
+        });
+        logOut.setOnMouseClicked(event -> {
+            AccueilMediateur.commutateur.Déconnecter(event);
+        });
         /***************************************************************************************/
         /********************************Les Buttons Fixes *************************************/
         /***************************************************************************************/

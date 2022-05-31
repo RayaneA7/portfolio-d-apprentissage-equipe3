@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.AccueilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.acceuil.AccueilController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="855.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -72,7 +66,7 @@
                <children>
                   <ImageView fx:id="AideImage" fitHeight="27.0" fitWidth="28.0" layoutX="18.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/Acceuil/PortfolioBut.png" />
+                        <Image url="@../icons/Acceuil/AideBut.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="AideLabel" alignment="TOP_LEFT" layoutX="56.0" layoutY="13.0" text="Aide" textFill="#666666">
@@ -177,8 +171,11 @@
       <Line fx:id="line3" endX="35.0" layoutX="111.0" layoutY="354.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
       <Line fx:id="line5" endX="35.0" layoutX="111.0" layoutY="504.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
       <Line fx:id="line4" endX="35.0" layoutX="111.0" layoutY="444.0" startX="-79.0" stroke="#d7d6d6" strokeWidth="2.0" />
-      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="68.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0" />
-      <BarChart fx:id="barCharta" layoutX="354.0" layoutY="385.0" prefHeight="205.0" prefWidth="429.0">
+      <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="68.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Circle>
+      <BarChart fx:id="barCharta" barGap="1.0" layoutX="426.0" layoutY="389.0" prefHeight="168.0" prefWidth="345.0" style="-fx-background-color: transparent;" stylesheets="@../css/Inscription.css">
         <xAxis>
           <CategoryAxis fx:id="projets" side="BOTTOM" />
         </xAxis>
@@ -186,21 +183,26 @@
           <NumberAxis fx:id="years" side="LEFT" />
         </yAxis>
       </BarChart>
-      <PieChart fx:id="softhardpie" layoutX="262.0" layoutY="409.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="100.0" />
-      <Circle fill="WHITE" layoutX="314.0" layoutY="464.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label fx:id="labstat" layoutX="295.0" layoutY="456.0" text="Label">
+      <PieChart fx:id="softhardpie" layoutX="308.0" layoutY="386.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="112.0" prefWidth="101.0" stylesheets="@../css/Inscription.css" />
+      <Circle fill="WHITE" layoutX="359.0" layoutY="442.0" radius="26.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="labstat" layoutX="339.0" layoutY="433.0" text="Label">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="16.0" fitWidth="200.0" layoutX="481.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="16.0" fitWidth="200.0" layoutX="515.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Nombre%20de%20projets%20realisés.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="100.0" layoutX="266.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="16.0" fitWidth="126.0" layoutX="296.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Mes%20Compétences.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="85.0" layoutX="317.0" layoutY="489.0">
+         <image>
+            <Image url="@../icons/Profil/Frame%2077.png" />
          </image>
       </ImageView>
    </children>

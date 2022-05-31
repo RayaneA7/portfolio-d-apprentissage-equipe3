@@ -70,10 +70,6 @@ public class Portfolio1Controller implements Initializable {
     @FXML
     private ImageView AideImage;
     @FXML
-    private ImageView Mod1;
-    @FXML
-    private ImageView Mod2;
-    @FXML
     private ImageView PortModel1;
     @FXML
     private ImageView PortModel2;
@@ -113,8 +109,14 @@ public class Portfolio1Controller implements Initializable {
     private Image ModelAnim1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/Mod2.png"));
     private Image PortMod1 = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioModel.png"));
     private Image PortMo2 = new Image(getClass().getResourceAsStream("/icons/Portfolio/PortfolioModel2.png"));
-    private int nbrPag = 3;
+    /*****************************************/
+    Image image1 =new Image(getClass().getResourceAsStream("/icons/Portfolio/Model1.png"));
+    Image image2 =new Image(getClass().getResourceAsStream("/icons/Portfolio/Model2.png"));
+    Image image3 =new Image(getClass().getResourceAsStream("/icons/Portfolio/Model3.png"));
+
+    private int nbrPag = 2;
     static int Currentpag = 0;
+    public static int modele;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -255,19 +257,26 @@ public class Portfolio1Controller implements Initializable {
 
         PortModel1.setOnMouseClicked(e -> {
             try {
+                if(pagination.getCurrentPageIndex() == 0) modele = 1;
+                if(pagination.getCurrentPageIndex() == 1) modele = 3;
+                System.out.println("le modele choisi en portfolio1 est :"+modele);
                 Preview(e, pagination.getCurrentPageIndex());
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
         });
 
-        Mod1.setOnMouseClicked(e -> {
+
+        PortModel2.setOnMouseClicked(e -> {
             try {
+                if(pagination.getCurrentPageIndex() == 0) modele = 2;
                 Preview(e, pagination.getCurrentPageIndex());
-            } catch (IOException ex) {
-                ex.printStackTrace();
+            } catch (Exception exception) {
+                exception.printStackTrace();
             }
         });
+
+
         DeconnexionBut.setOnMouseClicked(e -> {
             try {
                AccueilMediateur.commutateur.Déconnecter(e);
@@ -276,54 +285,26 @@ public class Portfolio1Controller implements Initializable {
             }
         });
         Currentpag = pagination.getCurrentPageIndex();
+
     }
 
     public AnchorPane CreatePage(int pageIndex) {
         AnchorPane pane = new AnchorPane();
         if (pageIndex == 0) {
-            Mod1.setImage(ModelProf1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
             PortModel1.setLayoutX(0);
             PortModel1.setLayoutY(20);
             PortModel2.setLayoutX(238);
             PortModel2.setLayoutY(20);
+            PortModel1.setImage(image1);
+            PortModel2.setImage(image2);
             pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1, Mod2);
             return pane;
         }
         if (pageIndex == 1) {
-            Mod1.setImage(ModelAnim1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
             PortModel1.setLayoutX(0);
             PortModel1.setLayoutY(20);
-            PortModel2.setLayoutX(238);
-            PortModel2.setLayoutY(20);
-            pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().add(Mod1);
-            pane.getChildren().add(Mod2);
-            return pane;
-        }
-        if (pageIndex == 2) {
-            Mod1.setImage(ModelProf1);
-            Mod2.setImage(ModelAnim1);
-            Mod1.setLayoutX(35);
-            Mod1.setLayoutY(46);
-            Mod2.setLayoutX(275);
-            Mod2.setLayoutY(46);
-            PortModel1.setLayoutX(0);
-            PortModel1.setLayoutY(20);
-            PortModel2.setLayoutX(238);
-            PortModel2.setLayoutY(20);
-            pane.getChildren().addAll(PortModel1, PortModel2);
-            pane.getChildren().addAll(Mod1, Mod2);
+            PortModel1.setImage(image3);
+            pane.getChildren().addAll(PortModel1);
             return pane;
         }
         return null;
@@ -331,7 +312,7 @@ public class Portfolio1Controller implements Initializable {
 
     public void CreatePag() {
         pagination.setPageCount(nbrPag);
-        pagination.setCurrentPageIndex(Currentpag);
+        //pagination.setCurrentPageIndex(Currentpag);
         pagination.setPageFactory((Integer pageIndex) -> CreatePage(pageIndex));
         pagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
         pagination.getStylesheets().add("/css/PortfolioPag.css");
@@ -349,7 +330,6 @@ public class Portfolio1Controller implements Initializable {
         //faire une mise à jour pour la liste
         AccueilMediateur.utilisateur= Utilisateur.deserialization(AccueilMediateur.studentFolder);
         FXMLLoader loader = null;
-        if (numPag == 0) {
             loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel1View.fxml"));
             try {
                 if(AccueilMediateur.memory.get(4)!=null) {
@@ -360,19 +340,6 @@ public class Portfolio1Controller implements Initializable {
                 e.printStackTrace();
             }
             AccueilMediateur.monPagination.setCurrentPageIndex(4);
-        }
-        /***************A realiser *********************/
-        /************************************************/
-        /*********************************************
-        if (numPag == 1) {
-            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel2View.fxml"));
-            AccueilMediateur.monPagination.setCurrentPageIndex(6);
-        }
-        if (numPag == 2) {
-            loader = new FXMLLoader(getClass().getResource("/views/PortfolioModel3View.fxml"));
-            AccueilMediateur.monPagination.setCurrentPageIndex(7);
-        }
-        /************************************************/
     }
 }
 /*195 80 gridPane ScrPane*/

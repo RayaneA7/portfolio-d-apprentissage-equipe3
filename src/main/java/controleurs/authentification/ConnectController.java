@@ -279,6 +279,7 @@ public class ConnectController implements Initializable {
             stage.setWidth(830);
             stage.setHeight(630);
             stage.setResizable(false);
+            stage.setTitle("Ecareer");
             stage.show();
         }
     }

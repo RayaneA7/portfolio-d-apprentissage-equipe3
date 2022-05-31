@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="monAnchorpane1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="835.0" stylesheets="@../css/PortfolioPag.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.parametre.Parametre_Controller">
+<AnchorPane fx:id="monAnchorpane1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="835.0" stylesheets="@../css/PortfolioPag.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.parametre.Parametre_Controller">
     <children>
         <ImageView fitHeight="630.0" fitWidth="830.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -145,7 +141,7 @@
             <graphic>
                 <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="174.0">
                     <children>
-                        <Label fx:id="AccueilLabel1" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="168.0" style="-fx-font-family: Work Sans;" text="Informations presonnel" textAlignment="CENTER" textFill="#444444">
+                        <Label fx:id="AccueilLabel1" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="168.0" text="Informations presonnel" textAlignment="CENTER" textFill="#444444">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -161,7 +157,7 @@
             <graphic>
                 <AnchorPane prefHeight="26.0" prefWidth="139.0">
                     <children>
-                        <Label fx:id="AccueilLabel11" alignment="CENTER" prefHeight="25.0" prefWidth="103.0" style="-fx-font-family: Work Sans;" text="Mot de passe" textAlignment="CENTER" textFill="#444444">
+                        <Label fx:id="AccueilLabel11" alignment="CENTER" prefHeight="25.0" prefWidth="103.0" text="Mot de passe" textAlignment="CENTER" textFill="#444444">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -185,7 +181,7 @@
             <graphic>
                 <AnchorPane prefHeight="52.0" prefWidth="87.0">
                     <children>
-                        <Label fx:id="AccueilLabel12" layoutX="6.0" layoutY="1.0" prefHeight="25.0" prefWidth="90.0" style="-fx-font-family: Work Sans;" text="Adress Email" textAlignment="CENTER" textFill="#444444">
+                        <Label fx:id="AccueilLabel12" layoutX="6.0" layoutY="1.0" prefHeight="25.0" prefWidth="90.0" text="Adress Email" textAlignment="CENTER" textFill="#444444">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -201,7 +197,7 @@
             <graphic>
                 <AnchorPane prefHeight="26.0" prefWidth="139.0">
                     <children>
-                        <Label fx:id="AccueilLabel111" alignment="CENTER" layoutY="1.0" prefHeight="25.0" prefWidth="66.0" style="-fx-font-family: Work Sans;" text="Contact" textAlignment="CENTER" textFill="#444444">
+                        <Label fx:id="AccueilLabel111" alignment="CENTER" layoutY="1.0" prefHeight="25.0" prefWidth="66.0" text="Contact" textAlignment="CENTER" textFill="#444444">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -227,13 +223,16 @@
       <Line fx:id="line2" endX="35.0" layoutX="116.0" layoutY="294.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <Line fx:id="line4" endX="35.0" layoutX="116.0" layoutY="444.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <Line fx:id="line3" endX="35.0" layoutX="116.0" layoutY="354.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
-      <Line fx:id="line5" endX="35.0" layoutX="116.0" layoutY="504.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="116.0" layoutY="497.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
       <AnchorPane fx:id="monAnchorpane" layoutX="233.0" layoutY="190.0" prefHeight="320.0" prefWidth="483.0" style="-fx-background-color: FAFAFA;">
          </AnchorPane>
-      <ImageView fx:id="logOut" fitHeight="44.0" fitWidth="40.0" layoutX="755.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logOut" fitHeight="33.0" fitWidth="38.0" layoutX="755.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Deconnexion.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Button fx:id="RetourButton" layoutX="540.0" layoutY="522.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-text-fill: #215DA7; -fx-border-radius: 10; -fx-background-radius: 7; -fx-background-color: white; -fx-font-family: Open sans; -fx-font-weight: bold;" text="Retour">
          <font>

@@ -206,6 +206,9 @@ public class AccueilController implements Initializable {
             imagePersonnel.setOnMouseClicked(e-> {
                         AccueilMediateur.commutateur.AllerProfile(e);
                     });
+            imagePersonnel.setOnMouseClicked(e->{
+                AccueilMediateur.commutateur.AllerProfile(e);
+            });
         /****************************************************/
         AccueilButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
             AccueilButton.setStyle("-fx-background-color: #f1c53c");

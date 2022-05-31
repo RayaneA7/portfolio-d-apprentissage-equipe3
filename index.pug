@@ -1,9 +1,15 @@
+
 doctype html
 html
     head
         title= pageName
-        link(rel='stylesheet', href='./style.css')
-        //include ./style.css
+        if (modeleNum == '1')
+            link(rel='stylesheet', href='./style1.css')
+        if (modeleNum == '2')
+            link(rel='stylesheet', href='./style2.css')
+        if (modeleNum == '3')
+            link(rel='stylesheet', href='./style3.css')
+            
     body
     table
         tr.Header
@@ -19,13 +25,13 @@ html
                 //    div
                 //        a(href="#"): img(src="./assets/icons8-google-plus.svg" alt="email")
                 //        p= info.Email
-            td(style="padding:5px; background-color:#F1C53C; text-align:center;")
-                img(class="StudentImage" src="./assets/rayane.jpg" alt="student picture")
+            td
+                img(class="StudentImage" src="./ImagePersonnel.png" alt="student picture")
         tr
             td(colspan="2")
                 h2 Pedagogique
-        tr
-            each projet in projets
+        each projet in projets
+            tr
                 if (projet.type == 'Pédagogique')
                     td(colspan="2" class="project")
                                 a(href='//google.com' target="_blank")
@@ -44,8 +50,8 @@ html
         tr
             td(colspan="2")
                 h2 Clubs
-        tr
-            each projet in projets
+        each projet in projets
+            tr
                 if (projet.type == 'Club')
                     td(colspan="2" class="project")
                                 a(href='//google.com' target="_blank")
@@ -57,6 +63,7 @@ html
                                     div
                                         p= projet.description
                                         div.technologies
+                                            p= projet.ClubName
                                     div.competence
                                          each competence in projet.competences
                                             div
@@ -64,12 +71,12 @@ html
         tr
             td(colspan="2")
                 h2 Personnels
-        tr
-            each projet in projets
+        each projet in projets
+            tr
                 if (projet.type == 'Personnel')
                     td(colspan="2" class="project")
-                                a(href='https://drive.google.com/drive/u/0/folders/1DuLtnvRDoJ_LM43aaOxrBvMTbiizhxx0' target="_blank")
-                                        h3.projectTitle= projet.titre
+                                a(href='' target="_blank")
+                                        h3.projectTitle= projet.title
                                             span.projectDate [
                                             span.projectDate= projet.date
                                             span.projectDate ]
@@ -96,5 +103,3 @@ html
                 div
                     p powered by
                     img(class="logo" src="./assets/Ecareer2.png")
-
-

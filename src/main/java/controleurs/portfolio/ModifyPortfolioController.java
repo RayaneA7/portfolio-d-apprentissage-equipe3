@@ -308,19 +308,19 @@ public class ModifyPortfolioController implements Initializable {
         myProject = new MyProject() {
             @Override
             public void mySelectedProject(Project project) {
-                AccueilMediateur.utilisateur.listPortfolio.get(id - 1).getListProject().add(project);
+                AccueilMediateur.utilisateur.listPortfolio.get(id - 1).getListProjUUid().add(project.getId());
             }
 
             @Override
             public void notSelectedProject(Project project) {
                 int i = 0;
-                List<Project> newList = new ArrayList();
-                for(Project p : AccueilMediateur.utilisateur.listPortfolio.get(id - 1).getListProject()){
-                   if(!p.getId().equals(project.getId())){
+                List<UUID> newList = new ArrayList();
+                for(UUID p : AccueilMediateur.utilisateur.listPortfolio.get(id - 1).getListProjUUid()){
+                   if(!p.equals(project.getId())){
                        newList.add(p);
                    }
                 }
-                AccueilMediateur.utilisateur.listPortfolio.get(id - 1).setListProject(newList);
+                AccueilMediateur.utilisateur.listPortfolio.get(id - 1).setListProjUUid(newList);
             }
         };
 
@@ -336,9 +336,9 @@ public class ModifyPortfolioController implements Initializable {
                 ProjectItemController projectItemController = fxmlLoader.getController();
                 projectItemController.setData(AccueilMediateur.utilisateur.listProjets.get(i), myProject);
 
-                for(Project p : portfolio.getListProject()){
-                     System.out.println("utilisateur :"+AccueilMediateur.utilisateur.listProjets.get(i).getId()+"  portfolio :"+p.getId());
-                    if (AccueilMediateur.utilisateur.listProjets.get(i).getId().equals(p.getId())) trouv = true;
+                for(UUID p : portfolio.getListProjUUid()){
+                     System.out.println("utilisateur :"+AccueilMediateur.utilisateur.listProjets.get(i).getId()+"  portfolio :"+p);
+                    if (AccueilMediateur.utilisateur.listProjets.get(i).getId().equals(p)) trouv = true;
 
                 }
                 if (trouv) {

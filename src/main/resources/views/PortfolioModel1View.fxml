@@ -1,138 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.portfolio.PortfolioModel1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.portfolio.PortfolioModel1Controller">
     <children>
-        <ImageView fitHeight="600.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="600.0" fitWidth="850.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../icons/Portfolio/ConsulterModelNew.png" />
             </image>
         </ImageView>
-        <Button fx:id="ProjetButton" layoutX="11.0" layoutY="259.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+        <Button fx:id="ProjetButton" layoutX="11.0" layoutY="234.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
             <graphic>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Portfolio/ProjetsBut.png" />
-                            </image></ImageView>
-                        <Label fx:id="ProjetLabel" layoutX="56.0" layoutY="16.0" text="Projets">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
+               <children>
+                  <ImageView fx:id="ProjetsImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/layers1.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ProjetLabel" layoutX="62.0" layoutY="16.0" text="Projets" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
                 </AnchorPane>
             </graphic>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="319.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+        <Button fx:id="PortfolioButton" layoutX="11.0" layoutY="294.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
             <graphic>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="25.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Portfolio/PortfolioBut.png" />
-                            </image></ImageView>
-                        <Label fx:id="PortfolioLabel" layoutX="56.0" layoutY="16.0" text="Portfolios">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
+               <children>
+                  <ImageView fx:id="PortfolioImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/PortfolioBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="PortfolioLabel" layoutX="62.0" layoutY="16.0" text="Portfolios" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
                 </AnchorPane>
             </graphic>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="AideButton" layoutX="11.0" layoutY="477.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F1;">
+        <Button fx:id="AideButton" layoutX="11.0" layoutY="444.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F1;">
             <graphic>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="AideImage" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Portfolio/AideBut.png" />
-                            </image></ImageView>
-                        <Label fx:id="AideLabel" layoutX="57.0" layoutY="15.0" text="Aide">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
+               <children>
+                  <ImageView fx:id="AideImage" fitHeight="28.0" fitWidth="30.0" layoutX="23.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/AideBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AideLabel" layoutX="61.0" layoutY="14.0" text="Aide" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
                 </AnchorPane>
             </graphic>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="ParametresButton" layoutX="11.0" layoutY="412.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+        <Button fx:id="ParametresButton" layoutX="11.0" layoutY="384.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
             <graphic>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Portfolio/ParametresBut.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="ParametresLabel" layoutX="45.0" layoutY="14.0" text="Parametres">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
+               <children>
+                  <ImageView fx:id="ParametresIamge" fitHeight="34.0" fitWidth="31.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/ParametresBut.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="ParametresLabel" layoutX="52.0" layoutY="14.0" text="Parametres" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
                 </AnchorPane>
             </graphic>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="AccueilButton" layoutX="11.0" layoutY="199.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
+        <Button fx:id="AccueilButton" layoutX="11.0" layoutY="176.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" style="-fx-background-color: F5F5F5;">
             <graphic>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                    <children>
-                        <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/Portfolio/AccueilBut.png" />
-                            </image>
-                        </ImageView>
-                        <Label fx:id="AccueilLabel" layoutX="56.0" layoutY="16.0" text="Accueil">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
+               <children>
+                  <ImageView fx:id="AccueilImage" fitHeight="34.0" fitWidth="31.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Acceuil/Accueil.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AccueilLabel" layoutX="62.0" layoutY="16.0" text="Accueil" textFill="#666666">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
                 </AnchorPane>
             </graphic>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Line fx:id="line1" endX="27.0" layoutX="111.0" layoutY="259.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line2" endX="27.0" layoutX="111.0" layoutY="319.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line3" endX="27.0" layoutX="111.0" layoutY="379.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line5" endX="27.0" layoutX="111.0" layoutY="537.0" startX="-79.0" stroke="#666666" />
-        <Line fx:id="line4" endX="35.0" layoutX="111.0" layoutY="472.0" startX="-79.0" stroke="#666666" />
-        <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="715.0" layoutY="39.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
+        <Circle fx:id="imagePersonnel" fill="WHITE" layoutX="718.0" layoutY="61.0" radius="25.0" stroke="#666666" strokeDashOffset="4.0" strokeType="INSIDE" strokeWidth="3.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Circle>
-      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="770.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logOut" accessibleRole="BUTTON" fitHeight="38.0" fitWidth="35.0" layoutX="760.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Acceuil/Deconnexion.png" />
          </image>
@@ -140,10 +133,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="348.0" fitWidth="232.0" layoutX="491.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="monImageModel" fitHeight="348.0" fitWidth="246.0" layoutX="499.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/Portfolio/Mod1.png" />
          </image>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="20.02" offsetX="1.0" offsetY="2.0" radius="6.3475" width="7.37">
+               <color>
+                  <Color opacity="0.15989845991134644" />
+               </color>
+            </DropShadow>
+         </effect>
       </ImageView>
       <ScrollPane fx:id="ScrPane" layoutX="222.0" layoutY="207.0" prefHeight="246.0" prefWidth="223.0" style="-fx-background-color: F7F7F7;">
          <content>
@@ -159,23 +159,69 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="CreateLabel" layoutX="257.0" layoutY="132.0" opacity="0.0" text="Portfolio créé avec succès" textFill="#08ae21">
+      <Label fx:id="CreateLabel" layoutX="249.0" layoutY="132.0" opacity="0.0" text="Portfolio créé avec succès" textFill="#08ae21">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Line fx:id="line1" endX="35.0" layoutX="116.0" layoutY="233.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line2" endX="35.0" layoutX="116.0" layoutY="293.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line4" endX="35.0" layoutX="116.0" layoutY="443.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line5" endX="35.0" layoutX="116.0" layoutY="503.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Line fx:id="line3" endX="35.0" layoutX="116.0" layoutY="354.0" startX="-79.0" stroke="#d7d6d6" strokeLineCap="ROUND" strokeWidth="2.0" />
+      <Button fx:id="EnregBut" layoutX="296.0" layoutY="470.0" mnemonicParsing="false" style="-fx-background-color: #215da7;" text="Enregister" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="0.0" offsetX="-1.0" offsetY="1.0" radius="4.75">
+               <color>
+                  <Color opacity="0.36000001430511475" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="RetourBut" layoutX="680.0" layoutY="548.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: FFFFFF;" text="Retour" textFill="#215da7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="11.36" offsetX="-1.0" offsetY="1.0" radius="5.119999999999999" width="11.12">
+               <color>
+                  <Color opacity="0.36000001430511475" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="ExportPDF" layoutX="273.0" layoutY="548.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="126.0" style="-fx-font-weight: bold; -fx-background-color: F1C53C; -fx-background-radius: 8;" text="Exporter PDF">
          <font>
             <Font size="14.0" />
          </font>
-      </Label>
-      <Button fx:id="EnregBut" layoutX="294.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #184173; -fx-background-radius: 10px;" text="Enregister" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow />
+            <DropShadow blurType="ONE_PASS_BOX" height="0.0" offsetX="-1.0" offsetY="1.0" radius="4.75">
+               <color>
+                  <Color opacity="0.30000001192092896" />
+               </color>
+            </DropShadow>
          </effect>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Portfolio/pdf.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button fx:id="RetourBut" layoutX="305.0" layoutY="556.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 10px;" text="Retour" textFill="#184173">
+      <Button fx:id="ExportHTML" layoutX="266.0" layoutY="509.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: F1C53C; -fx-background-radius: 8; -fx-font-weight: bold;" text="Exporter HTML">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -183,30 +229,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow />
+            <DropShadow height="0.0" offsetX="-1.0" offsetY="1.0" radius="4.75">
+               <color>
+                  <Color opacity="0.30000001192092896" />
+               </color>
+            </DropShadow>
          </effect>
-      </Button>
-      <Button fx:id="ExportPDF" layoutX="337.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: f1c53c; -fx-background-radius: 10px;" text="Exporter PDF">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button fx:id="ExportHTML" layoutX="203.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: f1c53c; -fx-background-radius: 10;" text="Exporter HTML">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <DropShadow />
-         </effect>
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Portfolio/html.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
     </children>
 </AnchorPane>

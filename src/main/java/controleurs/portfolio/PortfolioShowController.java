@@ -135,6 +135,7 @@ public class PortfolioShowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         /**********************************************/
         MonScrollPane =new ScrollPane();
+        //MonScrollPane.setStyle("-fx-background: transparent");
         gridPane =new GridPane();
         MonScrollPane.setContent(gridPane);
         monAnchorpane.getChildren().add(MonScrollPane);
@@ -315,7 +316,11 @@ public class PortfolioShowController implements Initializable {
                     fxmlLoader.setLocation(getClass().getResource("/views/PortfolioModelView.fxml"));
                     AnchorPane anchorPane = fxmlLoader.load();
                     PortfolioItemController portfolioItemController = fxmlLoader.getController();
-                    portfolioItemController.setData(po, myPortfolio);
+                    if(po!=null) {
+                        portfolioItemController.setData(po, myPortfolio);
+                    }else{
+                        System.out.println("le portfolio est null");
+                    }
 
                     gridPane.add(anchorPane, column++, row);
                     GridPane.setMargin(anchorPane, new Insets(15, 15, 1, 10));
